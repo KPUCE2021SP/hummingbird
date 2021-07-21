@@ -12,7 +12,7 @@
     <img width="227" alt="스크린샷 2021-07-21 오전 10 05 15" src="https://user-images.githubusercontent.com/54930877/126414507-7129adca-947a-4707-86a0-dcb15871194f.png">
   </a>
 
-  <h3 align="center">PeekPeek</h3>
+  <h3 align="center">PeepPeep</h3>
 
   <p align="center">
     커밋할수록 자라나는 귀여운 병아리들과 꾸준한 개발습관 들이기 어플

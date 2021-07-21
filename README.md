@@ -87,7 +87,7 @@
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See https://github.com/KPUCE2021SP/hummingbird/blob/main/LICENSE for more information.
 
 
 <!-- CONTACT -->

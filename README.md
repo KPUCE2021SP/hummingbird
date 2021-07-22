@@ -64,7 +64,9 @@
 * [Firebase]
 * [Android Studio]
 
+### Architecture
 
+* [MVVM]
 
 <!-- GETTING STARTED -->
 ## Getting Started

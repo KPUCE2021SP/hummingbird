@@ -69,7 +69,6 @@
 ### Architecture
 
 * [MVVM](https://developer.android.com/jetpack/guide?hl=ko)
-* [AAC](https://developer.android.com/topic/libraries/architecture?hl=ko)
 
 <img src="https://user-images.githubusercontent.com/54930877/126727419-a0559519-e34b-42f6-a800-0917cbb5d19f.jpg" width=600 height=500></img>
 

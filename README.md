@@ -41,7 +41,7 @@
     </li>
     <li><a href="#system-configuration-diagram">System Configuration Diagram</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#role">Contact</a></li>
+    <li><a href="#role">Role</a></li>
   </ol>
 </details>
 
@@ -80,7 +80,7 @@
 
 저희 애플리케이션은 kotlin으로 개발하는 안드로이드 애플리케이션입니다. 안드로이드가 설치된 핸드폰을 준비해주세요.
 
-<!-- ROADMAP -->
+<!-- 시스템 구성도 -->
 ## System Configuration Diagram
 ![93047604-d7d86880-f697-11ea-8e36-695d67b1e9e5](https://user-images.githubusercontent.com/54930877/126727611-32a60de1-e299-471c-abdc-2498aca8987b.png)
 

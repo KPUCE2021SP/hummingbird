@@ -85,6 +85,22 @@
 아직 출시되지 않았어요! 조금만 더 기다려주실거죠?
 
 ### Prerequisites
+프로젝트 수준 그래들
+``` gradle
+ext.kotlin_version = "1.5.10"
+classpath "com.android.tools.build:gradle:4.2.2"
+classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+```
+
+앱 수준 그래들
+``` gradle
+compileSdkVersion 30
+buildToolsVersion "30.0.0"
+minSdkVersion 16
+targetSdkVersion 30
+jvmTarget = '1.8'
+testImplementation 'junit:junit:4.+'
+```
 
 저희 애플리케이션은 kotlin으로 개발하는 안드로이드 애플리케이션입니다. 안드로이드가 설치된 핸드폰을 준비해주세요.
 

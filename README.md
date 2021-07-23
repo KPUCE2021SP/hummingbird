@@ -101,9 +101,6 @@ targetSdkVersion 30
 jvmTarget = '1.8'
 testImplementation 'junit:junit:4.+'
 ```
-
-저희 애플리케이션은 kotlin으로 개발하는 안드로이드 애플리케이션입니다. 안드로이드가 설치된 핸드폰을 준비해주세요.
-
 <!-- LICENSE -->
 ## License
 

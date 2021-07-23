@@ -39,9 +39,9 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#system-configuration-diagram">System Configuration Diagram</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#role">Contact</a></li>
   </ol>
 </details>
 
@@ -61,12 +61,15 @@
 
 ### Built With
 
-* [Firebase]
-* [Android Studio]
+* [Firebase](https://firebase.google.com/)
+* [Android Studio](https://developer.android.com/studio)
+* [Kotlin](https://developer.android.com/kotlin)
+
+<img src="https://user-images.githubusercontent.com/54930877/126727419-a0559519-e34b-42f6-a800-0917cbb5d19f.jpg" width=600 height=500></img>
 
 ### Architecture
 
-* [MVVM]
+* [MVVM](https://developer.android.com/jetpack/guide?hl=ko)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -78,7 +81,8 @@
 저희 애플리케이션은 kotlin으로 개발하는 안드로이드 애플리케이션입니다. 안드로이드가 설치된 핸드폰을 준비해주세요.
 
 <!-- ROADMAP -->
-## Roadmap
+## System Configuration Diagram
+![93047604-d7d86880-f697-11ea-8e36-695d67b1e9e5](https://user-images.githubusercontent.com/54930877/126727611-32a60de1-e299-471c-abdc-2498aca8987b.png)
 
 <!-- LICENSE -->
 ## License
@@ -86,7 +90,10 @@
 Distributed under the MIT License. See https://github.com/KPUCE2021SP/hummingbird/blob/main/LICENSE for more information.
 
 
-<!-- CONTACT -->
-## Contact
+<!-- Role -->
+## Role
 
-Heo Min - huhmin0409@naver.com
+* [김기현](https://github.com/kim1387) - 팀장, 데브옵스, 백엔드
+* [송경진](https://github.com/kjsong99) - 트러블슈팅, 백엔드
+* [장아령](https://github.com/aristo0922) - 프론트엔드, 백엔드
+* [허민](https://github.com/hhhminme) - PM, 백엔드

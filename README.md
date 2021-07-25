@@ -104,7 +104,7 @@ testImplementation 'junit:junit:4.+'
 -- >
 
 <!-- Roadmap -->
-## RoadMap
+## RoadMap (에정)
 - Sprint1(7/26 ~ 8/7)
   - MVVP 아키텍쳐 패턴 적용, 로그인(Github API 연동)
 - Sprint2(8/8 ~ 8/21) 

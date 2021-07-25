@@ -11,6 +11,8 @@
 
   <p align="center">
     커밋할수록 자라나는 귀여운 병아리들과 꾸준한 개발습관 들이기 어플
+  <br />
+    readme에 담기지 않은 더 자세한 이야기를 만나보고 싶나요?
     <br />
     <a href="https://www.notion.so/PeepPeep-Home-91fd364357374b1abf066556b6cdda22"><strong>공식 노션 바로가기 »</strong></a>
     <br />

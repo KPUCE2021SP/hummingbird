@@ -15,9 +15,9 @@
     <a href="https://github.com/KPUCE2021SP/hummingbird"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://ovenapp.io/view/7yFxMZwFyZ10NiwMUPbTV39nFHsFDtfz#1CXFY">프로토타입 보러가기</a>
+    <a href="https://ovenapp.io/view/7yFxMZwFyZ10NiwMUPbTV39nFHsFDtfz#1CXFY">프로토타입 바로가기</a>
     ·
-    <a href="https://www.notion.so/12341cb0f7cb4c7fa11d6e3141e6ce81?v=62cc868baadf48c3b2bd810741db7109">회의 기록 노션 보러가기</a>
+    <a href="https://www.notion.so/PeepPeep-Home-91fd364357374b1abf066556b6cdda22">공식 소개 노션 바로가기</a>
   </p>
 </p>
 

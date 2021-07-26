@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">KotlinRetrofitREST example</string>
+    <string name="title_activity_access_token">Welcome</string>
+    <string name="hi_there">Hi there!</string>
+    <string name="access_token">Access Token</string>
+    <string name="next">Next</string>
+    <string name="title_activity_user_details">User Details</string>
+    <string name="enter_username">Enter username</string>
+    <string name="error_internet">We are unable to connect to the internet. Please check your settings</string>
+    <string name="enter_access_token">Please enter your access token</string>
+    <string name="error_enter_username">Please enter a username</string>
+    <string name="error_server">Sorry! Could not process your request at the moment. Please try again later.</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="followers">Followers</string>
+    <string name="public_repos">Public Repos</string>
+    <string name="following">Following</string>
+</resources>

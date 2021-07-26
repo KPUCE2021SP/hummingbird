@@ -2,12 +2,14 @@ package codevinci.com.kotlinretrofitrestexample.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Repo(val id: Int,
+
+
+data class Repo(val id: String,
                 val node_id: String,
                 val name:String,
                 val full_name:String,
                 val private:Boolean,
-                val owner:User,
+                val owner:Owner,
                 val html_url:String,
                 val description:String,
                 val fork:Boolean,
@@ -39,6 +41,7 @@ data class Repo(val id: Int,
                 val contents_url:String,
                 val compare_url:String,
                 val merges_url:String,
+                val archive_url:String,
                 val downloads_url:String,
                 val issues_url:String,
                 val pulls_url:String,
@@ -54,7 +57,7 @@ data class Repo(val id: Int,
                 val ssh_url:String,
                 val clone_url:String,
                 val svn_url:String,
-                val homepage:String,
+                val homepage:String?,
                 val size:Int,
                 val stargazers_count:Int,
                 val watchers_count:Int,
@@ -65,18 +68,42 @@ data class Repo(val id: Int,
                 val has_wiki:Boolean,
                 val has_pages:Boolean,
                 val forks_count:Int,
-                val mirror_url:String,
+                val mirror_url:String?,
                 val archived:Boolean,
                 val disabled:Boolean,
                 val open_issues_count:Int,
-                val license:String,
+                val license:License,
                 val forks:Int,
                 val open_issues:Int,
                 val watchers:Int,
-                val default_branch:String,
-                val temp_clone_token:String,
-                val network_count:Int,
-                val subscribers_count:Int
+                val default_branch:String
+)
+
+data class License(
+    val key:String,
+    val name:String,
+    val spdx_id:String,
+    val url:String,
+    val node_id:String
+)
+data class Owner(
+    val login: String,
+    val id: Int,
+    val node_id: String,
+    val avatar_url: String,
+    val gravatar_id: String,
+    val url: String,
+    val html_url: String,
+    val followers_url: String,
+    val following_url: String,
+    val gists_url: String,
+    val starred_url: String,
+    val subscriptions_url: String,
+    val organizations_url: String,
+    val repos_url: String,
+    val events_url: String,
+    val received_events_url: String,
+    val type: String
 )
 
 data class RepoResponse(val message:String?,val documentation_url:String?,var repo: Repo?)

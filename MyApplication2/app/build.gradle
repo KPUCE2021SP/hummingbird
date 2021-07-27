@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -28,6 +29,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,6 +47,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -52,6 +57,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-alpha02")
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha02")
+
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
 
     implementation platform('com.google.firebase:firebase-bom:28.2.1')
     implementation 'com.google.firebase:firebase-auth-ktx'

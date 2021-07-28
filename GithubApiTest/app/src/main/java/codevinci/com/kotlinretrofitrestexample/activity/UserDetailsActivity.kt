@@ -2,8 +2,8 @@ package codevinci.com.kotlinretrofitrestexample.activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.View
 import codevinci.com.kotlinretrofitrestexample.R
@@ -84,7 +84,8 @@ class UserDetailsActivity : AppCompatActivity() {
         llProfileView.visibility = View.GONE
         llRepoView.visibility = View.GONE
         fabSearch.visibility = View.GONE
-        rvMoreDetails.layoutManager = LinearLayoutManager(this)
+        rvMoreDetails.layoutManager =
+            LinearLayoutManager(this)
         rvMoreDetails.setHasFixedSize(true)
     }
 

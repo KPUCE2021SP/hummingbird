@@ -1,0 +1,659 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+MERGED from [androidx.databinding:databinding-adapters:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ac01a5edeb64c7de0bf1d4d115ac1fb4/databinding-adapters-4.2.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.databinding:databinding-runtime:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7a698d7127e646132678b9a70a99595b/databinding-runtime-4.2.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.databinding:viewbinding:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b154b30968da264fbbe4eafe9981bd3f/viewbinding-4.2.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/937d9b5b5fa5ca036ca24507b6cae611/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6711372ba9480be74b41e74662f7bcad/navigation-fragment-ktx-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7104fcf6e642d1c9172ec0ad0a1185e8/navigation-ui-ktx-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71445fcb30e37cc384dc2d971b0c9a08/navigation-runtime-ktx-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.preference:preference-ktx:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7e458fea89d12db6b113be43c111eadb/jetified-preference-ktx-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b356b31cf51ba7b9f4036e1a835cf761/fragment-ktx-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/658195d6b8daafe4a058b51fce47df03/activity-ktx-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6ae0cc07bf8263ceb6c5ee78fa21efb0/lifecycle-viewmodel-ktx-2.4.0-alpha02/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c3ce743acd43b4b7fe08ecac23540fc7/lifecycle-livedata-ktx-2.4.0-alpha02/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/701dbae3fa023b0e522e4fd0463fa007/navigation-ui-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.4.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/65d9cf0d8ac707e45a41a2f3c4901191/material-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6577bd1c3c6888efc603ab0996b4df2b/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.preference:preference:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4dd30cec5506d0694b475443f6890a2f/preference-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c63cad6f2edafbe6446d16fdf127a326/appcompat-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:17:1-83:12
+MERGED from [androidx.browser:browser:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/abd3c0c4616df65847e80c18517ad83c/browser-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.rahul:github-oauth:1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/917b7cea916e52c719d084d00811597c/jetified-github-oauth-1.0/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:2:1-21:12
+MERGED from [com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:15:1-38:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ce6bbfcdeaacec05c7d03edcbae761c0/navigation-common-ktx-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.6.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/40a78cb6970162fa49fc59eac7e43674/core-ktx-1.6.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/55cb4068c94eefc16c0233072e2ff0e2/lifecycle-livedata-core-ktx-2.4.0-alpha02/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/710746b101064f11caf1311ed37e08d5/lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:2:1-21:12
+MERGED from [com.google.firebase:firebase-analytics:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bc39f54692d119196430d01d5d044c87/firebase-analytics-19.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta01] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b7dc3860ec3893e1bd1a5e4852867ec8/firebase-appcheck-interop-16.0.0-beta01/AndroidManifest.xml:15:1-26:12
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:17:1-36:12
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/e8a11c8dbf2c2b181b0c9d5c8fadd5a3/firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:15:1-40:12
+MERGED from [androidx.navigation:navigation-fragment:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/859c3280e4a47ca3b65e19ff745c3fb6/navigation-fragment-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/47e63a278cd1b22bdbdbb5df8334da06/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c5fe53a68239d483a4ba45e2ab7a6c7d/firebase-database-collection-18.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/57942f62911e7460798a0b6e925b739a/play-services-auth-api-phone-17.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/53d5bbd3ec04324e87ca4ec045775d7f/play-services-safetynet-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c6e5ae7df859ed53df5a325985eb8f16/firebase-installations-interop-17.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5edb425402a8bcbc860a7a956fe77324/play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:17:1-46:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3eeb3bd315816f6361024a9bba3dae3e/play-services-measurement-sdk-19.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/10e7e803596aba13e8eb918eb50b7d3e/play-services-ads-identifier-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/23ebf475b2c32710fc2c4050cfc98a4f/play-services-measurement-sdk-api-19.0.0/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-base:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/8538cf7d9ca471a53bd23aebfbf17224/play-services-measurement-base-19.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3382b49b844ea4e2abc07e19a112fd31/play-services-stats-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d97c2d790b968e4346be1323c2e25879/firebase-measurement-connector-19.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.3.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/2cb01db4ca76910a50f27d153f3877bf/fragment-1.3.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6f8868a7f87b4199f267489342e5cb61/navigation-runtime-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.3] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c6a49297afb5f035d0d24127e23cf2d/activity-1.2.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/1e93bd57960a35fd94d3eca76a56a2d3/lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7106552cc46e760dd04ca58f8170cb33/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9f61ad26d393d1b29d2b9538db033c01/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/adcf0fe85500950d0c7297d25cb4df69/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/a63f7e2fae34cbb2070dd368e11006ad/lifecycle-viewmodel-2.4.0-alpha02/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/09611e1be004db31cf6f563647835248/appcompat-resources-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b01ecedd3daaed0b43f2e3d830bc65fd/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/91fba9653a395bf56f6e6266a6ccde02/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/f489856c6c7fbf2149d7e673d2b24416/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/55eec484a95e62a432f161d89b5f277a/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/313bc8572d8d6b5d2ef2e8af505c0bd0/transition-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3384f55de037613d3159ca521dc37737/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/991b24cf73eda61155d08098148513e8/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/67f6d4ec624c432aa72ccea67bd235de/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d61ae46cef1ecd206999742917b7a6a8/navigation-common-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.6.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d791f54bee25a80efebc2af3fc8277b7/core-1.6.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/66cb5e63bbd3fbcabb1567bbf76820f6/lifecycle-runtime-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/042a19393a5c17412b3e26fa1c726156/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7406cb8493afb83c7edacfa0f8f5f267/savedstate-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/92d2e66639bdabc31b201df531adf1a2/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/fc0f03894fff03a35d706a705a34d7ef/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6a795005f96869aa598c676f0f830f15/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-components:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/1c3cc2880f2f9df7f09e06dd24cb4538/firebase-components-17.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0f5dbc2c961b0a737bdfa69e08a9a60b/lifecycle-livedata-2.4.0-alpha02/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/1547a01b06cd24514d6af3d683783912/lifecycle-livedata-core-2.4.0-alpha02/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/411c0a8fbb2d30a931f60f4b38185737/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/a8ad9bb551b920caee008c5e2756cddd/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/622e025bc50c5b526a953fe584212f13/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/930820bedfc3e789e70eee4152182157/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6cd35aa0203a26f0bf316cbe87946f9d/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/21002386a0c9f678e406599c5ae598d4/annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+	package
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:3:5-30
+		INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+		INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+		INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:23:5-67
+MERGED from [com.github.rahul:github-oauth:1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/917b7cea916e52c719d084d00811597c/jetified-github-oauth-1.0/AndroidManifest.xml:11:5-67
+MERGED from [com.github.rahul:github-oauth:1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/917b7cea916e52c719d084d00811597c/jetified-github-oauth-1.0/AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/23ebf475b2c32710fc2c4050cfc98a4f/play-services-measurement-sdk-api-19.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/23ebf475b2c32710fc2c4050cfc98a4f/play-services-measurement-sdk-api-19.0.0/AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.USE_CREDENTIALS
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:6:5-8:38
+	android:maxSdkVersion
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:8:9-35
+	android:name
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:7:9-58
+queries
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:10:5-14:15
+intent#action:name:android.support.customtabs.action.CustomTabsService
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:11:9-13:18
+action#android.support.customtabs.action.CustomTabsService
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:12:13-90
+	android:name
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:12:21-87
+application
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:16:5-54:19
+MERGED from [com.google.android.material:material:1.4.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/65d9cf0d8ac707e45a41a2f3c4901191/material-1.4.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.4.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/65d9cf0d8ac707e45a41a2f3c4901191/material-1.4.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6577bd1c3c6888efc603ab0996b4df2b/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6577bd1c3c6888efc603ab0996b4df2b/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:26:5-81:19
+MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:26:5-81:19
+MERGED from [com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:11:5-19:19
+MERGED from [com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:11:5-19:19
+MERGED from [com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:11:5-19:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:11:5-19:19
+MERGED from [com.google.firebase:firebase-analytics:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bc39f54692d119196430d01d5d044c87/firebase-analytics-19.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bc39f54692d119196430d01d5d044c87/firebase-analytics-19.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta01] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b7dc3860ec3893e1bd1a5e4852867ec8/firebase-appcheck-interop-16.0.0-beta01/AndroidManifest.xml:24:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta01] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b7dc3860ec3893e1bd1a5e4852867ec8/firebase-appcheck-interop-16.0.0-beta01/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/e8a11c8dbf2c2b181b0c9d5c8fadd5a3/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/e8a11c8dbf2c2b181b0c9d5c8fadd5a3/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:25:5-38:19
+MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:25:5-38:19
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/53d5bbd3ec04324e87ca4ec045775d7f/play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/53d5bbd3ec04324e87ca4ec045775d7f/play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5edb425402a8bcbc860a7a956fe77324/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5edb425402a8bcbc860a7a956fe77324/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3eeb3bd315816f6361024a9bba3dae3e/play-services-measurement-sdk-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3eeb3bd315816f6361024a9bba3dae3e/play-services-measurement-sdk-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:28:5-29:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:28:5-29:19
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/10e7e803596aba13e8eb918eb50b7d3e/play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/10e7e803596aba13e8eb918eb50b7d3e/play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/8538cf7d9ca471a53bd23aebfbf17224/play-services-measurement-base-19.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/8538cf7d9ca471a53bd23aebfbf17224/play-services-measurement-base-19.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3382b49b844ea4e2abc07e19a112fd31/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3382b49b844ea4e2abc07e19a112fd31/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d97c2d790b968e4346be1323c2e25879/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d97c2d790b968e4346be1323c2e25879/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.6.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d791f54bee25a80efebc2af3fc8277b7/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d791f54bee25a80efebc2af3fc8277b7/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/92d2e66639bdabc31b201df531adf1a2/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/92d2e66639bdabc31b201df531adf1a2/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.6.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d791f54bee25a80efebc2af3fc8277b7/core-1.6.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:22:9-35
+	android:label
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:20:9-41
+	android:roundIcon
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:21:9-54
+	android:icon
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:19:9-43
+	android:allowBackup
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:18:9-35
+	android:theme
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:23:9-51
+	android:name
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:17:9-28
+activity#com.github.peep.LoginActivity
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:24:9-60
+	android:name
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:24:19-48
+activity#com.github.peep.HomeActivity
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:25:9-35:20
+	android:theme
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:27:13-42
+	android:name
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:26:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:28:13-34:29
+action#android.intent.action.MAIN
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:29:17-31:60
+	android:screenOrientation
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:31:21-57
+	android:name
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:30:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:33:17-77
+	android:name
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:33:27-74
+activity#com.github.peep.MainActivity
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:36:9-39:72
+	android:screenOrientation
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:38:13-49
+	android:theme
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:39:13-69
+	android:name
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:37:13-41
+activity#com.github.peep.SplashActivity
+ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:40:9-53:20
+	android:screenOrientation
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:42:13-49
+	android:theme
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:43:13-42
+	android:name
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:41:13-43
+uses-sdk
+INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:databinding-adapters:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ac01a5edeb64c7de0bf1d4d115ac1fb4/databinding-adapters-4.2.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:databinding-adapters:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ac01a5edeb64c7de0bf1d4d115ac1fb4/databinding-adapters-4.2.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:databinding-runtime:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7a698d7127e646132678b9a70a99595b/databinding-runtime-4.2.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:databinding-runtime:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7a698d7127e646132678b9a70a99595b/databinding-runtime-4.2.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:viewbinding:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b154b30968da264fbbe4eafe9981bd3f/viewbinding-4.2.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:viewbinding:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b154b30968da264fbbe4eafe9981bd3f/viewbinding-4.2.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/937d9b5b5fa5ca036ca24507b6cae611/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/937d9b5b5fa5ca036ca24507b6cae611/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6711372ba9480be74b41e74662f7bcad/navigation-fragment-ktx-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6711372ba9480be74b41e74662f7bcad/navigation-fragment-ktx-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7104fcf6e642d1c9172ec0ad0a1185e8/navigation-ui-ktx-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7104fcf6e642d1c9172ec0ad0a1185e8/navigation-ui-ktx-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71445fcb30e37cc384dc2d971b0c9a08/navigation-runtime-ktx-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71445fcb30e37cc384dc2d971b0c9a08/navigation-runtime-ktx-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference-ktx:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7e458fea89d12db6b113be43c111eadb/jetified-preference-ktx-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference-ktx:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7e458fea89d12db6b113be43c111eadb/jetified-preference-ktx-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b356b31cf51ba7b9f4036e1a835cf761/fragment-ktx-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b356b31cf51ba7b9f4036e1a835cf761/fragment-ktx-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/658195d6b8daafe4a058b51fce47df03/activity-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/658195d6b8daafe4a058b51fce47df03/activity-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6ae0cc07bf8263ceb6c5ee78fa21efb0/lifecycle-viewmodel-ktx-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6ae0cc07bf8263ceb6c5ee78fa21efb0/lifecycle-viewmodel-ktx-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c3ce743acd43b4b7fe08ecac23540fc7/lifecycle-livedata-ktx-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c3ce743acd43b4b7fe08ecac23540fc7/lifecycle-livedata-ktx-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/701dbae3fa023b0e522e4fd0463fa007/navigation-ui-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/701dbae3fa023b0e522e4fd0463fa007/navigation-ui-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.4.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/65d9cf0d8ac707e45a41a2f3c4901191/material-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.4.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/65d9cf0d8ac707e45a41a2f3c4901191/material-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6577bd1c3c6888efc603ab0996b4df2b/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6577bd1c3c6888efc603ab0996b4df2b/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.preference:preference:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4dd30cec5506d0694b475443f6890a2f/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4dd30cec5506d0694b475443f6890a2f/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c63cad6f2edafbe6446d16fdf127a326/appcompat-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c63cad6f2edafbe6446d16fdf127a326/appcompat-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.browser:browser:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/abd3c0c4616df65847e80c18517ad83c/browser-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/abd3c0c4616df65847e80c18517ad83c/browser-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.rahul:github-oauth:1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/917b7cea916e52c719d084d00811597c/jetified-github-oauth-1.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.rahul:github-oauth:1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/917b7cea916e52c719d084d00811597c/jetified-github-oauth-1.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ce6bbfcdeaacec05c7d03edcbae761c0/navigation-common-ktx-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ce6bbfcdeaacec05c7d03edcbae761c0/navigation-common-ktx-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.6.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/40a78cb6970162fa49fc59eac7e43674/core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.6.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/40a78cb6970162fa49fc59eac7e43674/core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/55cb4068c94eefc16c0233072e2ff0e2/lifecycle-livedata-core-ktx-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/55cb4068c94eefc16c0233072e2ff0e2/lifecycle-livedata-core-ktx-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/710746b101064f11caf1311ed37e08d5/lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/710746b101064f11caf1311ed37e08d5/lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-analytics:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bc39f54692d119196430d01d5d044c87/firebase-analytics-19.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bc39f54692d119196430d01d5d044c87/firebase-analytics-19.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta01] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b7dc3860ec3893e1bd1a5e4852867ec8/firebase-appcheck-interop-16.0.0-beta01/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta01] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b7dc3860ec3893e1bd1a5e4852867ec8/firebase-appcheck-interop-16.0.0-beta01/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/e8a11c8dbf2c2b181b0c9d5c8fadd5a3/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/e8a11c8dbf2c2b181b0c9d5c8fadd5a3/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/859c3280e4a47ca3b65e19ff745c3fb6/navigation-fragment-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/859c3280e4a47ca3b65e19ff745c3fb6/navigation-fragment-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/47e63a278cd1b22bdbdbb5df8334da06/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/47e63a278cd1b22bdbdbb5df8334da06/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c5fe53a68239d483a4ba45e2ab7a6c7d/firebase-database-collection-18.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c5fe53a68239d483a4ba45e2ab7a6c7d/firebase-database-collection-18.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/57942f62911e7460798a0b6e925b739a/play-services-auth-api-phone-17.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/57942f62911e7460798a0b6e925b739a/play-services-auth-api-phone-17.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/53d5bbd3ec04324e87ca4ec045775d7f/play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/53d5bbd3ec04324e87ca4ec045775d7f/play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c6e5ae7df859ed53df5a325985eb8f16/firebase-installations-interop-17.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c6e5ae7df859ed53df5a325985eb8f16/firebase-installations-interop-17.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5edb425402a8bcbc860a7a956fe77324/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5edb425402a8bcbc860a7a956fe77324/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3eeb3bd315816f6361024a9bba3dae3e/play-services-measurement-sdk-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3eeb3bd315816f6361024a9bba3dae3e/play-services-measurement-sdk-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/10e7e803596aba13e8eb918eb50b7d3e/play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/10e7e803596aba13e8eb918eb50b7d3e/play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/23ebf475b2c32710fc2c4050cfc98a4f/play-services-measurement-sdk-api-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/23ebf475b2c32710fc2c4050cfc98a4f/play-services-measurement-sdk-api-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/8538cf7d9ca471a53bd23aebfbf17224/play-services-measurement-base-19.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/8538cf7d9ca471a53bd23aebfbf17224/play-services-measurement-base-19.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3382b49b844ea4e2abc07e19a112fd31/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3382b49b844ea4e2abc07e19a112fd31/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d97c2d790b968e4346be1323c2e25879/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d97c2d790b968e4346be1323c2e25879/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.3.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/2cb01db4ca76910a50f27d153f3877bf/fragment-1.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/2cb01db4ca76910a50f27d153f3877bf/fragment-1.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6f8868a7f87b4199f267489342e5cb61/navigation-runtime-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6f8868a7f87b4199f267489342e5cb61/navigation-runtime-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.3] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c6a49297afb5f035d0d24127e23cf2d/activity-1.2.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.3] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c6a49297afb5f035d0d24127e23cf2d/activity-1.2.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/1e93bd57960a35fd94d3eca76a56a2d3/lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/1e93bd57960a35fd94d3eca76a56a2d3/lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7106552cc46e760dd04ca58f8170cb33/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7106552cc46e760dd04ca58f8170cb33/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9f61ad26d393d1b29d2b9538db033c01/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9f61ad26d393d1b29d2b9538db033c01/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/adcf0fe85500950d0c7297d25cb4df69/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/adcf0fe85500950d0c7297d25cb4df69/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/a63f7e2fae34cbb2070dd368e11006ad/lifecycle-viewmodel-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/a63f7e2fae34cbb2070dd368e11006ad/lifecycle-viewmodel-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/09611e1be004db31cf6f563647835248/appcompat-resources-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/09611e1be004db31cf6f563647835248/appcompat-resources-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b01ecedd3daaed0b43f2e3d830bc65fd/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b01ecedd3daaed0b43f2e3d830bc65fd/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/91fba9653a395bf56f6e6266a6ccde02/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/91fba9653a395bf56f6e6266a6ccde02/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/f489856c6c7fbf2149d7e673d2b24416/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/f489856c6c7fbf2149d7e673d2b24416/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/55eec484a95e62a432f161d89b5f277a/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/55eec484a95e62a432f161d89b5f277a/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/313bc8572d8d6b5d2ef2e8af505c0bd0/transition-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.3.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/313bc8572d8d6b5d2ef2e8af505c0bd0/transition-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3384f55de037613d3159ca521dc37737/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/3384f55de037613d3159ca521dc37737/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/991b24cf73eda61155d08098148513e8/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/991b24cf73eda61155d08098148513e8/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/67f6d4ec624c432aa72ccea67bd235de/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/67f6d4ec624c432aa72ccea67bd235de/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d61ae46cef1ecd206999742917b7a6a8/navigation-common-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.3.5] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d61ae46cef1ecd206999742917b7a6a8/navigation-common-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d791f54bee25a80efebc2af3fc8277b7/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/d791f54bee25a80efebc2af3fc8277b7/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/66cb5e63bbd3fbcabb1567bbf76820f6/lifecycle-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/66cb5e63bbd3fbcabb1567bbf76820f6/lifecycle-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/042a19393a5c17412b3e26fa1c726156/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/042a19393a5c17412b3e26fa1c726156/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7406cb8493afb83c7edacfa0f8f5f267/savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7406cb8493afb83c7edacfa0f8f5f267/savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/92d2e66639bdabc31b201df531adf1a2/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/92d2e66639bdabc31b201df531adf1a2/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/fc0f03894fff03a35d706a705a34d7ef/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/fc0f03894fff03a35d706a705a34d7ef/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6a795005f96869aa598c676f0f830f15/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6a795005f96869aa598c676f0f830f15/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-components:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/1c3cc2880f2f9df7f09e06dd24cb4538/firebase-components-17.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/1c3cc2880f2f9df7f09e06dd24cb4538/firebase-components-17.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0f5dbc2c961b0a737bdfa69e08a9a60b/lifecycle-livedata-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0f5dbc2c961b0a737bdfa69e08a9a60b/lifecycle-livedata-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/1547a01b06cd24514d6af3d683783912/lifecycle-livedata-core-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.4.0-alpha02] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/1547a01b06cd24514d6af3d683783912/lifecycle-livedata-core-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/411c0a8fbb2d30a931f60f4b38185737/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/411c0a8fbb2d30a931f60f4b38185737/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/a8ad9bb551b920caee008c5e2756cddd/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/a8ad9bb551b920caee008c5e2756cddd/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/622e025bc50c5b526a953fe584212f13/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/622e025bc50c5b526a953fe584212f13/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/930820bedfc3e789e70eee4152182157/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/930820bedfc3e789e70eee4152182157/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6cd35aa0203a26f0bf316cbe87946f9d/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6cd35aa0203a26f0bf316cbe87946f9d/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/21002386a0c9f678e406599c5ae598d4/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/21002386a0c9f678e406599c5ae598d4/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+		ADDED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:74:9-80:19
+MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:74:9-80:19
+MERGED from [com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:12:9-18:19
+MERGED from [com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:12:9-18:19
+MERGED from [com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:12:9-18:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:12:9-18:19
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:33:9-37:35
+MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:33:9-37:35
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:10:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:37:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:9:13-84
+meta-data#com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar
+ADDED from [com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:12:17-116
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/23ebf475b2c32710fc2c4050cfc98a4f/play-services-measurement-sdk-api-19.0.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/23ebf475b2c32710fc2c4050cfc98a4f/play-services-measurement-sdk-api-19.0.0/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:24:22-76
+activity#com.google.firebase.auth.internal.GenericIdpActivity
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:27:9-44:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:29:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:31:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:30:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:32:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:28:13-80
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:33:13-43:29
+action#android.intent.action.VIEW
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+category#android.intent.category.DEFAULT
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
+data
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
+	android:path
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
+	android:host
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
+	android:scheme
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
+activity#com.google.firebase.auth.internal.RecaptchaActivity
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:45:9-62:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:47:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:49:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:48:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:50:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:46:13-79
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:51:13-61:29
+service#com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:64:9-73:19
+	android:enabled
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:66:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:67:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:65:13-101
+intent-filter#action:name:com.google.firebase.auth.api.gms.service.START+category:name:android.intent.category.DEFAULT
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:68:13-72:29
+action#com.google.firebase.auth.api.gms.service.START
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:69:17-89
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:69:25-86
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:77:13-79:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:79:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:78:17-109
+meta-data#com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar
+ADDED from [com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:15:13-17:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:17:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:16:17-124
+meta-data#com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar
+ADDED from [com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:12:17-126
+meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
+ADDED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:33:17-109
+meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar
+ADDED from [com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:15:13-17:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:17:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:16:17-113
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/23ebf475b2c32710fc2c4050cfc98a4f/play-services-measurement-sdk-api-19.0.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/23ebf475b2c32710fc2c4050cfc98a4f/play-services-measurement-sdk-api-19.0.0/AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:24:22-65
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:30:13-32:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:32:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:31:17-139
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:19:17-127
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9a97c4936caa518398b7221f60aa0263/play-services-measurement-impl-19.0.0/AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:30:13-85
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:35:9-38:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:36:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:39:9-43:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:41:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:42:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:43:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:40:13-87
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:24:13-58

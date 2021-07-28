@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,33 +15,27 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="164dp"
         android:gravity="center"
         android:text="@string/hi_there"
-        android:textSize="30sp"/>
-
-    <EditText
-        android:id="@+id/etAccessToken"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_below="@id/textView"
-        android:ems="10"
-        android:hint="@string/access_token"
-        android:layout_marginBottom="15dp"
-        android:inputType="text"/>
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btNext"
-        android:background="@color/dark_gray"
-        android:textColor="@color/white"
+        android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/etAccessToken"
-        android:text="@string/next"/>
+        android:background="@color/dark_gray"
+        android:text="Start"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.435" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myapplication.databinding.FragmentFindBinding
 
-class MusicFragment : Fragment() {
+class FindFragment : Fragment() {
 
     private var mBinding : FragmentFindBinding? = null
 

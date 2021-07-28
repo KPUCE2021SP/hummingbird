@@ -57,10 +57,13 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-alpha02")
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha02")
-
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
 
+    //custom chrome view
+    implementation "androidx.browser:browser:1.3.0"
+
+    //firebase
     implementation platform('com.google.firebase:firebase-bom:28.2.1')
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-database-ktx'

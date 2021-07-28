@@ -33,7 +33,6 @@ class SplashActivity : AppCompatActivity() {
 
             Handler().postDelayed({
                 if(settings.getString("devCareer","")!!.isEmpty()){ //정보입력 안한 사람
-
                 }
 
 

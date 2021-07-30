@@ -7,10 +7,19 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.github.peep.App.Companion.prefs
 import com.github.peep.databinding.ActivityMainBinding
 import com.google.firebase.auth.GithubAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.peep.githubapitest.githubpapi.ApiClient
+import com.peep.githubapitest.githubpapi.GithubInterface
+import com.peep.githubapitest.model.User
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class MainActivity : AppCompatActivity(){
@@ -24,6 +33,8 @@ class MainActivity : AppCompatActivity(){
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
+
+
         //네비게이션을 담는 호스트
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.my_nav_host) as NavHostFragment
 
@@ -32,27 +43,15 @@ class MainActivity : AppCompatActivity(){
 
         //바텀 네비게이션뷰와 네비게이션 뷰를 묶어준다.
         NavigationUI.setupWithNavController(mBinding.myBottomNav, navController)
+
+
+
+
+
     }
-    private fun authWithGithub() {
 
-        // [START auth_with_github]
-        val token = "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"
-        val credential = GithubAuthProvider.getCredential(token)
-        Firebase.auth.signInWithCredential(credential)
-            .addOnCompleteListener(this) { task ->
-                Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful)
 
-                // If sign in fails, display a message to the user. If sign in succeeds
-                // the auth state listener will be notified and logic to handle the
-                // signed in user can be handled in the listener.
-                if (!task.isSuccessful) {
-                    Log.w(TAG, "signInWithCredential", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
-                }
 
-                // ...
-            }
-        // [END auth_with_github]
-    }
+
+
 }

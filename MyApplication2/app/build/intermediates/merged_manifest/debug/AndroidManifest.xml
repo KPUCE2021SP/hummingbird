@@ -34,7 +34,6 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.MyApplication" >
-        <activity android:name="com.github.peep.LoginActivity" />
         <activity
             android:name="com.github.peep.HomeActivity"
             android:theme="@style/Splash" >

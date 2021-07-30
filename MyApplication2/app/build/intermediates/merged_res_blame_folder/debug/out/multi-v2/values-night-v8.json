@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/Users/song-gyeongjin/hummingbird/MyApplication2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c63cad6f2edafbe6446d16fdf127a326/appcompat-1.3.0/res/values-night-v8/values-night-v8.xml",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/src/main/res/values-night/themes.xml",
+                    "source": "/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/res/values-night/themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

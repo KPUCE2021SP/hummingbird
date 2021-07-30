@@ -7,7 +7,7 @@ public final class ApiClient {
     @org.jetbrains.annotations.NotNull()
     public static final com.peep.githubapitest.githubpapi.ApiClient.Companion Companion = null;
     @org.jetbrains.annotations.NotNull()
-    private static final java.lang.String baseURL = "https://github.com/";
+    private static final java.lang.String baseURL = "https://api.github.com";
     @org.jetbrains.annotations.Nullable()
     private static retrofit2.Retrofit retrofit;
     

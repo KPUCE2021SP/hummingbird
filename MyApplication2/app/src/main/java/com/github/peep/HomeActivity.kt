@@ -18,50 +18,53 @@ class HomeActivity : AppCompatActivity() {
     private val mContext: Context?=null
 
 
+    private lateinit var mBinding : ActivityHomeBinding
 
-    private lateinit var hBinding : ActivityHomeBinding
+
+
+    val githubAuthenticatorBuilder = GithubAuthenticator.builder(this)
+        .clientId(BuildConfig.CLIENT_ID)
+        .clientSecret(BuildConfig.CLIENT_SECRET)
+        .onSuccess(object : SuccessCallback {
+            override fun onSuccess(result: String) {
+                runOnUiThread {
+                    val intent= Intent(this@HomeActivity,MainActivity::class.java)
+                    prefs.setString("token",result)
+                    finish()
+                    startActivity(intent)
+
+                }
+            }
+        })
+        .onError(object : ErrorCallback {
+            override fun onError(error: Exception) {
+                runOnUiThread {
+                    Toast.makeText(this@HomeActivity,error.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
+
+    val githubAuthenticator = githubAuthenticatorBuilder.build()
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        hBinding= ActivityHomeBinding.inflate(layoutInflater)
+        mBinding= ActivityHomeBinding.inflate(layoutInflater)
 
         super.onCreate(savedInstanceState)
-        val githubAuthenticatorBuilder = GithubAuthenticator.builder(this)
-            .clientId(BuildConfig.CLIENT_ID)
-            .clientSecret(BuildConfig.CLIENT_SECRET)
-            .onSuccess(object : SuccessCallback {
-                override fun onSuccess(result: String) {
-                    runOnUiThread {
-                        val intent= Intent(this@HomeActivity,MainActivity::class.java)
-                        App.prefs.setString("token",result)
-                        finish()
-                        startActivity(intent)
 
-                    }
-                }
-            })
-            .onError(object : ErrorCallback {
-                override fun onError(error: Exception) {
-                    runOnUiThread {
-                        Toast.makeText(this@HomeActivity,error.message, Toast.LENGTH_SHORT).show()
-                    }
-                }
-            })
+        if(prefs.getString("token","").equals("")){ //토큰이 없는 거
 
-        val githubAuthenticator = githubAuthenticatorBuilder.build()
-
-        if(prefs.getString("token","").equals("")){
-            githubAuthenticatorBuilder.debug(true)
-            setContentView(hBinding.root)
-
+            setContentView(mBinding.root)
 
             // Target specific email with login hint.
-            hBinding.loginBtn.setOnClickListener {
+            mBinding.loginBtn.setOnClickListener {
                 githubAuthenticator.authenticate()
+
             }
-            var intent=Intent(this,MainActivity::class.java)
-            finish()
-            startActivity(intent)
+
         }
 
         else{

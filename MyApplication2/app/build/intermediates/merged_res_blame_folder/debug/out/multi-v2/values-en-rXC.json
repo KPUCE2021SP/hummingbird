@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "/Users/song-gyeongjin/hummingbird/MyApplication2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "/Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4dd30cec5506d0694b475443f6890a2f/preference-1.1.1/res/values-en-rXC/values-en-rXC.xml",

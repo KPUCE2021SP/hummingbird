@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml",
+            "outputFile": "/Users/song-gyeongjin/hummingbird/MyApplication2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml",
             "map": [
                 {
                     "source": "/Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/res/values-ko/values.xml",

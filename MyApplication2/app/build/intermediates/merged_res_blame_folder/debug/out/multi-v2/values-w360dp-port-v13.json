@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w360dp-port-v13/values-w360dp-port-v13.xml",
+            "outputFile": "/Users/song-gyeongjin/hummingbird/MyApplication2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
                     "source": "/Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/65d9cf0d8ac707e45a41a2f3c4901191/material-1.4.0/res/values-w360dp-port-v13/values-w360dp-port-v13.xml",

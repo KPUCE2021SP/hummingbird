@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/song-gyeongjin/heo/hummingbird/MyApplication2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lv/values-lv.xml",
+            "outputFile": "/Users/song-gyeongjin/hummingbird/MyApplication2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lv/values-lv.xml",
             "map": [
                 {
                     "source": "/Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/res/values-lv/values.xml",

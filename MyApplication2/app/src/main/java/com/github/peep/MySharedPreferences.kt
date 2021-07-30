@@ -18,4 +18,8 @@ class MySharedPreferences(context: Context)
         prefs.edit().putString(key, str).apply()
     }
 
+    fun removeString(key:String){
+        prefs.edit().remove(key).apply()
+    }
+
 }

@@ -11,13 +11,10 @@ import retrofit2.http.Query
 
 interface GithubInterface {
     @GET("user")
-    fun getUserDetails(@Header("Authentication")accesstoken: String): Call<User>
+    fun getUser(@Header("Authorization")accesstoken: String): Call<User>
 
 
     @GET("user/repos")
-    fun getUserRepos(@Header("Authentication")accesstoken: String): Call<List<Repo>>
-
-    @GET("login/oauth/authorize?client_id={client_id}")
-    fun getPrivateCode(@Query("client_id")client_id:String) : Call<Code>
+    fun getUserRepos(@Header("Authorization")accesstoken: String): Call<List<Repo>>
 
 }

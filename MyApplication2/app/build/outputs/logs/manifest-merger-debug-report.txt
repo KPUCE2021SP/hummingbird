@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-55:12
+ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
 MERGED from [androidx.databinding:databinding-adapters:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ac01a5edeb64c7de0bf1d4d115ac1fb4/databinding-adapters-4.2.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.databinding:databinding-runtime:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/7a698d7127e646132678b9a70a99595b/databinding-runtime-4.2.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.databinding:viewbinding:4.2.2] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/b154b30968da264fbbe4eafe9981bd3f/viewbinding-4.2.2/AndroidManifest.xml:17:1-22:12
@@ -90,20 +90,20 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/930820bedfc3e789e70eee4152182157/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6cd35aa0203a26f0bf316cbe87946f9d/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/21002386a0c9f678e406599c5ae598d4/annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
 	package
 		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:3:5-30
 		INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-55:12
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
 		INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-55:12
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:1-56:12
 		INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:2:11-69
@@ -142,7 +142,7 @@ ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/Android
 	android:name
 		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:12:21-87
 application
-ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:16:5-53:19
+ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:16:5-54:19
 MERGED from [com.google.android.material:material:1.4.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/65d9cf0d8ac707e45a41a2f3c4901191/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/65d9cf0d8ac707e45a41a2f3c4901191/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/6577bd1c3c6888efc603ab0996b4df2b/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
@@ -210,43 +210,45 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/song
 	android:allowBackup
 		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:18:9-35
 	android:theme
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:23:9-51
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:24:9-51
+	android:usesCleartextTraffic
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:23:9-44
 	android:name
 		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:17:9-28
 activity#com.github.peep.HomeActivity
-ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:24:9-34:20
+ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:25:9-35:20
 	android:theme
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:26:13-42
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:27:13-42
 	android:name
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:25:13-41
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:26:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:27:13-33:29
+ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:28:13-34:29
 action#android.intent.action.MAIN
-ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:28:17-30:60
+ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:29:17-31:60
 	android:screenOrientation
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:30:21-57
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:31:21-57
 	android:name
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:29:21-62
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:30:21-62
 category#android.intent.category.LAUNCHER
-ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:32:17-77
+ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:33:17-77
 	android:name
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:32:27-74
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:33:27-74
 activity#com.github.peep.MainActivity
-ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:35:9-38:72
+ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:36:9-39:72
 	android:screenOrientation
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:37:13-49
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:38:13-49
 	android:theme
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:38:13-69
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:39:13-69
 	android:name
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:36:13-41
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:37:13-41
 activity#com.github.peep.SplashActivity
-ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:39:9-52:20
+ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:40:9-53:20
 	android:screenOrientation
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:41:13-49
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:42:13-49
 	android:theme
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:42:13-42
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:43:13-42
 	android:name
-		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:40:13-43
+		ADDED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:41:13-43
 uses-sdk
 INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml

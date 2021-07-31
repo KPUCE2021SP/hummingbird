@@ -8,7 +8,7 @@ class MySharedPreferences(context: Context)
 {
     private val prefs: SharedPreferences = context.getSharedPreferences("other2", 0)
 
-    fun getString(key: String, defValue: String): String
+    fun getString(key: String, defValue:String):String
     {
         return prefs.getString(key, defValue).toString()
     }
@@ -18,7 +18,7 @@ class MySharedPreferences(context: Context)
         prefs.edit().putString(key, str).apply()
     }
 
-    fun removeString(key:String){
+    fun remove(key:String){
         prefs.edit().remove(key).apply()
     }
 

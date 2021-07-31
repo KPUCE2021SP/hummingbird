@@ -9,7 +9,7 @@ import com.github.peep.databinding.FragmentCalendarBinding
 
 class CalendarFragment : Fragment() {
 
-    private var mBinding : FragmentCalendarBinding? = null
+    private var mBinding : FragmentCalendarBinding?=null
 
     override fun onCreateView(
         inflater: LayoutInflater,

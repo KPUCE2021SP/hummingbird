@@ -33,7 +33,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.MyApplication" >
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true" >
         <activity
             android:name="com.github.peep.HomeActivity"
             android:theme="@style/Splash" >

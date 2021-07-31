@@ -9,7 +9,7 @@ import com.github.peep.databinding.FragmentFindBinding
 
 class FindFragment : Fragment() {
 
-    private var mBinding : FragmentFindBinding? = null
+    private  var mBinding : FragmentFindBinding?=null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +23,7 @@ class FindFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        mBinding = null
+        mBinding=null
         super.onDestroyView()
     }
 }

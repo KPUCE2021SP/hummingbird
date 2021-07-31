@@ -41,7 +41,7 @@
 24-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:26:22-107
 25
 26    <application
-26-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:16:5-53:19
+26-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:16:5-54:19
 27        android:name="com.github.peep.App"
 27-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:17:9-28
 28        android:allowBackup="true"
@@ -58,261 +58,263 @@
 34        android:supportsRtl="true"
 34-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:22:9-35
 35        android:testOnly="true"
-36        android:theme="@style/Theme.MyApplication" >
-36-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:23:9-51
-37        <activity
-37-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:24:9-34:20
-38            android:name="com.github.peep.HomeActivity"
-38-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:25:13-41
-39            android:theme="@style/Splash" >
-39-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:26:13-42
-40            <intent-filter>
-40-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:27:13-33:29
-41                <action
-41-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:28:17-30:60
-42                    android:name="android.intent.action.MAIN"
-42-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:29:21-62
-43                    android:screenOrientation="portrait" />
-43-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:30:21-57
-44
-45                <category android:name="android.intent.category.LAUNCHER" />
-45-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:32:17-77
-45-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:32:27-74
-46            </intent-filter>
-47        </activity>
-48        <activity
-48-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:35:9-38:72
-49            android:name="com.github.peep.MainActivity"
-49-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:36:13-41
-50            android:screenOrientation="portrait"
-50-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:37:13-49
-51            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-51-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:38:13-69
-52        <activity
-52-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:39:9-52:20
-53            android:name="com.github.peep.SplashActivity"
-53-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:40:13-43
-54            android:screenOrientation="portrait"
-54-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:41:13-49
-55            android:theme="@style/Splash" >
-55-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:42:13-42
-56
-57            <!-- <intent-filter> -->
-58            <!-- <action -->
-59            <!-- android:name="android.intent.action.MAIN" -->
-60            <!-- android:screenOrientation="portrait" /> -->
-61
+36        android:theme="@style/Theme.MyApplication"
+36-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:24:9-51
+37        android:usesCleartextTraffic="true" >
+37-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:23:9-44
+38        <activity
+38-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:25:9-35:20
+39            android:name="com.github.peep.HomeActivity"
+39-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:26:13-41
+40            android:theme="@style/Splash" >
+40-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:27:13-42
+41            <intent-filter>
+41-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:28:13-34:29
+42                <action
+42-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:29:17-31:60
+43                    android:name="android.intent.action.MAIN"
+43-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:30:21-62
+44                    android:screenOrientation="portrait" />
+44-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:31:21-57
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:33:17-77
+46-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:33:27-74
+47            </intent-filter>
+48        </activity>
+49        <activity
+49-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:36:9-39:72
+50            android:name="com.github.peep.MainActivity"
+50-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:37:13-41
+51            android:screenOrientation="portrait"
+51-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:38:13-49
+52            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+52-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:39:13-69
+53        <activity
+53-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:40:9-53:20
+54            android:name="com.github.peep.SplashActivity"
+54-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:41:13-43
+55            android:screenOrientation="portrait"
+55-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:42:13-49
+56            android:theme="@style/Splash" >
+56-->/Users/song-gyeongjin/hummingbird/MyApplication2/app/src/main/AndroidManifest.xml:43:13-42
+57
+58            <!-- <intent-filter> -->
+59            <!-- <action -->
+60            <!-- android:name="android.intent.action.MAIN" -->
+61            <!-- android:screenOrientation="portrait" /> -->
 62
-63            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-64            <!-- </intent-filter> -->
-65        </activity>
-66
-67        <service
-67-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:8:9-14:19
-68            android:name="com.google.firebase.components.ComponentDiscoveryService"
-68-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:9:13-84
-69            android:directBootAware="true"
-69-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:35:13-43
-70            android:exported="false" >
-70-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:10:13-37
-71            <meta-data
-71-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:11:13-13:85
-72                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
-72-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:12:17-116
-73                android:value="com.google.firebase.components.ComponentRegistrar" />
-73-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:13:17-82
-74            <meta-data
-74-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:77:13-79:85
-75                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-75-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:78:17-109
-76                android:value="com.google.firebase.components.ComponentRegistrar" />
-76-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:79:17-82
-77            <meta-data
-77-->[com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:15:13-17:85
-78                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
-78-->[com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:16:17-124
-79                android:value="com.google.firebase.components.ComponentRegistrar" />
-79-->[com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:17:17-82
-80            <meta-data
-80-->[com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:11:13-13:85
-81                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
-81-->[com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:12:17-126
-82                android:value="com.google.firebase.components.ComponentRegistrar" />
-82-->[com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:13:17-82
-83            <meta-data
-83-->[com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:32:13-34:85
-84                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-84-->[com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:33:17-109
-85                android:value="com.google.firebase.components.ComponentRegistrar" />
-85-->[com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:34:17-82
-86            <meta-data
-86-->[com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:15:13-17:85
-87                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-87-->[com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:16:17-113
-88                android:value="com.google.firebase.components.ComponentRegistrar" />
-88-->[com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:17:17-82
-89            <meta-data
-89-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:30:13-32:85
-90                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-90-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:31:17-139
-91                android:value="com.google.firebase.components.ComponentRegistrar" />
-91-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:32:17-82
-92            <meta-data
-92-->[com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:18:13-20:85
-93                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-93-->[com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:19:17-127
-94                android:value="com.google.firebase.components.ComponentRegistrar" />
-94-->[com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:20:17-82
-95        </service>
-96
-97        <activity
-97-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:27:9-44:20
-98            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-98-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:28:13-80
-99            android:excludeFromRecents="true"
-99-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:29:13-46
-100            android:exported="true"
-100-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:30:13-36
-101            android:launchMode="singleTask"
-101-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:31:13-44
-102            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-102-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:32:13-72
-103            <intent-filter>
-103-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:33:13-43:29
-104                <action android:name="android.intent.action.VIEW" />
-104-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
-104-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
-105
-106                <category android:name="android.intent.category.DEFAULT" />
-106-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
-106-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
-107                <category android:name="android.intent.category.BROWSABLE" />
-107-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
-107-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
-108
-109                <data
-109-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
-110                    android:host="firebase.auth"
-110-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
-111                    android:path="/"
-111-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
-112                    android:scheme="genericidp" />
-112-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
-113            </intent-filter>
-114        </activity>
-115        <activity
-115-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:45:9-62:20
-116            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-116-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:46:13-79
-117            android:excludeFromRecents="true"
-117-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:47:13-46
-118            android:exported="true"
-118-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:48:13-36
-119            android:launchMode="singleTask"
-119-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:49:13-44
-120            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-120-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:50:13-72
-121            <intent-filter>
-121-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:51:13-61:29
-122                <action android:name="android.intent.action.VIEW" />
-122-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
-122-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
-123
-124                <category android:name="android.intent.category.DEFAULT" />
-124-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
-124-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
-125                <category android:name="android.intent.category.BROWSABLE" />
-125-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
-125-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
-126
-127                <data
-127-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
-128                    android:host="firebase.auth"
-128-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
-129                    android:path="/"
-129-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
-130                    android:scheme="recaptcha" />
-130-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
-131            </intent-filter>
-132        </activity>
-133
-134        <service
-134-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:64:9-73:19
-135            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-135-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:65:13-101
-136            android:enabled="true"
-136-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:66:13-35
-137            android:exported="false" >
-137-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:67:13-37
-138            <intent-filter>
-138-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:68:13-72:29
-139                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-139-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:69:17-89
-139-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:69:25-86
-140
-141                <category android:name="android.intent.category.DEFAULT" />
-141-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
-141-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
-142            </intent-filter>
-143        </service>
-144
-145        <provider
-145-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
-146            android:name="com.google.firebase.provider.FirebaseInitProvider"
-146-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:27:13-77
-147            android:authorities="com.github.peep.firebaseinitprovider"
-147-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:28:13-72
-148            android:directBootAware="true"
-148-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:29:13-43
-149            android:exported="false"
-149-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:30:13-37
-150            android:initOrder="100" />
-150-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:31:13-36
-151
-152        <activity
-152-->[com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
-153            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-153-->[com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
-154            android:exported="false"
-154-->[com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
-155            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-155-->[com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
-156
-157        <receiver
-157-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:29:9-33:20
-158            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-158-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:30:13-85
-159            android:enabled="true"
-159-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:31:13-35
-160            android:exported="false" >
-160-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:32:13-37
-161        </receiver>
-162
-163        <service
-163-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:35:9-38:40
-164            android:name="com.google.android.gms.measurement.AppMeasurementService"
-164-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:36:13-84
-165            android:enabled="true"
-165-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:37:13-35
-166            android:exported="false" />
-166-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:38:13-37
-167        <service
-167-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:39:9-43:72
-168            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-168-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:40:13-87
-169            android:enabled="true"
-169-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:41:13-35
-170            android:exported="false"
-170-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:42:13-37
-171            android:permission="android.permission.BIND_JOB_SERVICE" />
-171-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:43:13-69
-172
-173        <meta-data
-173-->[com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:23:9-25:69
-174            android:name="com.google.android.gms.version"
-174-->[com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:24:13-58
-175            android:value="@integer/google_play_services_version" />
-175-->[com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:25:13-66
-176    </application>
-177
-178</manifest>
+63
+64            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+65            <!-- </intent-filter> -->
+66        </activity>
+67
+68        <service
+68-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:8:9-14:19
+69            android:name="com.google.firebase.components.ComponentDiscoveryService"
+69-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:9:13-84
+70            android:directBootAware="true"
+70-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+71            android:exported="false" >
+71-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:10:13-37
+72            <meta-data
+72-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:11:13-13:85
+73                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
+73-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:12:17-116
+74                android:value="com.google.firebase.components.ComponentRegistrar" />
+74-->[com.google.firebase:firebase-auth-ktx:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4caa49c051f3371097b05cfd7a9b035b/firebase-auth-ktx-21.0.1/AndroidManifest.xml:13:17-82
+75            <meta-data
+75-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:77:13-79:85
+76                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+76-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:78:17-109
+77                android:value="com.google.firebase.components.ComponentRegistrar" />
+77-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:79:17-82
+78            <meta-data
+78-->[com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:15:13-17:85
+79                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
+79-->[com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:16:17-124
+80                android:value="com.google.firebase.components.ComponentRegistrar" />
+80-->[com.google.firebase:firebase-database-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/71aaa7c837d62416177c17b333675db7/firebase-database-ktx-20.0.0/AndroidManifest.xml:17:17-82
+81            <meta-data
+81-->[com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:11:13-13:85
+82                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
+82-->[com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:12:17-126
+83                android:value="com.google.firebase.components.ComponentRegistrar" />
+83-->[com.google.firebase:firebase-analytics-ktx:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/0eb7fffd22c418fd5fa75deee69ab649/firebase-analytics-ktx-19.0.0/AndroidManifest.xml:13:17-82
+84            <meta-data
+84-->[com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:32:13-34:85
+85                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+85-->[com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:33:17-109
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[com.google.firebase:firebase-database:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/ee199ee01274c32737a41723ef724787/firebase-database-20.0.0/AndroidManifest.xml:34:17-82
+87            <meta-data
+87-->[com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:15:13-17:85
+88                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+88-->[com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:16:17-113
+89                android:value="com.google.firebase.components.ComponentRegistrar" />
+89-->[com.google.firebase:firebase-common-ktx:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/35a6a01068290d0c304af6a8247bad57/firebase-common-ktx-20.0.0/AndroidManifest.xml:17:17-82
+90            <meta-data
+90-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:30:13-32:85
+91                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+91-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:31:17-139
+92                android:value="com.google.firebase.components.ComponentRegistrar" />
+92-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/9c618b50f2caa33fc4945d5d9ee59793/play-services-measurement-api-19.0.0/AndroidManifest.xml:32:17-82
+93            <meta-data
+93-->[com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:18:13-20:85
+94                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+94-->[com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:19:17-127
+95                android:value="com.google.firebase.components.ComponentRegistrar" />
+95-->[com.google.firebase:firebase-installations:17.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/4f9f19c3e571cd1e5eb5fff28eb1850f/firebase-installations-17.0.0/AndroidManifest.xml:20:17-82
+96        </service>
+97
+98        <activity
+98-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:27:9-44:20
+99            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+99-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:28:13-80
+100            android:excludeFromRecents="true"
+100-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:29:13-46
+101            android:exported="true"
+101-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:30:13-36
+102            android:launchMode="singleTask"
+102-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:31:13-44
+103            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+103-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:32:13-72
+104            <intent-filter>
+104-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:33:13-43:29
+105                <action android:name="android.intent.action.VIEW" />
+105-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
+105-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+106
+107                <category android:name="android.intent.category.DEFAULT" />
+107-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+107-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+108                <category android:name="android.intent.category.BROWSABLE" />
+108-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
+108-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
+109
+110                <data
+110-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
+111                    android:host="firebase.auth"
+111-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
+112                    android:path="/"
+112-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
+113                    android:scheme="genericidp" />
+113-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
+114            </intent-filter>
+115        </activity>
+116        <activity
+116-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:45:9-62:20
+117            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+117-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:46:13-79
+118            android:excludeFromRecents="true"
+118-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:47:13-46
+119            android:exported="true"
+119-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:48:13-36
+120            android:launchMode="singleTask"
+120-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:49:13-44
+121            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+121-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:50:13-72
+122            <intent-filter>
+122-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:51:13-61:29
+123                <action android:name="android.intent.action.VIEW" />
+123-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
+123-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+124
+125                <category android:name="android.intent.category.DEFAULT" />
+125-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+125-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+126                <category android:name="android.intent.category.BROWSABLE" />
+126-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
+126-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
+127
+128                <data
+128-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
+129                    android:host="firebase.auth"
+129-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
+130                    android:path="/"
+130-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
+131                    android:scheme="recaptcha" />
+131-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
+132            </intent-filter>
+133        </activity>
+134
+135        <service
+135-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:64:9-73:19
+136            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+136-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:65:13-101
+137            android:enabled="true"
+137-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:66:13-35
+138            android:exported="false" >
+138-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:67:13-37
+139            <intent-filter>
+139-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:68:13-72:29
+140                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+140-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:69:17-89
+140-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:69:25-86
+141
+142                <category android:name="android.intent.category.DEFAULT" />
+142-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+142-->[com.google.firebase:firebase-auth:21.0.1] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/73b0f75a6c3abd41dcbfe29b7cd3d1eb/firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+143            </intent-filter>
+144        </service>
+145
+146        <provider
+146-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+147            android:name="com.google.firebase.provider.FirebaseInitProvider"
+147-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+148            android:authorities="com.github.peep.firebaseinitprovider"
+148-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+149            android:directBootAware="true"
+149-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+150            android:exported="false"
+150-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+151            android:initOrder="100" />
+151-->[com.google.firebase:firebase-common:20.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/5c36600df91fd1969282efe4b712f8e6/firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+152
+153        <activity
+153-->[com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+154            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+154-->[com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+155            android:exported="false"
+155-->[com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+156            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+156-->[com.google.android.gms:play-services-base:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/c95ba9b18c5a0d85b69b05b756ea92bf/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+157
+158        <receiver
+158-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:29:9-33:20
+159            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+159-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:30:13-85
+160            android:enabled="true"
+160-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:31:13-35
+161            android:exported="false" >
+161-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:32:13-37
+162        </receiver>
+163
+164        <service
+164-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:35:9-38:40
+165            android:name="com.google.android.gms.measurement.AppMeasurementService"
+165-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:36:13-84
+166            android:enabled="true"
+166-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:37:13-35
+167            android:exported="false" />
+167-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:38:13-37
+168        <service
+168-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:39:9-43:72
+169            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+169-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:40:13-87
+170            android:enabled="true"
+170-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:41:13-35
+171            android:exported="false"
+171-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:42:13-37
+172            android:permission="android.permission.BIND_JOB_SERVICE" />
+172-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/85ea28c901fa981ef046e0723b22bf95/play-services-measurement-19.0.0/AndroidManifest.xml:43:13-69
+173
+174        <meta-data
+174-->[com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:23:9-25:69
+175            android:name="com.google.android.gms.version"
+175-->[com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:24:13-58
+176            android:value="@integer/google_play_services_version" />
+176-->[com.google.android.gms:play-services-basement:17.1.0] /Users/song-gyeongjin/.gradle/caches/transforms-2/files-2.1/bfd63a731ce4e0f77da5411ddc43ddea/play-services-basement-17.1.0/AndroidManifest.xml:25:13-66
+177    </application>
+178
+179</manifest>

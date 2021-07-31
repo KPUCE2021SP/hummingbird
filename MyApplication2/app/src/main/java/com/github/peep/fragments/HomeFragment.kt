@@ -19,6 +19,7 @@ import com.github.peep.R
 import com.github.peep.databinding.FragmentHomeBinding
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
+import com.peep.githubapitest.model.RepoRoot
 import com.peep.githubapitest.model.User
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
@@ -29,8 +30,13 @@ import java.net.CookieManager
 
 
 class HomeFragment : Fragment() {
+    companion object{
+        var reponame:String =""
+        var username:String=""
+        var repos:List<RepoRoot>? = null
+    }
 
-    private var mBinding : FragmentHomeBinding? = null
+    private var mBinding : FragmentHomeBinding?=null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,7 +49,11 @@ class HomeFragment : Fragment() {
         
         //새로 고침
         mBinding?.renewBtn?.setOnClickListener {
-            getUser(prefs.getString("token",""))
+            getUser()
+            getUserRepos()
+//            for(i in repos!!.indices){
+//                Log.d("repos",repos!![i].name.toString())
+//            }
 //            refreshFragment(this,getFragmentManager())
         }
 
@@ -60,15 +70,15 @@ class HomeFragment : Fragment() {
         return mBinding?.root
     }
 
-    fun getUser(@Header("Authorization")accessToken:String){
+    fun getUser(){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
-        val call=GithubService.getUser(accessToken)
+        val call=GithubService.getUser()
         call.enqueue(object: Callback<User>{
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
-                    today_commit_count_textview.setText(user!!.public_repos)
+                    username= user?.name.toString()
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -80,8 +90,30 @@ class HomeFragment : Fragment() {
         })
     }
 
+    fun getUserRepos(){
+        var GithubService=ApiClient.client.create(GithubInterface::class.java)
+        val call=GithubService.getUserRepos()
+        call.enqueue(object :Callback<List<RepoRoot>>{
+            override fun onResponse(call: Call<List<RepoRoot>>, response: Response<List<RepoRoot>>) {
+
+                Log.d("fullresponse", response.toString())
+                if (response.code() == 200) {
+                    repos= response.body()
+                    Toast.makeText(getActivity(), repos!![0].name, Toast.LENGTH_SHORT).show()
+                } else {
+                    Log.e("err",response.code().toString())
+                }
+            }
+
+            override fun onFailure(call: Call<List<RepoRoot>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+
+    }
+
     fun logout(){
-        prefs.removeString("token")
+        prefs.remove("token")
         android.webkit.CookieManager.getInstance().removeAllCookie()
     }
 

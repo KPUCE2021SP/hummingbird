@@ -1,4 +1,4 @@
-package com.peep.githubapitest.githubpapi
+package com.github.peep.githubpapi
 
 import com.github.peep.App.Companion.prefs
 import okhttp3.Interceptor

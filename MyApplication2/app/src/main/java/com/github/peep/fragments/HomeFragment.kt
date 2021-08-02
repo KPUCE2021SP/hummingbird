@@ -17,10 +17,10 @@ import com.github.peep.HomeActivity
 import com.github.peep.MainActivity
 import com.github.peep.R
 import com.github.peep.databinding.FragmentHomeBinding
-import com.peep.githubapitest.githubpapi.ApiClient
-import com.peep.githubapitest.githubpapi.GithubInterface
-import com.peep.githubapitest.model.RepoRoot
-import com.peep.githubapitest.model.User
+import com.github.peep.githubpapi.GithubInterface
+import com.github.peep.model.Repo
+import com.github.peep.model.User
+import com.github.peep.githubpapi.ApiClient
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -30,11 +30,8 @@ import java.net.CookieManager
 
 
 class HomeFragment : Fragment() {
-    companion object{
         var reponame:String =""
         var username:String=""
-        var repos:List<RepoRoot>? = null
-    }
 
     private var mBinding : FragmentHomeBinding?=null
 
@@ -49,7 +46,7 @@ class HomeFragment : Fragment() {
         
         //새로 고침
         mBinding?.renewBtn?.setOnClickListener {
-            getUser()
+//            getUser()
             getUserRepos()
 //            for(i in repos!!.indices){
 //                Log.d("repos",repos!![i].name.toString())
@@ -71,7 +68,7 @@ class HomeFragment : Fragment() {
     }
 
     fun getUser(){
-        var GithubService=ApiClient.client.create(GithubInterface::class.java)
+        var GithubService= ApiClient.client.create(GithubInterface::class.java)
         val call=GithubService.getUser()
         call.enqueue(object: Callback<User>{
             override fun onResponse(call: Call<User>, response: Response<User>) {
@@ -93,23 +90,24 @@ class HomeFragment : Fragment() {
     fun getUserRepos(){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
         val call=GithubService.getUserRepos()
-        call.enqueue(object :Callback<List<RepoRoot>>{
-            override fun onResponse(call: Call<List<RepoRoot>>, response: Response<List<RepoRoot>>) {
+        call.enqueue(object :Callback<List<Repo>>{
+            override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
 
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
-                    repos= response.body()
-                    Toast.makeText(getActivity(), repos!![0].name, Toast.LENGTH_SHORT).show()
+                    var repos= response.body()!!
+                    Toast.makeText(getActivity(), repos!![2].name, Toast.LENGTH_SHORT).show()
+
+
                 } else {
                     Log.e("err",response.code().toString())
                 }
             }
 
-            override fun onFailure(call: Call<List<RepoRoot>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Repo>>, t: Throwable) {
                 TODO("Not yet implemented")
             }
         })
-
     }
 
     fun logout(){
@@ -117,13 +115,13 @@ class HomeFragment : Fragment() {
         android.webkit.CookieManager.getInstance().removeAllCookie()
     }
 
-    fun refreshFragment(fragment:Fragment, framentManager: FragmentManager?){
-        val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
-        if (Build.VERSION.SDK_INT >= 26) {
-            ft.setReorderingAllowed(false)
-        }
-        ft.detach(this).attach(this).commit()
-    }
+//    fun refreshFragment(fragment:Fragment, framentManager: FragmentManager?){
+//        val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
+//        if (Build.VERSION.SDK_INT >= 26) {
+//            ft.setReorderingAllowed(false)
+//        }
+//        ft.detach(this).attach(this).commit()
+//    }
 
     override fun onDestroyView() {
         mBinding = null

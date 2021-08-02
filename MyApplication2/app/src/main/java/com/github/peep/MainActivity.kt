@@ -9,12 +9,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.github.peep.App.Companion.prefs
 import com.github.peep.databinding.ActivityMainBinding
-import com.google.firebase.auth.GithubAuthProvider
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import com.peep.githubapitest.githubpapi.ApiClient
-import com.peep.githubapitest.githubpapi.GithubInterface
-import com.peep.githubapitest.model.User
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import retrofit2.Call

@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
-    id 'kotlin-kapt'
     id 'com.google.gms.google-services'
     id 'androidx.navigation.safeargs.kotlin'
 }
@@ -66,6 +65,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha02")
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
     implementation('com.android.support:appcompat-v7:24.2.1')
 

@@ -2,13 +2,11 @@ package com.github.peep
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.peep.App.Companion.prefs
 import com.github.peep.databinding.ActivityHomeBinding
-import com.github.peep.databinding.ActivityMainBinding
 import com.github.rahul.githuboauth.ErrorCallback
 import com.github.rahul.githuboauth.GithubAuthenticator
 import com.github.rahul.githuboauth.SuccessCallback
@@ -19,8 +17,6 @@ class HomeActivity : AppCompatActivity() {
 
 
     private lateinit var mBinding : ActivityHomeBinding
-
-
 
     val githubAuthenticatorBuilder = GithubAuthenticator.builder(this)
         .clientId(BuildConfig.CLIENT_ID)
@@ -63,6 +59,7 @@ class HomeActivity : AppCompatActivity() {
             }
 
         }
+
         else{
             var intent=Intent(this,MainActivity::class.java)
             finish()

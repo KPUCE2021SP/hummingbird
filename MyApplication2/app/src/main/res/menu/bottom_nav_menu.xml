@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/calendarFragment"
-        android:title="커밋달력"
+        android:title="calendar"
         android:icon="@drawable/ic_baseline_calendar_today_24"
         />
     <item
         android:id="@+id/homeFragment"
-        android:title="홈"
+        android:title="home"
         android:icon="@drawable/ic_baseline_home_24"
         />
     <item
         android:id="@+id/findFragment"
-        android:title="농장탐험"
+        android:title="find"
         android:icon="@drawable/ic_baseline_find_in_page_24"
         />
 

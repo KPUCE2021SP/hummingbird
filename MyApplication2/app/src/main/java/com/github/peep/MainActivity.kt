@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity(){
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
+
+
         //네비게이션을 담는 호스트
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.my_nav_host) as NavHostFragment
 

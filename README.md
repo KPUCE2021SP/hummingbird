@@ -84,7 +84,7 @@
 
 아직 출시되지 않았어요! 조금만 더 기다려주실거죠?
 
-<!-- ### Prerequisites
+### Prerequisites
 프로젝트 수준 그래들
 ``` gradle
 ext.kotlin_version = "1.5.10"
@@ -101,7 +101,6 @@ targetSdkVersion 30
 jvmTarget = '1.8'
 testImplementation 'junit:junit:4.+'
 ```
--- >
 
 <!-- Roadmap -->
 ## RoadMap (에정)

@@ -37,7 +37,7 @@ data class Permissions(
     var pull:Boolean,
 )
 
-data class RepoRoot(
+data class Repo(
     var id:Int,
     var  node_id:String,
     var  name:String,

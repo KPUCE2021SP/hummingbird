@@ -19,7 +19,7 @@ import com.github.peep.R
 import com.github.peep.databinding.FragmentHomeBinding
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
-import com.peep.githubapitest.model.RepoRoot
+import com.peep.githubapitest.model.Repo
 import com.peep.githubapitest.model.User
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
         var public_repos = 0
         var fllowers = 0
         var following = 0
-        var repos:List<RepoRoot>? = null
+        var repos:List<Repo>? = null
     }
 
     private var mBinding : FragmentHomeBinding?=null
@@ -68,9 +68,7 @@ class HomeFragment : Fragment() {
             var intent=Intent(mActivity,HomeActivity::class.java)
             mActivity.finish()
             startActivity(intent)
-
         }
-
 
         return mBinding?.root
     }
@@ -85,7 +83,6 @@ class HomeFragment : Fragment() {
                     val user=response.body()
                     username= user?.name.toString()
                     Toast.makeText(getActivity(), "username : $username", Toast.LENGTH_SHORT).show()
-
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -100,19 +97,19 @@ class HomeFragment : Fragment() {
     fun getUserRepos(){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
         val call=GithubService.getUserRepos()
-        call.enqueue(object :Callback<List<RepoRoot>>{
-            override fun onResponse(call: Call<List<RepoRoot>>, response: Response<List<RepoRoot>>) {
+        call.enqueue(object :Callback<List<Repo>>{
+            override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
 
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     repos= response.body()
-                    //Toast.makeText(getActivity(), repos!![0].name, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(getActivity(), repos!![1].name, Toast.LENGTH_SHORT).show()
                 } else {
                     Log.e("err",response.code().toString())
                 }
             }
 
-            override fun onFailure(call: Call<List<RepoRoot>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Repo>>, t: Throwable) {
                 TODO("Not yet implemented")
             }
         })

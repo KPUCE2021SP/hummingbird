@@ -23,6 +23,10 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".RepoAuthActivity"
+            android:theme="@style/Splash">
+        </activity>
+        <activity
             android:name=".HomeActivity"
             android:theme="@style/Splash">
             <intent-filter>

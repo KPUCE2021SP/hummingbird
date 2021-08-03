@@ -1,6 +1,6 @@
 package com.peep.githubapitest.githubpapi
 
-import com.peep.githubapitest.model.RepoRoot
+import com.peep.githubapitest.model.Repo
 import com.peep.githubapitest.model.User
 import retrofit2.Call
 import retrofit2.http.GET
@@ -14,9 +14,9 @@ interface GithubInterface {
 
 
     @GET("user/repos")
-    fun getUserRepos(): Call<List<RepoRoot>>
+    fun getUserRepos(): Call<List<Repo>>
 
     @GET("repos/{username}/{reponame}/commits")
-    fun getRepoCommit(username:String,reponame:String):Call<List<RepoRoot>>?
+    fun getRepoCommit(username:String,reponame:String):Call<List<Repo>>?
 
 }

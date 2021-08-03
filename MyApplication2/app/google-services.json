@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "1079318800171",
+    "project_id": "peepproject-667d2",
+    "storage_bucket": "peepproject-667d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079318800171:android:7917e9b7cdae6dbb0fc76e",
+        "android_client_info": {
+          "package_name": "codevinci.com.kotlinretrofitrestexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079318800171-ep97gf2cg330vgfj7jsiltq2lf4ekf20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7BMKzMFGk2vxyDx3h5uSZmlzrTIQlbAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1079318800171-ep97gf2cg330vgfj7jsiltq2lf4ekf20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079318800171:android:23afd0bf87fd4cb60fc76e",
+        "android_client_info": {
+          "package_name": "com.github.peep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079318800171-sgbsa77bnn5m4n0dhog8f9mkv363t1rv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.github.peep",
+            "certificate_hash": "e5ffb5b771162c6c9cf9ca792f9fa6b1ec8a3a26"
+          }
+        },
+        {
+          "client_id": "1079318800171-ep97gf2cg330vgfj7jsiltq2lf4ekf20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7BMKzMFGk2vxyDx3h5uSZmlzrTIQlbAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1079318800171-ep97gf2cg330vgfj7jsiltq2lf4ekf20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079318800171:android:378e557b472b01d40fc76e",
+        "android_client_info": {
+          "package_name": "com.peep.githubapitest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079318800171-db7r15hsp8ml50pn8aj8c9ek3qndpuh7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.peep.githubapitest",
+            "certificate_hash": "e5ffb5b771162c6c9cf9ca792f9fa6b1ec8a3a26"
+          }
+        },
+        {
+          "client_id": "1079318800171-ep97gf2cg330vgfj7jsiltq2lf4ekf20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7BMKzMFGk2vxyDx3h5uSZmlzrTIQlbAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1079318800171-ep97gf2cg330vgfj7jsiltq2lf4ekf20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

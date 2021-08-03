@@ -8,10 +8,18 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorPrimary">@color/blue_1</color>
-    <color name="colorPrimaryDark">@color/blue_1</color>
+<!--    <color name="colorPrimary">@color/blue_1</color>-->
+<!--    <color name="colorPrimaryDark">@color/blue_1</color>-->
     <color name="colorAccent">@color/blue_5</color>
-
+    <color name="colorPrimary">#bce6ff</color>
+    <color name="colorPrimaryDark">#88cdf6</color>
+    <color name="colorText">#dcdde1</color>
+    <color name="colorTextDark">#646464</color>
+    <color name="colorLightGrey">#c0c0c0</color>
+    <color name="colorLightBlue">#8acbf6</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhiteBlue">#cde9fb</color>
+    <color name="colorseekbar">#ebebeb</color>
     <color name="blue_1">#00101f</color>
     <color name="blue_5">#0078ff</color>
 </resources>

@@ -1,18 +1,16 @@
+
 package com.github.peep.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.github.peep.databinding.FragmentFindBinding
-import kotlinx.android.synthetic.main.fragment_find.*
 
 class FindFragment : Fragment() {
 
-    private var mBinding : FragmentFindBinding? = null
+    private  var mBinding : FragmentFindBinding?=null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,7 +24,7 @@ class FindFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        mBinding = null
+        mBinding=null
         super.onDestroyView()
     }
 }

@@ -13,8 +13,8 @@ class ApiClient {
 
     companion object {
 
-        val baseURL: String = "https://api.github.com"
-        var retrofit: Retrofit? = null
+        val baseURL:  String= "https://api.github.com/"
+        private var retrofit: Retrofit?=null
 
 
         val client: Retrofit
@@ -24,10 +24,11 @@ class ApiClient {
                     val headerInterceptor = Interceptor {
                         val request = it.request()
                             .newBuilder()
-                            .addHeader("Authorization", prefs.getString("token",""))
+                            .addHeader("Authorization", "Bearer "+prefs.getString("token",""))
                             .build()
                         return@Interceptor it.proceed(request)
                     }
+
                     val httpClient = OkHttpClient.Builder()//initialize  okhttp
                     val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)//logging interceptor
 
@@ -35,9 +36,10 @@ class ApiClient {
                     httpClient.addInterceptor(headerInterceptor)
                     httpClient.connectTimeout(20, TimeUnit.SECONDS)
 
+
                     var retrofitBuilder: Retrofit.Builder = Retrofit.Builder()
-                            .baseUrl(baseURL)
-                            .addConverterFactory(GsonConverterFactory.create())
+                        .baseUrl(baseURL)
+                        .addConverterFactory(GsonConverterFactory.create())
                     retrofitBuilder.client(httpClient.build())//bind retrofit to okhttp
                     retrofit = retrofitBuilder.build()
                 }

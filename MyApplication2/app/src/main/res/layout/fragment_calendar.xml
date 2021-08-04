@@ -23,15 +23,21 @@
             app:layout_constraintVertical_chainStyle="spread"
             app:layout_constraintVertical_weight="1">
 
-            <ImageView
+
+            <ImageButton
                 android:id="@+id/refreshCalendar"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_centerVertical="true"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:padding="7dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_baseline_autorenew_24"
-                />
+                app:tint="@color/colorPeep" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -39,8 +45,8 @@
                 android:layout_centerVertical="true"
                 android:text="커밋 달력"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp"
+                android:textColor="@color/colorPeep2"
+                android:textSize="17sp"
                 android:gravity="center_horizontal" />
         </RelativeLayout>
 
@@ -89,7 +95,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0 개"
-                            android:textSize="10sp" />
+                            android:fontFamily="@font/font_title"
+                            android:textSize="13sp" />
 
                         <FrameLayout
                             android:layout_width="12dp"
@@ -102,7 +109,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="1 ~ 5 개"
-                            android:textSize="10sp" />
+                            android:fontFamily="@font/font_title"
+                            android:textSize="13sp" />
 
                         <FrameLayout
                             android:layout_width="12dp"
@@ -115,7 +123,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="6~10 개"
-                            android:textSize="10sp" />
+                            android:fontFamily="@font/font_title"
+                            android:textSize="13sp"/>
 
                         <FrameLayout
                             android:layout_width="12dp"
@@ -128,7 +137,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="10 개 +"
-                            android:textSize="10sp" />
+                            android:fontFamily="@font/font_title"
+                            android:textSize="13sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -142,7 +152,7 @@
                     android:gravity="center"
                     android:text="커밋기록이 없습니다!"
                     android:textColor="#c0c0c0"
-                    android:textSize="13sp" />
+                    android:textSize="15sp" />
 
                 <LinearLayout
                     android:id="@+id/commitLayout"
@@ -196,6 +206,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="16dp"
+                                    android:textColor="@color/colorPeep2"
                                     android:text="얻은 점수"
                                     android:textSize="13sp" />
 
@@ -204,7 +215,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="0"
-                                    android:textSize="30sp" />
+                                    android:fontFamily="@font/font_title"
+                                    android:textSize="33sp" />
                             </LinearLayout>
 
                             <FrameLayout
@@ -224,8 +236,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="16dp"
+                                    android:textColor="@color/colorPeep2"
                                     android:text="총 커밋수"
-                                    android:textColor="@color/colorPrimaryDark"
                                     android:textSize="13sp" />
 
                                 <TextView
@@ -233,7 +245,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="0"
-                                    android:textSize="32sp" />
+                                    android:fontFamily="@font/font_title"
+                                    android:textSize="33sp" />
                             </LinearLayout>
 
                             <FrameLayout
@@ -253,7 +266,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="16dp"
                                     android:text="얻은 아이템"
-                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textColor="@color/colorPeep2"
                                     android:textSize="13sp" />
 
                                 <TextView
@@ -273,6 +286,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#FFFFFF"
+                        android:fontFamily="@font/font_title"
                         android:orientation="vertical">
 
                         <LinearLayout

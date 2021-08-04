@@ -20,15 +20,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.MyApplication">
-        <activity
-            android:name=".RepoAuthActivity"
-            android:theme="@style/Splash">
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ProfileActivity"
+            android:theme="@style/Splash"
+            android:screenOrientation="portrait">
         </activity>
         <activity
+            android:name=".RepoAuthActivity"
+            android:theme="@style/Splash"
+            android:screenOrientation="portrait"></activity>
+        <activity
             android:name=".HomeActivity"
-            android:theme="@style/Splash">
+            android:theme="@style/Splash"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action
                     android:name="android.intent.action.MAIN"
@@ -56,5 +61,4 @@
             <!-- </intent-filter> -->
         </activity>
     </application>
-
 </manifest>

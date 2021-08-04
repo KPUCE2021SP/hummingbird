@@ -17,6 +17,8 @@ import com.github.peep.HomeActivity
 import com.github.peep.MainActivity
 import com.github.peep.R
 import com.github.peep.databinding.FragmentHomeBinding
+import com.github.peep.model.EventResponse
+import com.github.peep.model.EventResponseItem
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.Repo
@@ -39,6 +41,7 @@ class HomeFragment : Fragment() {
         var fllowers = 0
         var following = 0
         var repos:List<Repo>? = null
+        var events:EventResponse?=null
     }
 
     private var mBinding : FragmentHomeBinding?=null
@@ -55,7 +58,8 @@ class HomeFragment : Fragment() {
         //새로 고침
         mBinding?.renewBtn?.setOnClickListener {
             getUser()
-            getUserRepos()
+            getUserEvents(prefs.getString("username",""))
+//            getUserRepos()
 //            for(i in repos!!.indices){
 //                Log.d("repos",repos!![i].name.toString())
 //            }
@@ -81,8 +85,9 @@ class HomeFragment : Fragment() {
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
-                    username= user?.name.toString()
-                    Toast.makeText(getActivity(), "username : $username", Toast.LENGTH_SHORT).show()
+                    username= user?.login.toString()
+                    prefs.setString("username", username)
+//                    Toast.makeText(getActivity(), "username : $username", Toast.LENGTH_SHORT).show()
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -127,6 +132,27 @@ class HomeFragment : Fragment() {
             ft.setReorderingAllowed(false)
         }
         ft.detach(this).attach(this).commit()
+    }
+
+    fun getUserEvents(username:String){
+        var GithubService=ApiClient.client.create(GithubInterface::class.java)
+        val call=GithubService.getUserEvents(prefs.getString("username",""))
+        call.enqueue(object :Callback<EventResponse>{
+            override fun onResponse(call: Call<EventResponse>, response: Response<EventResponse>) {
+                Log.d("fullresponse", response.toString())
+                if (response.code() == 200) {
+                    events=response.body()
+                    Toast.makeText(getActivity(), events!![1].created_at, Toast.LENGTH_SHORT).show()
+                } else {
+                    Log.e("err",response.code().toString())
+                }
+            }
+
+            override fun onFailure(call: Call<EventResponse>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+
     }
 
     override fun onDestroyView() {

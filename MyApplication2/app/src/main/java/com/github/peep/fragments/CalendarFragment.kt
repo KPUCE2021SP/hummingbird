@@ -3,12 +3,14 @@ package com.github.peep.fragments
 import android.annotation.SuppressLint
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.catlove.gitcat.CalendarSelectedDecorator
 import com.catlove.gitcat.CalendarTodayDecorator
@@ -17,6 +19,8 @@ import com.github.peep.R
 import com.github.peep.databinding.FragmentCalendarBinding
 import com.github.peep.decorator.CalendarDesign
 import com.github.peep.model.CommitRoot
+import com.github.peep.model.EventResponse
+import com.github.peep.model.EventResponseItem
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.Repo
@@ -27,6 +31,8 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDate
+import java.time.LocalDateTime
 
 class CalendarFragment : Fragment() {
 
@@ -43,7 +49,7 @@ class CalendarFragment : Fragment() {
         val settings: SharedPreferences = requireActivity().getSharedPreferences("testlogin", MODE_PRIVATE)
         val calendarView = binding.calendarView
 
-
+        getUserCommitCount()
         // default 날짜는 오늘 날짜로
         val selectedDate: CalendarDay = CalendarDay.today()
         var preDay: CalendarDay = CalendarDay.today()
@@ -87,7 +93,6 @@ class CalendarFragment : Fragment() {
 
 
         calendarView.setOnMonthChangedListener { widget, date ->
-            getUserRepos()
             val mYear = date.year
             val mMonth = date.month
             val mDay = date.day
@@ -103,55 +108,43 @@ class CalendarFragment : Fragment() {
         mBinding = binding
         return mBinding?.root
     }
-    fun getUserRepos(){
-        var reposNameList:List<String>? = null
-        var repos:List<Repo>? = null
-        var GithubService=ApiClient.client.create(GithubInterface::class.java)
-        val call=GithubService.getUserRepos()
-        call.enqueue(object :Callback<List<Repo>>{
-            override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
+    fun getUserCommitCount(){
+        var events:ArrayList<EventResponseItem>? = null
+        val GithubService=ApiClient.client.create(GithubInterface::class.java)
+        try{
+            val call=GithubService.getUserEvents("kim1387")
+            call.enqueue(object :Callback<EventResponse>{
+                @RequiresApi(Build.VERSION_CODES.O)
+                override fun onResponse(call: Call<EventResponse>, response: Response<EventResponse>) {
 
-                Log.d("fullresponse", response.toString())
-                if (response.code() == 200) {
-                    repos = response.body()
-                    Toast.makeText(getActivity(), repos!![0].node_id, Toast.LENGTH_SHORT).show()
-                    Log.i("log",repos!![0].owner.repos_url.toString())
-                } else {
-                    Log.e("err",response.code().toString())
+                    Log.d("fullresponse", response.toString())
+                    if (response.code() == 200) {
+                        events = response.body()
+                        Log.i("todayEvents", events!![0].type)
+                        val todayEvents: ArrayList<EventResponseItem>? =
+                            events?.filter { it ->
+                                LocalDateTime.parse(it.created_at).toLocalDate().isEqual(LocalDate.now()) } as ArrayList<EventResponseItem>?
+                        Log.i("todayEvents", todayEvents!![0].type)
+                    } else {
+                        Log.e("err",response.code().toString())
+                    }
                 }
-            }
 
-            override fun onFailure(call: Call<List<Repo>>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-        })
+                override fun onFailure(call: Call<EventResponse>, t: Throwable) {
+                    Log.e("err","err")
+
+                }
+            })
+        }catch (e:Exception){
+            Log.d("getUserCommitCount", e.toString())
+        }
+
     }
 
-//    fun getCommitByRepo(){
-//        val usernameEx ="kim1387"
-//        val reponameEx ="spring-mentoring-goal"
-//
-//        var commits:List<CommitRoot>? = null
-//        val GithubService=ApiClient.client.create(GithubInterface::class.java)
-//        val call=GithubService.getRepoCommit(usernameEx,reponameEx)
-//        call?.enqueue(object : Callback<List<CommitRoot>> {
-//            override fun onResponse(call: Call<List<CommitRoot>>, response: Response<List<CommitRoot>>) {
-//
-//                Log.d("fullresponse", response.toString())
-//                if (response.code() == 200) {
-//                    commits= response.body()
-//                    Toast.makeText(getActivity(), commits!![0].node_id, Toast.LENGTH_SHORT).show()
-//                } else {
-//                    Log.e("err",response.code().toString())
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<List<CommitRoot>>, t: Throwable) {
-//                TODO("Not yet implemented")
-//            }
-//        })
-//
-//    }
+
+
+
+
     override fun onDestroyView() {
         mBinding = null
         super.onDestroyView()

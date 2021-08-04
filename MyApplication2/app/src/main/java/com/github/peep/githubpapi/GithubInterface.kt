@@ -1,14 +1,12 @@
 package com.peep.githubapitest.githubpapi
 
 import com.github.peep.model.CommitRoot
-import com.peep.githubapitest.model.CommitCount
+import com.github.peep.model.EventResponse
 import com.peep.githubapitest.model.RepoRoot
 import com.peep.githubapitest.model.User
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Header
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface GithubInterface {
     @GET("user")
@@ -29,6 +27,6 @@ interface GithubInterface {
     // Only events created within the past 90 days will be included in timelines.
     // Events older than 90 days will not be included (even if the total number of events in the timeline is less than 300).
     @GET("users/{username}/events")
-    fun getUserEvents(username:String):Call<List<RepoRoot>>?
+    fun getUserEvents(@Path("username") username:String):Call<EventResponse>
 
 }

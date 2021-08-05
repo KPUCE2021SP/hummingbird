@@ -84,7 +84,7 @@
 
 아직 출시되지 않았어요! 조금만 더 기다려주실거죠?
 
-### Prerequisites
+<!-- ### Prerequisites
 프로젝트 수준 그래들
 ``` gradle
 ext.kotlin_version = "1.5.10"
@@ -100,10 +100,10 @@ minSdkVersion 16
 targetSdkVersion 30
 jvmTarget = '1.8'
 testImplementation 'junit:junit:4.+'
-```
+``` -->
 
 <!-- Roadmap -->
-## RoadMap (에정)
+## RoadMap 
 - Sprint1(7/26 ~ 8/7)
   - MVVP 아키텍쳐 패턴 적용, 로그인(Github API 연동)
 - Sprint2(8/8 ~ 8/21) 

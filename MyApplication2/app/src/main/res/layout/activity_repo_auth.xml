@@ -96,7 +96,7 @@
                 android:id="@+id/public_radio"
                 android:layout_width="270dp"
                 android:layout_height="100dp"
-                android:background="@drawable/button_round"
+                android:background="@drawable/button_round_outline"
                 android:gravity="center"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
@@ -113,7 +113,8 @@
                         android:layout_gravity="left"
                         android:layout_marginLeft="5dp"
                         app:srcCompat="@drawable/ic_baseline_check_circle_24"
-                        android:visibility="gone" />
+                        android:visibility="gone"
+                        app:tint="@color/colorPeep2" />
                 </LinearLayout>
 
                 <TextView
@@ -134,6 +135,7 @@
                     android:paddingLeft="30sp"
                     android:paddingRight="30sp"
                     android:fontFamily="@font/font_choice"
+                    android:textColor="@color/colorPeep2"
                     android:text="GitHub 계정에 public으로 공개된 repository만 반영합니다. "
                     android:textAlignment="center"
                     android:textSize="12sp"
@@ -145,7 +147,7 @@
                 android:layout_width="270dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/button_round"
+                android:background="@drawable/button_round_outline"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:focusable="true"
@@ -161,8 +163,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginLeft="5dp"
+                        android:visibility="gone"
                         app:srcCompat="@drawable/ic_baseline_check_circle_24"
-                        android:visibility="gone" />
+                        app:tint="@color/colorPeep2"/>
                 </LinearLayout>
 
                 <TextView
@@ -183,6 +186,7 @@
                     android:paddingLeft="30sp"
                     android:paddingRight="30sp"
                     android:fontFamily="@font/font_choice"
+                    android:textColor="@color/colorPeep2"
                     android:text="Github 계정의 모든 repository를 반영합니다"
                     android:textAlignment="center"
                     android:textSize="12sp"

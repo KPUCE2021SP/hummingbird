@@ -50,11 +50,10 @@
             android:layout_height="45dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/ic_baseline_find_in_page_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            />
+            app:srcCompat="@drawable/ic_baseline_search_24" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ListView

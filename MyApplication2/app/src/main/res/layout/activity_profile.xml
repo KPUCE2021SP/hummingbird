@@ -18,65 +18,45 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
-    <TextView
-        android:id="@+id/peep_logo_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="173dp"
-        android:layout_marginLeft="173dp"
-        android:layout_marginTop="164dp"
-        android:layout_marginEnd="174dp"
-        android:layout_marginRight="174dp"
-        android:fontFamily="@font/font_title"
-        android:text="PeepPeep"
-        android:textSize="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:gravity="center">
 
-    <ImageView
-        android:id="@+id/git_profile_iv"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="193dp"
-        android:layout_marginLeft="193dp"
-        android:layout_marginEnd="194dp"
-        android:layout_marginRight="194dp"
-        app:layout_constraintBottom_toTopOf="@+id/git_username_tv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/peep_logo_tv"
-        app:srcCompat="@drawable/ic_baseline_emoji_emotions_24" />
+        <TextView
+            android:id="@+id/peep_logo_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_title"
+            android:text="PeepPeep"
+            android:textSize="50dp" />
 
-    <TextView
-        android:id="@+id/git_username_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="173dp"
-        android:layout_marginLeft="173dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="173dp"
-        android:layout_marginRight="173dp"
-        android:fontFamily="@font/font_nice"
-        android:text="userName"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/git_profile_iv" />
+        <ImageView
+            android:id="@+id/git_profile_iv"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/ic_baseline_emoji_emotions_24" />
 
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="132dp"
-        android:layout_marginRight="132dp"
-        android:fontFamily="@font/font_choice"
-        android:text="PeepPeep 시작하기"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/git_username_tv" />
+        <TextView
+            android:id="@+id/git_username_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="60dp"
+            android:fontFamily="@font/font_nice"
+            android:text="userName"
+            android:textSize="30dp" />
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_round"
+            android:fontFamily="@font/font_choice"
+            android:padding="20dp"
+            android:text="PeepPeep 시작하기" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

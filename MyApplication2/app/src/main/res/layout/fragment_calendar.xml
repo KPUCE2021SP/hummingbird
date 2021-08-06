@@ -168,7 +168,6 @@
                         android:id="@+id/todayCommit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_round"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -203,20 +202,23 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/commit_score"
+                                    android:text="0"
+                                    android:elevation="4dp"
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/background_design"
+                                    android:fontFamily="@font/font_title"
+                                    android:textSize="33sp" />
+
+                                <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="16dp"
+                                    android:layout_marginVertical="20dp"
                                     android:textColor="@color/colorPeep2"
                                     android:text="얻은 점수"
                                     android:textSize="13sp" />
-
-                                <TextView
-                                    android:id="@+id/commit_score"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="0"
-                                    android:fontFamily="@font/font_title"
-                                    android:textSize="33sp" />
                             </LinearLayout>
 
                             <FrameLayout
@@ -233,20 +235,23 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/commit_totalCommit"
+                                    android:text="0"
+                                    android:elevation="4dp"
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/background_design"
+                                    android:fontFamily="@font/font_title"
+                                    android:textSize="33sp" />
+
+                                <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="16dp"
+                                    android:layout_marginVertical="20dp"
                                     android:textColor="@color/colorPeep2"
                                     android:text="총 커밋수"
                                     android:textSize="13sp" />
-
-                                <TextView
-                                    android:id="@+id/commit_totalCommit"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="0"
-                                    android:fontFamily="@font/font_title"
-                                    android:textSize="33sp" />
                             </LinearLayout>
 
                             <FrameLayout
@@ -262,19 +267,23 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/commit_item"
+                                    android:text="없음"
+                                    android:elevation="4dp"
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/background_design"
+                                    android:fontFamily="@font/font_title"
+                                    android:textSize="33sp" />
+
+                                <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="16dp"
+                                    android:layout_marginVertical="20dp"
                                     android:text="얻은 아이템"
                                     android:textColor="@color/colorPeep2"
                                     android:textSize="13sp" />
-
-                                <TextView
-                                    android:id="@+id/commit_item"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="없음"
-                                    android:textSize="20sp" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -287,12 +296,14 @@
                         android:layout_height="wrap_content"
                         android:background="#FFFFFF"
                         android:fontFamily="@font/font_title"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="45dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="60dp"
-                            android:gravity="center">
+                            android:gravity="center"
+                            >
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -302,7 +313,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-
                                 android:text="커밋 내역 상세"
                                 android:textSize="15sp" />
                         </LinearLayout>
@@ -311,14 +321,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="70dp"
-                            android:background="#FFFFFF"
+                            android:background="@drawable/background_design"
                             android:gravity="center">
 
 
                             <androidx.recyclerview.widget.RecyclerView
                                 android:id="@+id/repository_recyclerview"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                android:layout_height="wrap_content"
+                                />
                         </RelativeLayout>
                     </LinearLayout>
                     <!--커밋 내역 상세 끝-->

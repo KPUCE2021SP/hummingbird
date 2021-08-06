@@ -65,7 +65,6 @@ class HomeFragment : Fragment() {
 
         mBinding?.settingBtn?.setOnClickListener {
             var intent = Intent(activity,SettingActivity::class.java)
-            activity?.finish()
             startActivity(intent)
         }
 

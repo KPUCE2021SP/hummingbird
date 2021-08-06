@@ -26,6 +26,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_alignParentLeft="true"
+            android:layout_centerVertical = "true"
             android:backgroundTint="@android:color/transparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -51,6 +52,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_centerVertical = "true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_search_24" />

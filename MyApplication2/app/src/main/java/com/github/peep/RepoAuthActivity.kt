@@ -32,6 +32,12 @@ class RepoAuthActivity : AppCompatActivity() {
             mBinding.privateRadioImg.visibility = View.VISIBLE
             focus = 2
         }
+        mBinding.backButton.setOnClickListener {
+            var intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
 
         mBinding.startButton.setOnClickListener {
             if (focus == 0) {

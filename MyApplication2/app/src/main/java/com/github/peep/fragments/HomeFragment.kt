@@ -16,6 +16,7 @@ import com.github.peep.App.Companion.prefs
 import com.github.peep.HomeActivity
 import com.github.peep.MainActivity
 import com.github.peep.R
+import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
@@ -63,12 +64,18 @@ class HomeFragment : Fragment() {
         }
 
         mBinding?.settingBtn?.setOnClickListener {
-            val mActivity=activity as MainActivity
-            logout()
-            var intent=Intent(mActivity,HomeActivity::class.java)
-            mActivity.finish()
+            var intent = Intent(activity,SettingActivity::class.java)
+            activity?.finish()
             startActivity(intent)
         }
+
+//        mBinding?.settingBtn?.setOnClickListener {
+//            val mActivity=activity as MainActivity
+//            logout()
+//            var intent=Intent(mActivity,HomeActivity::class.java)
+//            mActivity.finish()
+//            startActivity(intent)
+//        }
 
         return mBinding?.root
     }

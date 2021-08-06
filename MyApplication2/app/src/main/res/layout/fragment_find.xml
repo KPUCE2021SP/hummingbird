@@ -18,20 +18,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+
+        <ImageButton
             android:id="@+id/imageView2"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_alignParentLeft="true"
+            android:backgroundTint="@android:color/transparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_autorenew_24" />
-
+            app:srcCompat="@drawable/ic_baseline_autorenew_24"
+            app:tint="@color/colorPeep" />
         <EditText
-            android:layout_width="283dp"
-            android:layout_height="40dp"
+            android:layout_width="264dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
+            android:fontFamily="@font/font_title"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView3"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -43,16 +50,18 @@
             android:layout_height="45dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/ic_baseline_find_in_page_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_search_24" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="410dp"
         android:layout_height="665dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

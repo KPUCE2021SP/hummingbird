@@ -208,6 +208,7 @@
                                     android:layout_width="100dp"
                                     android:layout_height="80dp"
                                     android:gravity="center"
+                                    android:textColor="@color/colorText"
                                     android:background="@drawable/background_design"
                                     android:fontFamily="@font/font_title"
                                     android:textSize="33sp" />
@@ -243,6 +244,7 @@
                                     android:gravity="center"
                                     android:background="@drawable/background_design"
                                     android:fontFamily="@font/font_title"
+                                    android:textColor="@color/colorText"
                                     android:textSize="33sp" />
 
                                 <TextView

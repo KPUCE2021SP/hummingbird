@@ -64,6 +64,7 @@
 * [Android Studio](https://developer.android.com/studio)
 * [Kotlin](https://developer.android.com/kotlin)
 * [JetPack](https://developer.android.com/jetpack?hl=ko)
+* [qraphQL](https://graphql.org/)
 
 ### Architecture
 
@@ -107,14 +108,14 @@ testImplementation 'junit:junit:4.+'
 - Sprint1(7/26 ~ 8/7)
   - MVVP 아키텍쳐 패턴 적용, 로그인(Github API 연동)
 - Sprint2(8/8 ~ 8/21) 
-  - 병아리 키우기 홈화면, 병아리 수집 앨범
-- Sprint3(8/22 ~ 9/4)
   - 커밋 달력, 월간 리포트
+- Sprint3(8/22 ~ 9/4)
+  - 병아리 수집, 농장 탐험
 - Sprint4(9/5 ~ 9/18)
-  - 농장 탐험, 버그 테스트 밒 배포
+  - 버그 테스트 밒 배포
+<img width="1141" alt="스크린샷 2021-08-07 오전 11 35 57" src="https://user-images.githubusercontent.com/54930877/128585305-42a71971-c891-414c-b5d6-39cc1e8db471.png">
+<img width="876" alt="스크린샷 2021-08-07 오전 11 40 14" src="https://user-images.githubusercontent.com/54930877/128585388-51e28533-4769-4130-8eac-4839c1b4f7d3.png">
 
-
-![무제 (1)](https://user-images.githubusercontent.com/54930877/126888759-2dd84945-0ffa-43f4-a10e-a1596267be88.jpg)
 
 <!-- Role -->
 ## Role

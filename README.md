@@ -103,7 +103,7 @@ testImplementation 'junit:junit:4.+'
 * [장아령](https://github.com/aristo0922) - 프론트엔드, 백엔드
 * [허민](https://github.com/hhhminme) - PM, 백엔드
 
-## [Pic Resources](https://drive.google.com/drive/folders/1MoTUfPHKy3nWBoaWGlHVKubtEVDGjHGA?usp=sharing)
+## [Pic Resources](https://drive.google.com/drive/folders/1wpO1NG04ezMb3JURnkGOzDb1_NTwERkL?usp=sharing)
 
 <!-- LICENSE -->
 ## License

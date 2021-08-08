@@ -1,6 +1,6 @@
 package com.github.peep.fragments
 
-import android.content.Context
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -13,9 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.github.peep.App.Companion.prefs
-import com.github.peep.HomeActivity
-import com.github.peep.MainActivity
-import com.github.peep.R
+import com.github.peep.CollectionActicity
 import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
 import com.peep.githubapitest.githubpapi.ApiClient
@@ -26,8 +24,6 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.http.Header
-import java.net.CookieManager
 
 
 class HomeFragment : Fragment() {
@@ -76,6 +72,20 @@ class HomeFragment : Fragment() {
 //            startActivity(intent)
 //        }
 
+        mBinding?.commitExpInfoBtn?.setOnClickListener {
+            val ad = AlertDialog.Builder(activity)
+                .create()
+            ad.setCancelable(false)
+            ad.setTitle("경험치 정보")
+            ad.setMessage("커밋 할수록 경험치가 찹니다. \n경험치가 다 차면 상단 컬렉션에서 모으신 병아리를 확인 하실 수 있습니다.")
+            ad.setButton("확인"
+            ) { dialog, which -> dialog.dismiss() }
+            ad.show()
+        }
+        mBinding?.peepCollectionBtn?.setOnClickListener {
+            var intent = Intent(activity,CollectionActicity::class.java)
+            startActivity(intent)
+        }
         return mBinding?.root
     }
 
@@ -134,6 +144,7 @@ class HomeFragment : Fragment() {
         }
         ft.detach(this).attach(this).commit()
     }
+
 
     override fun onDestroyView() {
         mBinding = null

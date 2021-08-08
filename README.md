@@ -1,21 +1,14 @@
 
 
 <!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://ovenapp.io/view/7yFxMZwFyZ10NiwMUPbTV39nFHsFDtfz/clQkh">
-    <img width="227" alt="스크린샷 2021-07-21 오전 10 05 15" src="https://user-images.githubusercontent.com/54930877/126414507-7129adca-947a-4707-86a0-dcb15871194f.png">
-  </a>
-
+   <p align="center"><img width="774" alt="스크린샷 2021-08-08 오후 12 39 18" src="https://user-images.githubusercontent.com/54930877/128619951-9727f580-fc66-4a88-a586-724262b16746.png"></p>
   <h3 align="center">PeepPeep</h3>
-
   <p align="center">
     커밋할수록 자라나는 귀여운 병아리들과 꾸준한 개발습관 들이기 어플
   <br />
     hummingbird 팀의 개발 문화와 가치가 모여있습니다.
     <br />
-    <a href="https://www.notion.so/PeepPeep-Home-91fd364357374b1abf066556b6cdda22"><strong>공식 노션 바로가기 »</strong></a>
-    <br />
+    <a href="https://www.notion.so/PeepPeep-Home-91fd364357374b1abf066556b6cdda22"><strong>공식 노션 바로가기 » </strong></a>
     <br />
     <a href="https://ovenapp.io/view/7yFxMZwFyZ10NiwMUPbTV39nFHsFDtfz#1CXFY">프로토타입 바로가기</a>
   </p>
@@ -38,7 +31,6 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
       </ul> -->
     </li>
-    <li><a href="#roadmap">RoadMap</a></li>
     <li><a href="#role">Role</a></li>
     <li><a href="#license">License</a></li>
   </ol>
@@ -102,20 +94,6 @@ targetSdkVersion 30
 jvmTarget = '1.8'
 testImplementation 'junit:junit:4.+'
 ``` -->
-
-<!-- Roadmap -->
-## RoadMap 
-- Sprint1(7/26 ~ 8/7)
-  - MVVP 아키텍쳐 패턴 적용, 로그인(Github API 연동)
-- Sprint2(8/8 ~ 8/21) 
-  - 커밋 달력, 월간 리포트
-- Sprint3(8/22 ~ 9/4)
-  - 병아리 수집, 농장 탐험
-- Sprint4(9/5 ~ 9/18)
-  - 버그 테스트 밒 배포
-<img width="1141" alt="스크린샷 2021-08-07 오전 11 35 57" src="https://user-images.githubusercontent.com/54930877/128585305-42a71971-c891-414c-b5d6-39cc1e8db471.png">
-<img width="876" alt="스크린샷 2021-08-07 오전 11 40 14" src="https://user-images.githubusercontent.com/54930877/128585388-51e28533-4769-4130-8eac-4839c1b4f7d3.png">
-
 
 <!-- Role -->
 ## Role

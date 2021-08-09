@@ -1,11 +1,15 @@
 package com.github.peep
 
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.github.peep.databinding.ActivityRepoAuthBinding
 import com.github.peep.databinding.ActivitySplashBinding
@@ -32,6 +36,12 @@ class RepoAuthActivity : AppCompatActivity() {
             mBinding.privateRadioImg.visibility = View.VISIBLE
             focus = 2
         }
+        mBinding.backButton.setOnClickListener {
+            var intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
 
         mBinding.startButton.setOnClickListener {
             if (focus == 0) {
@@ -46,5 +56,6 @@ class RepoAuthActivity : AppCompatActivity() {
                 finish()
             }
         }
+
     }
 }

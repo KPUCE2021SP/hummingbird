@@ -27,11 +27,10 @@ class HomeActivity : AppCompatActivity() {
         .onSuccess(object : SuccessCallback {
             override fun onSuccess(result: String) {
                 runOnUiThread {
-                    val intent= Intent(this@HomeActivity,MainActivity::class.java)
+                    val intent= Intent(this@HomeActivity,ProfileActivity::class.java)
                     prefs.setString("token",result)
                     finish()
                     startActivity(intent)
-
                 }
             }
         })
@@ -50,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
         .onSuccess(object : SuccessCallback {
             override fun onSuccess(result: String) {
                 runOnUiThread {
-                    val intent= Intent(this@HomeActivity,MainActivity::class.java)
+                    val intent= Intent(this@HomeActivity,ProfileActivity::class.java)
                     prefs.setString("token",result)
                     finish()
                     startActivity(intent)
@@ -70,23 +69,22 @@ class HomeActivity : AppCompatActivity() {
         mBinding= ActivityHomeBinding.inflate(layoutInflater)
 
         super.onCreate(savedInstanceState)
-
-        if(prefs.getString("token","").equals("")){ //토큰이 없는 거
-
+        //토근이 저장되어 있지 않다면
+        if(prefs.getString("token","").equals("")){
             setContentView(mBinding.root)
 
-            // Target specific email with login hint.
             mBinding.loginBtn.setOnClickListener {
                 val intent = Intent(this, RepoAuthActivity:: class.java)
                 startActivityForResult(intent, 100)
+
 //                githubAuthenticator.authenticate()
 
             }
 
         }
-
+        //토큰이 있는거 -> 이후 자동 로그인
         else{
-            var intent=Intent(this,MainActivity::class.java)
+            var intent=Intent(this,SplashActivity::class.java)
             finish()
             startActivity(intent)
         }
@@ -102,13 +100,11 @@ class HomeActivity : AppCompatActivity() {
                     if(auth=="public"){
                         val githubAuthenticator = githubPublicAuthenticatorBuilder.build()
                         githubAuthenticator.authenticate()
-
                     }
                     else if(auth=="private"){
                         val githubAuthenticator = githubPrivateAuthenticatorBuilder.build()
                         githubAuthenticator.authenticate()
                     }
-//                    githubAuthenticator.authenticate()
                 }
             }
         }

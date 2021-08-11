@@ -56,7 +56,6 @@
 * [Android Studio](https://developer.android.com/studio)
 * [Kotlin](https://developer.android.com/kotlin)
 * [JetPack](https://developer.android.com/jetpack?hl=ko)
-* [qraphQL](https://graphql.org/)
 
 ### Architecture
 

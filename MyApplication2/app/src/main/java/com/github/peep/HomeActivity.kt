@@ -8,17 +8,26 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.peep.App.Companion.prefs
+import com.github.peep.DB.User
+import com.github.peep.DB.UserDB
 import com.github.peep.databinding.ActivityHomeBinding
 import com.github.rahul.githuboauth.ErrorCallback
 import com.github.rahul.githuboauth.GithubAuthenticator
 import com.github.rahul.githuboauth.SuccessCallback
+//메인 쓰레드에서 Romm DB에 접근하려고 하면 에러가 발생
+//Cannot access database on the main thread since it may potentially lock the UI for a long period of time.
+//따라서 Room과 관련된 액션은 Thread, AsyncTask 등을 이용해 백그라운드에서 작업해야 한다.
 
-
+//큰그림은 CatDataBase의 Room.databaseBuilder를 호출해 새로운 db 객체를 만들고. 데이터를 읽기/쓰기는 서브 쓰레드에서 작업
 class HomeActivity : AppCompatActivity() {
     private val mContext: Context?=null
     private lateinit var auth:String
-
     private lateinit var mBinding : ActivityHomeBinding
+
+    //DB연결
+    private var userDb : UserDB? = null
+    private var userList = listOf<User>()
+
 
     val githubPrivateAuthenticatorBuilder = GithubAuthenticator.builder(this)
         .clientId(BuildConfig.CLIENT_ID)

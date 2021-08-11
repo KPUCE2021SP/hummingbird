@@ -60,6 +60,16 @@ android {
 }
 
 dependencies {
+    //Room DB
+    def room_version = "2.3.0" // check latest version from docs
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    //recyclerview
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+    // For control over item selection of both touch and mouse driven selection
+    implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
+
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-alpha02")
     // LiveData

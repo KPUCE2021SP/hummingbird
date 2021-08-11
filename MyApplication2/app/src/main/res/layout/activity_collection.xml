@@ -51,7 +51,7 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_profile"
+        android:id="@+id/mRecyclerView"
         android:layout_width="411dp"
         android:layout_height="678dp"
         android:orientation="vertical"

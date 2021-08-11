@@ -61,9 +61,6 @@
 
 * [MVVM](https://developer.android.com/jetpack/guide?hl=ko)
 
-
-하지만 Cloud Firestore를 사용 하면 마지막 두 부분을 제거 할 수 있습니다. 이는 Firestore가 자체 로컬 캐시를 제공하기 때문입니다. 즉, 아래 다이어그램과 같이 모델 및 원격 데이터 소스를 제거하고 단일 저장소 클래스에 결합 할 수 있습니다.
-
 <img src="https://user-images.githubusercontent.com/54930877/126727419-a0559519-e34b-42f6-a800-0917cbb5d19f.jpg" width=600 height=500></img>
 
 <!-- GETTING STARTED -->

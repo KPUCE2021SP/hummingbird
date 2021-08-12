@@ -105,7 +105,9 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="25dp">
+                    android:layout_height="25dp"
+                    android:layout_marginTop="5dp"
+                    >
 
                     <ImageView
                         android:id="@+id/public_radio_img"
@@ -114,7 +116,7 @@
                         android:layout_gravity="left"
                         android:layout_marginLeft="5dp"
                         app:srcCompat="@drawable/ic_baseline_check_circle_24"
-                        android:visibility="gone"
+                        android:visibility="invisible"
                         app:tint="@color/colorPeep2" />
                 </LinearLayout>
 
@@ -138,6 +140,7 @@
                     android:paddingBottom="10dp"
                     android:paddingLeft="30sp"
                     android:paddingRight="30sp"
+                    android:layout_marginBottom="6dp"
                     android:fontFamily="@font/font_choice"
                     android:textColor="@color/colorPeep2"
                     android:text="GitHub 계정에 public으로 공개된 repository만 반영합니다. "
@@ -159,7 +162,9 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="20dp">
+                    android:layout_height="25dp"
+                    android:layout_marginTop="5dp"
+                    >
 
                     <ImageView
                         android:id="@+id/private_radio_img"
@@ -167,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginLeft="5dp"
-                        android:visibility="gone"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/ic_baseline_check_circle_24"
                         app:tint="@color/colorPeep2"/>
                 </LinearLayout>
@@ -192,6 +197,7 @@
                     android:paddingBottom="10dp"
                     android:paddingLeft="30sp"
                     android:paddingRight="30sp"
+                    android:layout_marginBottom="6dp"
                     android:fontFamily="@font/font_choice"
                     android:textColor="@color/colorPeep2"
                     android:text="Github 계정의 모든 repository를 반영합니다"

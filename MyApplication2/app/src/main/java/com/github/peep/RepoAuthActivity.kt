@@ -24,7 +24,7 @@ class RepoAuthActivity : AppCompatActivity() {
         mBinding = ActivityRepoAuthBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
-        mBinding.publicRadio.setOnClickListener {
+        mBinding.publicRadio.setOnClickListener{
             mBinding.publicRadioImg.visibility = View.VISIBLE
             mBinding.privateRadioImg.visibility = View.GONE
             focus = 1

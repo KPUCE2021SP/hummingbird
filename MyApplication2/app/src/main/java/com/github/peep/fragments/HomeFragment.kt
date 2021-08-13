@@ -57,8 +57,8 @@ class HomeFragment : Fragment() {
 
         //새로 고침
         mBinding?.renewBtn?.setOnClickListener {
-            getUser()
-            getUserEvents(prefs.getString("username",""))
+            //getUser()
+            //getUserEvents(prefs.getString("username",""))
 //            getUserRepos()
 //            for(i in repos!!.indices){
 //                Log.d("repos",repos!![i].name.toString())
@@ -105,7 +105,7 @@ class HomeFragment : Fragment() {
         call.enqueue(object :Callback<List<Repo>>{
             override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
 
-                Log.d("fullresponse", response.toString())
+                Log.d("fullresponse", "homefragment"+response.toString())
                 if (response.code() == 200) {
                     repos= response.body()
                     Toast.makeText(getActivity(), repos!![1].name, Toast.LENGTH_SHORT).show()

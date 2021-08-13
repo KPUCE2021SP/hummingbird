@@ -1,6 +1,7 @@
 package com.peep.githubapitest.githubpapi
 
 import com.github.peep.model.EventResponse
+import com.github.peep.model.RepoCommitsResponse
 import com.peep.githubapitest.model.Repo
 import com.peep.githubapitest.model.User
 import retrofit2.Call
@@ -18,7 +19,7 @@ interface GithubInterface {
     fun getUserRepos(): Call<List<Repo>>
 
     @GET("repos/{username}/{reponame}/commits")
-    fun getRepoCommit(@Path("username")username:String,@Path("reponame")reponame:String):Call<List<Repo>>?
+    fun getRepoCommit(@Path("username")username:String,@Path("reponame")reponame:String):Call<RepoCommitsResponse>
 
     // Activity data의 events api
     // push, Issue PullRequest 등등 조회 가능!

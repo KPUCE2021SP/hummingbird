@@ -71,7 +71,7 @@ class ProfileActivity : AppCompatActivity() {
                 if (response.code() == 200) {
                     val user=response.body()
                     Picasso.get().load(user?.avatar_url).into(mBinding.gitProfileIv)
-                    mBinding.gitUsernameTv.text = user?.name
+                    mBinding.gitUsernameTv.text = user?.login
                 } else {
                     Log.e("err",response.code().toString())
                 }

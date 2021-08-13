@@ -31,11 +31,10 @@ class CollectionAdapter( val context: Context, val users : List<User>) :
         private val txtName = itemView.findViewById<TextView>(R.id.tv_rv_name)
         private val txtCount = itemView.findViewById<TextView>(R.id.tv_rv_count)
 
-
         //뷰에 뿌려주는 함수
         fun bind(user: User){
-            txtName.text = user.git_Token
-            txtCount.text = user.git_Name
+            txtName.text = user.happy_Peep.toString()
+            txtCount.text = user.sad_Peep.toString()
 
         }
 

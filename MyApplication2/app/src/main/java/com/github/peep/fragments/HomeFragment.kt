@@ -12,33 +12,30 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import com.github.peep.App.Companion.prefs
 import com.github.peep.CollectionActicity
+import com.github.peep.DB.UserDB
+import com.github.peep.MainActivity
 import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.Repo
 import com.peep.githubapitest.model.User
-import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 
 class HomeFragment : Fragment() {
+
     companion object{
-        var reponame:String =""
         var username:String=""
-        var login : String = ""
         var id  : String = ""
-        var public_repos = 0
-        var fllowers = 0
-        var following = 0
         var repos:List<Repo>? = null
     }
 
     private var mBinding : FragmentHomeBinding?=null
+    private var userDb : UserDB? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,29 +46,28 @@ class HomeFragment : Fragment() {
         Log.d("reset", "onCreateView: 생성됨")
         mBinding = binding
 
+
+        userDb = UserDB.getInstance(requireContext() as MainActivity)
+
+        val addRunnable = Runnable {
+            userDb?.userDao()?.updateHappy()
+            userDb?.userDao()?.updateSad()
+            userDb?.userDao()?.updateLevel()
+        }
         //새로 고침
+        //현재는 레벨업, 병아리 졸업 기능으로 사용
         mBinding?.renewBtn?.setOnClickListener {
-            getUser()
-            getUserRepos()
-//            for(i in repos!!.indices){
-//                Log.d("repos",repos!![i].name.toString())
-//            }
-//            refreshFragment(this,getFragmentManager())
+            val addThread = Thread(addRunnable)
+            addThread.start()
         }
 
+        //세팅창
         mBinding?.settingBtn?.setOnClickListener {
             var intent = Intent(activity,SettingActivity::class.java)
             startActivity(intent)
         }
 
-//        mBinding?.settingBtn?.setOnClickListener {
-//            val mActivity=activity as MainActivity
-//            logout()
-//            var intent=Intent(mActivity,HomeActivity::class.java)
-//            mActivity.finish()
-//            startActivity(intent)
-//        }
-
+        //경험치 정보
         mBinding?.commitExpInfoBtn?.setOnClickListener {
             val ad = AlertDialog.Builder(activity)
                 .create()
@@ -82,6 +78,7 @@ class HomeFragment : Fragment() {
             ) { dialog, which -> dialog.dismiss() }
             ad.show()
         }
+        //컬렉션 이동
         mBinding?.peepCollectionBtn?.setOnClickListener {
             var intent = Intent(activity,CollectionActicity::class.java)
             startActivity(intent)
@@ -97,8 +94,7 @@ class HomeFragment : Fragment() {
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
-                    username= user?.name.toString()
-                    Toast.makeText(getActivity(), "username : $username", Toast.LENGTH_SHORT).show()
+                    username = user?.login.toString()
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -131,12 +127,6 @@ class HomeFragment : Fragment() {
         })
 
     }
-
-    fun logout(){
-        prefs.remove("token")
-        android.webkit.CookieManager.getInstance().removeAllCookie()
-    }
-
     fun refreshFragment(fragment:Fragment, framentManager: FragmentManager?){
         val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
         if (Build.VERSION.SDK_INT >= 26) {

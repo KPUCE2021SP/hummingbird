@@ -22,10 +22,9 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "user")
 class User (
     @PrimaryKey(autoGenerate = true) var id : Long?,
-    @ColumnInfo(name ="git_token") var git_Token : String?,
-    @ColumnInfo(name ="git_name") var git_Name : String?,
+    @ColumnInfo(name = "level") var level : Int,
     @ColumnInfo(name ="happy_peep") var happy_Peep : Int,
     @ColumnInfo(name ="sad_peep") var sad_Peep : Int
 ){
-    constructor() : this(null,"","",0,0)
+    constructor() : this(null,0,0,0)
 }

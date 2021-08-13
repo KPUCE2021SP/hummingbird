@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.github.peep.CollectionActicity
 
 //database holder를 포함하여, 앱의 영구 저장되는 데이터와 기본 연결을 위한 주 엑세스 지점이다.
 //RoomDatabase를 extend 하는 추상 클래스여야 하며, 테이블과 버전을 정의하는 곳이다.

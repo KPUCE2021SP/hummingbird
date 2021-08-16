@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.github.peep.App.Companion.prefs
 import com.github.peep.CollectionActicity
+import com.github.peep.R
 import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
 import com.peep.githubapitest.githubpapi.ApiClient
@@ -35,6 +36,7 @@ class HomeFragment : Fragment() {
         var public_repos = 0
         var fllowers = 0
         var following = 0
+        var clickcount = 0
         var repos:List<Repo>? = null
     }
 
@@ -85,6 +87,23 @@ class HomeFragment : Fragment() {
         mBinding?.peepCollectionBtn?.setOnClickListener {
             var intent = Intent(activity,CollectionActicity::class.java)
             startActivity(intent)
+        }
+
+        mBinding?.peepHomeImageview?.setOnClickListener {
+            clickcount ++;
+            peep_home_imageview.setImageResource(R.drawable.happyaction)
+            when (clickcount){
+                4 -> {
+                    clickcount =0 ;
+                    peep_home_imageview.setImageResource(R.drawable.happybasic)
+                }
+                1 -> peep_home_imageview.setImageResource(R.drawable.happyaction)
+                2 -> peep_home_imageview.setImageResource(R.drawable.happyaction2)
+                3 -> {
+                    peep_home_imageview.setImageResource(R.drawable.happyaction3)
+                }
+
+            }
         }
         return mBinding?.root
     }

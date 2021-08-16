@@ -2,12 +2,14 @@ package com.github.peep.fragments
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -36,11 +38,11 @@ class HomeFragment : Fragment() {
         var public_repos = 0
         var fllowers = 0
         var following = 0
-        var clickcount = 0
         var repos:List<Repo>? = null
     }
 
     private var mBinding : FragmentHomeBinding?=null
+    private lateinit var yPeepHome: AnimationDrawable
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -89,22 +91,17 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-        mBinding?.peepHomeImageview?.setOnClickListener {
-            clickcount ++;
-            peep_home_imageview.setImageResource(R.drawable.happyaction)
-            when (clickcount){
-                4 -> {
-                    clickcount =0 ;
-                    peep_home_imageview.setImageResource(R.drawable.happybasic)
-                }
-                1 -> peep_home_imageview.setImageResource(R.drawable.happyaction)
-                2 -> peep_home_imageview.setImageResource(R.drawable.happyaction2)
-                3 -> {
-                    peep_home_imageview.setImageResource(R.drawable.happyaction3)
-                }
-
-            }
+        mBinding?.peepHomeImageview?.apply {
+            setBackgroundResource(R.drawable.yellow_peep_ani)
+            yPeepHome = background as AnimationDrawable
+            yPeepHome.start()
         }
+
+        mBinding?.peepHomeImageview?.setOnClickListener {
+            val animation = AnimationUtils.loadAnimation(activity, R.anim.rotation)
+            peep_home_imageview.startAnimation(animation)
+        }
+
         return mBinding?.root
     }
 

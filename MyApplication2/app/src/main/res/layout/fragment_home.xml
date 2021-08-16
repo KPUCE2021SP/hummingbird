@@ -81,7 +81,6 @@
             android:id="@+id/peep_home_imageview"
             android:layout_width="266dp"
             android:layout_height="266dp"
-            android:src="@drawable/happybasic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"

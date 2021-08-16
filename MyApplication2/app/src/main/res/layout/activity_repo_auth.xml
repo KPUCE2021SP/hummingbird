@@ -4,92 +4,249 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RepoAuthActivity">
+    tools:context=".RepoAuthActivity"
+    android:background="#FFFFFF">
 
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="144dp"
-        android:text="Start"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <ImageButton
-        android:id="@+id/BackButton"
-        android:layout_width="33dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/ic_baseline_arrow_back_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_baseline_arrow_back_24" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginBottom="400dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="0.8"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayout5"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView1"
+        <ImageView
+            android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Repository Auth 권한 설정"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.68"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            app:tint="@color/colorText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        android:id="@+id/constraintLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="2"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayout6"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/font_nice"
+            android:text="Repository 권한 설정"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView13"/>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12sp"
+            android:paddingLeft="50sp"
+            android:paddingRight="50sp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="PeepPeep에서 커밋 내역을 수집하기 위해 접근할 GitHub Repository의 범위를 설정해주세요!"
+            android:textSize="12sp"
+            android:fontFamily="@font/font_choice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_weight="5"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayout7"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/repo_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
             android:gravity="center"
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/public_radio"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_round_outline"
+                android:gravity="center"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/publicRadio"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp">
+
+                    <ImageView
+                        android:id="@+id/public_radio_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="5dp"
+                        app:srcCompat="@drawable/ic_baseline_check_circle_24"
+                        android:visibility="gone"
+                        app:tint="@color/colorPeep2" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/public_radio_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:fontFamily="sans-serif"
-                    android:text="public"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/font_nice"
+                    android:text="Public Repository만 반영하기"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:layout_marginHorizontal="15dp"
+                    android:textSize="16sp" />
 
-                <RadioButton
-                    android:id="@+id/privateRadio"
+                <TextView
+                    android:id="@+id/public_radio_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:text="private"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-            </RadioGroup>
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="30sp"
+                    android:paddingRight="30sp"
+                    android:fontFamily="@font/font_choice"
+                    android:textColor="@color/colorPeep2"
+                    android:text="GitHub 계정에 public으로 공개된 repository만 반영합니다. "
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/private_radio"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_round_outline"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp">
+
+                    <ImageView
+                        android:id="@+id/private_radio_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="5dp"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_baseline_check_circle_24"
+                        app:tint="@color/colorPeep2"/>
+                </LinearLayout>
+
+                <TextView
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:id="@+id/private_radio_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:textColor="#000000"
+                    android:text="Private Repository도 반영하기"
+                    android:fontFamily="@font/font_nice"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/private_radio_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="30sp"
+                    android:paddingRight="30sp"
+                    android:fontFamily="@font/font_choice"
+                    android:textColor="@color/colorPeep2"
+                    android:text="Github 계정의 모든 repository를 반영합니다"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:gravity="center" />
+            </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+
+        <TextView
+            android:id="@+id/repo_ex"
+            android:fontFamily="@font/font_choice"
+            android:text="Private Repository의 커밋은 반영되지 않습니다."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/startButton"
+            android:gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="136dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_round"
+            android:fontFamily="@font/font_title"
+            android:text="다음으로"
+            android:textColor="#000000"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repo_ex"
+            app:layout_constraintVertical_chainStyle="packed" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.github.peep.model
+package com.peep.githubapitest.model
 
 data class User(val login:String ,
                 val id: Int,

@@ -22,9 +22,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RepoAuthActivity"></activity>
+        <activity android:name=".CollectionActicity"
+            android:theme="@style/Splash"
+            android:screenOrientation="portrait"
+            ></activity>
+        <activity
+            android:name=".SettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash" />
+        <activity
+            android:name=".ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash" />
+        <activity
+            android:name=".RepoAuthActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash" />
         <activity
             android:name=".HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Splash">
             <intent-filter>
                 <action
@@ -52,10 +68,6 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_calendar" />
     <fragment
         android:id="@+id/findFragment"
-        android:name="com.github.peep.fragments.MusicFragment"
+        android:name="com.github.peep.fragments.FindFragment"
         android:label="fragment_find"
         tools:layout="@layout/fragment_find" />
 </navigation>

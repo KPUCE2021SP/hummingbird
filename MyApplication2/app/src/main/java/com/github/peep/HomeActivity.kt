@@ -3,30 +3,22 @@ package com.github.peep
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.peep.App.Companion.prefs
 import com.github.peep.databinding.ActivityHomeBinding
-import com.github.peep.databinding.ActivityMainBinding
 import com.github.rahul.githuboauth.ErrorCallback
 import com.github.rahul.githuboauth.GithubAuthenticator
 import com.github.rahul.githuboauth.SuccessCallback
-import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.startActivityForResult
-import org.jetbrains.anko.toast
 
 
 class HomeActivity : AppCompatActivity() {
     private val mContext: Context?=null
     private lateinit var auth:String
 
-
     private lateinit var mBinding : ActivityHomeBinding
-
-
 
     val githubPrivateAuthenticatorBuilder = GithubAuthenticator.builder(this)
         .clientId(BuildConfig.CLIENT_ID)
@@ -35,11 +27,10 @@ class HomeActivity : AppCompatActivity() {
         .onSuccess(object : SuccessCallback {
             override fun onSuccess(result: String) {
                 runOnUiThread {
-                    val intent= Intent(this@HomeActivity,MainActivity::class.java)
+                    val intent= Intent(this@HomeActivity,ProfileActivity::class.java)
                     prefs.setString("token",result)
                     finish()
                     startActivity(intent)
-
                 }
             }
         })
@@ -50,7 +41,6 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         })
-
 
     val githubPublicAuthenticatorBuilder = GithubAuthenticator.builder(this)
         .clientId(BuildConfig.CLIENT_ID)
@@ -59,11 +49,10 @@ class HomeActivity : AppCompatActivity() {
         .onSuccess(object : SuccessCallback {
             override fun onSuccess(result: String) {
                 runOnUiThread {
-                    val intent= Intent(this@HomeActivity,MainActivity::class.java)
+                    val intent= Intent(this@HomeActivity,ProfileActivity::class.java)
                     prefs.setString("token",result)
                     finish()
                     startActivity(intent)
-
                 }
             }
         })
@@ -75,33 +64,27 @@ class HomeActivity : AppCompatActivity() {
             }
         })
 
-
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         mBinding= ActivityHomeBinding.inflate(layoutInflater)
 
         super.onCreate(savedInstanceState)
-
-        if(prefs.getString("token","").equals("")){ //토큰이 없는 거
-
+        //토근이 저장되어 있지 않다면
+        if(prefs.getString("token","").equals("")){
             setContentView(mBinding.root)
 
-            // Target specific email with login hint.
             mBinding.loginBtn.setOnClickListener {
                 val intent = Intent(this, RepoAuthActivity:: class.java)
                 startActivityForResult(intent, 100)
+
 //                githubAuthenticator.authenticate()
 
             }
 
         }
-
+        //토큰이 있는거 -> 이후 자동 로그인
         else{
-            var intent=Intent(this,MainActivity::class.java)
+            var intent=Intent(this,SplashActivity::class.java)
             finish()
             startActivity(intent)
         }
@@ -117,13 +100,11 @@ class HomeActivity : AppCompatActivity() {
                     if(auth=="public"){
                         val githubAuthenticator = githubPublicAuthenticatorBuilder.build()
                         githubAuthenticator.authenticate()
-
                     }
                     else if(auth=="private"){
                         val githubAuthenticator = githubPrivateAuthenticatorBuilder.build()
                         githubAuthenticator.authenticate()
                     }
-//                    githubAuthenticator.authenticate()
                 }
             }
         }

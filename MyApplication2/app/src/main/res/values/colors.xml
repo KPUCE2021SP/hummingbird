@@ -8,10 +8,17 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name = "colorPeep">#FFE29A</color>
+    <color name = "colorPeep2">#FFB601</color>
+    <color name = "colorText">#323232</color>
+
     <color name="colorPrimary">@color/blue_1</color>
     <color name="colorPrimaryDark">@color/blue_1</color>
     <color name="colorAccent">@color/blue_5</color>
 
+
+    <color name="colorTextDark">#333333</color>
+    <color name="colorLightGrey">#6A6A6A</color>
     <color name="blue_1">#00101f</color>
     <color name="blue_5">#0078ff</color>
 </resources>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/setting_profile_iv"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginLeft="105dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="106dp"
+            android:layout_marginRight="106dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/setting_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="174dp"
+            android:layout_marginLeft="174dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="173dp"
+            android:layout_marginRight="173dp"
+            android:layout_marginBottom="30dp"
+            android:text=""
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_profile_iv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:fontFamily="@font/font_choice"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="설정"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <LinearLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.053">
+
+        <TextView
+            android:id="@+id/setting_logout_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="github 로그아웃"
+
+            android:fontFamily="@font/font_choice"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_round_outline"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:fontFamily="@font/font_choice"
+            android:id="@+id/setting_repo_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="github Repository 권한 설정 "
+            android:layout_marginBottom="10dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_round_outline"
+            android:padding="10dp"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:id="@+id/setting_peep_init_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="모든 병아리 초기화"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/font_choice"
+            android:background="@drawable/button_round_outline"
+            android:padding="10dp"
+            android:textSize="17dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

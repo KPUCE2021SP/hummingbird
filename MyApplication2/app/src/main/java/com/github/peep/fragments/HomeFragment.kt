@@ -1,6 +1,6 @@
 package com.github.peep.fragments
 
-import android.content.Context
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -13,25 +13,34 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.github.peep.App.Companion.prefs
-import com.github.peep.HomeActivity
-import com.github.peep.MainActivity
-import com.github.peep.R
+import com.github.peep.CollectionActicity
+import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
-import com.github.peep.githubpapi.GithubInterface
-import com.github.peep.model.Repo
-import com.github.peep.model.User
-import com.github.peep.githubpapi.ApiClient
+import com.github.peep.model.Events
+import com.peep.githubapitest.githubpapi.ApiClient
+import com.peep.githubapitest.githubpapi.GithubInterface
+import com.peep.githubapitest.model.Repo
+import com.peep.githubapitest.model.User
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.http.Header
-import java.net.CookieManager
+import java.time.LocalDate
 
 
 class HomeFragment : Fragment() {
+    companion object{
         var reponame:String =""
         var username:String=""
+        var login : String = ""
+        var id  : String = ""
+        var public_repos = 0
+        var fllowers = 0
+        var following = 0
+        var repos:List<Repo>? = null
+        var events:Events?=null
+        var pushEvents:Events?=null
+    }
 
     private var mBinding : FragmentHomeBinding?=null
 
@@ -43,10 +52,11 @@ class HomeFragment : Fragment() {
         val binding = FragmentHomeBinding.inflate(inflater,container,false)
         Log.d("reset", "onCreateView: 생성됨")
         mBinding = binding
-        
+        getEvents("kjsong99")
+
         //새로 고침
         mBinding?.renewBtn?.setOnClickListener {
-//            getUser()
+            getUser()
             getUserRepos()
 //            for(i in repos!!.indices){
 //                Log.d("repos",repos!![i].name.toString())
@@ -55,20 +65,37 @@ class HomeFragment : Fragment() {
         }
 
         mBinding?.settingBtn?.setOnClickListener {
-            val mActivity=activity as MainActivity
-            logout()
-            var intent=Intent(mActivity,HomeActivity::class.java)
-            mActivity.finish()
+            var intent = Intent(activity,SettingActivity::class.java)
             startActivity(intent)
-
         }
 
+//        mBinding?.settingBtn?.setOnClickListener {
+//            val mActivity=activity as MainActivity
+//            logout()
+//            var intent=Intent(mActivity,HomeActivity::class.java)
+//            mActivity.finish()
+//            startActivity(intent)
+//        }
 
+        mBinding?.commitExpInfoBtn?.setOnClickListener {
+            val ad = AlertDialog.Builder(activity)
+                .create()
+            ad.setCancelable(false)
+            ad.setTitle("경험치 정보")
+            ad.setMessage("커밋 할수록 경험치가 찹니다. \n경험치가 다 차면 상단 컬렉션에서 모으신 병아리를 확인 하실 수 있습니다.")
+            ad.setButton("확인"
+            ) { dialog, which -> dialog.dismiss() }
+            ad.show()
+        }
+        mBinding?.peepCollectionBtn?.setOnClickListener {
+            var intent = Intent(activity,CollectionActicity::class.java)
+            startActivity(intent)
+        }
         return mBinding?.root
     }
 
     fun getUser(){
-        var GithubService= ApiClient.client.create(GithubInterface::class.java)
+        var GithubService=ApiClient.client.create(GithubInterface::class.java)
         val call=GithubService.getUser()
         call.enqueue(object: Callback<User>{
             override fun onResponse(call: Call<User>, response: Response<User>) {
@@ -76,6 +103,7 @@ class HomeFragment : Fragment() {
                 if (response.code() == 200) {
                     val user=response.body()
                     username= user?.name.toString()
+                    Toast.makeText(getActivity(), "username : $username", Toast.LENGTH_SHORT).show()
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -95,16 +123,42 @@ class HomeFragment : Fragment() {
 
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
-                    var repos= response.body()!!
-                    Toast.makeText(getActivity(), repos!![2].name, Toast.LENGTH_SHORT).show()
-
-
+                    repos= response.body()
+                    Toast.makeText(getActivity(), repos!![1].name, Toast.LENGTH_SHORT).show()
                 } else {
                     Log.e("err",response.code().toString())
                 }
             }
 
             override fun onFailure(call: Call<List<Repo>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+
+    }
+
+    fun getEvents(username:String){
+        var GithubService=ApiClient.client.create((GithubInterface::class.java))
+        val call=GithubService.getEvents(username)
+        val date: LocalDate = LocalDate.now()
+        call!!.enqueue(object :Callback<Events>{
+            override fun onResponse(call: Call<Events>, response: Response<Events>) {
+                Log.d("fullresponse", response.toString())
+                if (response.code() == 200) {
+                    events= response.body()
+                    for(i in events!!.indices){
+                        if(events!![i].type.equals("PushEvent")&&
+                            events!![i].created_at.substring(0,10).equals(date)){
+                            pushEvents!!.add(events!![i])
+                        }
+                    }
+                    Toast.makeText(getContext(), pushEvents!!.size, Toast.LENGTH_SHORT).show()
+                } else {
+                    Log.e("err",response.code().toString())
+                }
+            }
+
+            override fun onFailure(call: Call<Events>, t: Throwable) {
                 TODO("Not yet implemented")
             }
         })
@@ -115,13 +169,14 @@ class HomeFragment : Fragment() {
         android.webkit.CookieManager.getInstance().removeAllCookie()
     }
 
-//    fun refreshFragment(fragment:Fragment, framentManager: FragmentManager?){
-//        val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
-//        if (Build.VERSION.SDK_INT >= 26) {
-//            ft.setReorderingAllowed(false)
-//        }
-//        ft.detach(this).attach(this).commit()
-//    }
+    fun refreshFragment(fragment:Fragment, framentManager: FragmentManager?){
+        val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
+        if (Build.VERSION.SDK_INT >= 26) {
+            ft.setReorderingAllowed(false)
+        }
+        ft.detach(this).attach(this).commit()
+    }
+
 
     override fun onDestroyView() {
         mBinding = null

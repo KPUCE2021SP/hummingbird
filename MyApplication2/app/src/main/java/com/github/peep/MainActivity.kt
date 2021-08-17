@@ -16,7 +16,7 @@ import com.github.peep.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(){
 
     private lateinit var mBinding : ActivityMainBinding
-    private var userDb : UserDB? = null
+
 
     //나중에 값이 설정될거라고 lateinit으로 설정
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,27 +33,6 @@ class MainActivity : AppCompatActivity(){
 
         //바텀 네비게이션뷰와 네비게이션 뷰를 묶어준다.
         NavigationUI.setupWithNavController(mBinding.myBottomNav, navController)
-
-        //유저 테이블 생성 되는거 확인
-        //이미 로그인을 거치고 로컬 db이기 때문에 id의 의미가 무의미함.
-
-        userDb = UserDB.getInstance(this)
-
-        val addRunnable = Runnable {
-            val newUser = com.github.peep.DB.User()
-            newUser.level = 0
-            newUser.sad_Peep = 0
-            newUser.happy_Peep = 0
-            userDb?.userDao()?.insert(newUser)
-        }
-
-        val addThread = Thread(addRunnable)
-        addThread.start()
-    }
-
-    override fun onDestroy() {
-        UserDB.destroyInstance()
-        super.onDestroy()
     }
 
 }

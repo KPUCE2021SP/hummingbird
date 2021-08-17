@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.github.peep.App.Companion.prefs
 import com.github.peep.CollectionActicity
 import com.github.peep.DB.UserDB
 import com.github.peep.MainActivity
@@ -60,18 +61,7 @@ class HomeFragment : Fragment() {
         //새로 고침
         //현재는 레벨업, 병아리 졸업 기능으로 사용
         mBinding?.renewBtn?.setOnClickListener {
-<<<<<<< HEAD
-            val addThread = Thread(addRunnable)
-            addThread.start()
-=======
-            //getUser()
-            //getUserEvents(prefs.getString("username",""))
-//            getUserRepos()
-//            for(i in repos!!.indices){
-//                Log.d("repos",repos!![i].name.toString())
-//            }
-//            refreshFragment(this,getFragmentManager())
->>>>>>> origin/kim-3
+
         }
 
         //세팅창
@@ -107,13 +97,10 @@ class HomeFragment : Fragment() {
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
-<<<<<<< HEAD
-                    username = user?.login.toString()
-=======
                     username= user?.login.toString()
                     prefs.setString("username", username)
 //                    Toast.makeText(getActivity(), "username : $username", Toast.LENGTH_SHORT).show()
->>>>>>> origin/kim-3
+
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -153,9 +140,7 @@ class HomeFragment : Fragment() {
         }
         ft.detach(this).attach(this).commit()
     }
-
-<<<<<<< HEAD
-=======
+    
     fun getUserEvents(username:String){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
         val call=GithubService.getUserEvents(prefs.getString("username",""))
@@ -176,7 +161,6 @@ class HomeFragment : Fragment() {
         })
 
     }
->>>>>>> origin/kim-3
 
     override fun onDestroyView() {
         mBinding = null

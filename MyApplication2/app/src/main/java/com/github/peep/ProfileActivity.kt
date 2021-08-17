@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.github.peep.DB.UserDB
 import com.github.peep.databinding.ActivityProfileBinding
 import com.github.peep.fragments.HomeFragment
 import com.peep.githubapitest.githubpapi.ApiClient
@@ -27,6 +28,7 @@ import retrofit2.Response
 
 class ProfileActivity : AppCompatActivity() {
     lateinit var mBinding : ActivityProfileBinding
+    private var userDb : UserDB? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_profile)
@@ -41,7 +43,18 @@ class ProfileActivity : AppCompatActivity() {
         mBinding.backButton.setOnClickListener {
             showSettingPopup()
         }
+        //유저 프로필 정보 확인하며 최초 db 생성
+        userDb = UserDB.getInstance(this)
+        val addRunnable = Runnable {
+            val newUser = com.github.peep.DB.User()
+            newUser.level = 100
+            newUser.sad_Peep = 100
+            newUser.happy_Peep = 100
+            userDb?.userDao()?.insert(newUser)
+        }
 
+        val addThread = Thread(addRunnable)
+        addThread.start()
     }
     fun showSettingPopup(){
         val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -85,5 +98,9 @@ class ProfileActivity : AppCompatActivity() {
     fun logout(){
         App.prefs.remove("token")
         android.webkit.CookieManager.getInstance().removeAllCookie()
+    }
+    override fun onDestroy() {
+        UserDB.destroyInstance()
+        super.onDestroy()
     }
 }

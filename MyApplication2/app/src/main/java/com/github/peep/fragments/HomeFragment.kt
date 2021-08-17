@@ -2,20 +2,26 @@ package com.github.peep.fragments
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.github.peep.App.Companion.prefs
 import com.github.peep.CollectionActicity
+<<<<<<< HEAD
 import com.github.peep.DB.UserDB
 import com.github.peep.MainActivity
+=======
+import com.github.peep.R
+>>>>>>> origin/ah-2
 import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
 import com.github.peep.model.EventResponse
@@ -39,7 +45,11 @@ class HomeFragment : Fragment() {
     }
 
     private var mBinding : FragmentHomeBinding?=null
+<<<<<<< HEAD
     private var userDb : UserDB? = null
+=======
+    private lateinit var yPeepHome: AnimationDrawable
+>>>>>>> origin/ah-2
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -86,6 +96,18 @@ class HomeFragment : Fragment() {
             var intent = Intent(activity,CollectionActicity::class.java)
             startActivity(intent)
         }
+
+        mBinding?.peepHomeImageview?.apply {
+            setBackgroundResource(R.drawable.yellow_peep_ani)
+            yPeepHome = background as AnimationDrawable
+            yPeepHome.start()
+        }
+
+        mBinding?.peepHomeImageview?.setOnClickListener {
+            val animation = AnimationUtils.loadAnimation(activity, R.anim.rotation)
+            peep_home_imageview.startAnimation(animation)
+        }
+
         return mBinding?.root
     }
 

@@ -27,6 +27,7 @@ class CollectionActicity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection)
 
+<<<<<<< HEAD
         userDb = UserDB.getInstance(this)
         mAdapter = CollectionAdapter(this, userList)
 
@@ -44,6 +45,20 @@ class CollectionActicity : AppCompatActivity() {
                 Log.d("tag", "Error - $e")
             }
         }
+=======
+        initRecycler()
+    }
+
+    private fun initRecycler() {
+        collectionAdapter = CollectionAdapter(this)
+        rv_profile.adapter = collectionAdapter
+
+        //firebase 에 연동되어 있지 않기 때문에 임의의 더미 데이터 삽입
+        datas.apply {
+            add(CollectionData(img = R.drawable.peep_illust, name = "일러삡", count = 0))
+            add(CollectionData(img = R.drawable.happybasic, name = "해삡", count = 1))
+            add(CollectionData(img = R.drawable.sadaction, name = "슬리삡", count = 0))
+>>>>>>> origin/ah-2
 
         val thread = Thread(r)
         thread.start()

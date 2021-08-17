@@ -43,6 +43,7 @@ class ProfileActivity : AppCompatActivity() {
         mBinding.backButton.setOnClickListener {
             showSettingPopup()
         }
+
         //유저 프로필 정보 확인하며 최초 db 생성
         userDb = UserDB.getInstance(this)
         val addRunnable = Runnable {

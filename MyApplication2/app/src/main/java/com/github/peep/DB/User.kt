@@ -25,6 +25,7 @@ class User (
     @ColumnInfo(name = "level") var level : Int,
     @ColumnInfo(name ="happy_peep") var happy_Peep : Int,
     @ColumnInfo(name ="sad_peep") var sad_Peep : Int
+
 ){
     constructor() : this(null,0,0,0)
 }

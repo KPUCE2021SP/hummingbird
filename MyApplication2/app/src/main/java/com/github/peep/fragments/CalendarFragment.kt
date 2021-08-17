@@ -68,13 +68,15 @@ class CalendarFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
         val binding = FragmentCalendarBinding.inflate(inflater,container,false)
-        //val settings: SharedPreferences = requireActivity().getSharedPreferences("testlogin", MODE_PRIVATE)
+        val settings: SharedPreferences = requireActivity().getSharedPreferences("hhhminme", MODE_PRIVATE)
         val calendarView = binding.calendarView
         getUserCommitByRepos()
 
-        // getCommitByRepos()
-        // getUserCommitCount()
+        //getCommitByRepos()
+        getUserCommitCount()
         // default 날짜는 오늘 날짜로
         val selectedDate: CalendarDay = CalendarDay.today()
         var preDay: CalendarDay = CalendarDay.today()
@@ -119,7 +121,6 @@ class CalendarFragment : Fragment() {
             calendarView?.clearSelection()
         }
 
-
         calendarView.setOnMonthChangedListener { widget, date ->
             val mYear = date.year
             val mMonth = date.month
@@ -136,6 +137,7 @@ class CalendarFragment : Fragment() {
         mBinding = binding
         return mBinding?.root
     }
+
     fun getUserCommitCount(){
         var events:ArrayList<EventResponseItem>? = null
         val GithubService=ApiClient.client.create(GithubInterface::class.java)
@@ -171,6 +173,7 @@ class CalendarFragment : Fragment() {
         }
 
     }
+
     fun getUserCommitByRepos(){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
         val call=GithubService.getUserRepos()
@@ -197,6 +200,7 @@ class CalendarFragment : Fragment() {
         })
 
     }
+
     fun getReposCommits(name:String){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
         val commitCall = GithubService.getRepoCommit("kim1387",name)

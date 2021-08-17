@@ -59,7 +59,6 @@ class CalendarFragment : Fragment() {
         var events:EventResponse?=null
         var todayDate: Date =Date()
         var commitCount: Int = 0
-
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -73,6 +72,7 @@ class CalendarFragment : Fragment() {
         //val settings: SharedPreferences = requireActivity().getSharedPreferences("testlogin", MODE_PRIVATE)
         val calendarView = binding.calendarView
         getUserCommitByRepos()
+
         // getCommitByRepos()
         // getUserCommitCount()
         // default 날짜는 오늘 날짜로
@@ -105,14 +105,14 @@ class CalendarFragment : Fragment() {
             commit_totalCommit.text = commitCount.toString()
             if(valueList[2].isEmpty()){
                 commit_item.text= "없음!"
-                commit_item.textSize = 20F
+                commit_item.textSize = 14F
                 commit_item.setTextColor(resources.getColor(R.color.colorText))
             }else{
                 Log.d("onCreateView", "onCreateView: else ")
                 commitLayout.visibility = View.VISIBLE
                 noCommitText.visibility = View.GONE
                 commit_item.text = valueList[2]
-                commit_item.textSize = 33F
+                commit_item.textSize = 20F
                 commit_item.setTextColor(resources.getColor(R.color.colorTextDark))
             }
             Log.d("onCreateView", "onCreateView: ")
@@ -234,11 +234,8 @@ class CalendarFragment : Fragment() {
         })
     }
 
-
-
     override fun onDestroyView() {
         mBinding = null
         super.onDestroyView()
     }
 }
-

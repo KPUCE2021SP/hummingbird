@@ -14,9 +14,7 @@ import com.github.peep.databinding.ActivityMainBinding
 //CollectionActivity Room db와 RecyclerView를 성공적으로 연결하더라도, 아직 추가한 데이터가 없으므로
 //RecyclerView에는 아무 정보도 표시되지 않는다. AddActivity를 만들어 데이터 추가가 가능하도록 해주자
 class MainActivity : AppCompatActivity(){
-
     private lateinit var mBinding : ActivityMainBinding
-
 
     //나중에 값이 설정될거라고 lateinit으로 설정
     override fun onCreate(savedInstanceState: Bundle?) {

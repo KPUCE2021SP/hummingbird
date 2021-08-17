@@ -8,18 +8,20 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.peep.App.Companion.prefs
+import com.github.peep.DB.User
+import com.github.peep.DB.UserDB
 import com.github.peep.databinding.ActivityHomeBinding
 import com.github.rahul.githuboauth.ErrorCallback
 import com.github.rahul.githuboauth.GithubAuthenticator
 import com.github.rahul.githuboauth.SuccessCallback
 
-
 class HomeActivity : AppCompatActivity() {
     private val mContext: Context?=null
     private lateinit var auth:String
-
     private lateinit var mBinding : ActivityHomeBinding
 
+    //DB연결
+    private var userDb : UserDB? = null
     val githubPrivateAuthenticatorBuilder = GithubAuthenticator.builder(this)
         .clientId(BuildConfig.CLIENT_ID)
         .clientSecret(BuildConfig.CLIENT_SECRET)
@@ -70,14 +72,13 @@ class HomeActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         //토근이 저장되어 있지 않다면
+        //데이터 베이스 생성
         if(prefs.getString("token","").equals("")){
             setContentView(mBinding.root)
 
             mBinding.loginBtn.setOnClickListener {
                 val intent = Intent(this, RepoAuthActivity:: class.java)
                 startActivityForResult(intent, 100)
-
-//                githubAuthenticator.authenticate()
 
             }
 

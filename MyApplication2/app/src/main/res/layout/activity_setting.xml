@@ -78,10 +78,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="github 로그아웃"
-
             android:fontFamily="@font/font_choice"
             android:layout_margin="5dp"
-            android:padding="10dp"
+            android:padding="13dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/button_round_outline"
             android:textSize="17dp"/>
@@ -95,7 +94,7 @@
             android:layout_marginBottom="10dp"
             android:layout_margin="5dp"
             android:background="@drawable/button_round_outline"
-            android:padding="10dp"
+            android:padding="13dp"
             android:textSize="17dp"/>
 
         <TextView
@@ -106,7 +105,7 @@
             android:layout_margin="5dp"
             android:fontFamily="@font/font_choice"
             android:background="@drawable/button_round_outline"
-            android:padding="10dp"
+            android:padding="13dp"
             android:textSize="17dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -85,7 +85,6 @@ targetSdkVersion 30
 jvmTarget = '1.8'
 testImplementation 'junit:junit:4.+'
 ``` -->
-
 <!-- Role -->
 ## Role
 
@@ -95,6 +94,7 @@ testImplementation 'junit:junit:4.+'
 * [허민](https://github.com/hhhminme) - PM, 백엔드
 
 ## [Pic Resources](https://drive.google.com/drive/folders/1wpO1NG04ezMb3JURnkGOzDb1_NTwERkL?usp=sharing)
+
 
 <!-- LICENSE -->
 ## License

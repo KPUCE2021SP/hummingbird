@@ -72,10 +72,11 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/constraintLayout6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_weight="5"
@@ -99,13 +100,13 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_round_outline"
                 android:gravity="center"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="25dp">
+                    android:layout_height="25dp"
+                    android:layout_marginTop="5dp"
+                    >
 
                     <ImageView
                         android:id="@+id/public_radio_img"
@@ -114,7 +115,7 @@
                         android:layout_gravity="left"
                         android:layout_marginLeft="5dp"
                         app:srcCompat="@drawable/ic_baseline_check_circle_24"
-                        android:visibility="gone"
+                        android:visibility="invisible"
                         app:tint="@color/colorPeep2" />
                 </LinearLayout>
 
@@ -123,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/font_nice"
+                    android:fontFamily="@font/font_choice"
                     android:text="Public Repository만 반영하기"
                     android:gravity="center"
                     android:textAlignment="center"
@@ -138,6 +139,7 @@
                     android:paddingBottom="10dp"
                     android:paddingLeft="30sp"
                     android:paddingRight="30sp"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="@font/font_choice"
                     android:textColor="@color/colorPeep2"
                     android:text="GitHub 계정에 public으로 공개된 repository만 반영합니다. "
@@ -154,12 +156,13 @@
                 android:background="@drawable/button_round_outline"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:focusable="true"
-                android:focusableInTouchMode="true">
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="20dp">
+                    android:layout_height="25dp"
+                    android:layout_marginTop="5dp"
+                    >
 
                     <ImageView
                         android:id="@+id/private_radio_img"
@@ -167,7 +170,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginLeft="5dp"
-                        android:visibility="gone"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/ic_baseline_check_circle_24"
                         app:tint="@color/colorPeep2"/>
                 </LinearLayout>
@@ -182,7 +185,7 @@
                     android:layout_marginHorizontal="12dp"
                     android:textColor="#000000"
                     android:text="Private Repository도 반영하기"
-                    android:fontFamily="@font/font_nice"
+                    android:fontFamily="@font/font_choice"
                     android:textSize="16sp" />
 
                 <TextView
@@ -192,6 +195,7 @@
                     android:paddingBottom="10dp"
                     android:paddingLeft="30sp"
                     android:paddingRight="30sp"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="@font/font_choice"
                     android:textColor="@color/colorPeep2"
                     android:text="Github 계정의 모든 repository를 반영합니다"
@@ -200,7 +204,7 @@
                     android:gravity="center" />
             </LinearLayout>
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout7"
@@ -234,7 +238,6 @@
             android:layout_height="32dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/button_round"
-            android:fontFamily="@font/font_title"
             android:text="다음으로"
             android:textColor="#000000"
             android:textAllCaps="false"

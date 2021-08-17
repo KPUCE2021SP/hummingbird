@@ -3,7 +3,9 @@ package com.github.peep.decorator
 import android.app.Activity
 import android.graphics.Color
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.text.style.ForegroundColorSpan
+import androidx.annotation.RequiresApi
 import com.github.peep.R
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.DayViewDecorator
@@ -18,6 +20,7 @@ class CalendarDesign: DayViewDecorator {
 
     private var date: CalendarDay? = null
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     constructor(context : Activity) {
         date = CalendarDay.today()
         drawable = context.getDrawable(R.drawable.cal_today)!!

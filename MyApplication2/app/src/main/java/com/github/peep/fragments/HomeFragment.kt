@@ -17,6 +17,8 @@ import com.github.peep.DB.UserDB
 import com.github.peep.MainActivity
 import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
+import com.github.peep.model.EventResponse
+import com.github.peep.model.EventResponseItem
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.Repo
@@ -32,6 +34,7 @@ class HomeFragment : Fragment() {
         var username:String=""
         var id  : String = ""
         var repos:List<Repo>? = null
+        var events:EventResponse?=null
     }
 
     private var mBinding : FragmentHomeBinding?=null
@@ -57,8 +60,18 @@ class HomeFragment : Fragment() {
         //새로 고침
         //현재는 레벨업, 병아리 졸업 기능으로 사용
         mBinding?.renewBtn?.setOnClickListener {
+<<<<<<< HEAD
             val addThread = Thread(addRunnable)
             addThread.start()
+=======
+            //getUser()
+            //getUserEvents(prefs.getString("username",""))
+//            getUserRepos()
+//            for(i in repos!!.indices){
+//                Log.d("repos",repos!![i].name.toString())
+//            }
+//            refreshFragment(this,getFragmentManager())
+>>>>>>> origin/kim-3
         }
 
         //세팅창
@@ -94,7 +107,13 @@ class HomeFragment : Fragment() {
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
+<<<<<<< HEAD
                     username = user?.login.toString()
+=======
+                    username= user?.login.toString()
+                    prefs.setString("username", username)
+//                    Toast.makeText(getActivity(), "username : $username", Toast.LENGTH_SHORT).show()
+>>>>>>> origin/kim-3
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -112,7 +131,7 @@ class HomeFragment : Fragment() {
         call.enqueue(object :Callback<List<Repo>>{
             override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
 
-                Log.d("fullresponse", response.toString())
+                Log.d("fullresponse", "homefragment"+response.toString())
                 if (response.code() == 200) {
                     repos= response.body()
                     Toast.makeText(getActivity(), repos!![1].name, Toast.LENGTH_SHORT).show()
@@ -135,6 +154,29 @@ class HomeFragment : Fragment() {
         ft.detach(this).attach(this).commit()
     }
 
+<<<<<<< HEAD
+=======
+    fun getUserEvents(username:String){
+        var GithubService=ApiClient.client.create(GithubInterface::class.java)
+        val call=GithubService.getUserEvents(prefs.getString("username",""))
+        call.enqueue(object :Callback<EventResponse>{
+            override fun onResponse(call: Call<EventResponse>, response: Response<EventResponse>) {
+                Log.d("fullresponse", response.toString())
+                if (response.code() == 200) {
+                    events=response.body()
+                    Toast.makeText(getActivity(), events!![1].created_at, Toast.LENGTH_SHORT).show()
+                } else {
+                    Log.e("err",response.code().toString())
+                }
+            }
+
+            override fun onFailure(call: Call<EventResponse>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+
+    }
+>>>>>>> origin/kim-3
 
     override fun onDestroyView() {
         mBinding = null

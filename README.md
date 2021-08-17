@@ -11,17 +11,15 @@
 
   <p align="center">
     커밋할수록 자라나는 귀여운 병아리들과 꾸준한 개발습관 들이기 어플
+  <br />
+    hummingbird 팀의 개발 문화와 가치가 모여있습니다.
     <br />
-    <a href="https://github.com/KPUCE2021SP/hummingbird"><strong>Explore the docs »</strong></a>
+    <a href="https://www.notion.so/PeepPeep-Home-91fd364357374b1abf066556b6cdda22"><strong>공식 노션 바로가기 »</strong></a>
     <br />
     <br />
-    <a href="https://ovenapp.io/view/7yFxMZwFyZ10NiwMUPbTV39nFHsFDtfz#1CXFY">프로토타입 보러가기</a>
-    ·
-    <a href="https://www.notion.so/12341cb0f7cb4c7fa11d6e3141e6ce81?v=62cc868baadf48c3b2bd810741db7109">회의 기록 노션 보러가기</a>
+    <a href="https://ovenapp.io/view/7yFxMZwFyZ10NiwMUPbTV39nFHsFDtfz#1CXFY">프로토타입 바로가기</a>
   </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -36,12 +34,13 @@
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
-      <ul>
+<!--       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-      </ul>
+      </ul> -->
     </li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#roadmap">RoadMap</a></li>
     <li><a href="#role">Role</a></li>
+    <li><a href="#license">License</a></li>
   </ol>
 </details>
 
@@ -72,7 +71,7 @@
 
 
 하지만 Cloud Firestore를 사용 하면 마지막 두 부분을 제거 할 수 있습니다. 이는 Firestore가 자체 로컬 캐시를 제공하기 때문입니다. 즉, 아래 다이어그램과 같이 모델 및 원격 데이터 소스를 제거하고 단일 저장소 클래스에 결합 할 수 있습니다.
-<br />
+
 <img src="https://user-images.githubusercontent.com/54930877/126727419-a0559519-e34b-42f6-a800-0917cbb5d19f.jpg" width=600 height=500></img>
 
 
@@ -102,11 +101,20 @@ targetSdkVersion 30
 jvmTarget = '1.8'
 testImplementation 'junit:junit:4.+'
 ```
-<!-- LICENSE -->
-## License
 
-Distributed under the MIT License. See https://github.com/KPUCE2021SP/hummingbird/blob/main/LICENSE for more information.
+<!-- Roadmap -->
+## RoadMap (에정)
+- Sprint1(7/26 ~ 8/7)
+  - MVVP 아키텍쳐 패턴 적용, 로그인(Github API 연동)
+- Sprint2(8/8 ~ 8/21) 
+  - 병아리 키우기 홈화면, 병아리 수집 앨범
+- Sprint3(8/22 ~ 9/4)
+  - 커밋 달력, 월간 리포트
+- Sprint4(9/5 ~ 9/18)
+  - 농장 탐험, 버그 테스트 밒 배포
 
+
+![무제 (1)](https://user-images.githubusercontent.com/54930877/126888759-2dd84945-0ffa-43f4-a10e-a1596267be88.jpg)
 
 <!-- Role -->
 ## Role
@@ -115,3 +123,10 @@ Distributed under the MIT License. See https://github.com/KPUCE2021SP/hummingbir
 * [송경진](https://github.com/kjsong99) - 트러블슈팅, 백엔드
 * [장아령](https://github.com/aristo0922) - 프론트엔드, 백엔드
 * [허민](https://github.com/hhhminme) - PM, 백엔드
+
+## [Pic Resources](https://drive.google.com/drive/folders/1MoTUfPHKy3nWBoaWGlHVKubtEVDGjHGA?usp=sharing)
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See https://github.com/KPUCE2021SP/hummingbird/blob/main/LICENSE for more information.

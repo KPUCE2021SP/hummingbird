@@ -16,12 +16,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.github.peep.App.Companion.prefs
 import com.github.peep.CollectionActicity
-<<<<<<< HEAD
+import kotlinx.android.synthetic.main.fragment_home.*
 import com.github.peep.DB.UserDB
 import com.github.peep.MainActivity
-=======
 import com.github.peep.R
->>>>>>> origin/ah-2
 import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
 import com.github.peep.model.EventResponse
@@ -45,11 +43,8 @@ class HomeFragment : Fragment() {
     }
 
     private var mBinding : FragmentHomeBinding?=null
-<<<<<<< HEAD
     private var userDb : UserDB? = null
-=======
     private lateinit var yPeepHome: AnimationDrawable
->>>>>>> origin/ah-2
 
     override fun onCreateView(
         inflater: LayoutInflater,

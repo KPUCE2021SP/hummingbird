@@ -26,14 +26,12 @@ class CollectionActicity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection)
-
-<<<<<<< HEAD
         userDb = UserDB.getInstance(this)
         mAdapter = CollectionAdapter(this, userList)
 
         //리사이클 뷰에 주입된 데이터를 뿌려줌
         val r = Runnable {
-            try{
+            try {
                 userList = userDb?.userDao()?.getAll()!!
                 mAdapter = CollectionAdapter(this, userList)
                 mAdapter.notifyDataSetChanged()
@@ -41,27 +39,13 @@ class CollectionActicity : AppCompatActivity() {
                 mRecyclerView.adapter = mAdapter
                 mRecyclerView.layoutManager = LinearLayoutManager(this)
                 mRecyclerView.setHasFixedSize(true)
-            } catch( e : Exception) {
+            } catch (e: Exception) {
                 Log.d("tag", "Error - $e")
             }
         }
-=======
-        initRecycler()
-    }
 
-    private fun initRecycler() {
-        collectionAdapter = CollectionAdapter(this)
-        rv_profile.adapter = collectionAdapter
-
-        //firebase 에 연동되어 있지 않기 때문에 임의의 더미 데이터 삽입
-        datas.apply {
-            add(CollectionData(img = R.drawable.peep_illust, name = "일러삡", count = 0))
-            add(CollectionData(img = R.drawable.happybasic, name = "해삡", count = 1))
-            add(CollectionData(img = R.drawable.sadaction, name = "슬리삡", count = 0))
->>>>>>> origin/ah-2
-
-        val thread = Thread(r)
-        thread.start()
+        val rthread = Thread(r)
+        rthread.start()
     }
 
     override fun onDestroy(){
@@ -69,5 +53,4 @@ class CollectionActicity : AppCompatActivity() {
         userDb = null
         super.onDestroy()
     }
-
 }

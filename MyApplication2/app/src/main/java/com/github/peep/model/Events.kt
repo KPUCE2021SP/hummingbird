@@ -1,3 +1,3 @@
 package com.github.peep.model
 
-class Events : ArrayList<EventItem>()
+class Events : ArrayList<EventsItem>()

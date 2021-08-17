@@ -155,7 +155,8 @@ class HomeFragment : Fragment() {
                     for(i in events!!.indices){
                         Log.d("date2",events!![i].created_at.substring(0,10))
                         if(events!![i].type=="PushEvent"&&
-                            events!![i].created_at.substring(0,10)==date.toString()){
+                            events!![i].created_at.substring(0,10)==date.toString()&&
+                                events!![i].payload.ref=="refs/heads/main"){
                             count++
                         }
                     }

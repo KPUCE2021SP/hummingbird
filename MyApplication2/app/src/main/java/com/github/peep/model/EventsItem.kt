@@ -1,6 +1,6 @@
 package com.github.peep.model
 
-data class EventItem(
+data class EventsItem(
     val actor: Actor,
     val created_at: String,
     val id: String,

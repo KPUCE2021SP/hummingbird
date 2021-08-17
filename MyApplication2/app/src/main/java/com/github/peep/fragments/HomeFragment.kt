@@ -39,7 +39,8 @@ class HomeFragment : Fragment() {
         var following = 0
         var repos:List<Repo>? = null
         var events:Events?=null
-        var pushEvents:Events?=null
+        var count:Int=0
+
     }
 
     private var mBinding : FragmentHomeBinding?=null
@@ -52,12 +53,15 @@ class HomeFragment : Fragment() {
         val binding = FragmentHomeBinding.inflate(inflater,container,false)
         Log.d("reset", "onCreateView: 생성됨")
         mBinding = binding
-        getEvents("kjsong99")
+        getUser()
+        Log.d("username", prefs.getString("username",""))
+        getEvents(prefs.getString("username",""))
 
         //새로 고침
         mBinding?.renewBtn?.setOnClickListener {
-            getUser()
-            getUserRepos()
+            getEvents(prefs.getString("username",""))
+//            getUser()
+//            getUserRepos()
 //            for(i in repos!!.indices){
 //                Log.d("repos",repos!![i].name.toString())
 //            }
@@ -102,8 +106,8 @@ class HomeFragment : Fragment() {
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
-                    username= user?.name.toString()
-                    Toast.makeText(getActivity(), "username : $username", Toast.LENGTH_SHORT).show()
+                    username= user?.login.toString()
+                    prefs.setString("username",username)
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -138,21 +142,24 @@ class HomeFragment : Fragment() {
     }
 
     fun getEvents(username:String){
+        count=0
         var GithubService=ApiClient.client.create((GithubInterface::class.java))
         val call=GithubService.getEvents(username)
         val date: LocalDate = LocalDate.now()
+        Log.d("date",date.toString())
         call!!.enqueue(object :Callback<Events>{
             override fun onResponse(call: Call<Events>, response: Response<Events>) {
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     events= response.body()
                     for(i in events!!.indices){
-                        if(events!![i].type.equals("PushEvent")&&
-                            events!![i].created_at.substring(0,10).equals(date)){
-                            pushEvents!!.add(events!![i])
+                        Log.d("date2",events!![i].created_at.substring(0,10))
+                        if(events!![i].type=="PushEvent"&&
+                            events!![i].created_at.substring(0,10)==date.toString()){
+                            count++
                         }
                     }
-                    Toast.makeText(getContext(), pushEvents!!.size, Toast.LENGTH_SHORT).show()
+                    today_commit_count_textview.setText(count.toString())
                 } else {
                     Log.e("err",response.code().toString())
                 }

@@ -31,6 +31,7 @@ import com.peep.githubapitest.model.User
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDate
 
 
 class HomeFragment : Fragment() {
@@ -64,9 +65,9 @@ class HomeFragment : Fragment() {
             userDb?.userDao()?.updateLevel()
         }
         //새로 고침
-        //현재는 레벨업, 병아리 졸업 기능으로 사용
+        //현재는 오늘의 커밋 가져오기로 사용 중
         mBinding?.renewBtn?.setOnClickListener {
-
+            getEvents(prefs.getString("username",""))
         }
 
         //세팅창
@@ -129,27 +130,36 @@ class HomeFragment : Fragment() {
         })
     }
 
-    fun getUserRepos(){
-        var GithubService=ApiClient.client.create(GithubInterface::class.java)
-        val call=GithubService.getUserRepos()
-        call.enqueue(object :Callback<List<Repo>>{
-            override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
-
-                Log.d("fullresponse", "homefragment"+response.toString())
+    fun getEvents(username:String){
+        count=0
+        var GithubService=ApiClient.client.create((GithubInterface::class.java))
+        val call=GithubService.getEvents(username)
+        val date: LocalDate = LocalDate.now()
+        Log.d("date",date.toString())
+        call!!.enqueue(object :Callback<Events>{
+            override fun onResponse(call: Call<Events>, response: Response<Events>) {
+                Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
-                    repos= response.body()
-                    Toast.makeText(getActivity(), repos!![1].name, Toast.LENGTH_SHORT).show()
+                    events= response.body()
+                    for(i in events!!.indices){
+                        Log.d("date2",events!![i].created_at.substring(0,10))
+                        if(events!![i].type=="PushEvent"&&
+                            events!![i].created_at.substring(0,10)==date.toString()){
+                            count++
+                        }
+                    }
+                    today_commit_count_textview.setText(count.toString())
                 } else {
                     Log.e("err",response.code().toString())
                 }
             }
 
-            override fun onFailure(call: Call<List<Repo>>, t: Throwable) {
+            override fun onFailure(call: Call<Events>, t: Throwable) {
                 TODO("Not yet implemented")
             }
         })
-
     }
+
     fun refreshFragment(fragment:Fragment, framentManager: FragmentManager?){
         val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
         if (Build.VERSION.SDK_INT >= 26) {

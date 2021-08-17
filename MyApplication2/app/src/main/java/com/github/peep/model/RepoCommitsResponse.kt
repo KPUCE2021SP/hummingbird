@@ -3,13 +3,14 @@ package com.github.peep.model;
 class RepoCommitsResponse: ArrayList<RepoCommitsResponseItem>()
 
 data class RepoCommitsResponseItem(
-    val author: Any,
+    val author: Author,
     val comments_url: String,
     val commit: Commit,
-    val committer: Any,
+    val committer: Committer,
     val html_url: String,
     val node_id: String,
-    val parents: List<Any>,
+    val message: String,
+    val parents: List<Parent>,
     val sha: String,
     val url: String
 )

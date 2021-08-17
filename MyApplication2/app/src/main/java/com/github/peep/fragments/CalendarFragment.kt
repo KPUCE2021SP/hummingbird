@@ -55,28 +55,25 @@ class CalendarFragment : Fragment() {
         var fllowers = 0
         var following = 0
         var repos:List<Repo>? = null
-        var repoCommitsResponse:RepoCommitsResponse? = null
+        var repoCommitsResponse:List<CommitRoot>? = null
         var events:EventResponse?=null
         var todayDate: Date =Date()
         var commitCount: Int = 0
+
     }
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("UseRequireInsteadOfGet")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
         val binding = FragmentCalendarBinding.inflate(inflater,container,false)
-        val settings: SharedPreferences = requireActivity().getSharedPreferences("hhhminme", MODE_PRIVATE)
+        //val settings: SharedPreferences = requireActivity().getSharedPreferences("testlogin", MODE_PRIVATE)
         val calendarView = binding.calendarView
         getUserCommitByRepos()
-
-        //getCommitByRepos()
-        getUserCommitCount()
+        // getCommitByRepos()
+        // getUserCommitCount()
         // default 날짜는 오늘 날짜로
         val selectedDate: CalendarDay = CalendarDay.today()
         var preDay: CalendarDay = CalendarDay.today()
@@ -121,6 +118,7 @@ class CalendarFragment : Fragment() {
             calendarView?.clearSelection()
         }
 
+
         calendarView.setOnMonthChangedListener { widget, date ->
             val mYear = date.year
             val mMonth = date.month
@@ -137,12 +135,12 @@ class CalendarFragment : Fragment() {
         mBinding = binding
         return mBinding?.root
     }
-
     fun getUserCommitCount(){
         var events:ArrayList<EventResponseItem>? = null
         val GithubService=ApiClient.client.create(GithubInterface::class.java)
         try{
-            val call=GithubService.getUserEvents("kim1387")
+            // TODO kim1387를 사용자 이름으로 수정해야함
+            val call=GithubService.getUserEvents("hhhminme")
             call.enqueue(object :Callback<EventResponse>{
                 @RequiresApi(Build.VERSION_CODES.O)
                 override fun onResponse(call: Call<EventResponse>, response: Response<EventResponse>) {
@@ -173,7 +171,6 @@ class CalendarFragment : Fragment() {
         }
 
     }
-
     fun getUserCommitByRepos(){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
         val call=GithubService.getUserRepos()
@@ -183,7 +180,11 @@ class CalendarFragment : Fragment() {
 
                 //Log.d("fullresponse", response.code().toString())
                 if (response.code() == 200) {
+
+                    // list<repos>
+
                     repos = response.body()
+
                     repos!!.forEach {
                         getReposCommits(it.name)
                         reposNameList.add(it.name)
@@ -200,30 +201,35 @@ class CalendarFragment : Fragment() {
         })
 
     }
-
     fun getReposCommits(name:String){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
-        val commitCall = GithubService.getRepoCommit("kim1387",name)
-        commitCall.enqueue(object :Callback<RepoCommitsResponse>{
+        // TODO kim1387를 사용자 이름으로 수정해야함
+        val commitCall = GithubService.getRepoCommit("hhhminme",name)
+        commitCall.enqueue(object :Callback<List<CommitRoot>>{
             @RequiresApi(Build.VERSION_CODES.O)
             @SuppressLint("SimpleDateFormat")
             override fun onResponse(
-                call: Call<RepoCommitsResponse>,
-                response: Response<RepoCommitsResponse>
+                call: Call<List<CommitRoot>>,
+                response: Response<List<CommitRoot>>
             ) {
                 if (response.code() == 200) {
                     val dateFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd")
                     repoCommitsResponse = response.body()
                     repoCommitsResponse!!.filter {
+                        Log.d("fullresponsetime", "onResponse: "+dateFormat.format(it.commit.author.date)+"----"+ dateFormat.format(todayDate))
                         dateFormat.format(it.commit.author.date)
-                            .equals(dateFormat.format(todayDate))
+                            // TODO kim1387를 사용자 이름으로 수정해야함
+                            .equals(dateFormat.format(todayDate))&&it.commit.committer.name.equals("hhhminme")
                     }.forEach {
                         commitCount += 1
-                        Log.d("fullresponse", "onResponse: ${dateFormat.format(it.commit.author.date)}")
-                        Log.d("fullresponse", commitCount.toString())
+                        Log.d("fullresponsedate", "onResponse: ${dateFormat.format(it.commit.author.date)}")
+                        Log.d("fullresponse ${name}", "message: "+it.commit.message)
 
                     }
                     commit_totalCommit.text = commitCount.toString()
+                    if (commitCount!=0){
+                        Log.d("fullresponse+개수", commitCount.toString())
+                    }
 
                     // Log.d("fullresponse", repoCommitsResponse!![0].count.toString())
                 } else {
@@ -231,15 +237,18 @@ class CalendarFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<RepoCommitsResponse>, t: Throwable) {
+            override fun onFailure(call: Call<List<CommitRoot>>, t: Throwable) {
                 TODO("Not yet implemented")
             }
 
         })
     }
 
+
+
     override fun onDestroyView() {
         mBinding = null
         super.onDestroyView()
     }
 }
+

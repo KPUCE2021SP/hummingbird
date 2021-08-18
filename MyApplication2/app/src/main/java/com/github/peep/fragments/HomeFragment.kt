@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
 
 
         userDb = UserDB.getInstance(requireContext() as MainActivity)
-
+        getUser()
         val addRunnable = Runnable {
             userDb?.userDao()?.updateHappy()
             userDb?.userDao()?.updateSad()

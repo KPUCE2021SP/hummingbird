@@ -14,7 +14,6 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.github.peep.DB.UserDB
 import com.github.peep.databinding.ActivityProfileBinding
-import com.github.peep.fragments.HomeFragment
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.User

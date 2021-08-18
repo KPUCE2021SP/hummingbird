@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -24,6 +25,7 @@ import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
 import com.github.peep.model.EventResponse
 import com.github.peep.model.EventResponseItem
+import com.github.peep.model.Events
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.Repo
@@ -39,14 +41,15 @@ class HomeFragment : Fragment() {
     companion object{
         var username:String=""
         var id  : String = ""
-        var repos:List<Repo>? = null
-        var events:EventResponse?=null
+        var events:Events?=null
+        var count:Int=0
     }
 
     private var mBinding : FragmentHomeBinding?=null
     private var userDb : UserDB? = null
     private lateinit var yPeepHome: AnimationDrawable
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -130,6 +133,7 @@ class HomeFragment : Fragment() {
         })
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun getEvents(username:String){
         count=0
         var GithubService=ApiClient.client.create((GithubInterface::class.java))
@@ -166,27 +170,6 @@ class HomeFragment : Fragment() {
             ft.setReorderingAllowed(false)
         }
         ft.detach(this).attach(this).commit()
-    }
-    
-    fun getUserEvents(username:String){
-        var GithubService=ApiClient.client.create(GithubInterface::class.java)
-        val call=GithubService.getUserEvents(prefs.getString("username",""))
-        call.enqueue(object :Callback<EventResponse>{
-            override fun onResponse(call: Call<EventResponse>, response: Response<EventResponse>) {
-                Log.d("fullresponse", response.toString())
-                if (response.code() == 200) {
-                    events=response.body()
-                    Toast.makeText(getActivity(), events!![1].created_at, Toast.LENGTH_SHORT).show()
-                } else {
-                    Log.e("err",response.code().toString())
-                }
-            }
-
-            override fun onFailure(call: Call<EventResponse>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-        })
-
     }
 
     override fun onDestroyView() {

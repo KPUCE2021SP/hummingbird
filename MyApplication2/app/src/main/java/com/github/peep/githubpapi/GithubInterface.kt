@@ -2,6 +2,7 @@ package com.peep.githubapitest.githubpapi
 
 import com.github.peep.model.CommitRoot
 import com.github.peep.model.EventResponse
+import com.github.peep.model.Events
 import com.github.peep.model.RepoCommitsResponse
 import com.peep.githubapitest.model.Repo
 import com.peep.githubapitest.model.User
@@ -29,4 +30,7 @@ interface GithubInterface {
     // Events older than 90 days will not be included (even if the total number of events in the timeline is less than 300).
     @GET("users/{username}/events")
     fun getUserEvents(@Path("username") username:String):Call<EventResponse>
+
+    @GET("users/{username}/events")
+    fun getEvents(@Path("username")username:String):Call<Events>?
 }

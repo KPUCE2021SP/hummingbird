@@ -1,21 +1,14 @@
 
 
 <!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://ovenapp.io/view/7yFxMZwFyZ10NiwMUPbTV39nFHsFDtfz/clQkh">
-    <img width="227" alt="스크린샷 2021-07-21 오전 10 05 15" src="https://user-images.githubusercontent.com/54930877/126414507-7129adca-947a-4707-86a0-dcb15871194f.png">
-  </a>
-
+   <p align="center"><img width="774" alt="스크린샷 2021-08-08 오후 12 39 18" src="https://user-images.githubusercontent.com/54930877/128619951-9727f580-fc66-4a88-a586-724262b16746.png"></p>
   <h3 align="center">PeepPeep</h3>
-
   <p align="center">
     커밋할수록 자라나는 귀여운 병아리들과 꾸준한 개발습관 들이기 어플
   <br />
     hummingbird 팀의 개발 문화와 가치가 모여있습니다.
     <br />
-    <a href="https://www.notion.so/PeepPeep-Home-91fd364357374b1abf066556b6cdda22"><strong>공식 노션 바로가기 »</strong></a>
-    <br />
+    <a href="https://www.notion.so/PeepPeep-Home-91fd364357374b1abf066556b6cdda22"><strong>공식 노션 바로가기 » </strong></a>
     <br />
     <a href="https://ovenapp.io/view/7yFxMZwFyZ10NiwMUPbTV39nFHsFDtfz#1CXFY">프로토타입 바로가기</a>
   </p>
@@ -38,7 +31,6 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
       </ul> -->
     </li>
-    <li><a href="#roadmap">RoadMap</a></li>
     <li><a href="#role">Role</a></li>
     <li><a href="#license">License</a></li>
   </ol>
@@ -69,22 +61,14 @@
 
 * [MVVM](https://developer.android.com/jetpack/guide?hl=ko)
 
-
-하지만 Cloud Firestore를 사용 하면 마지막 두 부분을 제거 할 수 있습니다. 이는 Firestore가 자체 로컬 캐시를 제공하기 때문입니다. 즉, 아래 다이어그램과 같이 모델 및 원격 데이터 소스를 제거하고 단일 저장소 클래스에 결합 할 수 있습니다.
-
 <img src="https://user-images.githubusercontent.com/54930877/126727419-a0559519-e34b-42f6-a800-0917cbb5d19f.jpg" width=600 height=500></img>
-
-
-<!-- 시스템 구성도 -->
-### System Configuration Diagram
-![93047604-d7d86880-f697-11ea-8e36-695d67b1e9e5](https://user-images.githubusercontent.com/54930877/126727611-32a60de1-e299-471c-abdc-2498aca8987b.png)
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
 아직 출시되지 않았어요! 조금만 더 기다려주실거죠?
 
-### Prerequisites
+<!-- ### Prerequisites
 프로젝트 수준 그래들
 ``` gradle
 ext.kotlin_version = "1.5.10"
@@ -100,22 +84,7 @@ minSdkVersion 16
 targetSdkVersion 30
 jvmTarget = '1.8'
 testImplementation 'junit:junit:4.+'
-```
-
-<!-- Roadmap -->
-## RoadMap (에정)
-- Sprint1(7/26 ~ 8/7)
-  - MVVP 아키텍쳐 패턴 적용, 로그인(Github API 연동)
-- Sprint2(8/8 ~ 8/21) 
-  - 병아리 키우기 홈화면, 병아리 수집 앨범
-- Sprint3(8/22 ~ 9/4)
-  - 커밋 달력, 월간 리포트
-- Sprint4(9/5 ~ 9/18)
-  - 농장 탐험, 버그 테스트 밒 배포
-
-
-![무제 (1)](https://user-images.githubusercontent.com/54930877/126888759-2dd84945-0ffa-43f4-a10e-a1596267be88.jpg)
-
+``` -->
 <!-- Role -->
 ## Role
 
@@ -124,7 +93,8 @@ testImplementation 'junit:junit:4.+'
 * [장아령](https://github.com/aristo0922) - 프론트엔드, 백엔드
 * [허민](https://github.com/hhhminme) - PM, 백엔드
 
-## [Pic Resources](https://drive.google.com/drive/folders/1MoTUfPHKy3nWBoaWGlHVKubtEVDGjHGA?usp=sharing)
+## [Pic Resources](https://drive.google.com/drive/folders/1wpO1NG04ezMb3JURnkGOzDb1_NTwERkL?usp=sharing)
+
 
 <!-- LICENSE -->
 ## License

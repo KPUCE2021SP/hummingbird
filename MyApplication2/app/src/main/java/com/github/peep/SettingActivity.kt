@@ -1,14 +1,11 @@
 package com.github.peep
 
-import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.widget.TextView
 import com.github.peep.databinding.ActivitySettingBinding
+import com.github.peep.decorator.AlertDesign
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.User
@@ -36,9 +33,8 @@ class SettingActivity : AppCompatActivity() {
         mBinding.settingRepoBtn.setOnClickListener {
             showSettingPopup("권한을 변경하시겠습니까?\n변경 시, 재로그인이 필요합니다.")
         }
-
-
     }
+
     fun getUser(){
         var GithubService= ApiClient.client.create(GithubInterface::class.java)
         val call=GithubService.getUser()
@@ -63,23 +59,40 @@ class SettingActivity : AppCompatActivity() {
         App.prefs.remove("token")
         android.webkit.CookieManager.getInstance().removeAllCookie()
     }
+
     fun showSettingPopup(string : String){
-        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val view = inflater.inflate(R.layout.alert_popup,null)
-        var textView = view.findViewById<TextView>(R.id.alert_textview)
-        textView.text = string
-        val alertDialog = AlertDialog.Builder(this)
-            .setTitle("권한 설정 변경")
-            .setPositiveButton("확인"){ dialog, which ->
+//        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+//        val view = inflater.inflate(R.layout.alert_popup,null)
+//        var textView = view.findViewById<TextView>(R.id.alert_textview)
+//        textView.text = string
+
+        AlertDesign(this)
+            .setTitle("권한 변경")
+            .setMessage(string)
+            .setPositiveButton("예") {
                 logout()
                 var intent=Intent(this,HomeActivity::class.java)
                 finish()
                 startActivity(intent)
             }
-            .setNegativeButton("취소",null)
-            .create()
+            .setNegativeButton("취소"){
+                finish()
+            }
 
-        alertDialog.setView(view)
-        alertDialog.show()
+            .show()
+
+//        val alertDialog = AlertDesign.CustomDialogBuilder()
+//            .setTitle("권한 설정 변경")
+//            .setPositiveButton("확인"){ dialog, which ->
+//                logout()
+//                var intent=Intent(this,HomeActivity::class.java)
+//                finish()
+//                startActivity(intent)
+//            }
+//            .setNegativeButton("취소",null)
+//            .create()
+//
+//        alertDialog.setView(view)
+//        alertDialog.show()
     }
 }

@@ -27,8 +27,6 @@ class CollectionActicity : AppCompatActivity() {
         //firebase 에 연동되어 있지 않기 때문에 임의의 더미 데이터 삽입
         datas.apply {
             add(CollectionData(img = R.drawable.peep_illust, name = "일러삡", count = 0))
-            add(CollectionData(img = R.drawable.happybasic, name = "해삡", count = 1))
-            add(CollectionData(img = R.drawable.sadaction, name = "슬리삡", count = 0))
 
             collectionAdapter.datas = datas
 

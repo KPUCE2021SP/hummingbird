@@ -4,12 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-<<<<<<< HEAD
-import android.view.LayoutInflater
-import android.widget.TextView
 import com.github.peep.DB.UserDB
-=======
->>>>>>> origin/ah-2
+
 import com.github.peep.databinding.ActivitySettingBinding
 import com.github.peep.decorator.AlertDesign
 import com.peep.githubapitest.githubpapi.ApiClient
@@ -22,18 +18,18 @@ import retrofit2.Response
 
 class SettingActivity : AppCompatActivity() {
     lateinit var mBinding: ActivitySettingBinding
-    private var userDb : UserDB? = null
+    //private var userDb : UserDB? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
-        userDb = UserDB.getInstance(this)
+        //userDb = UserDB.getInstance(this)
 
-        val removeRunnable = Runnable{
-            userDb?.userDao()?.deleteAll()
-        }
+//        val removeRunnable = Runnable{
+//            userDb?.userDao()?.deleteAll()
+//        }
 
 
         //사용자 프로필, 이름 가져오기
@@ -48,15 +44,11 @@ class SettingActivity : AppCompatActivity() {
         mBinding.settingRepoBtn.setOnClickListener {
             showSettingPopup("권한을 변경하시겠습니까?\n변경 시, 재로그인이 필요합니다.")
         }
-<<<<<<< HEAD
         // 병아리 초기화
         mBinding.settingPeepInitBtn.setOnClickListener {
-            val removeThread = Thread(removeRunnable)
-            removeThread.start()
+//            val removeThread = Thread(removeRunnable)
+//            removeThread.start()
         }
-
-=======
->>>>>>> origin/ah-2
     }
 
     fun getUser(){

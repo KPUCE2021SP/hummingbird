@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.peep.DB.User
 import com.github.peep.DB.UserDB
 import com.github.peep.view.CollectionAdapter
+import com.github.peep.view.CollectionData
+import com.github.peep.view.HorizontalItemDecorator
+import com.github.peep.view.VerticalItemDecorator
 
 import kotlinx.android.synthetic.main.activity_collection.*
 import java.lang.Exception
@@ -19,41 +22,41 @@ import java.lang.Exception
 class CollectionActicity : AppCompatActivity() {
     private var userDb: UserDB? = null
     private var userList = listOf<User>()
-    lateinit var mAdapter: CollectionAdapter
-
-    val newUser = User() //새로운 객체를 생성, id 이외의 값을 지정 후 DB에 추가
+    lateinit var collectionAdapter: CollectionAdapter
+    val datas = mutableListOf<CollectionData>()
+    //val newUser = User() //새로운 객체를 생성, id 이외의 값을 지정 후 DB에 추가
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection)
-        userDb = UserDB.getInstance(this)
-        mAdapter = CollectionAdapter(this, userList)
+        //userDb = UserDB.getInstance(this)
 
         //리사이클 뷰에 주입된 데이터를 뿌려줌
-        val r = Runnable {
-            try {
-                userList = userDb?.userDao()?.getAll()!!
-                mAdapter = CollectionAdapter(this, userList)
-                mAdapter.notifyDataSetChanged()
-
-                mRecyclerView.adapter = mAdapter
-                mRecyclerView.layoutManager = LinearLayoutManager(this)
-                mRecyclerView.setHasFixedSize(true)
-            } catch (e: Exception) {
-                Log.d("tag", "Error - $e")
-            }
-        }
-
-        val rthread = Thread(r)
-        rthread.start()
+//        val r = Runnable {
+//            try {
+//                userList = userDb?.userDao()?.getAll()!!
+//                mAdapter = CollectionAdapter(this, userList)
+//                mAdapter.notifyDataSetChanged()
+//
+//                mRecyclerView.adapter = mAdapter
+//                mRecyclerView.layoutManager = LinearLayoutManager(this)
+//                mRecyclerView.setHasFixedSize(true)
+//            } catch (e: Exception) {
+//                Log.d("tag", "Error - $e")
+//            }
+//        }
+//
+//        val rthread = Thread(r)
+//        rthread.start()
     }
 
-<<<<<<< HEAD
-    override fun onDestroy(){
+
+    override fun onDestroy() {
         UserDB.destroyInstance()
         userDb = null
         super.onDestroy()
-=======
+    }
+
     private fun initRecycler() {
         collectionAdapter = CollectionAdapter(this)
         rv_profile.adapter = collectionAdapter
@@ -68,6 +71,5 @@ class CollectionActicity : AppCompatActivity() {
             rv_profile.addItemDecoration(HorizontalItemDecorator(10))
             collectionAdapter.notifyDataSetChanged()
         }
->>>>>>> origin/ah-2
     }
 }

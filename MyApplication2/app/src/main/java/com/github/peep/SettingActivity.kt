@@ -91,10 +91,7 @@ class SettingActivity : AppCompatActivity() {
                 finish()
                 startActivity(intent)
             }
-            .setNegativeButton("취소"){
-                finish()
-            }
-
+            .setNegativeButton("취소"){}
             .show()
 
 //        val alertDialog = AlertDesign.CustomDialogBuilder()

@@ -167,11 +167,4 @@ class HomeFragment : Fragment() {
         }
         ft.detach(this).attach(this).commit()
     }
-
-    override fun onDestroyView() {
-        mBinding = null
-        super.onDestroyView()
-    }
-
-
 }

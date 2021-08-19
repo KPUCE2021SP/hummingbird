@@ -90,11 +90,7 @@ class HomeFragment : Fragment() {
             ) { dialog, which -> dialog.dismiss() }
             ad.show()
         }
-        //컬렉션 이동
-        mBinding?.peepCollectionBtn?.setOnClickListener {
-            var intent = Intent(activity,CollectionActicity::class.java)
-            startActivity(intent)
-        }
+        
 
         mBinding?.peepHomeImageview?.apply {
             setBackgroundResource(R.drawable.yellow_peep_ani)

@@ -36,21 +36,7 @@
             app:srcCompat="@drawable/ic_baseline_autorenew_24"
             app:tint="@color/colorPeep" />
 
-        <ImageButton
-            android:id="@+id/peep_collection_btn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_toStartOf="@+id/setting_btn"
-            android:layout_toLeftOf="@+id/setting_btn"
-            android:adjustViewBounds="true"
-            android:layout_centerVertical = "true"
-            android:backgroundTint="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toStartOf="@+id/setting_btn"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_peep" />
+
 
         <ImageButton
             android:id="@+id/setting_btn"
@@ -111,16 +97,16 @@
             android:textSize="40dp"
             app:layout_constraintBottom_toTopOf="@+id/commit_exp_progressbar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintHorizontal_bias="0.335"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/peep_home_imageview"
-            app:layout_constraintVertical_bias="0.34" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:id="@+id/commit_exp_info_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="52dp"
             app:layout_constraintEnd_toStartOf="@+id/commit_exp_progressbar"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -154,6 +140,20 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/today_commit_textview" />
+
+        <TextView
+            android:id="@+id/current_level_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="현재 레벨 : 0"
+            android:textSize="20dp"
+            android:fontFamily="@font/font_title"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.313"
+            app:layout_constraintStart_toEndOf="@+id/peep_name"
+            app:layout_constraintTop_toBottomOf="@+id/peep_home_imageview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

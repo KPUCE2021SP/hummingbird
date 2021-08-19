@@ -20,8 +20,8 @@ import java.lang.Exception
 
 //큰그림은 CatDataBase의 Room.databaseBuilder를 호출해 새로운 db 객체를 만들고. 데이터를 읽기/쓰기는 서브 쓰레드에서 작업
 class CollectionActicity : AppCompatActivity() {
-    private var userDb: UserDB? = null
-    private var userList = listOf<User>()
+//    private var userDb: UserDB? = null
+//    private var userList = listOf<User>()
     lateinit var collectionAdapter: CollectionAdapter
     val datas = mutableListOf<CollectionData>()
     //val newUser = User() //새로운 객체를 생성, id 이외의 값을 지정 후 DB에 추가
@@ -48,14 +48,15 @@ class CollectionActicity : AppCompatActivity() {
 //
 //        val rthread = Thread(r)
 //        rthread.start()
+
+        initRecycler()
     }
 
-
-    override fun onDestroy() {
-        UserDB.destroyInstance()
-        userDb = null
-        super.onDestroy()
-    }
+//    override fun onDestroy() {
+//        UserDB.destroyInstance()
+//        userDb = null
+//        super.onDestroy()
+//    }
 
     private fun initRecycler() {
         collectionAdapter = CollectionAdapter(this)

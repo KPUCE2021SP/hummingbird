@@ -48,9 +48,26 @@ class CollectionActicity : AppCompatActivity() {
         rthread.start()
     }
 
+<<<<<<< HEAD
     override fun onDestroy(){
         UserDB.destroyInstance()
         userDb = null
         super.onDestroy()
+=======
+    private fun initRecycler() {
+        collectionAdapter = CollectionAdapter(this)
+        rv_profile.adapter = collectionAdapter
+
+        //firebase 에 연동되어 있지 않기 때문에 임의의 더미 데이터 삽입
+        datas.apply {
+            add(CollectionData(img = R.drawable.peep_illust, name = "일러삡", count = 0))
+
+            collectionAdapter.datas = datas
+
+            rv_profile.addItemDecoration(VerticalItemDecorator(20))
+            rv_profile.addItemDecoration(HorizontalItemDecorator(10))
+            collectionAdapter.notifyDataSetChanged()
+        }
+>>>>>>> origin/ah-2
     }
 }

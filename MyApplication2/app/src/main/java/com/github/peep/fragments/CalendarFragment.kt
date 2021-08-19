@@ -58,17 +58,13 @@ class CalendarFragment : Fragment() {
         //val settings: SharedPreferences = requireActivity().getSharedPreferences("testlogin", MODE_PRIVATE)
         val calendarView = binding.calendarView
         getUserCommitByRepos()
-        // default 날짜는 오늘 날짜로
-        val selectedDate: CalendarDay = CalendarDay.today()
         var preDay: CalendarDay = CalendarDay.today()
         calendarView.addDecorator(CalendarTodayDecorator(activity!!))//오늘 날짜
         calendarView.setOnDateChangedListener { widget, date, selected ->
             loading_img.visibility = View.VISIBLE//로딩화면 나타나기
-            val Year = date.year.toString()
-            var dateScore : String = Year
             commitCount = 0
             todayDate = date.date
-            Log.d("fullresponse", "Date: "+ todayDate)
+            Log.d("fullresponse", "selected Date"+ todayDate)
             getUserCommitByRepos()
             //하나씩 선택되는 drawable
             calendarView.addDecorator(CalendarUnselectedDecorator(preDay,requireActivity()))
@@ -81,7 +77,7 @@ class CalendarFragment : Fragment() {
 
             valueList.add("2")
             valueList.add(commitCount.toString())
-            valueList.add("3")
+            valueList.add("햅피햅삡")
             //count, score, levelUp 순으로
 
             commit_score.text = valueList[0]
@@ -91,15 +87,13 @@ class CalendarFragment : Fragment() {
                 commit_item.textSize = 14F
                 commit_item.setTextColor(resources.getColor(R.color.colorText))
             }else{
-                Log.d("onCreateView", "onCreateView: else ")
                 commitLayout.visibility = View.VISIBLE
                 noCommitText.visibility = View.GONE
                 commit_item.text = valueList[2]
                 commit_item.textSize = 20F
                 commit_item.setTextColor(resources.getColor(R.color.colorTextDark))
             }
-            Log.d("onCreateView", "onCreateView: ")
-            calendarView?.clearSelection()
+            calendarView.clearSelection()
         }
 
 
@@ -137,7 +131,7 @@ class CalendarFragment : Fragment() {
                         getReposCommits(it.name)
                         reposNameList.add(it.name)
                     }
-                    Log.d("fullresponse", reposNameList.toString()+reposNameList.count())
+                    Log.d("fullresponse", "레포 개수"+reposNameList.count())
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -151,8 +145,7 @@ class CalendarFragment : Fragment() {
     }
     fun getReposCommits(name:String){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
-        // TODO kim1387를 사용자 이름으로 수정해야함
-        Log.d("fullresponse", "getReposCommits: username"+ prefs.getString("username",""))
+        //Log.d("fullresponse", "getReposCommits: username"+ prefs.getString("username",""))
         val commitCall = GithubService.getRepoCommit(prefs.getString("username",""),name)
         commitCall.enqueue(object :Callback<List<CommitRoot>>{
             @RequiresApi(Build.VERSION_CODES.O)
@@ -165,18 +158,15 @@ class CalendarFragment : Fragment() {
                     val dateFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd")
                     repoCommitsResponse = response.body()
                     repoCommitsResponse!!.filter {
-                        Log.d("fullresponsetime", "onResponse: "+dateFormat.format(it.commit.author.date)+"----"+ dateFormat.format(todayDate))
                         dateFormat.format(it.commit.author.date)
-                            // TODO kim1387를 사용자 이름으로 수정해야함
                             .equals(dateFormat.format(todayDate))&&it.commit.committer.name.equals(prefs.getString("username",""))
                     }.forEach {
                         commitCount += 1
-                        Log.d("fullresponsedate", "onResponse: ${dateFormat.format(it.commit.author.date)}")
                         Log.d("fullresponse ${name}", "message: "+it.commit.message)
 
                     }
-                    commit_totalCommit.text = commitCount.toString()
                     if (commitCount!=0){
+                        commit_totalCommit.text = commitCount.toString()
                         Log.d("fullresponse+개수", commitCount.toString())
                     }
 

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 <!--    //배경색-->
-    <solid android:color="#fff" />
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#fff" />
 
-    <!--    //선색-->
-    <stroke
-        android:width="2dp"
-        android:color="@color/colorPeep" />
-
-    <corners android:radius="12dp"  />
-
-</shape>
+            <!--    //선색-->
+            <stroke
+                android:width="2dp"
+                android:color="@color/colorPeep" />
+            <corners android:radius="12dip"  />
+        </shape>
+    </item>
+</layer-list>

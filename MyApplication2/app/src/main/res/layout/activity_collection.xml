@@ -51,7 +51,7 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mRecyclerView"
+        android:id="@+id/rv_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
@@ -61,7 +61,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_recycler" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

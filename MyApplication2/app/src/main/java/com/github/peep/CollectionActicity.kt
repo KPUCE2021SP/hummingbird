@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.peep.DB.User
 import com.github.peep.DB.UserDB
 import com.github.peep.view.CollectionAdapter
+import com.github.peep.view.CollectionData
+import com.github.peep.view.HorizontalItemDecorator
+import com.github.peep.view.VerticalItemDecorator
 
 import kotlinx.android.synthetic.main.activity_collection.*
 import java.lang.Exception
@@ -17,40 +20,57 @@ import java.lang.Exception
 
 //큰그림은 CatDataBase의 Room.databaseBuilder를 호출해 새로운 db 객체를 만들고. 데이터를 읽기/쓰기는 서브 쓰레드에서 작업
 class CollectionActicity : AppCompatActivity() {
-    private var userDb: UserDB? = null
-    private var userList = listOf<User>()
-    lateinit var mAdapter: CollectionAdapter
-
-    val newUser = User() //새로운 객체를 생성, id 이외의 값을 지정 후 DB에 추가
+//    private var userDb: UserDB? = null
+//    private var userList = listOf<User>()
+    lateinit var collectionAdapter: CollectionAdapter
+    val datas = mutableListOf<CollectionData>()
+    //val newUser = User() //새로운 객체를 생성, id 이외의 값을 지정 후 DB에 추가
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection)
-        userDb = UserDB.getInstance(this)
-        mAdapter = CollectionAdapter(this, userList)
+        //userDb = UserDB.getInstance(this)
 
         //리사이클 뷰에 주입된 데이터를 뿌려줌
-        val r = Runnable {
-            try {
-                userList = userDb?.userDao()?.getAll()!!
-                mAdapter = CollectionAdapter(this, userList)
-                mAdapter.notifyDataSetChanged()
+//        val r = Runnable {
+//            try {
+//                userList = userDb?.userDao()?.getAll()!!
+//                mAdapter = CollectionAdapter(this, userList)
+//                mAdapter.notifyDataSetChanged()
+//
+//                mRecyclerView.adapter = mAdapter
+//                mRecyclerView.layoutManager = LinearLayoutManager(this)
+//                mRecyclerView.setHasFixedSize(true)
+//            } catch (e: Exception) {
+//                Log.d("tag", "Error - $e")
+//            }
+//        }
+//
+//        val rthread = Thread(r)
+//        rthread.start()
 
-                mRecyclerView.adapter = mAdapter
-                mRecyclerView.layoutManager = LinearLayoutManager(this)
-                mRecyclerView.setHasFixedSize(true)
-            } catch (e: Exception) {
-                Log.d("tag", "Error - $e")
-            }
-        }
-
-        val rthread = Thread(r)
-        rthread.start()
+        initRecycler()
     }
 
-    override fun onDestroy(){
-        UserDB.destroyInstance()
-        userDb = null
-        super.onDestroy()
+//    override fun onDestroy() {
+//        UserDB.destroyInstance()
+//        userDb = null
+//        super.onDestroy()
+//    }
+
+    private fun initRecycler() {
+        collectionAdapter = CollectionAdapter(this)
+        rv_profile.adapter = collectionAdapter
+
+        //firebase 에 연동되어 있지 않기 때문에 임의의 더미 데이터 삽입
+        datas.apply {
+            add(CollectionData(img = R.drawable.peep_illust, name = "일러삡", count = 0))
+
+            collectionAdapter.datas = datas
+
+            rv_profile.addItemDecoration(VerticalItemDecorator(20))
+            rv_profile.addItemDecoration(HorizontalItemDecorator(10))
+            collectionAdapter.notifyDataSetChanged()
+        }
     }
 }

@@ -1,15 +1,13 @@
 package com.github.peep
 
-import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.widget.TextView
 import com.github.peep.DB.UserDB
+
 import com.github.peep.databinding.ActivitySettingBinding
+import com.github.peep.decorator.AlertDesign
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.User
@@ -20,18 +18,18 @@ import retrofit2.Response
 
 class SettingActivity : AppCompatActivity() {
     lateinit var mBinding: ActivitySettingBinding
-    private var userDb : UserDB? = null
+    //private var userDb : UserDB? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
-        userDb = UserDB.getInstance(this)
+        //userDb = UserDB.getInstance(this)
 
-        val removeRunnable = Runnable{
-            userDb?.userDao()?.deleteAll()
-        }
+//        val removeRunnable = Runnable{
+//            userDb?.userDao()?.deleteAll()
+//        }
 
 
         //사용자 프로필, 이름 가져오기
@@ -48,11 +46,11 @@ class SettingActivity : AppCompatActivity() {
         }
         // 병아리 초기화
         mBinding.settingPeepInitBtn.setOnClickListener {
-            val removeThread = Thread(removeRunnable)
-            removeThread.start()
+//            val removeThread = Thread(removeRunnable)
+//            removeThread.start()
         }
-
     }
+
     fun getUser(){
         var GithubService= ApiClient.client.create(GithubInterface::class.java)
         val call=GithubService.getUser()
@@ -77,24 +75,41 @@ class SettingActivity : AppCompatActivity() {
         App.prefs.remove("token")
         android.webkit.CookieManager.getInstance().removeAllCookie()
     }
+
     fun showSettingPopup(string : String){
-        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val view = inflater.inflate(R.layout.alert_popup,null)
-        var textView = view.findViewById<TextView>(R.id.alert_textview)
-        textView.text = string
-        val alertDialog = AlertDialog.Builder(this)
-            .setTitle("권한 설정 변경")
-            .setPositiveButton("확인"){ dialog, which ->
+//        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+//        val view = inflater.inflate(R.layout.alert_popup,null)
+//        var textView = view.findViewById<TextView>(R.id.alert_textview)
+//        textView.text = string
+
+        AlertDesign(this)
+            .setTitle("권한 변경")
+            .setMessage(string)
+            .setPositiveButton("예") {
                 logout()
                 var intent=Intent(this,HomeActivity::class.java)
                 finish()
                 startActivity(intent)
             }
-            .setNegativeButton("취소",null)
-            .create()
+            .setNegativeButton("취소"){
+                finish()
+            }
 
-        alertDialog.setView(view)
-        alertDialog.show()
+            .show()
+
+//        val alertDialog = AlertDesign.CustomDialogBuilder()
+//            .setTitle("권한 설정 변경")
+//            .setPositiveButton("확인"){ dialog, which ->
+//                logout()
+//                var intent=Intent(this,HomeActivity::class.java)
+//                finish()
+//                startActivity(intent)
+//            }
+//            .setNegativeButton("취소",null)
+//            .create()
+//
+//        alertDialog.setView(view)
+//        alertDialog.show()
     }
     override fun onDestroy() {
         UserDB.destroyInstance()

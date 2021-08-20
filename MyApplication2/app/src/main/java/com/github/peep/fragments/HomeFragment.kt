@@ -10,25 +10,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.github.peep.App.Companion.prefs
-import com.github.peep.CollectionActicity
 import kotlinx.android.synthetic.main.fragment_home.*
 import com.github.peep.DB.UserDB
 import com.github.peep.MainActivity
 import com.github.peep.R
 import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
-import com.github.peep.model.EventResponse
-import com.github.peep.model.EventResponseItem
 import com.github.peep.model.Events
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
-import com.peep.githubapitest.model.Repo
 import com.peep.githubapitest.model.User
 import retrofit2.Call
 import retrofit2.Callback
@@ -93,7 +88,7 @@ class HomeFragment : Fragment() {
         
 
         mBinding?.peepHomeImageview?.apply {
-            setBackgroundResource(R.drawable.yellow_peep_ani)
+            setBackgroundResource(R.drawable.yellow_Hapeep_ani)
             yPeepHome = background as AnimationDrawable
             yPeepHome.start()
         }

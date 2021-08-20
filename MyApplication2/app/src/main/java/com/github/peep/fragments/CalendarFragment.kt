@@ -88,14 +88,12 @@ class CalendarFragment : Fragment() {
             commit_totalCommit.text = commitCount.toString()
             if(valueList[2].isEmpty()){
                 commit_item.text= "없음!"
-                commit_item.textSize = 14F
                 commit_item.setTextColor(resources.getColor(R.color.colorText))
             }else{
                 Log.d("onCreateView", "onCreateView: else ")
                 commitLayout.visibility = View.VISIBLE
                 noCommitText.visibility = View.GONE
                 commit_item.text = valueList[2]
-                commit_item.textSize = 20F
                 commit_item.setTextColor(resources.getColor(R.color.colorTextDark))
             }
             Log.d("onCreateView", "onCreateView: ")

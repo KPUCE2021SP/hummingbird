@@ -142,11 +142,17 @@ class HomeFragment : Fragment() {
     }
 
     fun getEvents(username:String){
-        count=0
+        count=0 //count 초기화
+
         var GithubService=ApiClient.client.create((GithubInterface::class.java))
         val call=GithubService.getEvents(username)
-        val date: LocalDate = LocalDate.now()
-        Log.d("date",date.toString())
+        val now: LocalDate = LocalDate.now() //현재 날짜
+
+        val date:String=prefs.getString("date","") //prefs의 date 가져오기
+
+        if(date==""||date!=now.toString()){ //date가 현재와 다르거나 설정된 적이 없으면 date 설정
+            prefs.setString("date",now.toString())
+        }
         call!!.enqueue(object :Callback<Events>{
             override fun onResponse(call: Call<Events>, response: Response<Events>) {
                 Log.d("fullresponse", response.toString())

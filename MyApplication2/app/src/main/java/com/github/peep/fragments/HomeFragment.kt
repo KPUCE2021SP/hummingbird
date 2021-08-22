@@ -143,6 +143,7 @@ class HomeFragment : Fragment() {
 
     fun getEvents(username:String){
         count=0 //count 초기화
+        var savedCount:Int=0
 
         var GithubService=ApiClient.client.create((GithubInterface::class.java))
         val call=GithubService.getEvents(username)
@@ -152,6 +153,7 @@ class HomeFragment : Fragment() {
 
         if(date==""||date!=now.toString()){ //date가 현재와 다르거나 설정된 적이 없으면 date 설정
             prefs.setString("date",now.toString())
+            prefs.remove("count") //날짜가 변경되었기 때문에 반영된 count 정보 삭제
         }
         call!!.enqueue(object :Callback<Events>{
             override fun onResponse(call: Call<Events>, response: Response<Events>) {
@@ -163,10 +165,35 @@ class HomeFragment : Fragment() {
                         if(events!![i].type=="PushEvent"&&
                             events!![i].created_at.substring(0,10)==date.toString()&&
                                 events!![i].payload.ref=="refs/heads/main"){
-                            count++
+                            count++ //push Event count
                         }
                     }
-                    today_commit_count_textview.setText(count.toString())
+
+                    if(prefs.getString("count","")==""){ //count가 설정된 적 없을 경우
+                        prefs.setString("count",count.toString()) //반영된 count 정보 갱신
+                        today_commit_count_textview.setText(count.toString())
+                        if(count<2&&count!=0){
+                            commit_exp_progressbar.incrementProgressBy(20 * count)
+                        }
+                        else{
+                            commit_exp_progressbar.incrementProgressBy(20)
+                        }
+                    }
+                    else{ //count가 설정된 적 있을 경우
+                        savedCount=prefs.getString("count","").toInt()
+                        if(savedCount<2){ //반영된 count가 2 미만일 경우만 반영됨
+                            if(count>2){
+                                commit_exp_progressbar.incrementProgressBy(20 * (2-savedCount)) //최대 점수는 2점이기 때문에
+                            }
+                            else if((count<=2)&&(count>0)){
+                                commit_exp_progressbar.incrementProgressBy(20 * (count-savedCount)) //현재 카운트에서 이미 반영된 카운트 빼기]
+                            }
+                            commit_exp_progressbar.incrementProgressBy(20 * (count))
+                        }
+                        prefs.setString("count",count.toString()) //반영된 count 정보 갱신
+                        today_commit_count_textview.setText(count.toString())
+                    }
+
                 } else {
                     Log.e("err",response.code().toString())
                 }

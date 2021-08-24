@@ -2,6 +2,9 @@ package com.github.peep
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
+import androidx.navigation.NavOptions
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.github.peep.DB.UserDB
@@ -31,6 +34,21 @@ class MainActivity : AppCompatActivity(){
 
         //바텀 네비게이션뷰와 네비게이션 뷰를 묶어준다.
         NavigationUI.setupWithNavController(mBinding.myBottomNav, navController)
+
+//        supportFragmentManager.commit{
+//            setCustomAnimations(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim,
+//                        R.anim.nav_default_pop_enter_anim, R.anim.nav_default_pop_exit_anim)
+//            addToBackStack(null)
+////            replace(R.id.nav_host_fragment_container, navHostFragment.onContextItemSelected)
+////            addToBackStack(null)
+//        }
+
+//        val animationOptions = NavOptions.Builder().setEnterAnim(R.anim.nav_enter_anim)
+//            .setExitAnim(R.anim.nav_exit_anim)
+//            .setPopEnterAnim(R.anim.nav_pop_enter_anim)
+//            .setPopExitAnim(R.anim.nav_pop_exit_anim).build()
+//
+//        findNavController().navigate(MyFragmentDirections.toMainActivity(), animationOptions)
     }
 
 }

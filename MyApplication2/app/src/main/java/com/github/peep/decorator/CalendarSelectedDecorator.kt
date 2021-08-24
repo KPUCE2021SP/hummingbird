@@ -4,13 +4,16 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.text.style.ForegroundColorSpan
 import android.util.Log
+import androidx.annotation.RequiresApi
 import com.github.peep.R
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.DayViewDecorator
 import com.prolificinteractive.materialcalendarview.DayViewFacade
 
+@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 class CalendarSelectedDecorator @SuppressLint("UseCompatLoadingForDrawables") constructor(
     dates: CalendarDay,
     context: Activity

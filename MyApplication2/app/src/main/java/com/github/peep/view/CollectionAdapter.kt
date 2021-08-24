@@ -38,6 +38,5 @@ class CollectionAdapter(private val context: Context) : RecyclerView.Adapter<Col
             txtCount.text = item.count.toString()
             Glide.with(itemView).load(item.img).into(imgProfile)
         }
-
     }
 }

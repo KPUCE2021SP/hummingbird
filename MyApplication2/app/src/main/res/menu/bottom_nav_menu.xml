@@ -11,8 +11,8 @@
         android:icon="@drawable/ic_baseline_home_24"
         />
     <item
-        android:id="@+id/findFragment"
-        android:title="농장탐험"
+        android:id="@+id/acticity_collection"
+        android:title="컬렉션"
         android:icon="@drawable/ic_baseline_find_in_page_24"
         />
 

@@ -88,7 +88,7 @@ class HomeFragment : Fragment() {
         
 
         mBinding?.peepHomeImageview?.apply {
-            setBackgroundResource(R.drawable.yellow_Hapeep_ani)
+            setBackgroundResource(R.drawable.yellow_hapeep_ani)
             yPeepHome = background as AnimationDrawable
             yPeepHome.start()
         }

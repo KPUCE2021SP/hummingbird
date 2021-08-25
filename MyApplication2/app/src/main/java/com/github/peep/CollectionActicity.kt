@@ -1,5 +1,6 @@
 package com.github.peep
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -50,6 +51,11 @@ class CollectionActicity : AppCompatActivity() {
 //        rthread.start()
 
         initRecycler()
+
+        renew_btn.setOnClickListener {
+            setResult(Activity.RESULT_OK)
+            finish()
+        }
     }
 
 //    override fun onDestroy() {

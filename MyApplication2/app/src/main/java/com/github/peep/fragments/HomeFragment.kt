@@ -1,5 +1,6 @@
 package com.github.peep.fragments
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
@@ -17,19 +18,16 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.github.peep.App.Companion.prefs
 import com.github.peep.CollectionActicity
-import kotlinx.android.synthetic.main.fragment_home.*
 import com.github.peep.DB.UserDB
 import com.github.peep.MainActivity
 import com.github.peep.R
 import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
-import com.github.peep.model.EventResponse
-import com.github.peep.model.EventResponseItem
 import com.github.peep.model.Events
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
-import com.peep.githubapitest.model.Repo
 import com.peep.githubapitest.model.User
+import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -78,6 +76,11 @@ class HomeFragment : Fragment() {
             var intent = Intent(activity,SettingActivity::class.java)
             startActivity(intent)
         }
+        //병아리 졸업
+        mBinding?.gradBtn?.setOnClickListener {
+            var intent = Intent(activity,CollectionActicity::class.java)
+            startActivityForResult(intent,100)
+        }
 
         //경험치 정보
         mBinding?.commitExpInfoBtn?.setOnClickListener {
@@ -104,6 +107,18 @@ class HomeFragment : Fragment() {
         }
 
         return mBinding?.root
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(resultCode == Activity.RESULT_OK){
+            when(requestCode){
+                100 -> {
+                    Toast.makeText(activity,"새로운 병아리 등장",Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
     fun getUser(){

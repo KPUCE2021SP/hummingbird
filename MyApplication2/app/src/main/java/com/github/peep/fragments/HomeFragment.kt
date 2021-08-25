@@ -16,12 +16,9 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.github.peep.*
 import com.github.peep.App.Companion.prefs
-import com.github.peep.CollectionActicity
 import com.github.peep.DB.UserDB
-import com.github.peep.MainActivity
-import com.github.peep.R
-import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
 import com.github.peep.model.Events
 import com.peep.githubapitest.githubpapi.ApiClient
@@ -41,8 +38,10 @@ class HomeFragment : Fragment() {
         var id  : String = ""
         var events:Events?=null
         var count:Int=0
+        //유저가 처음 받는 기본 병아리는 yellow
+        var currentPeep : String = "yellow"
     }
-
+    private lateinit var nextPeep : String
     private var mBinding : FragmentHomeBinding?=null
     private var userDb : UserDB? = null
     private lateinit var yPeepHome: AnimationDrawable
@@ -78,7 +77,8 @@ class HomeFragment : Fragment() {
         }
         //병아리 졸업
         mBinding?.gradBtn?.setOnClickListener {
-            var intent = Intent(activity,CollectionActicity::class.java)
+            var intent = Intent(activity,PeepSelectActivity::class.java)
+            intent.putExtra("currentPeep", currentPeep)
             startActivityForResult(intent,100)
         }
 
@@ -95,31 +95,64 @@ class HomeFragment : Fragment() {
         }
         
 
-        mBinding?.peepHomeImageview?.apply {
-            setBackgroundResource(R.drawable.yellow_peep_ani)
-            yPeepHome = background as AnimationDrawable
-            yPeepHome.start()
-        }
+//        mBinding?.peepHomeImageview?.apply {
+//            setBackgroundResource(R.drawable.yellow_peep_ani)
+//            yPeepHome = background as AnimationDrawable
+//            yPeepHome.start()
+//        }
 
-        mBinding?.peepHomeImageview?.setOnClickListener {
-            val animation = AnimationUtils.loadAnimation(activity, R.anim.rotation)
-            peep_home_imageview.startAnimation(animation)
-        }
+//        mBinding?.peepHomeImageview?.setOnClickListener {
+//            val animation = AnimationUtils.loadAnimation(activity, R.anim.rotation)
+//            peep_home_imageview.startAnimation(animation)
+//        }
 
         return mBinding?.root
     }
-
+    //커밍 기능
+    //새로운 병아리를 받은 후 졸업된다.
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if(resultCode == Activity.RESULT_OK){
             when(requestCode){
                 100 -> {
-                    Toast.makeText(activity,"새로운 병아리 등장",Toast.LENGTH_SHORT).show()
+                    nextPeep= data!!.getStringExtra("nextPeep")!!
+                    currentPeep = nextPeep
+                    when(currentPeep){
+                        //기본 병아리 획득
+                        "yellow" -> {
+                            Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
+                            mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral)
+                        }
+                        //빨간 병아리
+                        "red" -> {
+                            Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
+                            mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_red)
+                        }
+                        //초록 병아리
+                        "green" -> {
+                            Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
+                            mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_green)
+
+                        }
+                        //파랑 병아리
+                        "blue" -> {
+                            Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
+                            mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
+                        }
+                        //비둘기(tlqkf zz)
+                        "peigeon" -> {
+                            Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
+                            mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
+
+                        }
+                        //뱁새 추가 예정
+                    }
                 }
             }
         }
     }
+
 
     fun getUser(){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)

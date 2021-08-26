@@ -94,6 +94,32 @@ class HomeFragment : Fragment() {
             ad.show()
         }
         
+        //병아리 일러 추후 애니메이션 작업 할 예정
+        mBinding?.peepHomeImageview?.apply{
+            when(currentPeep){
+                "yellow" -> {
+                    mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral)
+                }
+                //빨간 병아리
+                "red" -> {
+                    mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_red)
+                }
+                //초록 병아리
+                "green" -> {
+                    mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_green)
+                }
+                //파랑 병아리
+                "blue" -> {
+                    mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
+                }
+                //비둘기
+                "peigeon" -> {
+                    mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
+                }
+                //뱁새 추가 예정
+            }
+        }
+
 
 //        mBinding?.peepHomeImageview?.apply {
 //            setBackgroundResource(R.drawable.yellow_peep_ani)
@@ -118,6 +144,12 @@ class HomeFragment : Fragment() {
                 100 -> {
                     nextPeep= data!!.getStringExtra("nextPeep")!!
                     currentPeep = nextPeep
+                    // 1 = yellow
+                    // 2 = red
+                    // 3 = green
+                    // 4 = blue
+                    // 5 = peigeon
+
                     when(currentPeep){
                         //기본 병아리 획득
                         "yellow" -> {
@@ -140,7 +172,7 @@ class HomeFragment : Fragment() {
                             Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
                             mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
                         }
-                        //비둘기(tlqkf zz)
+                        //비둘기
                         "peigeon" -> {
                             Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
                             mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)

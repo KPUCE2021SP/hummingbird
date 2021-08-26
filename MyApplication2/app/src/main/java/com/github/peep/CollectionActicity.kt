@@ -26,7 +26,7 @@ class CollectionActicity : AppCompatActivity() {
     lateinit var collectionAdapter: CollectionAdapter
 
     val datas = mutableListOf<CollectionData>()
-    private var currentPeep: String? = intent.getStringExtra("currentPeep")
+    //private var currentPeep: String? = intent.getStringExtra("currentPeep")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,13 +36,11 @@ class CollectionActicity : AppCompatActivity() {
         rv_profile.adapter = collectionAdapter
 
         renew_btn.setOnClickListener {
-            setResult(Activity.RESULT_OK)
-            finish()
-        }
-        if(currentPeep != null){
-            if(datas.isEmpty() == true){
-                Toast.makeText(this,"${currentPeep}",Toast.LENGTH_SHORT).show()
-            }
+//            if(currentPeep != null){
+//                if(datas.isEmpty() == true){
+//                    Toast.makeText(this,"${currentPeep}",Toast.LENGTH_SHORT).show()
+//                }
+//            }
         }
     }
 

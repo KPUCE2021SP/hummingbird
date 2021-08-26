@@ -77,9 +77,9 @@ class HomeFragment : Fragment() {
         }
         //병아리 졸업
         mBinding?.gradBtn?.setOnClickListener {
-            var intent = Intent(activity,PeepSelectActivity::class.java)
-            intent.putExtra("currentPeep", currentPeep)
-            startActivityForResult(intent,100)
+            var intent = Intent(activity,CollectionActicity::class.java)
+            //intent.putExtra("currentPeep", currentPeep)
+            startActivity(intent)
         }
 
         //경험치 정보
@@ -134,58 +134,6 @@ class HomeFragment : Fragment() {
 
         return mBinding?.root
     }
-    //커밍 기능
-    //새로운 병아리를 받은 후 졸업된다.
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if(resultCode == Activity.RESULT_OK){
-            when(requestCode){
-                100 -> {
-                    nextPeep= data!!.getStringExtra("nextPeep")!!
-                    currentPeep = nextPeep
-                    // 1 = yellow
-                    // 2 = red
-                    // 3 = green
-                    // 4 = blue
-                    // 5 = peigeon
-
-                    when(currentPeep){
-                        //기본 병아리 획득
-                        "yellow" -> {
-                            Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
-                            mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral)
-                        }
-                        //빨간 병아리
-                        "red" -> {
-                            Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
-                            mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_red)
-                        }
-                        //초록 병아리
-                        "green" -> {
-                            Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
-                            mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_green)
-
-                        }
-                        //파랑 병아리
-                        "blue" -> {
-                            Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
-                            mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
-                        }
-                        //비둘기
-                        "peigeon" -> {
-                            Toast.makeText(activity,"새로운 병아리 등장 : ${currentPeep}",Toast.LENGTH_SHORT).show()
-                            mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
-
-                        }
-                        //뱁새 추가 예정
-                    }
-                }
-            }
-        }
-    }
-
-
     fun getUser(){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
         val call=GithubService.getUser()

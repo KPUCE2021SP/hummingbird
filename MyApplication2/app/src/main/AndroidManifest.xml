@@ -22,10 +22,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CollectionActicity"
-            android:theme="@style/Splash"
+        <activity android:name=".PickPeepActivity"></activity>
+        <activity
+            android:name=".CollectionActicity"
             android:screenOrientation="portrait"
-            ></activity>
+            android:theme="@style/Splash" />
         <activity
             android:name=".SettingActivity"
             android:screenOrientation="portrait"

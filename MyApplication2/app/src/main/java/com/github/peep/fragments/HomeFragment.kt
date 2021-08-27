@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
         var events:Events?=null
         var count:Int=0
         //유저가 처음 받는 기본 병아리는 yellow
-        var currentPeep : String = "yellow"
+        var currentPeep : String = "blue"
     }
     private lateinit var nextPeep : String
     private var mBinding : FragmentHomeBinding?=null
@@ -78,7 +78,7 @@ class HomeFragment : Fragment() {
         //병아리 졸업
         mBinding?.gradBtn?.setOnClickListener {
             var intent = Intent(activity,CollectionActicity::class.java)
-            //intent.putExtra("currentPeep", currentPeep)
+            intent.putExtra("currentPeep", currentPeep)
             startActivity(intent)
         }
 

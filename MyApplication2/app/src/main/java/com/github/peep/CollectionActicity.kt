@@ -25,36 +25,66 @@ import java.lang.Exception
 class CollectionActicity : AppCompatActivity() {
     lateinit var collectionAdapter: CollectionAdapter
 
-    val datas = mutableListOf<CollectionData>()
-    //private var currentPeep: String? = intent.getStringExtra("currentPeep")
-
+    var datas = mutableListOf<CollectionData>()
+    //yellow,red,green,blue,peigeon 순서대로 가지고 병아리의 숫자.
+    //이후엔 map으로 수정할 예정
+    val peepCount = arrayOf(0,0,0,0,0)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection)
-
+        var currentPeep: String? = intent.getStringExtra("currentPeep")
         collectionAdapter = CollectionAdapter(this)
         rv_profile.adapter = collectionAdapter
 
-        renew_btn.setOnClickListener {
-//            if(currentPeep != null){
-//                if(datas.isEmpty() == true){
-//                    Toast.makeText(this,"${currentPeep}",Toast.LENGTH_SHORT).show()
-//                }
-//            }
+        if (currentPeep != null) {
+            if (datas.isEmpty() == true) {
+                when (currentPeep) {
+                    "yellow" -> {
+                        peepCount[0]++
+                        Toast.makeText(this, "${currentPeep}", Toast.LENGTH_SHORT).show()
+                        datas.add(CollectionData(img = R.drawable.basic_neutral, name = currentPeep, count = peepCount[0]))
+                    }
+                    "red" -> {
+                        peepCount[1]++
+                        Toast.makeText(this, "${currentPeep}", Toast.LENGTH_SHORT).show()
+                        datas.add(CollectionData(img = R.drawable.basic_neutral, name = currentPeep, count = peepCount[1]))
+
+                    }
+                    "green" -> {
+                        peepCount[2]++
+                        Toast.makeText(this, "${currentPeep}", Toast.LENGTH_SHORT).show()
+                        datas.add(CollectionData(img = R.drawable.basic_neutral, name = currentPeep, count = peepCount[2]))
+
+                    }
+                    "blue" -> {
+                        peepCount[3]++
+                        Toast.makeText(this, "${currentPeep}", Toast.LENGTH_SHORT).show()
+                        datas.add(CollectionData(img = R.drawable.basic_neutral, name = currentPeep, count = peepCount[3]))
+
+                    }
+                    "peigeon" -> {
+                        peepCount[4]++
+                        Toast.makeText(this, "${currentPeep}", Toast.LENGTH_SHORT).show()
+                        datas.add(CollectionData(img = R.drawable.basic_neutral, name = currentPeep, count = peepCount[4]))
+                    }
+                }
+            }
         }
-    }
-
-    private fun initRecycler() {
-        //firebase 에 연동되어 있지 않기 때문에 임의의 더미 데이터 삽입
-        datas.apply {
-            add(CollectionData(img = R.drawable.peep_illust, name = "일러삡", count = 0))
-
+        else{
             collectionAdapter.datas = datas
-
-            rv_profile.addItemDecoration(VerticalItemDecorator(20))
-            rv_profile.addItemDecoration(HorizontalItemDecorator(10))
             collectionAdapter.notifyDataSetChanged()
         }
     }
 
-}
+    //졸업한 병아리가 없을때 최초 수행
+    private fun initRecycler(name : String, count : Int, img : Int) {
+        //firebase 에 연동되어 있지 않기 때문에 임의의 더미 데이터 삽입
+        datas.add(CollectionData(img = img, name = name, count = count))
+
+        collectionAdapter.datas = datas
+
+        rv_profile.addItemDecoration(VerticalItemDecorator(20))
+        rv_profile.addItemDecoration(HorizontalItemDecorator(10))
+        collectionAdapter.notifyDataSetChanged()
+        }
+    }

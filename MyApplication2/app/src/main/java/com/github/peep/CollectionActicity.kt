@@ -28,7 +28,9 @@ class CollectionActicity : AppCompatActivity() {
     var datas = mutableListOf<CollectionData>()
     //yellow,red,green,blue,peigeon 순서대로 가지고 병아리의 숫자.
     //이후엔 map으로 수정할 예정
-    val peepCount = arrayOf(0,0,0,0,0)
+    companion object{
+        var peepCount = arrayOf(0,0,0,0,0)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection)
@@ -37,6 +39,7 @@ class CollectionActicity : AppCompatActivity() {
         rv_profile.adapter = collectionAdapter
 
         if (currentPeep != null) {
+            //졸업기능이 실행되고 컬렉션이 비어 있을 때
             if (datas.isEmpty() == true) {
                 when (currentPeep) {
                     "yellow" -> {
@@ -69,8 +72,42 @@ class CollectionActicity : AppCompatActivity() {
                     }
                 }
             }
+            else{
+
+            }
+            collectionAdapter.datas = datas
+            collectionAdapter.notifyDataSetChanged()
         }
+        //졸업 기능이 이뤄지지 않고 그냥 컬렉션 볼때
+        //hard 코딩으로 일단 구현
         else{
+            Toast.makeText(this, "null? : ${currentPeep}", Toast.LENGTH_SHORT).show()
+            for(i in peepCount.indices){
+                if(peepCount[i] != 0){
+                    when(i){
+                        //yellow
+                        0 ->{
+                            datas.add(CollectionData(img = R.drawable.basic_neutral, name = "yellow", count = peepCount[0]))
+                        }
+                        //red
+                        1 ->{
+                            datas.add(CollectionData(img = R.drawable.basic_neutral, name = "red", count = peepCount[1]))
+                        }
+                        //green
+                        2 ->{
+                            datas.add(CollectionData(img = R.drawable.basic_neutral, name = "green", count = peepCount[2]))
+                        }
+                        //blue
+                        3 ->{
+                            datas.add(CollectionData(img = R.drawable.basic_neutral, name = "blue", count = peepCount[3]))
+                        }
+                        //peigeon
+                        4 -> {
+                            datas.add(CollectionData(img = R.drawable.basic_neutral, name = "peigeon", count = peepCount[4]))
+                        }
+                    }
+                }
+            }
             collectionAdapter.datas = datas
             collectionAdapter.notifyDataSetChanged()
         }

@@ -29,6 +29,7 @@ class CollectionActicity : AppCompatActivity() {
     //yellow,red,green,blue,peigeon 순서대로 가지고 병아리의 숫자.
     //이후엔 map으로 수정할 예정
     companion object{
+        val peepName = arrayOf("yellow","red","green","blue","peigeon")
         var peepCount = arrayOf(0,0,0,0,0)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,50 +73,100 @@ class CollectionActicity : AppCompatActivity() {
                     }
                 }
             }
+            //졸업기능이 실행되고 이미 하나 이상의 병아리가 졸업했을 때
             else{
-
+                for(i in peepName.indices){
+                    if(peepName[i] == currentPeep){
+                        peepCount[i]++
+                    }
+                }
+                gradPeepCount()
             }
+
+            //리사이클러 뷰 데이터 적용
             collectionAdapter.datas = datas
+            rv_profile.addItemDecoration(VerticalItemDecorator(20))
+            rv_profile.addItemDecoration(HorizontalItemDecorator(10))
             collectionAdapter.notifyDataSetChanged()
         }
         //졸업 기능이 이뤄지지 않고 그냥 컬렉션 볼때
-        //hard 코딩으로 일단 구현
+        //hard coding으로 구현
         else{
             Toast.makeText(this, "null? : ${currentPeep}", Toast.LENGTH_SHORT).show()
-            for(i in peepCount.indices){
-                if(peepCount[i] != 0){
-                    when(i){
-                        //yellow
-                        0 ->{
-                            datas.add(CollectionData(img = R.drawable.basic_neutral, name = "yellow", count = peepCount[0]))
-                        }
-                        //red
-                        1 ->{
-                            datas.add(CollectionData(img = R.drawable.basic_neutral, name = "red", count = peepCount[1]))
-                        }
-                        //green
-                        2 ->{
-                            datas.add(CollectionData(img = R.drawable.basic_neutral, name = "green", count = peepCount[2]))
-                        }
-                        //blue
-                        3 ->{
-                            datas.add(CollectionData(img = R.drawable.basic_neutral, name = "blue", count = peepCount[3]))
-                        }
-                        //peigeon
-                        4 -> {
-                            datas.add(CollectionData(img = R.drawable.basic_neutral, name = "peigeon", count = peepCount[4]))
-                        }
-                    }
-                }
-            }
+
+            gradPeepCount()
+
+            //리사이클러 뷰에 데이터 적용
             collectionAdapter.datas = datas
+            rv_profile.addItemDecoration(VerticalItemDecorator(20))
+            rv_profile.addItemDecoration(HorizontalItemDecorator(10))
             collectionAdapter.notifyDataSetChanged()
+
         }
     }
 
-    //졸업한 병아리가 없을때 최초 수행
+    //졸업한 병아리의 수를 카운팅하는 함수
+    //만약 졸업한 병아리가 있다면 해당 병아리를 리사이클러뷰에 추가해준다.
+    fun gradPeepCount(){
+        for(i in peepCount.indices) {
+            if (peepCount[i] != 0) {
+                when (i) {
+                    //yellow
+                    0 -> {
+                        datas.add(
+                            CollectionData(
+                                img = R.drawable.basic_neutral,
+                                name = "yellow",
+                                count = peepCount[0]
+                            )
+                        )
+                    }
+                    //red
+                    1 -> {
+                        datas.add(
+                            CollectionData(
+                                img = R.drawable.basic_neutral,
+                                name = "red",
+                                count = peepCount[1]
+                            )
+                        )
+                    }
+                    //green
+                    2 -> {
+                        datas.add(
+                            CollectionData(
+                                img = R.drawable.basic_neutral,
+                                name = "green",
+                                count = peepCount[2]
+                            )
+                        )
+                    }
+                    //blue
+                    3 -> {
+                        datas.add(
+                            CollectionData(
+                                img = R.drawable.basic_neutral,
+                                name = "blue",
+                                count = peepCount[3]
+                            )
+                        )
+                    }
+                    //peigeon
+                    4 -> {
+                        datas.add(
+                            CollectionData(
+                                img = R.drawable.basic_neutral,
+                                name = "peigeon",
+                                count = peepCount[4]
+                            )
+                        )
+                    }
+                }
+            }
+        }
+    }
+
     private fun initRecycler(name : String, count : Int, img : Int) {
-        //firebase 에 연동되어 있지 않기 때문에 임의의 더미 데이터 삽입
         datas.add(CollectionData(img = img, name = name, count = count))
 
         collectionAdapter.datas = datas

@@ -60,10 +60,13 @@ class HomeFragment : Fragment() {
         userDb = UserDB.getInstance(requireContext() as MainActivity)
         getUser()
 
+        nextPeep = getActivity()?.getIntent()?.getStringExtra("nextPeep").toString()
+
         //새로 고침
         //현재는 오늘의 커밋 가져오기로 사용 중
         mBinding?.renewBtn?.setOnClickListener {
             getEvents(prefs.getString("username",""))
+            Toast.makeText(activity,"nextPeep : ${nextPeep}",Toast.LENGTH_SHORT).show()
         }
 
         //세팅창

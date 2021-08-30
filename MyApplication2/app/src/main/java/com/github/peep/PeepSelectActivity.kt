@@ -15,25 +15,35 @@ class PeepSelectActivity : AppCompatActivity() {
         var currentPeep : String? = intent.getStringExtra("currentPeep")
 
         peep_yellow_btn.setOnClickListener {
-            nextPeep("yellow")
+            var intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("nextPeep","yellow")
+            startActivity(intent)
         }
         peep_red_btn.setOnClickListener {
-            nextPeep("red")
+            var intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("nextPeep","red")
+            startActivity(intent)
         }
         peep_green_btn.setOnClickListener {
-            nextPeep("green")
+            var intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("nextPeep","green")
+            startActivity(intent)
         }
         peep_blue_btn.setOnClickListener {
-            nextPeep("blue")
+            var intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("nextPeep","blue")
+            startActivity(intent)
         }
         peep_peigeon_btn.setOnClickListener {
-            nextPeep("peigeon")
+            var intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("nextPeep","peigeon")
+            startActivity(intent)
         }
     }
-    fun nextPeep(value : String){
-        var intent = Intent(this, HomeFragment::class.java)
-        intent.putExtra("nextPeep",value)
-        setResult(Activity.RESULT_OK, intent)
-        finish()
-    }
+//    fun nextPeep(value : String){
+//        var intent = Intent(this, HomeFragment::class.java)
+//        intent.putExtra("nextPeep",value)
+//        setResult(Activity.RESULT_OK, intent)
+//        finish()
+//    }
 }

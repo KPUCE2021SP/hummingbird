@@ -91,7 +91,7 @@ class CollectionActicity : AppCompatActivity() {
             collectionAdapter.notifyDataSetChanged()
 
             //커밍 기능을 위한 팝업
-            showSettingPopup("권한을 변경하시겠습니까?\n변경 시, 재로그인이 필요합니다.")
+            showSettingPopup("새로운 병아리")
         }
         //졸업 기능이 이뤄지지 않고 그냥 컬렉션 볼때
         //hard coding으로 구현
@@ -178,7 +178,7 @@ class CollectionActicity : AppCompatActivity() {
 //        textView.text = string
 
         AlertDesign(this)
-            .setTitle("권한 변경")
+            .setTitle("새로운 병아리")
             .setMessage(string)
             .setPositiveButton("예") {
                 var intent=Intent(this,PeepSelectActivity::class.java)

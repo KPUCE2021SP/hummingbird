@@ -39,9 +39,9 @@ class HomeFragment : Fragment() {
         var events:Events?=null
         var count:Int=0
         //유저가 처음 받는 기본 병아리는 yellow
-        var currentPeep : String = "blue"
+        var currentPeep : String? = "yellow"
     }
-    private lateinit var nextPeep : String
+    private var nextPeep : String? = null
     private var mBinding : FragmentHomeBinding?=null
     private var userDb : UserDB? = null
     private lateinit var yPeepHome: AnimationDrawable
@@ -55,7 +55,6 @@ class HomeFragment : Fragment() {
         val binding = FragmentHomeBinding.inflate(inflater,container,false)
         Log.d("reset", "onCreateView: 생성됨")
         mBinding = binding
-
 
         userDb = UserDB.getInstance(requireContext() as MainActivity)
         getUser()
@@ -79,6 +78,7 @@ class HomeFragment : Fragment() {
             var intent = Intent(activity,CollectionActicity::class.java)
             intent.putExtra("currentPeep", currentPeep)
             startActivity(intent)
+            requireActivity().finish()
         }
 
         //경험치 정보
@@ -94,28 +94,56 @@ class HomeFragment : Fragment() {
         }
         
         //병아리 일러 추후 애니메이션 작업 할 예정
+        //병아리 일러스트, 애니메이션 작업이 남아 있기 때문에 함수화 하지 않고 하드코딩했다.
         mBinding?.peepHomeImageview?.apply{
-            when(currentPeep){
-                "yellow" -> {
-                    mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral)
+            if(nextPeep!= null){
+                currentPeep = nextPeep
+                when(currentPeep){
+                    "yellow" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral)
+                    }
+                    //빨간 병아리
+                    "red" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_red)
+                    }
+                    //초록 병아리
+                    "green" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_green)
+                    }
+                    //파랑 병아리
+                    "blue" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
+                    }
+                    //비둘기
+                    "peigeon" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
+                    }
+                    //뱁새 추가 예정
                 }
-                //빨간 병아리
-                "red" -> {
-                    mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_red)
+            }
+            else{
+                when(currentPeep){
+                    "yellow" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral)
+                    }
+                    //빨간 병아리
+                    "red" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_red)
+                    }
+                    //초록 병아리
+                    "green" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_green)
+                    }
+                    //파랑 병아리
+                    "blue" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
+                    }
+                    //비둘기
+                    "peigeon" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
+                    }
+                    //뱁새 추가 예정
                 }
-                //초록 병아리
-                "green" -> {
-                    mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_green)
-                }
-                //파랑 병아리
-                "blue" -> {
-                    mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
-                }
-                //비둘기
-                "peigeon" -> {
-                    mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
-                }
-                //뱁새 추가 예정
             }
         }
 

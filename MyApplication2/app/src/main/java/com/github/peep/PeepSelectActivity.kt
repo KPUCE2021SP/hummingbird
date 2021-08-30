@@ -18,26 +18,31 @@ class PeepSelectActivity : AppCompatActivity() {
             var intent = Intent(this, MainActivity::class.java)
             intent.putExtra("nextPeep","yellow")
             startActivity(intent)
+            finish()
         }
         peep_red_btn.setOnClickListener {
             var intent = Intent(this, MainActivity::class.java)
             intent.putExtra("nextPeep","red")
             startActivity(intent)
+            finish()
         }
         peep_green_btn.setOnClickListener {
             var intent = Intent(this, MainActivity::class.java)
             intent.putExtra("nextPeep","green")
             startActivity(intent)
+            finish()
         }
         peep_blue_btn.setOnClickListener {
             var intent = Intent(this, MainActivity::class.java)
             intent.putExtra("nextPeep","blue")
             startActivity(intent)
+            finish()
         }
         peep_peigeon_btn.setOnClickListener {
             var intent = Intent(this, MainActivity::class.java)
             intent.putExtra("nextPeep","peigeon")
             startActivity(intent)
+            finish()
         }
     }
 //    fun nextPeep(value : String){

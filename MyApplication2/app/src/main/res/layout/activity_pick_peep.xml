@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PickPeepActivity">
+    tools:context=".PickPeepActivity"
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/pick_peep_title"
@@ -22,11 +23,14 @@
     <LinearLayout
         android:id="@+id/red_peep_layout"
         android:background="@drawable/card_round_outline"
-        android:layout_width="120dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.32"
+        app:layout_constraintHeight_percent="0.34"
         android:orientation="vertical"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="35dp"
         android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@id/green_peep_layout"
         app:layout_constraintRight_toLeftOf="@+id/yellow_peep_layout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pick_peep_title">
@@ -34,7 +38,8 @@
         <ImageView
             android:id="@+id/red_peep_illu"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/red_peep_illust" />
 
         <TextView
@@ -43,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:fontFamily="@font/font_title"
-            android:textSize="20sp"
+            android:textSize="19sp"
             android:gravity="center"
             android:text="빨간 병아리" />
     </LinearLayout>
@@ -51,10 +56,13 @@
     <LinearLayout
         android:id="@+id/yellow_peep_layout"
         android:background="@drawable/card_round_outline"
-        android:layout_width="120dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.32"
+        app:layout_constraintHeight_percent="0.34"
         android:orientation="vertical"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginHorizontal="5dp"
         android:padding="8dp"
         app:layout_constraintLeft_toRightOf="@id/red_peep_layout"
         app:layout_constraintRight_toLeftOf="@id/blue_peep_layout"
@@ -63,28 +71,32 @@
         <ImageView
             android:id="@+id/yellow_peep_illu"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/peep_illust" />
 
         <TextView
             android:id="@+id/yellow_peep_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/font_title"
-            android:textSize="20sp"
-            android:gravity="center"
             android:layout_marginVertical="10dp"
+            android:fontFamily="@font/font_title"
+            android:textSize="19sp"
+            android:gravity="center"
             android:text="노란 병아리" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/blue_peep_layout"
         android:background="@drawable/card_round_outline"
-        android:layout_width="120dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.32"
+        app:layout_constraintHeight_percent="0.34"
         android:orientation="vertical"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="35dp"
         android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@id/w_peep_layout"
         app:layout_constraintLeft_toRightOf="@id/yellow_peep_layout"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pick_peep_title">
@@ -92,25 +104,28 @@
         <ImageView
             android:id="@+id/blue_peep_illu"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/blue_peep_illust" />
 
         <TextView
             android:id="@+id/blue_peep_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/font_title"
-            android:textSize="20sp"
-            android:gravity="center"
             android:layout_marginVertical="10dp"
+            android:fontFamily="@font/font_title"
+            android:textSize="19sp"
+            android:gravity="center"
             android:text="파란 병아리" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/green_peep_layout"
         android:background="@drawable/card_round_outline"
-        android:layout_width="120dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.32"
+        app:layout_constraintHeight_percent="0.34"
         android:orientation="vertical"
         android:layout_marginTop="15dp"
         android:padding="8dp"
@@ -121,26 +136,30 @@
         <ImageView
             android:id="@+id/green_peep_illu"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/green_peep_illust" />
 
         <TextView
             android:id="@+id/green_peep_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/font_title"
-            android:textSize="20sp"
-            android:gravity="center"
             android:layout_marginVertical="10dp"
+            android:fontFamily="@font/font_title"
+            android:textSize="19sp"
+            android:gravity="center"
             android:text="초록 병아리" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/pigeon_layout"
         android:background="@drawable/card_round_outline"
-        android:layout_width="120dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.32"
+        app:layout_constraintHeight_percent="0.34"
         android:orientation="vertical"
         android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="5dp"
         android:padding="8dp"
         app:layout_constraintLeft_toRightOf="@id/green_peep_layout"
         app:layout_constraintRight_toLeftOf="@id/w_peep_layout"
@@ -149,25 +168,28 @@
         <ImageView
             android:id="@+id/pg_peep_illu"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/pigeon_illust" />
 
         <TextView
             android:id="@+id/pigeon_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
             android:fontFamily="@font/font_title"
             android:textSize="20sp"
             android:gravity="center"
-            android:layout_marginVertical="10dp"
             android:text="비둘기" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/w_peep_layout"
         android:background="@drawable/card_round_outline"
-        android:layout_width="120dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.32"
+        app:layout_constraintHeight_percent="0.34"
         android:orientation="vertical"
         android:layout_marginTop="15dp"
         android:padding="8dp"
@@ -176,29 +198,31 @@
         app:layout_constraintTop_toBottomOf="@id/blue_peep_layout">
 
         <ImageView
-            android:id="@+id/w_peep_illu"
+            android:id="@+id/baepsae_illu"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             app:srcCompat="@drawable/pigeon_illust" />
 
         <TextView
-            android:id="@+id/w_peep_title"
-            android:fontFamily="@font/font_title"
-            android:textSize="20sp"
+            android:id="@+id/baepsae_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginVertical="10dp"
+            android:fontFamily="@font/font_title"
+            android:textSize="20sp"
+            android:gravity="center"
             android:text="뱁새" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
-        android:background="@drawable/yellow_btn"
+        android:id="@+id/next_btn"
+        android:background="@drawable/button_round"
         android:fontFamily="@font/font_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="선택"
+        android:layout_marginVertical="15dp"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

@@ -1,6 +1,7 @@
 package com.github.peep
 
 import android.app.Activity
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -12,8 +13,8 @@ import org.jetbrains.anko.toast
 
 class PickPeepActivity : AppCompatActivity() {
     private lateinit var mBinding : ActivityPickPeepBinding
-    private lateinit var anim_out : Animation
-    private lateinit var anim_in : Animation
+    private lateinit var anim_out : AnimationDrawable
+    private lateinit var anim_in : AnimationDrawable
 
 //    picked값 0: 선택 안함
 //    1:red peep    2:yellow    3: blue
@@ -25,40 +26,77 @@ class PickPeepActivity : AppCompatActivity() {
         mBinding = ActivityPickPeepBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
-//        mBinding?.yellowPeepLayout?.apply {
-//            anim_out = background as Animation
-//            anim_out.start()
-//            anim_in = background as Animation
-//            anim_in.start()
-//        }
-//
-//        val anim_out = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_out)
-//        val anim_in = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_in)
 
         mBinding.redPeepLayout.setOnClickListener {
             picked =1
-//            mBinding.yellowPeepLayout.startAnimation(anim_out)
-//            mBinding.redPeepLayout.startAnimation(anim_in)
+            val anim_out = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_out)
+            val anim_in = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_in)
+            mBinding.redPeepLayout.startAnimation(anim_in)
+            mBinding.yellowPeepLayout.startAnimation(anim_out)
+            mBinding.bluePeepLayout.startAnimation(anim_out)
+            mBinding.greenPeepLayout.startAnimation(anim_out)
+            mBinding.wPeepLayout.startAnimation(anim_out)
+            mBinding.pigeonLayout.startAnimation(anim_out)
         }
 
         mBinding.yellowPeepLayout.setOnClickListener {
             picked =2
+            val anim_out = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_out)
+            val anim_in = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_in)
+            mBinding.redPeepLayout.startAnimation(anim_out)
+            mBinding.yellowPeepLayout.startAnimation(anim_in)
+            mBinding.bluePeepLayout.startAnimation(anim_out)
+            mBinding.greenPeepLayout.startAnimation(anim_out)
+            mBinding.wPeepLayout.startAnimation(anim_out)
+            mBinding.pigeonLayout.startAnimation(anim_out)
         }
 
         mBinding.bluePeepLayout.setOnClickListener {
             picked =3
+            val anim_out = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_out)
+            val anim_in = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_in)
+            mBinding.redPeepLayout.startAnimation(anim_out)
+            mBinding.yellowPeepLayout.startAnimation(anim_out)
+            mBinding.bluePeepLayout.startAnimation(anim_in)
+            mBinding.greenPeepLayout.startAnimation(anim_out)
+            mBinding.wPeepLayout.startAnimation(anim_out)
+            mBinding.pigeonLayout.startAnimation(anim_out)
         }
 
         mBinding.greenPeepLayout.setOnClickListener {
             picked =4
+            val anim_out = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_out)
+            val anim_in = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_in)
+            mBinding.redPeepLayout.startAnimation(anim_out)
+            mBinding.yellowPeepLayout.startAnimation(anim_out)
+            mBinding.bluePeepLayout.startAnimation(anim_out)
+            mBinding.greenPeepLayout.startAnimation(anim_in)
+            mBinding.wPeepLayout.startAnimation(anim_out)
+            mBinding.pigeonLayout.startAnimation(anim_out)
         }
 
         mBinding.pigeonLayout.setOnClickListener {
             picked =5
+            val anim_out = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_out)
+            val anim_in = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_in)
+            mBinding.redPeepLayout.startAnimation(anim_out)
+            mBinding.yellowPeepLayout.startAnimation(anim_out)
+            mBinding.bluePeepLayout.startAnimation(anim_out)
+            mBinding.greenPeepLayout.startAnimation(anim_out)
+            mBinding.wPeepLayout.startAnimation(anim_out)
+            mBinding.pigeonLayout.startAnimation(anim_in)
         }
 
         mBinding.wPeepLayout.setOnClickListener {
             picked =6
+            val anim_out = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_out)
+            val anim_in = AnimationUtils.loadAnimation(applicationContext, com.github.peep.R.anim.alpha_anim_fade_in)
+            mBinding.redPeepLayout.startAnimation(anim_out)
+            mBinding.yellowPeepLayout.startAnimation(anim_out)
+            mBinding.bluePeepLayout.startAnimation(anim_out)
+            mBinding.greenPeepLayout.startAnimation(anim_out)
+            mBinding.wPeepLayout.startAnimation(anim_in)
+            mBinding.pigeonLayout.startAnimation(anim_out)
         }
 
         mBinding.nextBtn.setOnClickListener {
@@ -79,23 +117,19 @@ class PickPeepActivity : AppCompatActivity() {
                     finish()
                 }
                 4 ->{
-//                    intent.putExtra("picked", "green")
-//                    setResult(Activity.RESULT_OK, intent)
-//                    finish()
-                    toast("green peep")
+                    intent.putExtra("picked", "green")
+                    setResult(Activity.RESULT_OK, intent)
+                    finish()
                 }
                 5 ->{
-//                    intent.putExtra("picked", "pigeon")
-//                    setResult(Activity.RESULT_OK, intent)
-//                    finish()
-                    toast("pigeon peep")
+                    intent.putExtra("picked", "pigeon")
+                    setResult(Activity.RESULT_OK, intent)
+                    finish()
                 }
                     6 ->{
-//                    intent.putExtra("picked", "baepsae")
-//                    setResult(Activity.RESULT_OK, intent)
-//                    finish()
-                        toast("baepsae")
-
+                    intent.putExtra("picked", "baepsae")
+                    setResult(Activity.RESULT_OK, intent)
+                    finish()
                     }
             }
         }

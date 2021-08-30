@@ -59,11 +59,7 @@ class HomeFragment : Fragment() {
 
         userDb = UserDB.getInstance(requireContext() as MainActivity)
         getUser()
-        val addRunnable = Runnable {
-            userDb?.userDao()?.updateHappy()
-            userDb?.userDao()?.updateSad()
-            userDb?.userDao()?.updateLevel()
-        }
+
         //새로 고침
         //현재는 오늘의 커밋 가져오기로 사용 중
         mBinding?.renewBtn?.setOnClickListener {

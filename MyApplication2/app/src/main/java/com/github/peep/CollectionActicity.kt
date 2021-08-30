@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.peep.DB.User
 import com.github.peep.DB.UserDB
+import com.github.peep.decorator.AlertDesign
 import com.github.peep.view.CollectionAdapter
 import com.github.peep.view.CollectionData
 import com.github.peep.view.HorizontalItemDecorator
@@ -88,6 +89,9 @@ class CollectionActicity : AppCompatActivity() {
             rv_profile.addItemDecoration(VerticalItemDecorator(20))
             rv_profile.addItemDecoration(HorizontalItemDecorator(10))
             collectionAdapter.notifyDataSetChanged()
+
+            //커밍 기능을 위한 팝업
+            showSettingPopup("권한을 변경하시겠습니까?\n변경 시, 재로그인이 필요합니다.")
         }
         //졸업 기능이 이뤄지지 않고 그냥 컬렉션 볼때
         //hard coding으로 구현
@@ -165,6 +169,43 @@ class CollectionActicity : AppCompatActivity() {
             }
         }
     }
+
+    //커밍 기능을 위한 팝업 함수.
+    fun showSettingPopup(string : String){
+//        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+//        val view = inflater.inflate(R.layout.alert_popup,null)
+//        var textView = view.findViewById<TextView>(R.id.alert_textview)
+//        textView.text = string
+
+        AlertDesign(this)
+            .setTitle("권한 변경")
+            .setMessage(string)
+            .setPositiveButton("예") {
+                var intent=Intent(this,PeepSelectActivity::class.java)
+                finish()
+                startActivity(intent)
+            }
+            .setNegativeButton("취소"){
+                finish()
+            }
+
+            .show()
+
+//        val alertDialog = AlertDesign.CustomDialogBuilder()
+//            .setTitle("권한 설정 변경")
+//            .setPositiveButton("확인"){ dialog, which ->
+//                logout()
+//                var intent=Intent(this,HomeActivity::class.java)
+//                finish()
+//                startActivity(intent)
+//            }
+//            .setNegativeButton("취소",null)
+//            .create()
+//
+//        alertDialog.setView(view)
+//        alertDialog.show()
+    }
+
 
     private fun initRecycler(name : String, count : Int, img : Int) {
         datas.add(CollectionData(img = img, name = name, count = count))

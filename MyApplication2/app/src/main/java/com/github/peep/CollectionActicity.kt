@@ -27,12 +27,14 @@ class CollectionActicity : AppCompatActivity() {
     lateinit var collectionAdapter: CollectionAdapter
 
     var datas = mutableListOf<CollectionData>()
+
     //yellow,red,green,blue,peigeon 순서대로 가지고 병아리의 숫자.
     //이후엔 map으로 수정할 예정
-    companion object{
-        val peepName = arrayOf("yellow","red","green","blue","peigeon")
-        var peepCount = arrayOf(0,0,0,0,0)
+    companion object {
+        val peepName = arrayOf("yellow", "red", "green", "blue", "peigeon")
+        var peepCount = arrayOf(0, 0, 0, 0, 0)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection)
@@ -40,49 +42,14 @@ class CollectionActicity : AppCompatActivity() {
         collectionAdapter = CollectionAdapter(this)
         rv_profile.adapter = collectionAdapter
 
+        //졸업 기능이 이루어질 때
         if (currentPeep != null) {
-            //졸업기능이 실행되고 컬렉션이 비어 있을 때
-            if (datas.isEmpty() == true) {
-                when (currentPeep) {
-                    "yellow" -> {
-                        peepCount[0]++
-                        Toast.makeText(this, "${currentPeep}", Toast.LENGTH_SHORT).show()
-                        datas.add(CollectionData(img = R.drawable.basic_neutral, name = currentPeep, count = peepCount[0]))
-                    }
-                    "red" -> {
-                        peepCount[1]++
-                        Toast.makeText(this, "${currentPeep}", Toast.LENGTH_SHORT).show()
-                        datas.add(CollectionData(img = R.drawable.basic_neutral, name = currentPeep, count = peepCount[1]))
-
-                    }
-                    "green" -> {
-                        peepCount[2]++
-                        Toast.makeText(this, "${currentPeep}", Toast.LENGTH_SHORT).show()
-                        datas.add(CollectionData(img = R.drawable.basic_neutral, name = currentPeep, count = peepCount[2]))
-
-                    }
-                    "blue" -> {
-                        peepCount[3]++
-                        Toast.makeText(this, "${currentPeep}", Toast.LENGTH_SHORT).show()
-                        datas.add(CollectionData(img = R.drawable.basic_neutral, name = currentPeep, count = peepCount[3]))
-
-                    }
-                    "peigeon" -> {
-                        peepCount[4]++
-                        Toast.makeText(this, "${currentPeep}", Toast.LENGTH_SHORT).show()
-                        datas.add(CollectionData(img = R.drawable.basic_neutral, name = currentPeep, count = peepCount[4]))
-                    }
+            for (i in peepName.indices) {
+                if (peepName[i] == currentPeep) {
+                    peepCount[i]++
                 }
             }
-            //졸업기능이 실행되고 이미 하나 이상의 병아리가 졸업했을 때
-            else{
-                for(i in peepName.indices){
-                    if(peepName[i] == currentPeep){
-                        peepCount[i]++
-                    }
-                }
-                gradPeepCount()
-            }
+            gradPeepCount()
 
             //리사이클러 뷰 데이터 적용
             collectionAdapter.datas = datas
@@ -91,13 +58,13 @@ class CollectionActicity : AppCompatActivity() {
             collectionAdapter.notifyDataSetChanged()
 
             //커밍 기능을 위한 팝업
+            //예를 누르면 새로운 병아리가 오고, 취소 혹은 뒤로가기를 누르면 현재 병아리를 다시 한번 키운다.
             showSettingPopup("새로운 병아리")
         }
         //졸업 기능이 이뤄지지 않고 그냥 컬렉션 볼때
         //hard coding으로 구현
-        else{
+        else {
             Toast.makeText(this, "null? : ${currentPeep}", Toast.LENGTH_SHORT).show()
-
             gradPeepCount()
 
             //리사이클러 뷰에 데이터 적용
@@ -105,14 +72,13 @@ class CollectionActicity : AppCompatActivity() {
             rv_profile.addItemDecoration(VerticalItemDecorator(20))
             rv_profile.addItemDecoration(HorizontalItemDecorator(10))
             collectionAdapter.notifyDataSetChanged()
-
         }
     }
 
     //졸업한 병아리의 수를 카운팅하는 함수
     //만약 졸업한 병아리가 있다면 해당 병아리를 리사이클러뷰에 추가해준다.
-    fun gradPeepCount(){
-        for(i in peepCount.indices) {
+    fun gradPeepCount() {
+        for (i in peepCount.indices) {
             if (peepCount[i] != 0) {
                 when (i) {
                     //yellow
@@ -129,7 +95,7 @@ class CollectionActicity : AppCompatActivity() {
                     1 -> {
                         datas.add(
                             CollectionData(
-                                img = R.drawable.basic_neutral,
+                                img = R.drawable.basic_neutral_red,
                                 name = "red",
                                 count = peepCount[1]
                             )
@@ -139,7 +105,7 @@ class CollectionActicity : AppCompatActivity() {
                     2 -> {
                         datas.add(
                             CollectionData(
-                                img = R.drawable.basic_neutral,
+                                img = R.drawable.basic_neutral_green,
                                 name = "green",
                                 count = peepCount[2]
                             )
@@ -149,7 +115,7 @@ class CollectionActicity : AppCompatActivity() {
                     3 -> {
                         datas.add(
                             CollectionData(
-                                img = R.drawable.basic_neutral,
+                                img = R.drawable.basic_neutral_blue,
                                 name = "blue",
                                 count = peepCount[3]
                             )
@@ -159,7 +125,7 @@ class CollectionActicity : AppCompatActivity() {
                     4 -> {
                         datas.add(
                             CollectionData(
-                                img = R.drawable.basic_neutral,
+                                img = R.drawable.basic_happy_pigeon,
                                 name = "peigeon",
                                 count = peepCount[4]
                             )
@@ -171,43 +137,24 @@ class CollectionActicity : AppCompatActivity() {
     }
 
     //커밍 기능을 위한 팝업 함수.
-    fun showSettingPopup(string : String){
-//        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-//        val view = inflater.inflate(R.layout.alert_popup,null)
-//        var textView = view.findViewById<TextView>(R.id.alert_textview)
-//        textView.text = string
-
+    fun showSettingPopup(string: String) {
         AlertDesign(this)
             .setTitle("새로운 병아리")
             .setMessage(string)
             .setPositiveButton("예") {
-                var intent=Intent(this,PeepSelectActivity::class.java)
+                var intent = Intent(this, PeepSelectActivity::class.java)
                 finish()
                 startActivity(intent)
             }
-            .setNegativeButton("취소"){
+            .setNegativeButton("취소") {
                 finish()
             }
-
             .show()
 
-//        val alertDialog = AlertDesign.CustomDialogBuilder()
-//            .setTitle("권한 설정 변경")
-//            .setPositiveButton("확인"){ dialog, which ->
-//                logout()
-//                var intent=Intent(this,HomeActivity::class.java)
-//                finish()
-//                startActivity(intent)
-//            }
-//            .setNegativeButton("취소",null)
-//            .create()
-//
-//        alertDialog.setView(view)
-//        alertDialog.show()
     }
 
 
-    private fun initRecycler(name : String, count : Int, img : Int) {
+    private fun initRecycler(name: String, count: Int, img: Int) {
         datas.add(CollectionData(img = img, name = name, count = count))
 
         collectionAdapter.datas = datas
@@ -215,5 +162,5 @@ class CollectionActicity : AppCompatActivity() {
         rv_profile.addItemDecoration(VerticalItemDecorator(20))
         rv_profile.addItemDecoration(HorizontalItemDecorator(10))
         collectionAdapter.notifyDataSetChanged()
-        }
     }
+}

@@ -43,7 +43,6 @@ class HomeFragment : Fragment() {
     }
     private var nextPeep : String? = null
     private var mBinding : FragmentHomeBinding?=null
-    private var userDb : UserDB? = null
     private lateinit var yPeepHome: AnimationDrawable
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -56,16 +55,14 @@ class HomeFragment : Fragment() {
         Log.d("reset", "onCreateView: 생성됨")
         mBinding = binding
 
-        userDb = UserDB.getInstance(requireContext() as MainActivity)
         getUser()
-
-        nextPeep = getActivity()?.getIntent()?.getStringExtra("nextPeep").toString()
 
         //새로 고침
         //현재는 오늘의 커밋 가져오기로 사용 중
         mBinding?.renewBtn?.setOnClickListener {
             getEvents(prefs.getString("username",""))
             Toast.makeText(activity,"nextPeep : ${nextPeep}",Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity,"currentPeep : ${currentPeep}",Toast.LENGTH_SHORT).show()
         }
 
         //세팅창
@@ -92,12 +89,14 @@ class HomeFragment : Fragment() {
             ) { dialog, which -> dialog.dismiss() }
             ad.show()
         }
-        
+
+        nextPeep = getActivity()?.getIntent()?.getStringExtra("nextPeep")
         //병아리 일러 추후 애니메이션 작업 할 예정
         //병아리 일러스트, 애니메이션 작업이 남아 있기 때문에 함수화 하지 않고 하드코딩했다.
         mBinding?.peepHomeImageview?.apply{
-            if(nextPeep!= null){
+            if(nextPeep != null){
                 currentPeep = nextPeep
+                Log.d("currentPeep","currentPeep")
                 when(currentPeep){
                     "yellow" -> {
                         mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral)

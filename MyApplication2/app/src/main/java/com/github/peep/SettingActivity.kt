@@ -87,8 +87,7 @@ class SettingActivity : AppCompatActivity() {
             .setMessage(string)
             .setPositiveButton("예") {
                 logout()
-//                임의로
-                var intent=Intent(this, PickPeepActivity::class.java)
+                var intent=Intent(this,HomeActivity::class.java)
                 finish()
                 startActivity(intent)
             }

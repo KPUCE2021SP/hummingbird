@@ -1,15 +1,12 @@
 package com.github.peep.decorator
 
 import android.app.AlertDialog
-import android.content.Context
-import android.os.Handler
-import android.view.MotionEvent
 import android.view.View
-import androidx.annotation.StringRes
+import android.widget.ImageView
 import com.github.peep.R
 import kotlinx.android.synthetic.main.alert_popup.view.*
 
-class AlertDesign(private val context: Context)  {
+class AlertDesign(private val context: ImageView)  {
 
     private val builder: AlertDialog.Builder by lazy {
         AlertDialog.Builder(context).setView(view)

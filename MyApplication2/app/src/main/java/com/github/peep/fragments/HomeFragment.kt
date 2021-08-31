@@ -14,13 +14,12 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.github.peep.*
 import com.github.peep.App.Companion.prefs
 import kotlinx.android.synthetic.main.fragment_home.*
 import com.github.peep.DB.UserDB
-import com.github.peep.MainActivity
-import com.github.peep.R
-import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
+import com.github.peep.decorator.AlertDesign
 import com.github.peep.model.Events
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
@@ -38,6 +37,9 @@ class HomeFragment : Fragment() {
         var id  : String = ""
         var events:Events?=null
         var count:Int=0
+
+//      보유 병아리
+        var havePeep:String ?= null
     }
 
     private var mBinding : FragmentHomeBinding?=null
@@ -87,10 +89,55 @@ class HomeFragment : Fragment() {
         }
         
 
+        //보유한 병아리에 따라 이미지 설정
         mBinding?.peepHomeImageview?.apply {
-            setBackgroundResource(R.drawable.yellow_hapeep_ani)
-            yPeepHome = background as AnimationDrawable
-            yPeepHome.start()
+            when(havePeep){
+                "red" -> {
+                    setBackgroundResource(R.drawable.red_hapeep_ani)
+                    yPeepHome = background as AnimationDrawable
+                    yPeepHome.start()
+                }
+                "yellow" -> {
+                    setBackgroundResource(R.drawable.yellow_hapeep_ani)
+                    yPeepHome = background as AnimationDrawable
+                    yPeepHome.start()
+                }
+                "blue" -> {
+                    setBackgroundResource(R.drawable.blue_hapeep_ani)
+                    yPeepHome = background as AnimationDrawable
+                    yPeepHome.start()
+                }
+                "green" -> {
+                    setBackgroundResource(R.drawable.green_hapeep_ani)
+                    yPeepHome = background as AnimationDrawable
+                    yPeepHome.start()
+                }
+//                "pigeon" -> {
+//                    setBackgroundResource(R.drawable.pigeon_hapeep_ani)
+//                    yPeepHome = background as AnimationDrawable
+//                    yPeepHome.start()
+//                }
+//                "baepsae" -> {
+//                    setBackgroundResource(R.drawable.baepsae_hapeep_ani)
+//                    yPeepHome = background as AnimationDrawable
+//                    yPeepHome.start()
+//                }
+                else -> { //보유한 병아리가 없을 때 병아리 선택하라는 알람
+                    AlertDesign(this)
+                        .setTitle("병아리 선택")
+                        .setMessage("보유한 병아리가 없습니다. 새로운 병아리를 입양해주세요!")
+                        .setPositiveButton("예") {
+                            //왜 오류가 뜨지...?
+                            var intent = Intent(this, PickPeepActivity::class.java)
+                            finish()
+                            startActivity(intent)
+                        }
+                        .setNegativeButton("취소"){
+                            finish()
+                        }
+                        .show()
+                }
+            }
         }
 
         mBinding?.peepHomeImageview?.setOnClickListener {

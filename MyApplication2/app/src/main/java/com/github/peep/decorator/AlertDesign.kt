@@ -21,15 +21,6 @@ class AlertDesign(private val context: Context)  {
 
     private var dialog: AlertDialog? = null
 
-    private val onTouchListener = View.OnTouchListener { _, motionEvent ->
-        if (motionEvent.action == MotionEvent.ACTION_UP) {
-            Handler().postDelayed({
-                dismiss()
-            }, 5)
-        }
-        false
-    }
-
     fun setTitle(title: CharSequence): AlertDesign {
         view.text_title.text = title
         return this
@@ -48,10 +39,13 @@ class AlertDesign(private val context: Context)  {
         }
         return this
     }
-    fun setNegativeButton(text: CharSequence, listener: ((view: View) -> Unit)): AlertDesign {
+    fun setNegativeButton(text: CharSequence, listener: (view: View) -> (Unit)): AlertDesign  {
         view.btn_negative.apply {
             this.text = text
             setOnClickListener(listener)
+        }
+        view.btn_negative.setOnClickListener{
+            this.dismiss()
         }
         return this
     }
@@ -59,6 +53,7 @@ class AlertDesign(private val context: Context)  {
     fun create() {
         dialog = builder.create()
     }
+
 
     fun show() {
         dialog = builder.create()

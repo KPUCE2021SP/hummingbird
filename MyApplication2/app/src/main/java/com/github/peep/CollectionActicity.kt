@@ -59,12 +59,12 @@ class CollectionActicity : AppCompatActivity() {
 
             //커밍 기능을 위한 팝업
             //예를 누르면 새로운 병아리가 오고, 취소 혹은 뒤로가기를 누르면 현재 병아리를 다시 한번 키운다.
-            showSettingPopup("새로운 병아리")
+            showSettingPopup("새로운 병아리를 획득하시고 싶다면 '예'\n기존 병아리를 한번 더 키우고 싶다면 '아니요'를 눌러주세요.")
         }
         //졸업 기능이 이뤄지지 않고 그냥 컬렉션 볼때
         //hard coding으로 구현
         else {
-            Toast.makeText(this, "null? : ${currentPeep}", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "null? : ${currentPeep}", Toast.LENGTH_SHORT).show()
             gradPeepCount()
 
             //리사이클러 뷰에 데이터 적용
@@ -139,14 +139,14 @@ class CollectionActicity : AppCompatActivity() {
     //커밍 기능을 위한 팝업 함수.
     fun showSettingPopup(string: String) {
         AlertDesign(this)
-            .setTitle("새로운 병아리")
+            .setTitle("새로운 병아리 획득!")
             .setMessage(string)
             .setPositiveButton("예") {
-                var intent = Intent(this, PeepSelectActivity::class.java)
+                var intent = Intent(this, PickPeepActivity::class.java)
                 finish()
                 startActivity(intent)
             }
-            .setNegativeButton("취소") {
+            .setNegativeButton("아니요") {
                 finish()
             }
             .show()

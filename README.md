@@ -91,7 +91,7 @@ testImplementation 'junit:junit:4.+'
 * [김기현](https://github.com/kim1387) - 팀장, 데브옵스, 백엔드
 * [송경진](https://github.com/kjsong99) - 트러블슈팅, 백엔드
 * [장아령](https://github.com/aristo0922) - 프론트엔드, 백엔드
-* [허민](https://github.com/hhhminme) - PM, ,프론트엔드, 백엔드
+* [허민](https://github.com/hhhminme) - PM, 프론트엔드, 백엔드
 
 ## [Pic Resources](https://drive.google.com/drive/folders/1wpO1NG04ezMb3JURnkGOzDb1_NTwERkL?usp=sharing)
 

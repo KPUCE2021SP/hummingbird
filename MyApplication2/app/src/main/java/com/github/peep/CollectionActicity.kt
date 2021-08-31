@@ -153,7 +153,6 @@ class CollectionActicity : AppCompatActivity() {
 
     }
 
-
     private fun initRecycler(name: String, count: Int, img: Int) {
         datas.add(CollectionData(img = img, name = name, count = count))
 

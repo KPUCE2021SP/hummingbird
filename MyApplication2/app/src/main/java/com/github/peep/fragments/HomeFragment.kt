@@ -146,7 +146,7 @@ class HomeFragment : Fragment() {
             }
         }
 
-
+        //기존 애니메이션 작업
 //        mBinding?.peepHomeImageview?.apply {
 //            setBackgroundResource(R.drawable.yellow_peep_ani)
 //            yPeepHome = background as AnimationDrawable

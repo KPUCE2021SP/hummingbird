@@ -114,7 +114,7 @@ class HomeFragment : Fragment() {
                         mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
                     }
                     //비둘기
-                    "peigeon" -> {
+                    "pigeon" -> {
                         mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
                     }
                     //뱁새 추가 예정
@@ -138,7 +138,7 @@ class HomeFragment : Fragment() {
                         mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
                     }
                     //비둘기
-                    "peigeon" -> {
+                    "pigeon" -> {
                         mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
                     }
                     //뱁새 추가 예정

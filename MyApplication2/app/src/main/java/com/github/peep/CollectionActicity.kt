@@ -31,7 +31,7 @@ class CollectionActicity : AppCompatActivity() {
     //yellow,red,green,blue,peigeon 순서대로 가지고 병아리의 숫자.
     //이후엔 map으로 수정할 예정
     companion object {
-        val peepName = arrayOf("yellow", "red", "green", "blue", "peigeon")
+        val peepName = arrayOf("yellow", "red", "green", "blue", "pigeon")
         var peepCount = arrayOf(0, 0, 0, 0, 0)
     }
 
@@ -85,7 +85,7 @@ class CollectionActicity : AppCompatActivity() {
                     0 -> {
                         datas.add(
                             CollectionData(
-                                img = R.drawable.basic_neutral,
+                                img = R.drawable.peep_illust,
                                 name = "yellow",
                                 count = peepCount[0]
                             )
@@ -95,7 +95,7 @@ class CollectionActicity : AppCompatActivity() {
                     1 -> {
                         datas.add(
                             CollectionData(
-                                img = R.drawable.basic_neutral_red,
+                                img = R.drawable.red_peep_illust,
                                 name = "red",
                                 count = peepCount[1]
                             )
@@ -105,7 +105,7 @@ class CollectionActicity : AppCompatActivity() {
                     2 -> {
                         datas.add(
                             CollectionData(
-                                img = R.drawable.basic_neutral_green,
+                                img = R.drawable.green_peep_illust,
                                 name = "green",
                                 count = peepCount[2]
                             )
@@ -115,18 +115,18 @@ class CollectionActicity : AppCompatActivity() {
                     3 -> {
                         datas.add(
                             CollectionData(
-                                img = R.drawable.basic_neutral_blue,
+                                img = R.drawable.blue_peep_illust,
                                 name = "blue",
                                 count = peepCount[3]
                             )
                         )
                     }
-                    //peigeon
+                    //pigeon
                     4 -> {
                         datas.add(
                             CollectionData(
-                                img = R.drawable.basic_happy_pigeon,
-                                name = "peigeon",
+                                img = R.drawable.pigeon_illu,
+                                name = "pigeon",
                                 count = peepCount[4]
                             )
                         )

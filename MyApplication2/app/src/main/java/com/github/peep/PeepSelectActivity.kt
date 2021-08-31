@@ -38,9 +38,9 @@ class PeepSelectActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        peep_peigeon_btn.setOnClickListener {
+        peep_pigeon_btn.setOnClickListener {
             var intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("nextPeep","peigeon")
+            intent.putExtra("nextPeep","pigeon")
             startActivity(intent)
             finish()
         }

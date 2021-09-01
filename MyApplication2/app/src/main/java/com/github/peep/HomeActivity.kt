@@ -31,6 +31,8 @@ class HomeActivity : AppCompatActivity() {
                 runOnUiThread {
                     val intent= Intent(this@HomeActivity,ProfileActivity::class.java)
                     prefs.setString("token",result)
+                    prefs.setString("exp","0")
+                    prefs.setString("level","0")
                     finish()
                     startActivity(intent)
                 }

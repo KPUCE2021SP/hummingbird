@@ -56,20 +56,23 @@ class HomeFragment : Fragment() {
 
         val binding = FragmentHomeBinding.inflate(inflater,container,false)
         Log.d("reset", "onCreateView: 생성됨")
+        getUser()
 
+        username=prefs.getString("username","")
         mBinding = binding
 
         init()
+        getEvents(username)
         view()
 
 
-//
-//        //새로 고침
-//        //현재는 오늘의 커밋 가져오기로 사용 중
-//        mBinding?.renewBtn?.setOnClickListener {
-////            getEvents(prefs.getString("username",""))
-//            getLevel(count)
-//        }
+
+        //새로 고침
+        //현재는 오늘의 커밋 가져오기로 사용 중
+        mBinding?.renewBtn?.setOnClickListener {
+            getEvents(username)
+            view()
+        }
 
         //세팅창
         mBinding?.settingBtn?.setOnClickListener {
@@ -88,22 +91,6 @@ class HomeFragment : Fragment() {
             ) { dialog, which -> dialog.dismiss() }
             ad.show()
         }
-
-        mBinding?.dateButton?.setOnClickListener { //임의의 날짜 설정 버튼
-            prefs.remove("count") //날짜를 초기화했기 때문에 카운트도 초기화
-            prefs.remove("date")
-            init()
-            view()
-
-        }
-
-        mBinding?.countButton?.setOnClickListener {
-            init()
-            upCount()
-            progress()
-            view()
-        }
-
         
 
         mBinding?.peepHomeImageview?.apply {
@@ -130,7 +117,6 @@ class HomeFragment : Fragment() {
                     val user=response.body()
                     username= user?.login.toString()
                     prefs.setString("username", username)
-//                    Toast.makeText(getActivity(), "username : $username", Toast.LENGTH_SHORT).show()
 
                 } else {
                     Log.e("err",response.code().toString())
@@ -143,111 +129,62 @@ class HomeFragment : Fragment() {
         })
     }
 
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    fun getLevel(){
-//
-//        //경험치, 레벨, 날짜, 카운트 초기화 되어있지 않은 경우 초기화 해주기
-//        if(checkInit("exp")){
-//            prefs.setString("exp","0")
-//        }
-//
-//        if(checkInit("level")){
-//            prefs.setString("level","1")
-//        }
-//
-//        if(checkInit("date")){
-//            prefs.setString("date",LocalDate.now().toString())
-//        }
-//
-//        if(checkInit("count")){
-//            prefs.setString("count","0")
-//        }
-//
-//        var level:Int=prefs.getString("level","").toInt()
-//        var exp:Int=prefs.getString("exp","").toInt()
-//        var count:Int= prefs.getString("count","").toInt()
-//        var date:String=prefs.getString("date","")
-//
-//        mBinding?.todayCommitCountTextview?.setText(count)
-//        mBinding?.currentLevelTv?.setText(level)
-//        mBinding?.commitExpProgressbar?.setProgress(exp)
-//
-//        if(count<3){
-//            for(i in 1..count){
-//                progress()
-//            }
-//        }
-//
-//        mBinding?.todayCommitCountTextview?.setText(count.toString())
-//    }
 
-//
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    fun getLevel(num:Int){
-//
-//        var count:Int= prefs.getString("count","").toInt()
-//        var date:String=prefs.getString("date","")
-//
-//        if(num>count&&num<3){
-//            for(i in count..num){
-//                progress()
-//            }
-//        }
-//        today_commit_count_textview.setText(prefs.getString("count","0"))
-//    }
 
-    fun upCount(){
-        var count:Int=prefs.getString("count","").toInt()
-        count++
+    fun upCount(count:Int){
         prefs.setString("count",count.toString())
     }
 
-//
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    fun getEvents(username:String){
-//        count=0
-//        var GithubService=ApiClient.client.create((GithubInterface::class.java))
-//        val call=GithubService.getEvents(username)
-//        val now: String = LocalDate.now().toString() //현재 날짜
-//        val date:String=prefs.getString("date","") //반영된 날짜
-//        val savedCount:String=prefs.getString("count","") //이미 반영된 count 수
-//
-//        if(date!=now||date==""){ //date가 현재 날짜와 다르거나 설정된 적이 없을 경우
-//            prefs.setString("date",now)
-//            prefs.remove("count") //날짜를 초기화했기 때문에 카운트도 초기화
-//        }
-//        call!!.enqueue(object :Callback<Events>{
-//            override fun onResponse(call: Call<Events>, response: Response<Events>) {
-//                Log.d("fullresponse", response.toString())
-//                if (response.code() == 200) {
-//                    events= response.body()
-//                    for(i in events!!.indices){
-//                        if(events!![i].type=="PushEvent"&&
-//                            events!![i].created_at.substring(0,10)==date){
-//                            count++
-//                        }
-//                    }
-//                    if(savedCount==""){ //반영된 count가 없을 경우
-//                        prefs.setString("count",count.toString()) //카운트 설정
-//                    }
-//                    else{ //이미 반영된 count가 있을 경우
-//                        if(savedCount.toInt()<2){
-//                            for(i in (savedCount.toInt())..count){
-//                                commit_exp_progressbar.incrementProgressBy(20)
-//                            }
-//                        }
-//                    }
-//                    today_commit_count_textview.setText(count.toString())
-//                } else {
-//                    Log.e("err",response.code().toString())
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<Events>, t: Throwable) {
-//                TODO("Not yet implemented")
-//            }
-//        })
-//    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun getEvents(username:String){
+        var count:Int=0
+        var GithubService=ApiClient.client.create((GithubInterface::class.java))
+        val call=GithubService.getEvents(username)
+        val now: String = LocalDate.now().toString() //현재 날짜
+        val date:String=prefs.getString("date","") //반영된 날짜
+        val savedCount:Int=prefs.getString("count","").toInt() //이미 반영된 count 수
+
+        if(date!=now){ //date가 현재 날짜와 다르거나 설정된 적이 없을 경우
+            prefs.setString("date",now)
+            prefs.remove("count") //날짜를 초기화했기 때문에 카운트도 초기화
+            init()
+        }
+        call!!.enqueue(object :Callback<Events>{
+            override fun onResponse(call: Call<Events>, response: Response<Events>) {
+                Log.d("fullresponse", response.toString())
+                if (response.code() == 200) {
+                    events= response.body()
+                    for(i in events!!.indices){
+                        if(events!![i].type=="PushEvent"&&
+                            events!![i].created_at.substring(0,10)==date&&
+                            events!![i].payload.ref=="refs/heads/main"){
+                            count++
+                        }
+                    }
+                    Log.d("saveCount ",savedCount.toString())
+                    Log.d("count",count.toString())
+                    if(savedCount < count){ //반영된 count가 현재 count 보다 작을 경우
+
+                        for(i in savedCount..count){
+                            if(i<3&&i>0){
+                                progress(i)
+                            }
+
+                        }
+                        upCount(count)
+
+                    }
+                } else {
+                    Log.e("err",response.code().toString())
+                }
+            }
+
+            override fun onFailure(call: Call<Events>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
 
     fun refreshFragment(fragment:Fragment, framentManager: FragmentManager?){
         val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
@@ -292,10 +229,9 @@ class HomeFragment : Fragment() {
         mBinding?.todayCommitCountTextview?.setText(prefs.getString("count",""))
     }
 
-    fun progress(){
+    fun progress(count:Int){
         var exp:Int=prefs.getString("exp","").toInt()
         var level:Int=prefs.getString("level","").toInt()
-        var count:Int=prefs.getString("count","").toInt()
 
         if(count<3){
             if(exp<80){
@@ -313,6 +249,8 @@ class HomeFragment : Fragment() {
             }
             prefs.setString("exp",exp.toString())
             prefs.setString("level",level.toString())
+        }
+        else{
         }
 
 

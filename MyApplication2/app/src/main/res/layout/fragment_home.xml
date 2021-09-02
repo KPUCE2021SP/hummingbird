@@ -159,22 +159,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/dateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="date"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/countButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Count"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
-        app:layout_constraintEnd_toEndOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

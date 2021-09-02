@@ -11,6 +11,7 @@ import com.github.peep.App.Companion.prefs
 import com.github.peep.DB.User
 import com.github.peep.DB.UserDB
 import com.github.peep.databinding.ActivityHomeBinding
+import com.github.peep.fragments.HomeFragment
 import com.github.rahul.githuboauth.ErrorCallback
 import com.github.rahul.githuboauth.GithubAuthenticator
 import com.github.rahul.githuboauth.SuccessCallback
@@ -73,6 +74,8 @@ class HomeActivity : AppCompatActivity() {
         mBinding= ActivityHomeBinding.inflate(layoutInflater)
 
         super.onCreate(savedInstanceState)
+
+
         //토근이 저장되어 있지 않다면
         //데이터 베이스 생성
         if(prefs.getString("token","").equals("")){

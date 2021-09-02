@@ -6,6 +6,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.github.peep.DB.UserDB
 import com.github.peep.databinding.ActivityMainBinding
+import com.github.peep.fragments.HomeFragment
 
 //메인 쓰레드에서 Romm DB에 접근하려고 하면 에러가 발생
 //Cannot access database on the main thread since it may potentially lock the UI for a long period of time.
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity(){
     //나중에 값이 설정될거라고 lateinit으로 설정
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
 
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)

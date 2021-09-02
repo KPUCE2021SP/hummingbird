@@ -47,22 +47,17 @@ class HomeFragment : Fragment() {
     private var mBinding : FragmentHomeBinding?=null
     private lateinit var yPeepHome: AnimationDrawable
 
+
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val binding = FragmentHomeBinding.inflate(inflater,container,false)
-        Log.d("reset", "onCreateView: 생성됨")
-        getUser()
-
-        username=prefs.getString("username","")
         mBinding = binding
-
         init()
-        getEvents(username)
         view()
 
 
@@ -106,6 +101,21 @@ class HomeFragment : Fragment() {
 
         return mBinding?.root
     }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        getUser()
+        username=prefs.getString("username","")
+
+        init()
+        getEvents(username)
+
+        view()
+
+    }
+
+
 
     fun getUser(){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)

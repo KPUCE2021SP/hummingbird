@@ -149,7 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/font_title"
-            android:text="현재 레벨 : 0"
+            android:text="현재 레벨 : 1"
             android:textColor="@color/colorText"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"

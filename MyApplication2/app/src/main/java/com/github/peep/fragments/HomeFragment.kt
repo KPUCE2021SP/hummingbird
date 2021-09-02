@@ -42,13 +42,10 @@ class HomeFragment : Fragment() {
         var username:String=""
         var id  : String = ""
         var events:Events?=null
-        var count:Int=0
     }
 
     private var mBinding : FragmentHomeBinding?=null
     private lateinit var yPeepHome: AnimationDrawable
-    var exp:Int=prefs.getString("exp","-1").toInt()
-    var level:Int=prefs.getString("level","-1").toInt()
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -56,30 +53,23 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        count=0
+
         val binding = FragmentHomeBinding.inflate(inflater,container,false)
         Log.d("reset", "onCreateView: 생성됨")
+
         mBinding = binding
 
-        if(level<0){
-            level=1
-            prefs.setString("level","1")
-        }
+        init()
+        view()
 
-        if(exp<0){
-            exp=0
-            prefs.setString("exp","0")
-        }
 
-        mBinding?.currentLevelTv?.setText("현재 레벨 : " +prefs.getString("level",""))
-        mBinding?.commitExpProgressbar?.setProgress(prefs.getString("exp","").toInt())
-
-        //새로 고침
-        //현재는 오늘의 커밋 가져오기로 사용 중
-        mBinding?.renewBtn?.setOnClickListener {
-//            getEvents(prefs.getString("username",""))
-            getLevel(count)
-        }
+//
+//        //새로 고침
+//        //현재는 오늘의 커밋 가져오기로 사용 중
+//        mBinding?.renewBtn?.setOnClickListener {
+////            getEvents(prefs.getString("username",""))
+//            getLevel(count)
+//        }
 
         //세팅창
         mBinding?.settingBtn?.setOnClickListener {
@@ -98,13 +88,20 @@ class HomeFragment : Fragment() {
             ) { dialog, which -> dialog.dismiss() }
             ad.show()
         }
+
         mBinding?.dateButton?.setOnClickListener { //임의의 날짜 설정 버튼
-            prefs.setString("date",LocalDate.now().toString())
             prefs.remove("count") //날짜를 초기화했기 때문에 카운트도 초기화
+            prefs.remove("date")
+            init()
+            view()
+
         }
 
         mBinding?.countButton?.setOnClickListener {
-            count++
+            init()
+            upCount()
+            progress()
+            view()
         }
 
         
@@ -146,116 +143,111 @@ class HomeFragment : Fragment() {
         })
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun getLevel(count:Int){
+//    @RequiresApi(Build.VERSION_CODES.O)
+//    fun getLevel(){
+//
+//        //경험치, 레벨, 날짜, 카운트 초기화 되어있지 않은 경우 초기화 해주기
+//        if(checkInit("exp")){
+//            prefs.setString("exp","0")
+//        }
+//
+//        if(checkInit("level")){
+//            prefs.setString("level","1")
+//        }
+//
+//        if(checkInit("date")){
+//            prefs.setString("date",LocalDate.now().toString())
+//        }
+//
+//        if(checkInit("count")){
+//            prefs.setString("count","0")
+//        }
+//
+//        var level:Int=prefs.getString("level","").toInt()
+//        var exp:Int=prefs.getString("exp","").toInt()
+//        var count:Int= prefs.getString("count","").toInt()
+//        var date:String=prefs.getString("date","")
+//
+//        mBinding?.todayCommitCountTextview?.setText(count)
+//        mBinding?.currentLevelTv?.setText(level)
+//        mBinding?.commitExpProgressbar?.setProgress(exp)
+//
+//        if(count<3){
+//            for(i in 1..count){
+//                progress()
+//            }
+//        }
+//
+//        mBinding?.todayCommitCountTextview?.setText(count.toString())
+//    }
 
-        val date:String= prefs.getString("date","")
-        var exp:Int=prefs.getString("exp","-1").toInt()
-        var level:Int=prefs.getString("level","-1").toInt()
+//
+//    @RequiresApi(Build.VERSION_CODES.O)
+//    fun getLevel(num:Int){
+//
+//        var count:Int= prefs.getString("count","").toInt()
+//        var date:String=prefs.getString("date","")
+//
+//        if(num>count&&num<3){
+//            for(i in count..num){
+//                progress()
+//            }
+//        }
+//        today_commit_count_textview.setText(prefs.getString("count","0"))
+//    }
 
-        if(date==""){ //date가 설정된 적이 없을 경우
-            prefs.setString("date",LocalDate.now().toString())
-            prefs.remove("count") //날짜를 초기화했기 때문에 카운트도 초기화
-        }
-
-        var savedCount:String=prefs.getString("count","") //이미 반영된 count 수
-
-        if(savedCount==""){ //반영된 count가 없을 경우
-            prefs.setString("count",count.toString()) //카운트 설정
-            if(count<3){
-                for(i in 1..count){
-                    if(exp < 80){
-                        exp+=20
-                    }
-                    else{
-                        exp=0
-                        if(level<5){
-                            level++
-                        }
-                    }
-                }
-            }
-            else{
-                for(i in 1..2){
-                    if(exp < 80){
-                        exp+=20
-                    }
-                    else{
-                        exp=0
-                        if(level<5){
-                            level++
-                        }
-                    }
-                }
-            }
-        }
-        else{ //이미 반영된 count가 있을 경우
-            if(savedCount.toInt()<2){
-                for(i in (savedCount.toInt())..count){
-                    if(exp < 80){
-                        exp+=20
-                    }
-                    else{
-                        exp=0
-                        if(level<5){
-                            level++
-                        }
-                    }
-                }
-            }
-        }
-        today_commit_count_textview.setText(prefs.getString("count","0"))
-        prefs.setString("level",level.toString())
-        prefs.setString("exp",exp.toString())
-        mBinding?.commitExpProgressbar?.setProgress(prefs.getString("exp","").toInt())
-        mBinding?.currentLevelTv?.setText("현재 레벨 : "+ prefs.getString("level",""))
+    fun upCount(){
+        var count:Int=prefs.getString("count","").toInt()
+        count++
+        prefs.setString("count",count.toString())
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun getEvents(username:String){
-        count=0
-        var GithubService=ApiClient.client.create((GithubInterface::class.java))
-        val call=GithubService.getEvents(username)
-        val now: String = LocalDate.now().toString() //현재 날짜
-        val date:String=prefs.getString("date","") //반영된 날짜
-        val savedCount:String=prefs.getString("count","") //이미 반영된 count 수
-
-        if(date!=now||date==""){ //date가 현재 날짜와 다르거나 설정된 적이 없을 경우
-            prefs.setString("date",now)
-            prefs.remove("count") //날짜를 초기화했기 때문에 카운트도 초기화
-        }
-        call!!.enqueue(object :Callback<Events>{
-            override fun onResponse(call: Call<Events>, response: Response<Events>) {
-                Log.d("fullresponse", response.toString())
-                if (response.code() == 200) {
-                    events= response.body()
-                    for(i in events!!.indices){
-                        if(events!![i].type=="PushEvent"&&
-                            events!![i].created_at.substring(0,10)==date){
-                            count++
-                        }
-                    }
-                    if(savedCount==""){ //반영된 count가 없을 경우
-                        prefs.setString("count",count.toString()) //카운트 설정
-                    }
-                    else{ //이미 반영된 count가 있을 경우
-                        if(savedCount.toInt()<2){
-                            for(i in (savedCount.toInt())..count){
-                                commit_exp_progressbar.incrementProgressBy(20)
-                            }
-                        }
-                    }
-                    today_commit_count_textview.setText(count.toString())
-                } else {
-                    Log.e("err",response.code().toString())
-                }
-            }
-
-            override fun onFailure(call: Call<Events>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-        })
-    }
+//
+//    @RequiresApi(Build.VERSION_CODES.O)
+//    fun getEvents(username:String){
+//        count=0
+//        var GithubService=ApiClient.client.create((GithubInterface::class.java))
+//        val call=GithubService.getEvents(username)
+//        val now: String = LocalDate.now().toString() //현재 날짜
+//        val date:String=prefs.getString("date","") //반영된 날짜
+//        val savedCount:String=prefs.getString("count","") //이미 반영된 count 수
+//
+//        if(date!=now||date==""){ //date가 현재 날짜와 다르거나 설정된 적이 없을 경우
+//            prefs.setString("date",now)
+//            prefs.remove("count") //날짜를 초기화했기 때문에 카운트도 초기화
+//        }
+//        call!!.enqueue(object :Callback<Events>{
+//            override fun onResponse(call: Call<Events>, response: Response<Events>) {
+//                Log.d("fullresponse", response.toString())
+//                if (response.code() == 200) {
+//                    events= response.body()
+//                    for(i in events!!.indices){
+//                        if(events!![i].type=="PushEvent"&&
+//                            events!![i].created_at.substring(0,10)==date){
+//                            count++
+//                        }
+//                    }
+//                    if(savedCount==""){ //반영된 count가 없을 경우
+//                        prefs.setString("count",count.toString()) //카운트 설정
+//                    }
+//                    else{ //이미 반영된 count가 있을 경우
+//                        if(savedCount.toInt()<2){
+//                            for(i in (savedCount.toInt())..count){
+//                                commit_exp_progressbar.incrementProgressBy(20)
+//                            }
+//                        }
+//                    }
+//                    today_commit_count_textview.setText(count.toString())
+//                } else {
+//                    Log.e("err",response.code().toString())
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<Events>, t: Throwable) {
+//                TODO("Not yet implemented")
+//            }
+//        })
+//    }
 
     fun refreshFragment(fragment:Fragment, framentManager: FragmentManager?){
         val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
@@ -264,4 +256,68 @@ class HomeFragment : Fragment() {
         }
         ft.detach(this).attach(this).commit()
     }
+
+    fun checkInit(key:String):Boolean{
+        var value:String=prefs.getString(key,"")
+        if(value==""){
+            return true
+        }
+        return false
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun init(){
+        //경험치, 레벨, 날짜, 카운트 초기화 되어있지 않은 경우 초기화 해주기
+        if(checkInit("exp")){
+            prefs.setString("exp","0")
+        }
+
+        if(checkInit("level")){
+            prefs.setString("level","1")
+        }
+
+        if(checkInit("date")){
+            prefs.setString("date",LocalDate.now().toString())
+        }
+
+        if(checkInit("count")){
+            prefs.setString("count","0")
+        }
+
+    }
+
+    fun view(){
+        mBinding?.commitExpProgressbar?.setProgress(prefs.getString("exp","").toInt())
+        mBinding?.currentLevelTv?.setText("현재 레벨 : "+prefs.getString("level",""))
+        mBinding?.todayCommitCountTextview?.setText(prefs.getString("count",""))
+    }
+
+    fun progress(){
+        var exp:Int=prefs.getString("exp","").toInt()
+        var level:Int=prefs.getString("level","").toInt()
+        var count:Int=prefs.getString("count","").toInt()
+
+        if(count<3){
+            if(exp<80){
+                exp+=20
+            }
+            else{
+                exp=0
+                if(level<5){
+                    level++
+                }
+                else{
+                    //졸업
+                    level=1
+                }
+            }
+            prefs.setString("exp",exp.toString())
+            prefs.setString("level",level.toString())
+        }
+
+
+    }
+
+
+
 }

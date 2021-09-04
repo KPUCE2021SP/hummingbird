@@ -9,44 +9,51 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.github.peep.App.Companion.prefs
 import com.github.peep.CollectionActicity
-import kotlinx.android.synthetic.main.fragment_home.*
-import com.github.peep.DB.UserDB
-import com.github.peep.MainActivity
 import com.github.peep.R
 import com.github.peep.SettingActivity
 import com.github.peep.databinding.FragmentHomeBinding
-import com.github.peep.model.EventResponse
-import com.github.peep.model.EventResponseItem
 import com.github.peep.model.Events
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
-import com.peep.githubapitest.model.Repo
 import com.peep.githubapitest.model.User
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.time.LocalDate
+import java.util.*
 
 
 class HomeFragment : Fragment() {
 
-    companion object{
-        var username:String=""
-        var id  : String = ""
-        var events:Events?=null
+    companion object {
+        var username: String = ""
+        var id: String = ""
+        var events: Events? = null
+
+        //유저가 처음 받는 기본 병아리는 yellow
+        var currentPeep: String? = "yellow"
+
+        var df1: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+
     }
 
-    private var mBinding : FragmentHomeBinding?=null
+    private var nextPeep: String? = null
+    private var mBinding: FragmentHomeBinding? = null
     private lateinit var yPeepHome: AnimationDrawable
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        getUser()
+        username= prefs.getString("username","")
+    }
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -55,10 +62,8 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentHomeBinding.inflate(inflater,container,false)
+        val binding = FragmentHomeBinding.inflate(inflater, container, false)
         mBinding = binding
-        init()
-        view()
 
 
 
@@ -71,8 +76,15 @@ class HomeFragment : Fragment() {
 
         //세팅창
         mBinding?.settingBtn?.setOnClickListener {
-            var intent = Intent(activity,SettingActivity::class.java)
+            var intent = Intent(activity, SettingActivity::class.java)
             startActivity(intent)
+        }
+        //병아리 졸업
+        mBinding?.gradBtn?.setOnClickListener {
+            var intent = Intent(activity, CollectionActicity::class.java)
+            intent.putExtra("currentPeep", currentPeep)
+            startActivity(intent)
+            requireActivity().finish()
         }
 
         //경험치 정보
@@ -82,22 +94,77 @@ class HomeFragment : Fragment() {
             ad.setCancelable(false)
             ad.setTitle("경험치 정보")
             ad.setMessage("커밋 할수록 경험치가 찹니다. \n경험치가 다 차면 상단 컬렉션에서 모으신 병아리를 확인 하실 수 있습니다.")
-            ad.setButton("확인"
+            ad.setButton(
+                "확인"
             ) { dialog, which -> dialog.dismiss() }
             ad.show()
         }
-        
 
+        nextPeep = getActivity()?.getIntent()?.getStringExtra("nextPeep")
+        //병아리 일러 추후 애니메이션 작업 할 예정
+        //병아리 일러스트, 애니메이션 작업이 남아 있기 때문에 함수화 하지 않고 하드코딩했다.
         mBinding?.peepHomeImageview?.apply {
-            setBackgroundResource(R.drawable.yellow_peep_ani)
-            yPeepHome = background as AnimationDrawable
-            yPeepHome.start()
+            if (nextPeep != null) {
+                currentPeep = nextPeep
+                when (currentPeep) {
+                    "yellow" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral)
+                    }
+                    //빨간 병아리
+                    "red" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_red)
+                    }
+                    //초록 병아리
+                    "green" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_green)
+                    }
+                    //파랑 병아리
+                    "blue" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
+                    }
+                    //비둘기
+                    "pigeon" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
+                    }
+                    //뱁새 추가 예정
+                }
+            } else {
+                when (currentPeep) {
+                    "yellow" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral)
+                    }
+                    //빨간 병아리
+                    "red" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_red)
+                    }
+                    //초록 병아리
+                    "green" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_green)
+                    }
+                    //파랑 병아리
+                    "blue" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
+                    }
+                    //비둘기
+                    "pigeon" -> {
+                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
+                    }
+                    //뱁새 추가 예정
+                }
+            }
         }
 
-        mBinding?.peepHomeImageview?.setOnClickListener {
-            val animation = AnimationUtils.loadAnimation(activity, R.anim.rotation)
-            peep_home_imageview.startAnimation(animation)
-        }
+        //기존 애니메이션 작업
+//        mBinding?.peepHomeImageview?.apply {
+//            setBackgroundResource(R.drawable.yellow_peep_ani)
+//            yPeepHome = background as AnimationDrawable
+//            yPeepHome.start()
+//        }
+
+//        mBinding?.peepHomeImageview?.setOnClickListener {
+//            val animation = AnimationUtils.loadAnimation(activity, R.anim.rotation)
+//            peep_home_imageview.startAnimation(animation)
+//        }
 
         return mBinding?.root
     }
@@ -105,17 +172,13 @@ class HomeFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        getUser()
-        username=prefs.getString("username","")
+
 
         init()
         getEvents(username)
-
         view()
 
     }
-
-
 
     fun getUser(){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
@@ -140,12 +203,6 @@ class HomeFragment : Fragment() {
     }
 
 
-
-    fun upCount(count:Int){
-        prefs.setString("count",count.toString())
-    }
-
-
     @RequiresApi(Build.VERSION_CODES.O)
     fun getEvents(username:String){
         var count:Int=0
@@ -155,8 +212,8 @@ class HomeFragment : Fragment() {
         val date:String=prefs.getString("date","") //반영된 날짜
         val savedCount:Int=prefs.getString("count","").toInt() //이미 반영된 count 수
 
-        if(date!=now){ //date가 현재 날짜와 다르거나 설정된 적이 없을 경우
-            prefs.setString("date",now)
+        if(date!=now){ //date가 현재 날짜와 다를 경우
+            prefs.remove("date")
             prefs.remove("count") //날짜를 초기화했기 때문에 카운트도 초기화
             init()
         }
@@ -165,9 +222,17 @@ class HomeFragment : Fragment() {
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     events= response.body()
+                    var created_at:Date
+                    var kor_created_at:Date
+                    var str_date:String
                     for(i in events!!.indices){
+                        var dateString:String = events!![i].created_at.replace("Z", "GMT+00:00")
+                        created_at= df1.parse(dateString)
+                        kor_created_at= convert(created_at)!!
+                        str_date=df1.format(kor_created_at)
+
                         if(events!![i].type=="PushEvent"&&
-                            events!![i].created_at.substring(0,10)==date&&
+                            str_date.substring(0,10)==date&&
                             events!![i].payload.ref=="refs/heads/main"){
                             count++
                         }
@@ -175,9 +240,8 @@ class HomeFragment : Fragment() {
                     Log.d("saveCount ",savedCount.toString())
                     Log.d("count",count.toString())
                     if(savedCount < count){ //반영된 count가 현재 count 보다 작을 경우
-
                         for(i in savedCount..count){
-                            if(i<3&&i>0){
+                            if(i<3){
                                 progress(i)
                             }
 
@@ -196,12 +260,16 @@ class HomeFragment : Fragment() {
         })
     }
 
-    fun refreshFragment(fragment:Fragment, framentManager: FragmentManager?){
+    fun refreshFragment(fragment: Fragment, framentManager: FragmentManager?) {
         val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
         if (Build.VERSION.SDK_INT >= 26) {
             ft.setReorderingAllowed(false)
         }
         ft.detach(this).attach(this).commit()
+    }
+
+    fun upCount(count:Int){
+        prefs.setString("count",count.toString())
     }
 
     fun checkInit(key:String):Boolean{
@@ -234,16 +302,16 @@ class HomeFragment : Fragment() {
     }
 
     fun view(){
-        mBinding?.commitExpProgressbar?.setProgress(prefs.getString("exp","").toInt())
-        mBinding?.currentLevelTv?.setText("현재 레벨 : "+prefs.getString("level",""))
-        mBinding?.todayCommitCountTextview?.setText(prefs.getString("count",""))
+        mBinding?.commitExpProgressbar?.progress = prefs.getString("exp","").toInt()
+        mBinding?.currentLevelTv?.text = "현재 레벨 : "+prefs.getString("level","")
+        mBinding?.todayCommitCountTextview?.text = prefs.getString("count","")
     }
 
     fun progress(count:Int){
         var exp:Int=prefs.getString("exp","").toInt()
         var level:Int=prefs.getString("level","").toInt()
 
-        if(count<3){
+        if(count<2){
             if(exp<80){
                 exp+=20
             }
@@ -260,12 +328,11 @@ class HomeFragment : Fragment() {
             prefs.setString("exp",exp.toString())
             prefs.setString("level",level.toString())
         }
-        else{
-        }
-
-
     }
 
-
-
+    fun convert(date: Date?): Date? { //시차 변환
+        val calendar = Calendar.getInstance()
+        calendar.time = date
+        return calendar.time
+    }
 }

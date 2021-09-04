@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.core.app.ActivityCompat
 import com.github.peep.DB.UserDB
 
 import com.github.peep.databinding.ActivitySettingBinding
@@ -88,14 +87,12 @@ class SettingActivity : AppCompatActivity() {
             .setMessage(string)
             .setPositiveButton("예") {
                 logout()
-                var intent=Intent(this,HomeActivity::class.java)
-                ActivityCompat.finishAffinity(this)
+//                임의로
+                var intent=Intent(this, PickPeepActivity::class.java)
+                finish()
                 startActivity(intent)
             }
-            .setNegativeButton("취소"){
-                finish()
-            }
-
+            .setNegativeButton("취소"){}
             .show()
 
 //        val alertDialog = AlertDesign.CustomDialogBuilder()

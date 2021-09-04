@@ -56,11 +56,10 @@
     </RelativeLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25sp"
         android:layout_weight="1"
+        android:layout_marginBottom="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/relativeLayout">
 
@@ -80,8 +79,7 @@
             android:layout_width="238dp"
             android:layout_height="18dp"
             android:layout_marginTop="55dp"
-            android:max="100"
-            android:progress="0"
+            android:progress="25"
             android:progressDrawable="@drawable/progressbar_progressbar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -148,15 +146,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/font_title"
-            android:text="현재 레벨 : 1"
-            android:textColor="@color/colorText"
+            android:text="level. 0"
             android:textSize="20dp"
+            android:fontFamily="@font/font_title"
+            android:textColor="@color/colorText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.313"
             app:layout_constraintStart_toEndOf="@+id/peep_name"
             app:layout_constraintTop_toBottomOf="@+id/peep_home_imageview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/grad_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="누르면 졸업 새로운 병아리 도착"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

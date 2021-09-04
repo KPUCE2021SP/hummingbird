@@ -13,7 +13,7 @@
     <item
         android:id="@+id/acticity_collection"
         android:title="컬렉션"
-        android:icon="@drawable/ic_baseline_find_in_page_24"
+        android:icon="@drawable/icon_peep"
         />
 
 </menu>

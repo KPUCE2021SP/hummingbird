@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@drawable/basic_neutral_green" android:duration="2500"/>
+    <item android:drawable="@drawable/action_neutral_green_2" android:duration="2500"/>
+    <item android:drawable="@drawable/action_neutral_green_3" android:duration="2500"/>
+    <item android:drawable="@drawable/action_neutral_green_1" android:duration="2500"/>
+
+</animation-list>

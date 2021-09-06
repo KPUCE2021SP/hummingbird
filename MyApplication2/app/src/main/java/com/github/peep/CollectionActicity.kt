@@ -62,7 +62,6 @@ class CollectionActicity : AppCompatActivity() {
             showSettingPopup("새로운 병아리를 획득하시고 싶다면 '예'\n기존 병아리를 한번 더 키우고 싶다면 '아니요'를 눌러주세요.")
         }
         //졸업 기능이 이뤄지지 않고 그냥 컬렉션 볼때
-        //hard coding으로 구현
         else {
             //Toast.makeText(this, "null? : ${currentPeep}", Toast.LENGTH_SHORT).show()
             gradPeepCount()

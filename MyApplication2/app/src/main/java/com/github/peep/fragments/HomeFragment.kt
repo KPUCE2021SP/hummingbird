@@ -79,13 +79,7 @@ class HomeFragment : Fragment() {
             var intent = Intent(activity, SettingActivity::class.java)
             startActivity(intent)
         }
-        //병아리 졸업
-        mBinding?.gradBtn?.setOnClickListener {
-            var intent = Intent(activity, CollectionActicity::class.java)
-            intent.putExtra("currentPeep", currentPeep)
-            startActivity(intent)
-            requireActivity().finish()
-        }
+
 
         //경험치 정보
         mBinding?.commitExpInfoBtn?.setOnClickListener {
@@ -321,7 +315,8 @@ class HomeFragment : Fragment() {
                     level++
                 }
                 else{
-                    //졸업
+
+                    graduation()
                     level=1
                 }
             }
@@ -334,5 +329,12 @@ class HomeFragment : Fragment() {
         val calendar = Calendar.getInstance()
         calendar.time = date
         return calendar.time
+    }
+
+    fun graduation(){
+        var intent = Intent(activity, CollectionActicity::class.java)
+        intent.putExtra("currentPeep", currentPeep)
+        startActivity(intent)
+        requireActivity().finish()
     }
 }

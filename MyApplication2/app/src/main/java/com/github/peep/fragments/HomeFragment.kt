@@ -79,13 +79,13 @@ class HomeFragment : Fragment() {
             var intent = Intent(activity, SettingActivity::class.java)
             startActivity(intent)
         }
-        //병아리 졸업
-        mBinding?.gradBtn?.setOnClickListener {
-            var intent = Intent(activity, CollectionActicity::class.java)
-            intent.putExtra("currentPeep", currentPeep)
-            startActivity(intent)
-            requireActivity().finish()
-        }
+//        //병아리 졸업
+//        mBinding?.gradBtn?.setOnClickListener {
+//            var intent = Intent(activity, CollectionActicity::class.java)
+//            intent.putExtra("currentPeep", currentPeep)
+//            startActivity(intent)
+//            requireActivity().finish()
+//        }
 
         //경험치 정보
         mBinding?.commitExpInfoBtn?.setOnClickListener {
@@ -173,7 +173,6 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
         init()
         getEvents(username)
         view()
@@ -244,10 +243,7 @@ class HomeFragment : Fragment() {
                             if(i<3){
                                 progress(i)
                             }
-
                         }
-                        upCount(count)
-
                     }
                 } else {
                     Log.e("err",response.code().toString())
@@ -322,6 +318,13 @@ class HomeFragment : Fragment() {
                 else{
                     //졸업
                     level=1
+
+                    //졸업 기능 수행
+                    var intent = Intent(activity, CollectionActicity::class.java)
+                    intent.putExtra("currentPeep", currentPeep)
+                    startActivity(intent)
+                    requireActivity().finish()
+
                 }
             }
             prefs.setString("exp",exp.toString())

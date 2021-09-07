@@ -3,12 +3,18 @@ package com.github.peep.decorator
 import android.app.AlertDialog
 import android.content.Context
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.github.peep.R
 import kotlinx.android.synthetic.main.alert_popup.view.*
+import java.util.logging.Handler
 
-class AlertDesignOneBtn(private val context: Context) {
+class AlertDesignOneBtn(private val context: Context){
     private val builder: AlertDialog.Builder by lazy {
-        AlertDialog.Builder(context).setView(view)
+        AlertDialog
+            .Builder(context)
+            .setCancelable(false)
+            .setView(view)
     }
 
     private val view: View by lazy {
@@ -48,4 +54,5 @@ class AlertDesignOneBtn(private val context: Context) {
     fun dismiss() {
         dialog?.dismiss()
     }
+
 }

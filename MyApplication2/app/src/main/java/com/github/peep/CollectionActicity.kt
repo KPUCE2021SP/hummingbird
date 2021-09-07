@@ -1,24 +1,15 @@
 package com.github.peep
 
-import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.github.peep.DB.User
-import com.github.peep.DB.UserDB
-import com.github.peep.decorator.AlertDesign
+import androidx.appcompat.app.AppCompatActivity
 import com.github.peep.decorator.AlertDesignOneBtn
-import com.github.peep.fragments.HomeFragment
 import com.github.peep.view.CollectionAdapter
 import com.github.peep.view.CollectionData
 import com.github.peep.view.HorizontalItemDecorator
 import com.github.peep.view.VerticalItemDecorator
-
 import kotlinx.android.synthetic.main.activity_collection.*
-import java.lang.Exception
 
 //메인 쓰레드에서 Romm DB에 접근하려고 하면 에러가 발생
 //Cannot access database on the main thread since it may potentially lock the UI for a long period of time.
@@ -35,6 +26,7 @@ class CollectionActicity : AppCompatActivity() {
     companion object {
         val peepName = arrayOf("yellow", "red", "green", "blue", "pigeon")
         var peepCount = arrayOf(0, 0, 0, 0, 0)
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -153,7 +145,9 @@ class CollectionActicity : AppCompatActivity() {
 //                startActivity(intent)
 //                finish()
 //            }
+
             .show()
+
     }
 
     private fun initRecycler(name: String, count: Int, img: Int) {

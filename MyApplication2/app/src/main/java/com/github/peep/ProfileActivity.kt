@@ -67,7 +67,6 @@ class ProfileActivity : AppCompatActivity() {
         val call=GithubService.getUser()
         call.enqueue(object: Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
-                Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
                     Picasso.get().load(user?.avatar_url).into(mBinding.gitProfileIv)

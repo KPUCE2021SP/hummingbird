@@ -1,6 +1,7 @@
 package com.github.peep.fragments
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import com.apollographql.apollo.ApolloClient
 import com.catlove.gitcat.CalendarSelectedDecorator
 import com.catlove.gitcat.CalendarTodayDecorator
 import com.catlove.gitcat.CalendarUnselectedDecorator
@@ -16,6 +18,7 @@ import com.github.peep.App
 import com.github.peep.App.Companion.prefs
 import com.github.peep.R
 import com.github.peep.databinding.FragmentCalendarBinding
+import com.github.peep.graphql.apolloClient
 import com.github.peep.model.CommitRoot
 import com.github.peep.model.EventResponse
 import com.peep.githubapitest.githubpapi.ApiClient
@@ -190,6 +193,7 @@ class CalendarFragment : Fragment() {
 
         })
     }
+
 
 
 

@@ -122,7 +122,6 @@ class HomeActivity : AppCompatActivity() {
         val call=GithubService.getUser()
         call.enqueue(object: Callback<com.peep.githubapitest.model.User>{
             override fun onResponse(call: Call<com.peep.githubapitest.model.User>, response: Response<com.peep.githubapitest.model.User>) {
-                Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
                     HomeFragment.username = user?.login.toString()

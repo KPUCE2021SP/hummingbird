@@ -50,9 +50,13 @@ class HomeFragment : Fragment() {
     private lateinit var yPeepHome: AnimationDrawable
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("view","onCreate")
         super.onCreate(savedInstanceState)
         getUser()
         username= prefs.getString("username","")
+
+
+
     }
 
 
@@ -62,8 +66,14 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("view","onCreateView")
         val binding = FragmentHomeBinding.inflate(inflater, container, false)
         mBinding = binding
+
+        init()
+        getEvents(username)
+
+        view()
 
 
 
@@ -71,7 +81,6 @@ class HomeFragment : Fragment() {
         //현재는 오늘의 커밋 가져오기로 사용 중
         mBinding?.renewBtn?.setOnClickListener {
             getEvents(username)
-            view()
         }
 
         //세팅창
@@ -163,23 +172,17 @@ class HomeFragment : Fragment() {
         return mBinding?.root
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
 
 
-        init()
-        getEvents(username)
-        view()
 
-    }
+
+
 
     fun getUser(){
         var GithubService=ApiClient.client.create(GithubInterface::class.java)
         val call=GithubService.getUser()
         call.enqueue(object: Callback<User>{
             override fun onResponse(call: Call<User>, response: Response<User>) {
-                Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
                     username= user?.login.toString()
@@ -213,7 +216,6 @@ class HomeFragment : Fragment() {
         }
         call!!.enqueue(object :Callback<Events>{
             override fun onResponse(call: Call<Events>, response: Response<Events>) {
-                Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     events= response.body()
                     var created_at:Date
@@ -234,15 +236,14 @@ class HomeFragment : Fragment() {
                     Log.d("saveCount ",savedCount.toString())
                     Log.d("count",count.toString())
                     if(savedCount < count){ //반영된 count가 현재 count 보다 작을 경우
-                        for(i in savedCount..count){
+                        for(i in 1..(count-savedCount)){
                             if(i<3){
                                 progress(i)
                             }
-
                         }
-                        upCount(count)
-
                     }
+                    upCount(count)
+                    view()
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -264,6 +265,7 @@ class HomeFragment : Fragment() {
 
     fun upCount(count:Int){
         prefs.setString("count",count.toString())
+        mBinding?.todayCommitCountTextview?.setText(count.toString())
     }
 
     fun checkInit(key:String):Boolean{
@@ -296,16 +298,19 @@ class HomeFragment : Fragment() {
     }
 
     fun view(){
+        var exp:Int=prefs.getString("exp","").toInt()
+        var level:Int=prefs.getString("level","").toInt()
+
+
         mBinding?.commitExpProgressbar?.progress = prefs.getString("exp","").toInt()
-        mBinding?.currentLevelTv?.text = "현재 레벨 : "+prefs.getString("level","")
-        mBinding?.todayCommitCountTextview?.text = prefs.getString("count","")
+        mBinding?.currentLevelTv?.text = "lv : "+prefs.getString("level","")
     }
 
     fun progress(count:Int){
         var exp:Int=prefs.getString("exp","").toInt()
         var level:Int=prefs.getString("level","").toInt()
 
-        if(count<2){
+        if(count<3){
             if(exp<80){
                 exp+=20
             }
@@ -315,11 +320,13 @@ class HomeFragment : Fragment() {
                     level++
                 }
                 else{
-
                     graduation()
                     level=1
                 }
             }
+
+            Log.d("value",exp.toString())
+            Log.d("value",level.toString())
             prefs.setString("exp",exp.toString())
             prefs.setString("level",level.toString())
         }

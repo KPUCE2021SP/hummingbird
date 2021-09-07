@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.18645833333333334" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18645833333333334" />
         <entry key="app/src/main/res/layout/activity_peep_select.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_pick_peep.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.19610507246376813" />
@@ -13,7 +15,7 @@
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_find.xml" value="0.19610507246376813" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21401824951171877" />
         <entry key="app/src/main/res/layout/item_recycler.xml" value="0.19610507246376813" />
       </map>
     </option>

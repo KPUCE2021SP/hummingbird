@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.github.peep.App.Companion.prefs
 import com.github.peep.DB.UserDB
 
 import com.github.peep.databinding.ActivitySettingBinding
@@ -56,7 +57,6 @@ class SettingActivity : AppCompatActivity() {
         val call=GithubService.getUser()
         call.enqueue(object: Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
-                Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
                     Picasso.get().load(user?.avatar_url).into(mBinding.settingProfileIv)
@@ -74,6 +74,7 @@ class SettingActivity : AppCompatActivity() {
     fun logout(){
         App.prefs.remove("token")
         android.webkit.CookieManager.getInstance().removeAllCookie()
+        App.prefs.clear()
     }
 
     fun showSettingPopup(string : String){
@@ -88,7 +89,8 @@ class SettingActivity : AppCompatActivity() {
             .setPositiveButton("예") {
                 logout()
 //                임의로
-                var intent=Intent(this, PickPeepActivity::class.java)
+                var intent=Intent(this, HomeActivity::class.java)
+                finish()
                 finish()
                 startActivity(intent)
             }

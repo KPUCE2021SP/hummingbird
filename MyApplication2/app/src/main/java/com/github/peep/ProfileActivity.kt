@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.bumptech.glide.Glide
 import com.github.peep.DB.UserDB
 import com.github.peep.databinding.ActivityProfileBinding
 import com.peep.githubapitest.githubpapi.ApiClient
@@ -70,7 +71,7 @@ class ProfileActivity : AppCompatActivity() {
                 Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
-                    Picasso.get().load(user?.avatar_url).into(mBinding.gitProfileIv)
+                    Glide.with(this@ProfileActivity).load(user?.avatar_url).circleCrop().into(mBinding.gitProfileIv)
                     mBinding.gitUsernameTv.text = user?.login
                 } else {
                     Log.e("err",response.code().toString())

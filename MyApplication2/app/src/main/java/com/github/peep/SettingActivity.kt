@@ -25,11 +25,6 @@ class SettingActivity : AppCompatActivity() {
         mBinding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
-        //userDb = UserDB.getInstance(this)
-
-//        val removeRunnable = Runnable{
-//            userDb?.userDao()?.deleteAll()
-//        }
 
 
         //사용자 프로필, 이름 가져오기

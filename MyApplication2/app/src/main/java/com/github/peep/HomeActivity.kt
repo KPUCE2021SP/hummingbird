@@ -11,17 +11,21 @@ import com.github.peep.App.Companion.prefs
 import com.github.peep.DB.User
 import com.github.peep.DB.UserDB
 import com.github.peep.databinding.ActivityHomeBinding
+import com.github.peep.fragments.HomeFragment
 import com.github.rahul.githuboauth.ErrorCallback
 import com.github.rahul.githuboauth.GithubAuthenticator
 import com.github.rahul.githuboauth.SuccessCallback
+import com.peep.githubapitest.githubpapi.ApiClient
+import com.peep.githubapitest.githubpapi.GithubInterface
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeActivity : AppCompatActivity() {
     private val mContext: Context?=null
     private lateinit var auth:String
     private lateinit var mBinding : ActivityHomeBinding
 
-    //DB연결
-    private var userDb : UserDB? = null
     val githubPrivateAuthenticatorBuilder = GithubAuthenticator.builder(this)
         .clientId(BuildConfig.CLIENT_ID)
         .clientSecret(BuildConfig.CLIENT_SECRET)
@@ -31,6 +35,7 @@ class HomeActivity : AppCompatActivity() {
                 runOnUiThread {
                     val intent= Intent(this@HomeActivity,ProfileActivity::class.java)
                     prefs.setString("token",result)
+                    getUser()
                     finish()
                     startActivity(intent)
                 }
@@ -85,6 +90,7 @@ class HomeActivity : AppCompatActivity() {
         }
         //토큰이 있는거 -> 이후 자동 로그인
         else{
+
             var intent=Intent(this,SplashActivity::class.java)
             finish()
             startActivity(intent)
@@ -109,5 +115,27 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    fun getUser(){
+        var GithubService=ApiClient.client.create(GithubInterface::class.java)
+        val call=GithubService.getUser()
+        call.enqueue(object: Callback<com.peep.githubapitest.model.User>{
+            override fun onResponse(call: Call<com.peep.githubapitest.model.User>, response: Response<com.peep.githubapitest.model.User>) {
+                Log.d("fullresponse", response.toString())
+                if (response.code() == 200) {
+                    val user=response.body()
+                    HomeFragment.username = user?.login.toString()
+                    prefs.setString("username", HomeFragment.username)
+
+                } else {
+                    Log.e("err",response.code().toString())
+                }
+            }
+
+            override fun onFailure(call: Call<com.peep.githubapitest.model.User>, t: Throwable) {
+                Log.d("error","error")
+            }
+        })
     }
 }

@@ -79,7 +79,10 @@ class HomeFragment : Fragment() {
             var intent = Intent(activity, SettingActivity::class.java)
             startActivity(intent)
         }
-
+        //졸업기능 부활
+        mBinding?.gradBtn?.setOnClickListener {
+            graduation()
+        }
 
         //경험치 정보
         mBinding?.commitExpInfoBtn?.setOnClickListener {

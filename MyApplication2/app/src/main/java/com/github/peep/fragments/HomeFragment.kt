@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
         var count:Int=0
 
 //      보유 병아리
-        var havePeep:String ?= null
+        var havePeep:String ?= "yellow"
     }
 
     private var mBinding : FragmentHomeBinding?=null
@@ -122,21 +122,7 @@ class HomeFragment : Fragment() {
 //                    yPeepHome = background as AnimationDrawable
 //                    yPeepHome.start()
 //                }
-                else -> { //보유한 병아리가 없을 때 병아리 선택하라는 알람
-                    AlertDesign(this)
-                        .setTitle("병아리 선택")
-                        .setMessage("보유한 병아리가 없습니다. 새로운 병아리를 입양해주세요!")
-                        .setPositiveButton("예") {
-                            //왜 오류가 뜨지...?
-                            var intent = Intent(this, PickPeepActivity::class.java)
-                            finish()
-                            startActivity(intent)
-                        }
-                        .setNegativeButton("취소"){
-                            finish()
-                        }
-                        .show()
-                }
+
             }
         }
 

@@ -10,17 +10,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import com.apollographql.apollo.ApolloCall
+import com.apollographql.apollo.ApolloCallback
 import com.apollographql.apollo.ApolloClient
+import com.apollographql.apollo.exception.ApolloException
 import com.catlove.gitcat.CalendarSelectedDecorator
 import com.catlove.gitcat.CalendarTodayDecorator
 import com.catlove.gitcat.CalendarUnselectedDecorator
 import com.github.peep.App
 import com.github.peep.App.Companion.prefs
 import com.github.peep.R
+import com.github.peep.ResultQuery
 import com.github.peep.databinding.FragmentCalendarBinding
 import com.github.peep.graphql.apolloClient
 import com.github.peep.model.CommitRoot
 import com.github.peep.model.EventResponse
+import com.github.peep.type.RepositoryPrivacy
+import com.github.rahul.githuboauth.SuccessCallback
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.Repo
@@ -34,6 +40,7 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 class CalendarFragment : Fragment() {
 
@@ -57,10 +64,13 @@ class CalendarFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val client:ApolloClient= apolloClient(getContext()!!)
+        //여기서 부터 작성
+
+
         val binding = FragmentCalendarBinding.inflate(inflater,container,false)
         //val settings: SharedPreferences = requireActivity().getSharedPreferences("testlogin", MODE_PRIVATE)
         val calendarView = binding.calendarView
-        getUserCommitByRepos()
         // default 날짜는 오늘 날짜로
         val selectedDate: CalendarDay = CalendarDay.today()
         var preDay: CalendarDay = CalendarDay.today()
@@ -68,11 +78,32 @@ class CalendarFragment : Fragment() {
         calendarView.setOnDateChangedListener { widget, date, selected ->
             loading_img.visibility = View.VISIBLE//로딩화면 나타나기
             val Year = date.year.toString()
+            val Month=date.month.toString()
             var dateScore : String = Year
             commitCount = 0
             todayDate = date.date
             Log.d("fullresponse", "Date: "+ todayDate)
-            getUserCommitByRepos()
+
+            client.query(ResultQuery(prefs.getString("username",""),"2021-08-01T00:00:00Z","2021-08-31T00:00:00Z",RepositoryPrivacy.PRIVATE))
+                .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
+                    override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
+                        if(response.data!=null){
+                            Log.d("graphql",response.data.toString())
+                        }
+                        else{
+                            Log.d("graphql","empty")
+                        }
+                    }
+
+                    override fun onFailure(e: ApolloException) {
+                        TODO("Not yet implemented")
+                    }
+                })
+//            if(prefs.getString("auth","")=="public"){ //public
+////            var countMap=HashMap<Int,Int>()
+//            }
+//            else{ //private
+//            }
             //하나씩 선택되는 drawable
             calendarView.addDecorator(CalendarUnselectedDecorator(preDay,requireActivity()))
             calendarView.addDecorator(CalendarSelectedDecorator(date,requireActivity()))
@@ -120,83 +151,6 @@ class CalendarFragment : Fragment() {
         mBinding = binding
         return mBinding?.root
     }
-    fun getUserCommitByRepos(){
-        var GithubService=ApiClient.client.create(GithubInterface::class.java)
-        val call=GithubService.getUserRepos()
-        var reposNameList: MutableList<String> = mutableListOf()
-        call.enqueue(object :Callback<List<Repo>>{
-            override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
-
-                //Log.d("fullresponse", response.code().toString())
-                if (response.code() == 200) {
-
-                    // list<repos>
-
-                    repos = response.body()
-
-                    repos!!.forEach {
-                        getReposCommits(it.name)
-                        reposNameList.add(it.name)
-                    }
-                    Log.d("fullresponse", reposNameList.toString()+reposNameList.count())
-                } else {
-                    Log.e("err",response.code().toString())
-                }
-            }
-
-            override fun onFailure(call: Call<List<Repo>>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-        })
-
-    }
-    fun getReposCommits(name:String){
-        var GithubService=ApiClient.client.create(GithubInterface::class.java)
-        // TODO kim1387를 사용자 이름으로 수정해야함
-        Log.d("fullresponse", "getReposCommits: username"+ prefs.getString("username",""))
-        val commitCall = GithubService.getRepoCommit(prefs.getString("username",""),name)
-        commitCall.enqueue(object :Callback<List<CommitRoot>>{
-            @RequiresApi(Build.VERSION_CODES.O)
-            @SuppressLint("SimpleDateFormat")
-            override fun onResponse(
-                call: Call<List<CommitRoot>>,
-                response: Response<List<CommitRoot>>
-            ) {
-                if (response.code() == 200) {
-                    val dateFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd")
-                    repoCommitsResponse = response.body()
-                    repoCommitsResponse!!.filter {
-                        Log.d("fullresponsetime", "onResponse: "+dateFormat.format(it.commit.author.date)+"----"+ dateFormat.format(todayDate))
-                        dateFormat.format(it.commit.author.date)
-                            // TODO kim1387를 사용자 이름으로 수정해야함
-                            .equals(dateFormat.format(todayDate))&&it.commit.committer.name.equals(prefs.getString("username",""))
-                    }.forEach {
-                        commitCount += 1
-                        Log.d("fullresponsedate", "onResponse: ${dateFormat.format(it.commit.author.date)}")
-                        Log.d("fullresponse ${name}", "message: "+it.commit.message)
-
-                    }
-                    commit_totalCommit.text = commitCount.toString()
-                    if (commitCount!=0){
-                        Log.d("fullresponse+개수", commitCount.toString())
-                    }
-
-                    // Log.d("fullresponse", repoCommitsResponse!![0].count.toString())
-                } else {
-                    Log.e("err1",response.toString())
-                }
-            }
-
-            override fun onFailure(call: Call<List<CommitRoot>>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-
-        })
-    }
-
-
-
-
     override fun onDestroyView() {
         mBinding = null
         super.onDestroyView()

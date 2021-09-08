@@ -79,7 +79,7 @@ class SettingActivity : AppCompatActivity() {
             .setPositiveButton("예") {
                 logout()
                 var intent=Intent(this,HomeActivity::class.java)
-                finish()
+                finishAffinity()
                 startActivity(intent)
             }
             .setNegativeButton("취소"){

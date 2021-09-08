@@ -15,6 +15,7 @@ import androidx.fragment.app.DialogFragment
 import com.bumptech.glide.Glide
 import com.github.peep.DB.UserDB
 import com.github.peep.databinding.ActivityProfileBinding
+import com.github.peep.decorator.AlertDesign
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.User
@@ -28,7 +29,6 @@ import retrofit2.Response
 
 class ProfileActivity : AppCompatActivity() {
     lateinit var mBinding : ActivityProfileBinding
-    private var userDb : UserDB? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_profile)
@@ -41,27 +41,24 @@ class ProfileActivity : AppCompatActivity() {
             finish()
         }
         mBinding.backButton.setOnClickListener {
-            showSettingPopup()
+            showSettingPopup("로그아웃 하시겠습니까?")
         }
     }
-    fun showSettingPopup(){
-        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val view = inflater.inflate(R.layout.alert_popup,null)
-        var textView = view.findViewById<TextView>(R.id.alert_textview)
-        textView.text = "권한을 변경하시겠습니까?\n변경 시, 재로그인이 필요합니다."
-        val alertDialog = AlertDialog.Builder(this)
-            .setTitle("권한 설정 변경")
-            .setPositiveButton("확인"){ dialog, which ->
+    fun showSettingPopup(string : String){
+        AlertDesign(this)
+            .setTitle("권한 변경")
+            .setMessage(string)
+            .setPositiveButton("예") {
                 logout()
                 var intent=Intent(this,HomeActivity::class.java)
                 finish()
                 startActivity(intent)
             }
-            .setNegativeButton("취소",null)
-            .create()
+            .setNegativeButton("취소"){
+                finish()
+            }
 
-        alertDialog.setView(view)
-        alertDialog.show()
+            .show()
     }
     fun getUser(){
         var GithubService= ApiClient.client.create(GithubInterface::class.java)
@@ -90,5 +87,10 @@ class ProfileActivity : AppCompatActivity() {
     override fun onDestroy() {
         UserDB.destroyInstance()
         super.onDestroy()
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        Toast.makeText(this,"시작하기 버튼을 눌러주세요.",Toast.LENGTH_SHORT).show()
     }
 }

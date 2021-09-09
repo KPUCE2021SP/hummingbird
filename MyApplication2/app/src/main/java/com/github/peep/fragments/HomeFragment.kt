@@ -42,6 +42,7 @@ class HomeFragment : Fragment() {
         var currentPeep: String? = "yellow"
 
         var df1: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+        var df2: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
 
     }
 
@@ -49,7 +50,13 @@ class HomeFragment : Fragment() {
     private var mBinding: FragmentHomeBinding? = null
     private lateinit var yPeepHome: AnimationDrawable
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        Log.d("timezone",df1.timeZone.toString())
+//        df1.timeZone= TimeZone.getTimeZone("GMT-0:00") //한국 (default)
+        df2.timeZone= TimeZone.getTimeZone("GMT-0:00") //미국
         Log.d("view","onCreate")
         super.onCreate(savedInstanceState)
         getUser()

@@ -42,19 +42,6 @@ class ProfileActivity : AppCompatActivity() {
         mBinding.backButton.setOnClickListener {
             showSettingPopup()
         }
-
-        //유저 프로필 정보 확인하며 최초 db 생성
-        userDb = UserDB.getInstance(this)
-        val addRunnable = Runnable {
-            val newUser = com.github.peep.DB.User()
-            newUser.level = 100
-            newUser.sad_Peep = 100
-            newUser.happy_Peep = 100
-            userDb?.userDao()?.insert(newUser)
-        }
-
-        val addThread = Thread(addRunnable)
-        addThread.start()
     }
     fun showSettingPopup(){
         val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater

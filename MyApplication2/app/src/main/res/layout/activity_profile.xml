@@ -39,17 +39,15 @@
         app:layout_constraintBottom_toTopOf="@+id/git_username_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/peep_logo_tv"
-        app:srcCompat="@drawable/ic_baseline_emoji_emotions_24" />
+        app:layout_constraintTop_toBottomOf="@+id/peep_logo_tv" />
 
     <TextView
         android:id="@+id/git_username_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/font_choice"
-        android:text="userName"
-        android:textSize="30sp"
         android:gravity="center"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/startButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

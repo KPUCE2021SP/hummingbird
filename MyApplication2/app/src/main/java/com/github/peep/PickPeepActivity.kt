@@ -1,10 +1,12 @@
 package com.github.peep
 
 import android.app.Activity
+import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.peep.databinding.ActivityPickPeepBinding
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -19,6 +21,7 @@ class PickPeepActivity : AppCompatActivity() {
 //    picked값 0: 선택 안함
 //    1:red peep    2:yellow    3: blue
 //    4: green      5:pigeon    6: w(뱁새)
+
     private var picked = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -101,36 +104,49 @@ class PickPeepActivity : AppCompatActivity() {
 
         mBinding.nextBtn.setOnClickListener {
             when(picked){
+                //red
                 1 ->{
-                    intent.putExtra("picked", "red")
-                    setResult(Activity.RESULT_OK, intent)
+                    var intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("nextPeep","red")
+                    startActivity(intent)
                     finish()
                 }
+                //yellow
                 2 ->{
-                    intent.putExtra("picked", "yellow")
-                    setResult(Activity.RESULT_OK, intent)
+                    var intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("nextPeep","yellow")
+                    startActivity(intent)
                     finish()
                 }
+                //blue
                 3 ->{
-                    intent.putExtra("picked", "blue")
-                    setResult(Activity.RESULT_OK, intent)
+                    var intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("nextPeep","blue")
+                    startActivity(intent)
                     finish()
                 }
+                //green
                 4 ->{
-                    intent.putExtra("picked", "green")
-                    setResult(Activity.RESULT_OK, intent)
+                    var intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("nextPeep","green")
+                    startActivity(intent)
                     finish()
                 }
+                //pigeon
                 5 ->{
-                    intent.putExtra("picked", "pigeon")
-                    setResult(Activity.RESULT_OK, intent)
+                    var intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("nextPeep","pigeon")
+                    startActivity(intent)
                     finish()
                 }
-                    6 ->{
-                    intent.putExtra("picked", "baepsae")
-                    setResult(Activity.RESULT_OK, intent)
-                    finish()
-                    }
+                //뱁새
+                6 ->{
+//                    var intent = Intent(this, MainActivity::class.java)
+//                    intent.putExtra("nextPeep","yellow")
+//                    startActivity(intent)
+//                    finish()
+                    Toast.makeText(this,"뱁새 없어용", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

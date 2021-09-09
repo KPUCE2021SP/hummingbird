@@ -44,7 +44,6 @@ class CalendarFragment : Fragment() {
         var events:EventResponse?=null
         var todayDate: Date =Date()
         var commitCount: Int = 0
-
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)

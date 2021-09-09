@@ -7,8 +7,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.github.peep.DB.User
-import com.github.peep.DB.UserDB
 import com.github.peep.decorator.AlertDesign
 import com.github.peep.view.CollectionAdapter
 import com.github.peep.view.CollectionData

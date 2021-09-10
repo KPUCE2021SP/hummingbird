@@ -1,7 +1,6 @@
 package com.github.peep.fragments
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -11,28 +10,24 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.apollographql.apollo.ApolloCall
-import com.apollographql.apollo.ApolloCallback
 import com.apollographql.apollo.ApolloClient
-import com.apollographql.apollo.api.toJson
 import com.apollographql.apollo.exception.ApolloException
 import com.catlove.gitcat.CalendarSelectedDecorator
 import com.catlove.gitcat.CalendarTodayDecorator
 import com.catlove.gitcat.CalendarUnselectedDecorator
-import com.github.peep.App
 import com.github.peep.App.Companion.prefs
 import com.github.peep.R
 import com.github.peep.ResultQuery
 import com.github.peep.databinding.FragmentCalendarBinding
+import com.github.peep.decorator.EventDecorator
 import com.github.peep.fragments.HomeFragment.Companion.df1
 import com.github.peep.fragments.HomeFragment.Companion.df2
 import com.github.peep.graphql.apolloClient
-import com.github.peep.model.CommitRoot
-import com.github.peep.model.EventResponse
 import com.github.peep.type.RepositoryPrivacy
-import com.peep.githubapitest.model.Repo
 import com.prolificinteractive.materialcalendarview.CalendarDay
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import kotlinx.android.synthetic.main.fragment_calendar.*
-import org.json.JSONObject
+import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.util.*
 import kotlin.collections.ArrayList
@@ -41,7 +36,6 @@ import kotlin.collections.HashMap
 class CalendarFragment : Fragment() {
 
     private var mBinding : FragmentCalendarBinding?=null
-    var detailCommits = JSONObject()
 
     companion object{
         var id  : String = ""
@@ -78,17 +72,16 @@ class CalendarFragment : Fragment() {
             TODO("VERSION.SDK_INT < O")
         }
         var year=LocalDate.now().year
+        monthCount.clear()
 
-        getEvents(month,year)
+        getEvents(month,year,calendarView)
 
         calendarView.setOnDateChangedListener { widget, date, selected ->
             loading_img.visibility = View.VISIBLE//로딩화면 나타나기
             val year = date.year
             val month=date.month
-
-
-
-
+            val day = date.day
+            getDateEvent(month, year, day)
 
             //하나씩 선택되는 drawable
             calendarView.addDecorator(CalendarUnselectedDecorator(preDay,requireActivity()))
@@ -105,7 +98,6 @@ class CalendarFragment : Fragment() {
             //count, score, levelUp 순으로
 
             commit_score.text = valueList[0]
-            commit_totalCommit.text = commitCount.toString()
             if(valueList[2].isEmpty()){
                 commit_item.text= "없음!"
                 commit_item.setTextColor(resources.getColor(R.color.colorText))
@@ -122,20 +114,18 @@ class CalendarFragment : Fragment() {
 
 
         calendarView.setOnMonthChangedListener { widget, date ->
+            widget.invalidateDecorators()
             val mYear = date.year
             val mMonth = date.month+1
             val mDay = date.day
 
-            monthCount.clear()
 
-            getEvents(mMonth,mYear)
+            getEvents(mMonth,mYear,calendarView)
 
+            Log.i("Move date", date.toString() + "")
             Log.i("Move date", mYear.toString() + "")
             Log.i("Move date", mMonth.toString() + "")
             Log.i("Move date", mDay.toString() + "")
-
-            //아마 초기화
-            detailCommits = JSONObject()
 
         }
         mBinding = binding
@@ -153,7 +143,7 @@ class CalendarFragment : Fragment() {
         super.onDestroyView()
     }
 
-    fun getEvents(month:Int,year:Int){
+    fun getEvents(month:Int,year:Int,calendarView:MaterialCalendarView){
 
         monthCount.clear()
 
@@ -225,6 +215,7 @@ class CalendarFragment : Fragment() {
                                     var count:Int=monthCount.getOrDefault(day,0)+1
                                     monthCount.remove(day)
                                     monthCount.set(day,count)
+                                    Log.d("monthCount",""+monthCount.toString())
 
 
                                 }
@@ -235,6 +226,25 @@ class CalendarFragment : Fragment() {
                         }
                         for ((key, value) in monthCount){
                             Log.d("value","${key} : ${value}")
+                        }
+                        Log.d("value","-----------------------")
+                        val level1Commit : ArrayList<CalendarDay> = ArrayList()
+                        val level2Commit : ArrayList<CalendarDay> = ArrayList()
+                        val level3Commit : ArrayList<CalendarDay> = ArrayList()
+                        for (entry in monthCount) {
+                            if(entry.value in 1..5){
+                                level1Commit.add(CalendarDay.from(year,month-1,entry.key.toInt()))
+                            }else if(entry.value in 6..10){
+                                level2Commit.add(CalendarDay.from(year,month-1,entry.key.toInt()))
+                            }else if(entry.value in 11..1000){
+                                level3Commit.add(CalendarDay.from(year,month-1,entry.key.toInt()))
+                            }
+                        }
+                        Log.d("level1Commit", "level1Commit: "+level1Commit.toString())
+                        mBinding!!.root.post {
+                            calendarView.addDecorator(EventDecorator(level1Commit,requireActivity(),"level_1"))
+                            calendarView.addDecorator(EventDecorator(level2Commit,requireActivity(),"level_2"))
+                            calendarView.addDecorator(EventDecorator(level3Commit,requireActivity(),"level_3"))
                         }
                     }
                     override fun onFailure(e: ApolloException) {
@@ -332,6 +342,29 @@ class CalendarFragment : Fragment() {
                         for ((key, value) in monthCount){
                             Log.d("value","${key} : ${value}")
                         }
+                        Log.d("value","-----------------------")
+
+                        val level1Commit : ArrayList<CalendarDay> = ArrayList()
+                        val level2Commit : ArrayList<CalendarDay> = ArrayList()
+                        val level3Commit : ArrayList<CalendarDay> = ArrayList()
+                        Log.d("entry", "onCreateView: "+monthCount)
+
+                        for (entry in monthCount) {
+                            if(entry.value in 1..5){
+                                level1Commit.add(CalendarDay.from(year,month-1,entry.key.toInt()))
+                            }else if(entry.value in 6..10){
+                                level2Commit.add(CalendarDay.from(year,month-1,entry.key.toInt()))
+                            }else if(entry.value in 11..1000){
+                                level3Commit.add(CalendarDay.from(year,month-1,entry.key.toInt()))
+                            }
+                        }
+                        Log.d("level1Commit", "level1Commit: "+level1Commit.toString())
+                        mBinding!!.root.post {
+                            calendarView.addDecorator(EventDecorator(level1Commit,requireActivity(),"level_1"))
+                            calendarView.addDecorator(EventDecorator(level2Commit,requireActivity(),"level_2"))
+                            calendarView.addDecorator(EventDecorator(level3Commit,requireActivity(),"level_3"))
+                        }
+
                     }
                     override fun onFailure(e: ApolloException) {
                         TODO("Not yet implemented")
@@ -341,8 +374,191 @@ class CalendarFragment : Fragment() {
 
         }
 
+    }
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun getDateEvent(month:Int,year:Int,day:Int){
+        var dateCount=HashMap<String,Int>()
+
+        var startDate:String=""
+        var endDate:String=""
+        val selectedDate = year.toString()+"-"+String.format("%02d",month)+"-"+String.format("%02d",day)
+        Log.d("start1",selectedDate)
+
+        startDate = selectedDate+"T00:00:00GMT+09:00"
+        endDate = selectedDate+"T23:59:59GMT+09:00"
+
+        var start=df2.parse(startDate)
+        var end=df2.parse(endDate)
+
+        var kor_start=convert(start)
+        var kor_end=convert(end)
+
+        startDate=df2.format(kor_start)
+        endDate=df2.format(kor_end)
+
+        Log.d("start1",startDate)
+        Log.d("end",endDate)
 
 
+        if(prefs.getString("auth","")=="public"){ //public
+
+
+            val client:ApolloClient= apolloClient(requireContext())
+            client.query(ResultQuery(prefs.getString("username",""),startDate,endDate,RepositoryPrivacy.PUBLIC))
+                .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
+                    @RequiresApi(Build.VERSION_CODES.N)
+                    override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
+                        var data = response.data!!
+                        Log.d("graphql", data.toString())
+                        var repositories=data.user!!.repositories
+                        for(i in 0..repositories.nodes!!.size-1){
+                            var repository= repositories.nodes!![i]
+                            if(repository!!.ref!=null){
+                                var asCommit= repository!!.ref!!.target!!.asCommit
+                                var history=asCommit!!.history
+                                for(i in 0 until history.nodes!!.size-1){
+                                    var commit=history!!.nodes!![i]
+                                    var committedDate=commit!!.committedDate.toString()
+
+                                    var dateString: String = committedDate.replace("Z", "GMT+00:00")
+                                    var dateFormat: Date = df1.parse(dateString)
+                                    var kor_dateFormat: Date = convert(dateFormat)!!
+                                    var str_date: String = df1.format(kor_dateFormat)
+                                    Log.d("committedDate",str_date)
+
+                                    var day:String=str_date.substring(8,10)
+                                    Log.d("day",day)
+
+                                    var count:Int=dateCount.getOrDefault(day,0)+1
+                                    dateCount.remove(day)
+                                    dateCount.set(day,count)
+                                    Log.d("monthCount",""+dateCount.toString())
+
+
+                                }
+                                Log.d("repository",repository!!.name)
+                            }
+
+
+                        }
+                        for ((key, value) in dateCount){
+                            Log.d("value","${key} : ${value}")
+                        }
+                        commit_totalCommit.text = dateCount.count().toString()
+                        commit_score.text = dateCount.count().toString()
+                        if (dateCount.count()>=2){
+                            commit_score.text = "2"
+                        }
+                    }
+                    override fun onFailure(e: ApolloException) {
+                        TODO("Not yet implemented")
+                    }
+                })
+        }
+        else{ //private
+
+            val client:ApolloClient= apolloClient(requireContext())
+
+            client.query(ResultQuery(prefs.getString("username",""),startDate,endDate,RepositoryPrivacy.PRIVATE))
+                .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
+                    @RequiresApi(Build.VERSION_CODES.N)
+                    override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
+                        var data = response.data!!
+                        Log.d("graphql", data.toString())
+                        var repositories=data.user!!.repositories
+                        for(i in 0..repositories.nodes!!.size-1){
+                            var repository= repositories.nodes!![i]
+                            if(repository!!.ref!=null){
+                                var asCommit= repository!!.ref!!.target!!.asCommit
+                                var history=asCommit!!.history
+                                for(i in 0 until history.nodes!!.size-1){
+
+                                    var commit= history.nodes!![i]
+
+                                    var committedDate=commit!!.committedDate.toString()
+
+                                    var dateString: String = committedDate.replace("Z", "GMT+00:00")
+                                    var dateFormat: Date = df1.parse(dateString)
+                                    var kor_dateFormat: Date = convert(dateFormat)!!
+                                    var str_date: String = df1.format(kor_dateFormat)
+
+                                    Log.d("committedDate",str_date)
+
+                                    var day:String=str_date.substring(8,10)
+                                    Log.d("day",day)
+
+                                    var count:Int=dateCount.getOrDefault(day,0)+1
+                                    dateCount.remove(day)
+                                    dateCount.set(day,count)
+
+
+                                }
+                                Log.d("repository",repository!!.name)
+                            }
+
+                        }
+                        for ((key, value) in dateCount){
+                            Log.d("value","${key} : ${value}")
+                        }
+
+                    }
+                    override fun onFailure(e: ApolloException) {
+                        TODO("Not yet implemented")
+                    }
+                })
+
+            client.query(ResultQuery(prefs.getString("username",""),startDate,endDate,RepositoryPrivacy.PUBLIC))
+                .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
+                    @RequiresApi(Build.VERSION_CODES.N)
+                    override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
+                        var data = response.data!!
+                        Log.d("graphql", data.toString())
+                        var repositories=data.user!!.repositories
+                        for(i in 0..repositories.nodes!!.size-1){
+                            var repository= repositories.nodes!![i]
+                            if(repository!!.ref!=null){
+                                var commit= repository!!.ref!!.target!!.asCommit
+                                var history=commit!!.history
+                                for(i in history.nodes!!.indices){
+                                    var commitItem= history.nodes!!.get(i)
+                                    var committedDate=commitItem!!.committedDate.toString()
+
+                                    var dateString: String = committedDate.replace("Z", "GMT+00:00")
+                                    var dateFormat: Date = df1.parse(dateString)
+                                    var kor_dateFormat: Date = convert(dateFormat)!!
+                                    var str_date: String = df1.format(kor_dateFormat)
+
+                                    var day:String=str_date.substring(8,10)
+                                    Log.d("day",day)
+
+                                    var count:Int=dateCount.getOrDefault(day,0)+1
+                                    dateCount.remove(day)
+                                    dateCount.set(day,count)
+
+
+                                }
+                                Log.d("repository",repository!!.name)
+                            }
+
+
+                        }
+                        for ((key, value) in dateCount){
+                            Log.d("value","${key} : ${value}")
+                        }
+                        commit_totalCommit.text = dateCount.count().toString()
+                        commit_score.text = dateCount.count().toString()
+                        if (dateCount.count()>=2){
+                            commit_score.text = "2"
+                        }
+
+                    }
+                    override fun onFailure(e: ApolloException) {
+                        TODO("Not yet implemented")
+                    }
+                })
+
+
+        }
 
     }
 }

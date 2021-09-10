@@ -48,6 +48,8 @@ class CalendarFragment : Fragment() {
         var todayDate: Date =Date()
         var commitCount: Int = 0
 
+        var monthCount=HashMap<String,Int>()
+
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -58,14 +60,18 @@ class CalendarFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        var startDate:String=""
-        var endDate:String=""
+
+
 
         val binding = FragmentCalendarBinding.inflate(inflater,container,false)
         //val settings: SharedPreferences = requireActivity().getSharedPreferences("testlogin", MODE_PRIVATE)
         val calendarView = binding.calendarView
         // default 날짜는 오늘 날짜로
         val selectedDate: CalendarDay = CalendarDay.today()
+
+        var preDay: CalendarDay = CalendarDay.today()
+        calendarView.addDecorator(CalendarTodayDecorator(activity!!))//오늘 날짜
+
         var month= if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             LocalDate.now().monthValue
         } else {
@@ -73,198 +79,15 @@ class CalendarFragment : Fragment() {
         }
         var year=LocalDate.now().year
 
-        if(month in arrayListOf<Int>(1,3,5,7,8,10,12)){ //31일까지
-            startDate=year.toString()+"-"+String.format("%02d",month)+"-01T00:00:00GMT+09:00"
-            endDate=year.toString()+"-"+String.format("%02d",month)+"-31T23:59:59GMT+09:00"
-
-            var start=df2.parse(startDate)
-            var end=df2.parse(endDate)
-
-            var kor_start=convert(start)
-            var kor_end=convert(end)
-
-            startDate=df2.format(kor_start)
-            endDate=df2.format(kor_end)
-        }
-        else{ //30일까지
-            startDate=year.toString()+"-"+String.format("%02d",month)+"-01T00:00:00GMT+09:00"
-            endDate=year.toString()+"-"+String.format("%02d",month)+"-30T23:59:59GMT+09:00"
-
-            var start=df2.parse(startDate)
-            var end=df2.parse(endDate)
-
-            var kor_start=convert(start)
-            var kor_end=convert(end)
-
-            startDate=df2.format(kor_start)
-            endDate=df2.format(kor_end)
-        }
-
-        var preDay: CalendarDay = CalendarDay.today()
-        calendarView.addDecorator(CalendarTodayDecorator(activity!!))//오늘 날짜
-
-        Log.d("start",startDate)
-        Log.d("end",endDate)
-
-
-            if(prefs.getString("auth","")=="public"){ //public
-                var monthCount=HashMap<String,Int>()
-
-                val client:ApolloClient= apolloClient(requireContext())
-                client.query(ResultQuery(prefs.getString("username",""),startDate,endDate,RepositoryPrivacy.PUBLIC))
-                    .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
-                        @RequiresApi(Build.VERSION_CODES.N)
-                        override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
-                            var data = response.data!!
-                            Log.d("graphql", data.toString())
-                            var repositories=data.user!!.repositories
-                            for(i in 0..repositories.nodes!!.size-1){
-                                var repository= repositories.nodes!![i]
-                                if(repository!!.ref!=null){
-                                    var asCommit= repository!!.ref!!.target!!.asCommit
-                                    var history=asCommit!!.history
-                                    for(i in 0 until history.nodes!!.size-1){
-                                        var commit=history!!.nodes!![i]
-                                        var committedDate=commit!!.committedDate.toString()
-
-                                        var dateString: String = committedDate.replace("Z", "GMT+00:00")
-                                        var dateFormat: Date = df1.parse(dateString)
-                                        var kor_dateFormat: Date = convert(dateFormat)!!
-                                        var str_date: String = df1.format(kor_dateFormat)
-
-                                        var day:String=str_date.substring(8,10)
-                                        Log.d("day",day)
-
-                                        var count:Int=monthCount.getOrDefault(day,0)+1
-                                        monthCount.remove(day)
-                                        monthCount.set(day,count)
-
-
-                                    }
-                                    Log.d("repository",repository!!.name)
-                                }
-
-
-                            }
-                            for ((key, value) in monthCount){
-                                Log.d("value","${key} : ${value}")
-                            }
-                        }
-                        override fun onFailure(e: ApolloException) {
-                            TODO("Not yet implemented")
-                        }
-                    })
-            }
-            else{ //private
-                var monthCount=HashMap<String,Int>()
-
-                val client:ApolloClient= apolloClient(requireContext())
-
-                client.query(ResultQuery(prefs.getString("username",""),startDate,endDate,RepositoryPrivacy.PRIVATE))
-                    .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
-                        @RequiresApi(Build.VERSION_CODES.N)
-                        override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
-                            var data = response.data!!
-                            Log.d("graphql", data.toString())
-                            var repositories=data.user!!.repositories
-                            for(i in 0..repositories.nodes!!.size-1){
-                                var repository= repositories.nodes!![i]
-                                if(repository!!.ref!=null){
-                                    var asCommit= repository!!.ref!!.target!!.asCommit
-                                    var history=asCommit!!.history
-                                    for(i in 0 until history.nodes!!.size-1){
-                                        var commit=history!!.nodes!![i]
-                                        var committedDate=commit!!.committedDate.toString()
-
-                                        var dateString: String = committedDate.replace("Z", "GMT+00:00")
-                                        var dateFormat: Date = df1.parse(dateString)
-                                        var kor_dateFormat: Date = convert(dateFormat)!!
-                                        var str_date: String = df1.format(kor_dateFormat)
-
-                                        var day:String=str_date.substring(8,10)
-                                        Log.d("day",day)
-
-                                        var count:Int=monthCount.getOrDefault(day,0)+1
-                                        monthCount.remove(day)
-                                        monthCount.set(day,count)
-
-
-                                    }
-                                    Log.d("repository",repository!!.name)
-                                }
-
-
-                            }
-                            for ((key, value) in monthCount){
-                                Log.d("value","${key} : ${value}")
-                            }
-                        }
-                        override fun onFailure(e: ApolloException) {
-                            TODO("Not yet implemented")
-                        }
-                    })
-
-                client.query(ResultQuery(prefs.getString("username",""),startDate,endDate,RepositoryPrivacy.PUBLIC))
-                    .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
-                        @RequiresApi(Build.VERSION_CODES.N)
-                        override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
-                            var data = response.data!!
-                            Log.d("graphql", data.toString())
-                            var repositories=data.user!!.repositories
-                            for(i in 0..repositories.nodes!!.size-1){
-                                var repository= repositories.nodes!![i]
-                                if(repository!!.ref!=null){
-                                    var asCommit= repository!!.ref!!.target!!.asCommit
-                                    var history=asCommit!!.history
-                                    for(i in 0 until history.nodes!!.size-1){
-                                        var commit=history!!.nodes!![i]
-                                        var committedDate=commit!!.committedDate.toString()
-
-                                        var dateString: String = committedDate.replace("Z", "GMT+00:00")
-                                        var dateFormat: Date = df1.parse(dateString)
-                                        var kor_dateFormat: Date = convert(dateFormat)!!
-                                        var str_date: String = df1.format(kor_dateFormat)
-
-                                        var day:String=str_date.substring(8,10)
-                                        Log.d("day",day)
-
-                                        var count:Int=monthCount.getOrDefault(day,0)+1
-                                        monthCount.remove(day)
-                                        monthCount.set(day,count)
-
-
-                                    }
-                                    Log.d("repository",repository!!.name)
-                                }
-
-
-                            }
-                            for ((key, value) in monthCount){
-                                Log.d("value","${key} : ${value}")
-                            }
-                        }
-                        override fun onFailure(e: ApolloException) {
-                            TODO("Not yet implemented")
-                        }
-                    })
-
-
-            }
-
-
-
-
-        //여기서 부터 작성
-
-
+        getEvents(month,year)
 
         calendarView.setOnDateChangedListener { widget, date, selected ->
             loading_img.visibility = View.VISIBLE//로딩화면 나타나기
-            val Year = date.year.toString()
-            val Month=date.month.toString()
-            var dateScore : String = Year
-            commitCount = 0
-            todayDate = date.date
+            val year = date.year
+            val month=date.month
+
+
+
 
 
             //하나씩 선택되는 drawable
@@ -300,8 +123,12 @@ class CalendarFragment : Fragment() {
 
         calendarView.setOnMonthChangedListener { widget, date ->
             val mYear = date.year
-            val mMonth = date.month
+            val mMonth = date.month+1
             val mDay = date.day
+
+            monthCount.clear()
+
+            getEvents(mMonth,mYear)
 
             Log.i("Move date", mYear.toString() + "")
             Log.i("Move date", mMonth.toString() + "")
@@ -324,5 +151,198 @@ class CalendarFragment : Fragment() {
     override fun onDestroyView() {
         mBinding = null
         super.onDestroyView()
+    }
+
+    fun getEvents(month:Int,year:Int){
+
+        monthCount.clear()
+
+        var startDate:String=""
+        var endDate:String=""
+
+        if(month in arrayListOf<Int>(1,3,5,7,8,10,12)){ //31일까지
+            startDate=year.toString()+"-"+String.format("%02d",month)+"-01T00:00:00GMT+09:00"
+            endDate=year.toString()+"-"+String.format("%02d",month)+"-31T23:59:59GMT+09:00"
+
+            var start=df2.parse(startDate)
+            var end=df2.parse(endDate)
+
+            var kor_start=convert(start)
+            var kor_end=convert(end)
+
+            startDate=df2.format(kor_start)
+            endDate=df2.format(kor_end)
+        }
+        else{ //30일까지
+            startDate=year.toString()+"-"+String.format("%02d",month)+"-01T00:00:00GMT+09:00"
+            endDate=year.toString()+"-"+String.format("%02d",month)+"-30T23:59:59GMT+09:00"
+
+            var start=df2.parse(startDate)
+            var end=df2.parse(endDate)
+
+            var kor_start=convert(start)
+            var kor_end=convert(end)
+
+            startDate=df2.format(kor_start)
+            endDate=df2.format(kor_end)
+        }
+
+
+
+        Log.d("start",startDate)
+        Log.d("end",endDate)
+
+
+        if(prefs.getString("auth","")=="public"){ //public
+
+
+            val client:ApolloClient= apolloClient(requireContext())
+            client.query(ResultQuery(prefs.getString("username",""),startDate,endDate,RepositoryPrivacy.PUBLIC))
+                .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
+                    @RequiresApi(Build.VERSION_CODES.N)
+                    override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
+                        var data = response.data!!
+                        Log.d("graphql", data.toString())
+                        var repositories=data.user!!.repositories
+                        for(i in 0..repositories.nodes!!.size-1){
+                            var repository= repositories.nodes!![i]
+                            if(repository!!.ref!=null){
+                                var asCommit= repository!!.ref!!.target!!.asCommit
+                                var history=asCommit!!.history
+                                for(i in 0 until history.nodes!!.size-1){
+                                    var commit=history!!.nodes!![i]
+                                    var committedDate=commit!!.committedDate.toString()
+
+                                    var dateString: String = committedDate.replace("Z", "GMT+00:00")
+                                    var dateFormat: Date = df1.parse(dateString)
+                                    var kor_dateFormat: Date = convert(dateFormat)!!
+                                    var str_date: String = df1.format(kor_dateFormat)
+                                    Log.d("committedDate",str_date)
+
+                                    var day:String=str_date.substring(8,10)
+                                    Log.d("day",day)
+
+                                    var count:Int=monthCount.getOrDefault(day,0)+1
+                                    monthCount.remove(day)
+                                    monthCount.set(day,count)
+
+
+                                }
+                                Log.d("repository",repository!!.name)
+                            }
+
+
+                        }
+                        for ((key, value) in monthCount){
+                            Log.d("value","${key} : ${value}")
+                        }
+                    }
+                    override fun onFailure(e: ApolloException) {
+                        TODO("Not yet implemented")
+                    }
+                })
+        }
+        else{ //private
+
+            val client:ApolloClient= apolloClient(requireContext())
+
+            client.query(ResultQuery(prefs.getString("username",""),startDate,endDate,RepositoryPrivacy.PRIVATE))
+                .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
+                    @RequiresApi(Build.VERSION_CODES.N)
+                    override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
+                        var data = response.data!!
+                        Log.d("graphql", data.toString())
+                        var repositories=data.user!!.repositories
+                        for(i in 0..repositories.nodes!!.size-1){
+                            var repository= repositories.nodes!![i]
+                            if(repository!!.ref!=null){
+                                var asCommit= repository!!.ref!!.target!!.asCommit
+                                var history=asCommit!!.history
+                                for(i in 0 until history.nodes!!.size-1){
+
+                                    var commit= history.nodes!![i]
+
+                                    var committedDate=commit!!.committedDate.toString()
+
+                                    var dateString: String = committedDate.replace("Z", "GMT+00:00")
+                                    var dateFormat: Date = df1.parse(dateString)
+                                    var kor_dateFormat: Date = convert(dateFormat)!!
+                                    var str_date: String = df1.format(kor_dateFormat)
+
+                                    Log.d("committedDate",str_date)
+
+                                    var day:String=str_date.substring(8,10)
+                                    Log.d("day",day)
+
+                                    var count:Int=monthCount.getOrDefault(day,0)+1
+                                    monthCount.remove(day)
+                                    monthCount.set(day,count)
+
+
+                                }
+                                Log.d("repository",repository!!.name)
+                            }
+
+
+                        }
+                        for ((key, value) in monthCount){
+                            Log.d("value","${key} : ${value}")
+                        }
+                    }
+                    override fun onFailure(e: ApolloException) {
+                        TODO("Not yet implemented")
+                    }
+                })
+
+            client.query(ResultQuery(prefs.getString("username",""),startDate,endDate,RepositoryPrivacy.PUBLIC))
+                .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
+                    @RequiresApi(Build.VERSION_CODES.N)
+                    override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
+                        var data = response.data!!
+                        Log.d("graphql", data.toString())
+                        var repositories=data.user!!.repositories
+                        for(i in 0..repositories.nodes!!.size-1){
+                            var repository= repositories.nodes!![i]
+                            if(repository!!.ref!=null){
+                                var commit= repository!!.ref!!.target!!.asCommit
+                                var history=commit!!.history
+                                for(i in history.nodes!!.indices){
+                                    var commitItem= history.nodes!!.get(i)
+                                    var committedDate=commitItem!!.committedDate.toString()
+
+                                    var dateString: String = committedDate.replace("Z", "GMT+00:00")
+                                    var dateFormat: Date = df1.parse(dateString)
+                                    var kor_dateFormat: Date = convert(dateFormat)!!
+                                    var str_date: String = df1.format(kor_dateFormat)
+
+                                    var day:String=str_date.substring(8,10)
+                                    Log.d("day",day)
+
+                                    var count:Int=monthCount.getOrDefault(day,0)+1
+                                    monthCount.remove(day)
+                                    monthCount.set(day,count)
+
+
+                                }
+                                Log.d("repository",repository!!.name)
+                            }
+
+
+                        }
+                        for ((key, value) in monthCount){
+                            Log.d("value","${key} : ${value}")
+                        }
+                    }
+                    override fun onFailure(e: ApolloException) {
+                        TODO("Not yet implemented")
+                    }
+                })
+
+
+        }
+
+
+
+
     }
 }

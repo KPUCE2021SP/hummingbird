@@ -202,7 +202,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/pigeon_illust" />
+            app:srcCompat="@drawable/white_peep_illust" />
 
         <TextView
             android:id="@+id/baepsae_title"

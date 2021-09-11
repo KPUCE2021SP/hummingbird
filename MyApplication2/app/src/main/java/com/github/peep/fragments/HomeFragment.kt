@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -24,6 +25,7 @@ import com.github.peep.model.Events
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.User
+import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -72,6 +74,14 @@ class HomeFragment : Fragment() {
         mBinding?.renewBtn?.setOnClickListener {
             getEvents(username)
             view()
+        }
+
+        //병아리 졸업
+        mBinding?.gradBtn?.setOnClickListener {
+            var intent = Intent(activity, CollectionActicity::class.java)
+            intent.putExtra("currentPeep", currentPeep)
+            startActivity(intent)
+            requireActivity().finish()
         }
 
         //세팅창
@@ -123,9 +133,15 @@ class HomeFragment : Fragment() {
                     }
                     //비둘기
                     "pigeon" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.pg_happy_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()                    }
+                    //뱁새
+                    "white" -> {
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.white_happy_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()
                     }
-                    //뱁새 추가 예정
                 }
             } else {
                 when (currentPeep) {
@@ -154,24 +170,23 @@ class HomeFragment : Fragment() {
                     }
                     //비둘기
                     "pigeon" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
-                    }
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.pg_happy_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()                    }
                     //뱁새 추가 예정
+                    "white" -> {
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.white_happy_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()
+                    }
                 }
             }
         }
 
-        //기존 애니메이션 작업
-//        mBinding?.peepHomeImageview?.apply {
-//            setBackgroundResource(R.drawable.yellow_peep_ani)
-//            yPeepHome = background as AnimationDrawable
-//            yPeepHome.start()
-//        }
-
-//        mBinding?.peepHomeImageview?.setOnClickListener {
-//            val animation = AnimationUtils.loadAnimation(activity, R.anim.rotation)
-//            peep_home_imageview.startAnimation(animation)
-//        }
+        mBinding?.peepHomeImageview?.setOnClickListener {
+            val animation = AnimationUtils.loadAnimation(activity, R.anim.rotation)
+            peep_home_imageview.startAnimation(animation)
+        }
 
         return mBinding?.root
     }
@@ -310,7 +325,7 @@ class HomeFragment : Fragment() {
 
     fun view(){
         mBinding?.commitExpProgressbar?.progress = prefs.getString("exp","").toInt()
-        mBinding?.currentLevelTv?.text = "현재 레벨 : "+prefs.getString("level","")
+        mBinding?.currentLevelTv?.text = "Level. "+prefs.getString("level","")
         mBinding?.todayCommitCountTextview?.text = prefs.getString("count","")
     }
 

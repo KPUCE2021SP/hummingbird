@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
 
-</selector>
+    <item android:drawable="@drawable/basic_neutral_w" android:duration="2500"/>
+    <item android:drawable="@drawable/action_neutral_w1" android:duration="2500"/>
+    <item android:drawable="@drawable/action_neutral_w2" android:duration="2500"/>
+    <item android:drawable="@drawable/action_neutral_w3" android:duration="2500"/>
+
+</animation-list>

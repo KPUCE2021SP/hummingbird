@@ -103,18 +103,12 @@ class CalendarFragment : Fragment() {
             valueList.add(commitCount.toString())
             valueList.add("3")
             //count, score, levelUp 순으로
-
-            commit_score.text = valueList[0]
             commit_totalCommit.text = commitCount.toString()
             if(valueList[2].isEmpty()){
-                commit_item.text= "없음!"
-                commit_item.setTextColor(resources.getColor(R.color.colorText))
             }else{
                 Log.d("onCreateView", "onCreateView: else ")
                 commitLayout.visibility = View.VISIBLE
                 noCommitText.visibility = View.GONE
-                commit_item.text = valueList[2]
-                commit_item.setTextColor(resources.getColor(R.color.colorTextDark))
             }
             Log.d("onCreateView", "onCreateView: ")
             calendarView?.clearSelection()
@@ -293,52 +287,6 @@ class CalendarFragment : Fragment() {
                         TODO("Not yet implemented")
                     }
                 })
-
-            client.query(ResultQuery(prefs.getString("username",""),startDate,endDate,RepositoryPrivacy.PUBLIC))
-                .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
-                    @RequiresApi(Build.VERSION_CODES.N)
-                    override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
-                        var data = response.data!!
-                        Log.d("graphql", data.toString())
-                        var repositories=data.user!!.repositories
-                        for(i in 0..repositories.nodes!!.size-1){
-                            var repository= repositories.nodes!![i]
-                            if(repository!!.ref!=null){
-                                var commit= repository!!.ref!!.target!!.asCommit
-                                var history=commit!!.history
-                                for(i in history.nodes!!.indices){
-                                    var commitItem= history.nodes!!.get(i)
-                                    var committedDate=commitItem!!.committedDate.toString()
-
-                                    var dateString: String = committedDate.replace("Z", "GMT+00:00")
-                                    var dateFormat: Date = df1.parse(dateString)
-                                    var kor_dateFormat: Date = convert(dateFormat)!!
-                                    var str_date: String = df1.format(kor_dateFormat)
-
-                                    var day:String=str_date.substring(8,10)
-                                    Log.d("day",day)
-
-                                    var count:Int=monthCount.getOrDefault(day,0)+1
-                                    monthCount.remove(day)
-                                    monthCount.set(day,count)
-
-
-                                }
-                                Log.d("repository",repository!!.name)
-                            }
-
-
-                        }
-                        for ((key, value) in monthCount){
-                            Log.d("value","${key} : ${value}")
-                        }
-                    }
-                    override fun onFailure(e: ApolloException) {
-                        TODO("Not yet implemented")
-                    }
-                })
-
-
         }
 
 

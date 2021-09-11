@@ -110,6 +110,14 @@ class HomeFragment : Fragment() {
             ad.show()
         }
 
+        mBinding?.countButton?.setOnClickListener {
+            progress(1)
+            view()
+        }
+
+        nextPeep = getActivity()?.getIntent()?.getStringExtra("nextPeep")
+        //병아리 일러 추후 애니메이션 작업 할 예정
+        //병아리 일러스트, 애니메이션 작업이 남아 있기 때문에 함수화 하지 않고 하드코딩했다.
         nextPeep = getActivity()?.getIntent()?.getStringExtra("nextPeep")
         //병아리 일러 추후 애니메이션 작업 할 예정
         //병아리 일러스트, 애니메이션 작업이 남아 있기 때문에 함수화 하지 않고 하드코딩했다.
@@ -118,64 +126,77 @@ class HomeFragment : Fragment() {
                 currentPeep = nextPeep
                 when (currentPeep) {
                     "yellow" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral)
-                    }
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.yellow_hapeep_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()                    }
                     //빨간 병아리
                     "red" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_red)
-                    }
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.red_hapeep_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()                    }
                     //초록 병아리
                     "green" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_green)
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.green_hapeep_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()
                     }
                     //파랑 병아리
                     "blue" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.blue_hapeep_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()
                     }
                     //비둘기
                     "pigeon" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.pg_happy_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()                    }
+                    //뱁새
+                    "white" -> {
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.white_happy_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()
                     }
-                    //뱁새 추가 예정
                 }
             } else {
                 when (currentPeep) {
                     "yellow" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral)
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.yellow_hapeep_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()
                     }
                     //빨간 병아리
                     "red" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_red)
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.red_hapeep_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()
                     }
                     //초록 병아리
                     "green" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_green)
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.green_hapeep_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()
                     }
                     //파랑 병아리
                     "blue" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_neutral_blue)
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.blue_hapeep_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()
                     }
                     //비둘기
                     "pigeon" -> {
-                        mBinding!!.peepHomeImageview.setImageResource(R.drawable.basic_happy_pigeon)
-                    }
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.pg_happy_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()                    }
                     //뱁새 추가 예정
+                    "white" -> {
+                        mBinding!!.peepHomeImageview.setBackgroundResource(R.drawable.white_happy_ani)
+                        yPeepHome = background as AnimationDrawable
+                        yPeepHome.start()
+                    }
                 }
             }
         }
-
-        //기존 애니메이션 작업
-//        mBinding?.peepHomeImageview?.apply {
-//            setBackgroundResource(R.drawable.yellow_peep_ani)
-//            yPeepHome = background as AnimationDrawable
-//            yPeepHome.start()
-//        }
-
-//        mBinding?.peepHomeImageview?.setOnClickListener {
-//            val animation = AnimationUtils.loadAnimation(activity, R.anim.rotation)
-//            peep_home_imageview.startAnimation(animation)
-//        }
-
         return mBinding?.root
     }
 

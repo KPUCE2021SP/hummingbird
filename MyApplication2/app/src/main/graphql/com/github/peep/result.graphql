@@ -1,18 +1,34 @@
 query Result($username:String!,$start:GitTimestamp!,$end:GitTimestamp!,$privacy:RepositoryPrivacy!){
-    user(login:$username){
-        repositories(first:100,privacy:$privacy){
-            nodes{
-                name
-                ref(qualifiedName:"main"){
-                    target{
-                        ... on Commit{
-                            history(since:$start,until:$end){
-                                totalCount
-                                nodes{
-                                    committedDate
-                                    authoredByCommitter
-                                    message
-
+    user(login: $username) {
+        repositories(first: 100, privacy: $privacy) {
+            nodes {
+                refs(
+                    refPrefix: "refs/heads/"
+                    orderBy: { direction: DESC, field: TAG_COMMIT_DATE }
+                    first: 100
+                ) {
+                    edges {
+                        node {
+                            ... on Ref {
+                                name
+                                target {
+                                    ... on Commit {
+                                        history(
+                                            since: $start
+                                            until: $end
+                                        ) {
+                                            nodes {
+                                                author {
+                                                    date
+                                                    email
+                                                    name
+                                                }
+                                                committedDate
+                                                authoredByCommitter
+                                                message
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -22,3 +38,4 @@ query Result($username:String!,$start:GitTimestamp!,$end:GitTimestamp!,$privacy:
         }
     }
 }
+

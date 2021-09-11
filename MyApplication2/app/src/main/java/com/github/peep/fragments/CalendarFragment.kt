@@ -80,11 +80,7 @@ class CalendarFragment : Fragment() {
 
         calendarView.setOnDateChangedListener { widget, date, selected ->
             loading_img.visibility = View.VISIBLE//로딩화면 나타나기
-            val year = date.year
-            val month=date.month+1
-            val day = date.day
             dateCount.clear()
-            //getDateEvent(month, year, day)
 
             //하나씩 선택되는 drawable
             calendarView.addDecorator(CalendarUnselectedDecorator(preDay,requireActivity()))
@@ -208,32 +204,41 @@ class CalendarFragment : Fragment() {
                         var repositories=data.user!!.repositories
                         for(i in 0..repositories.nodes!!.size-1){
                             var repository= repositories.nodes!![i]
-                            if(repository!!.ref!=null){
-                                var asCommit= repository!!.ref!!.target!!.asCommit
-                                var history=asCommit!!.history
-                                for(i in 0 until history.nodes!!.size-1){
-                                    var commit=history!!.nodes!![i]
-                                    var committedDate=commit!!.committedDate.toString()
+                            if(repository!!.refs!=null){
+                                var asCommit= repository!!.refs!!.edges!!.filter { it!!.node!!.name == "master"||it!!.node!!.name!!.equals("main") }
+                                var historylist= arrayListOf<ResultQuery.History>()
+                                asCommit!!.forEach{historylist.add(it!!.node!!.target!!.asCommit!!.history)}
+                                for (history in historylist){
+                                    for(i in 0 until history.nodes!!.size-1){
+                                        var commit=history!!.nodes!![i]
+                                        var committedDate=commit!!.committedDate.toString()
 
-                                    var dateString: String = committedDate.replace("Z", "GMT+00:00")
-                                    Log.d("dateString", dateString)
-                                    var dateFormat: Date = df1.parse(dateString)
-                                    var kor_dateFormat: Date = convert(dateFormat)!!
-                                    var str_date: String = df1.format(kor_dateFormat)
-                                    Log.d("committedDate",str_date)
+                                        var dateString: String = committedDate.replace("Z", "GMT+00:00")
+                                        Log.d("dateString", dateString)
+                                        var dateFormat: Date = df1.parse(dateString)
+                                        var kor_dateFormat: Date = convert(dateFormat)!!
+                                        var str_date: String = df1.format(kor_dateFormat)
+                                        Log.d("committedDate",str_date)
 
-                                    var day:String=str_date.substring(8,10)
-                                    Log.d("day",day)
+                                        var day:String=str_date.substring(8,10)
+                                        Log.d("day",day)
+                                        Log.d("useremail2",commit.author!!.email.toString())
+                                        Log.d("useremail1",prefs.getString("useremail",""))
+                                        Log.d("userRealName",prefs.getString("userRealName",""))
 
-
-                                    var count:Int=monthCount.getOrDefault(day,0)+1
-                                    monthCount.remove(day)
-                                    monthCount.set(day,count)
-                                    Log.d("monthCount",""+monthCount.toString())
-
-
+                                        if ((commit.author!!.name!!.toString().equals(prefs.getString("username","")))
+                                            ||(commit.author!!.email!!.toString().equals(prefs.getString("useremail","")))
+                                            ||(commit.author!!.email!!.toString().contains(prefs.getString("username","")))
+                                            ||(commit.author!!.name!!.toString().equals(prefs.getString("userRealName",""))))
+                                            {
+                                            var count:Int=monthCount.getOrDefault(day,0)+1
+                                            monthCount.remove(day)
+                                            monthCount.set(day,count)
+                                            Log.d("monthCount",""+monthCount.toString())
+                                        }
+                                    }
                                 }
-                                Log.d("repository",repository!!.name)
+
                             }
 
 
@@ -279,31 +284,41 @@ class CalendarFragment : Fragment() {
                         var repositories=data.user!!.repositories
                         for(i in 0..repositories.nodes!!.size-1){
                             var repository= repositories.nodes!![i]
-                            if(repository!!.ref!=null){
-                                var asCommit= repository!!.ref!!.target!!.asCommit
-                                var history=asCommit!!.history
-                                for(i in 0 until history.nodes!!.size-1){
+                            if(repository!!.refs!=null){
+                                var asCommit= repository!!.refs!!.edges!!.filter { it!!.node!!.name == "master"||it!!.node!!.name!!.equals("main") }
+                                var historylist= arrayListOf<ResultQuery.History>()
+                                asCommit!!.forEach{historylist.add(it!!.node!!.target!!.asCommit!!.history)}
+                                for (history in historylist){
+                                    for(i in 0 until history.nodes!!.size-1){
+                                        var commit=history!!.nodes!![i]
+                                        var committedDate=commit!!.committedDate.toString()
 
-                                    var commit= history.nodes!![i]
+                                        var dateString: String = committedDate.replace("Z", "GMT+00:00")
+                                        Log.d("dateString", dateString)
+                                        var dateFormat: Date = df1.parse(dateString)
+                                        var kor_dateFormat: Date = convert(dateFormat)!!
+                                        var str_date: String = df1.format(kor_dateFormat)
+                                        Log.d("committedDate",str_date)
 
-                                    var committedDate=commit!!.committedDate.toString()
+                                        var day:String=str_date.substring(8,10)
+                                        Log.d("day",day)
+                                        Log.d("useremail2",commit.author!!.email.toString())
+                                        Log.d("useremail1",prefs.getString("useremail",""))
+                                        Log.d("userRealName",prefs.getString("userRealName",""))
 
-                                    var dateString: String = committedDate.replace("Z", "GMT+00:00")
-                                    var dateFormat: Date = df1.parse(dateString)
-                                    var kor_dateFormat: Date = convert(dateFormat)!!
-                                    var str_date: String = df1.format(kor_dateFormat)
-
-                                    Log.d("committedDate",str_date)
-
-                                    var day:String=str_date.substring(8,10)
-                                    Log.d("day",day)
-
-                                    var count:Int=monthCount.getOrDefault(day,0)+1
-                                    monthCount.remove(day)
-                                    monthCount.set(day,count)
-
+                                        if ((commit.author!!.name!!.toString().equals(prefs.getString("username","")))
+                                            ||(commit.author!!.email!!.toString().equals(prefs.getString("useremail","")))
+                                            ||(commit.author!!.email!!.toString().contains(prefs.getString("username","")))
+                                            ||(commit.author!!.name!!.toString().equals(prefs.getString("userRealName",""))))
+                                            {
+                                            var count:Int=monthCount.getOrDefault(day,0)+1
+                                            monthCount.remove(day)
+                                            monthCount.set(day,count)
+                                            Log.d("monthCount",""+monthCount.toString())
+                                        }
+                                    }
                                 }
-                                Log.d("repository",repository!!.name)
+
                             }
 
 
@@ -326,28 +341,40 @@ class CalendarFragment : Fragment() {
                         var repositories=data.user!!.repositories
                         for(i in 0..repositories.nodes!!.size-1){
                             var repository= repositories.nodes!![i]
-                            if(repository!!.ref!=null){
-                                var commit= repository!!.ref!!.target!!.asCommit
-                                var history=commit!!.history
-                                for(i in history.nodes!!.indices){
-                                    var commitItem= history.nodes!!.get(i)
-                                    var committedDate=commitItem!!.committedDate.toString()
+                            if(repository!!.refs!=null){
+                                var asCommit= repository!!.refs!!.edges!!.filter { it!!.node!!.name == "master"||it!!.node!!.name!!.equals("main") }
+                                var historylist= arrayListOf<ResultQuery.History>()
+                                asCommit!!.forEach{historylist.add(it!!.node!!.target!!.asCommit!!.history)}
+                                for (history in historylist){
+                                    for(i in 0 until history.nodes!!.size-1){
+                                        var commit=history!!.nodes!![i]
+                                        var committedDate=commit!!.committedDate.toString()
 
-                                    var dateString: String = committedDate.replace("Z", "GMT+00:00")
-                                    var dateFormat: Date = df1.parse(dateString)
-                                    var kor_dateFormat: Date = convert(dateFormat)!!
-                                    var str_date: String = df1.format(kor_dateFormat)
+                                        var dateString: String = committedDate.replace("Z", "GMT+00:00")
+                                        Log.d("dateString", dateString)
+                                        var dateFormat: Date = df1.parse(dateString)
+                                        var kor_dateFormat: Date = convert(dateFormat)!!
+                                        var str_date: String = df1.format(kor_dateFormat)
+                                        Log.d("committedDate",str_date)
 
-                                    var day:String=str_date.substring(8,10)
-                                    Log.d("day",day)
-
-
-                                    var count:Int=monthCount.getOrDefault(day,0)+1
-                                    monthCount.remove(day)
-                                    monthCount.set(day,count)
-
+                                        var day:String=str_date.substring(8,10)
+                                        Log.d("day",day)
+                                        Log.d("useremail2",commit.author!!.email.toString())
+                                        Log.d("useremail1",prefs.getString("useremail",""))
+                                        Log.d("userRealName",prefs.getString("userRealName",""))
+                                        if ((commit.author!!.name!!.toString().equals(prefs.getString("username","")))
+                                            ||(commit.author!!.email!!.toString().equals(prefs.getString("useremail","")))
+                                            ||(commit.author!!.email!!.toString().contains(prefs.getString("username","")))
+                                            ||(commit.author!!.name!!.toString().equals(prefs.getString("userRealName",""))))
+                                            {
+                                            var count:Int=monthCount.getOrDefault(day,0)+1
+                                            monthCount.remove(day)
+                                            monthCount.set(day,count)
+                                            Log.d("monthCount",""+monthCount.toString())
+                                        }
+                                    }
                                 }
-                                Log.d("repository",repository!!.name)
+
                             }
 
 

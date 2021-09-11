@@ -124,6 +124,8 @@ class HomeActivity : AppCompatActivity() {
                     val user=response.body()
                     HomeFragment.username = user?.login.toString()
                     prefs.setString("username", HomeFragment.username)
+                    prefs.setString("useremail", HomeFragment.useremail)
+                    prefs.setString("useremail", HomeFragment.usereRealName)
 
                 } else {
                     Log.e("err",response.code().toString())

@@ -35,6 +35,8 @@ class HomeFragment : Fragment() {
 
     companion object {
         var username: String = ""
+        var useremail: String = ""
+        var usereRealName: String = ""
         var id: String = ""
         var events: Events? = null
 
@@ -193,7 +195,12 @@ class HomeFragment : Fragment() {
                 if (response.code() == 200) {
                     val user=response.body()
                     username= user?.login.toString()
+                    useremail= user?.email.toString()
+                    usereRealName= user?.name.toString()
+                    Log.d("useremail", useremail)
                     prefs.setString("username", username)
+                    prefs.setString("useremail", useremail)
+                    prefs.setString("userRealName", usereRealName)
 
                 } else {
                     Log.e("err",response.code().toString())

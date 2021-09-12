@@ -3,14 +3,39 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf8523f9-92ca-4894-97e7-3bdfe21be185" name="Default Changelist" comment="" />
+    <list default="true" id="cf8523f9-92ca-4894-97e7-3bdfe21be185" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/hummingbird.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hummingbird.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1wQ6fNCbgcrMs1FyKPWmFpqsb7S" />
@@ -20,7 +45,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/MyApplication2" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -33,5 +58,26 @@
       <updated>1628378568482</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="3141" y="72" key="FileChooserDialogImpl" timestamp="1629267931182">
+      <screen x="2400" y="-203" width="1920" height="1040" />
+    </state>
+    <state x="3141" y="72" key="FileChooserDialogImpl/0.0.1536.824/2400.-203.1920.1040@2400.-203.1920.1040" timestamp="1629267931182" />
+    <state x="3068" y="-85" width="584" height="804" key="find.popup" timestamp="1629267898095">
+      <screen x="2400" y="-203" width="1920" height="1040" />
+    </state>
+    <state x="3068" y="-85" width="584" height="804" key="find.popup/0.0.1536.824/2400.-203.1920.1040@2400.-203.1920.1040" timestamp="1629267898095" />
   </component>
 </project>

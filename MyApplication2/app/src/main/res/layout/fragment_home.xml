@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
+    android:backgroundTint="@color/white"
     tools:context="com.github.peep.fragments.HomeFragment">
 
 
@@ -102,17 +103,31 @@
             android:progress="0"
             android:progressDrawable="@drawable/progressbar_progressbar"
             app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
             app:layout_constraintStart_toEndOf="@+id/current_level_tv"
             app:layout_constraintTop_toBottomOf="@+id/peep_home_imageview" />
+=======
+            app:layout_constraintHorizontal_bias="0.335"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/peep_home_imageview"
+            app:layout_constraintVertical_bias="0.0" />
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:id="@+id/commit_exp_info_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_marginTop="11dp"
             android:layout_marginEnd="315dp"
             android:layout_marginRight="315dp"
             app:layout_constraintEnd_toEndOf="parent"
+=======
+            android:layout_marginTop="52dp"
+            app:layout_constraintEnd_toStartOf="@+id/commit_exp_progressbar"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
             app:layout_constraintTop_toBottomOf="@+id/peep_home_imageview"
             app:srcCompat="@drawable/ic_baseline_error_24"
             app:tint="@color/colorPeep" />
@@ -153,6 +168,7 @@
             android:id="@+id/current_level_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_marginStart="64dp"
             android:layout_marginLeft="64dp"
             android:layout_marginTop="17dp"
@@ -165,7 +181,29 @@
             app:layout_constraintEnd_toStartOf="@+id/commit_exp_progressbar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/commit_exp_info_btn" />
+=======
+            android:layout_marginTop="16dp"
+            android:text="level. 0"
+            android:textSize="20dp"
+            android:fontFamily="@font/font_title"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.313"
+            app:layout_constraintStart_toEndOf="@+id/peep_name"
+            app:layout_constraintTop_toBottomOf="@+id/peep_home_imageview" />
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/grad_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="누르면 졸업 새로운 병아리 도착"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

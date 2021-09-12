@@ -15,23 +15,45 @@ import com.apollographql.apollo.exception.ApolloException
 import com.catlove.gitcat.CalendarSelectedDecorator
 import com.catlove.gitcat.CalendarTodayDecorator
 import com.catlove.gitcat.CalendarUnselectedDecorator
+<<<<<<< HEAD
+=======
+import com.github.peep.App
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
 import com.github.peep.App.Companion.prefs
 import com.github.peep.R
 import com.github.peep.ResultQuery
 import com.github.peep.databinding.FragmentCalendarBinding
+<<<<<<< HEAD
 import com.github.peep.decorator.EventDecorator
 import com.github.peep.fragments.HomeFragment.Companion.df1
 import com.github.peep.fragments.HomeFragment.Companion.df2
 import com.github.peep.graphql.apolloClient
 import com.github.peep.type.RepositoryPrivacy
+=======
+import com.github.peep.model.CommitRoot
+import com.github.peep.model.EventResponse
+import com.peep.githubapitest.githubpapi.ApiClient
+import com.peep.githubapitest.githubpapi.GithubInterface
+import com.peep.githubapitest.model.Repo
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
 import com.prolificinteractive.materialcalendarview.CalendarDay
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import kotlinx.android.synthetic.main.fragment_calendar.*
+<<<<<<< HEAD
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
+=======
+import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
 
 class CalendarFragment : Fragment() {
 
@@ -39,11 +61,19 @@ class CalendarFragment : Fragment() {
 
     companion object{
         var id  : String = ""
+<<<<<<< HEAD
         var todayDate: Date =Date()
         var commitCount: Int = 0
 
         var monthCount=HashMap<Int,Int>()
 
+=======
+        var repos:List<Repo>? = null
+        var repoCommitsResponse:List<CommitRoot>? = null
+        var events:EventResponse?=null
+        var todayDate: Date =Date()
+        var commitCount: Int = 0
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -53,6 +83,7 @@ class CalendarFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+<<<<<<< HEAD
 
 
 
@@ -60,6 +91,12 @@ class CalendarFragment : Fragment() {
         val binding = FragmentCalendarBinding.inflate(inflater,container,false)
         //val settings: SharedPreferences = requireActivity().getSharedPreferences("testlogin", MODE_PRIVATE)
         val calendarView = binding.calendarView
+=======
+        val binding = FragmentCalendarBinding.inflate(inflater,container,false)
+        //val settings: SharedPreferences = requireActivity().getSharedPreferences("testlogin", MODE_PRIVATE)
+        val calendarView = binding.calendarView
+        getUserCommitByRepos()
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
         // default 날짜는 오늘 날짜로
         val selectedDate: CalendarDay = CalendarDay.today()
 
@@ -79,11 +116,20 @@ class CalendarFragment : Fragment() {
 
         calendarView.setOnDateChangedListener { widget, date, selected ->
             loading_img.visibility = View.VISIBLE//로딩화면 나타나기
+<<<<<<< HEAD
             val year = date.year
             val month=date.month+1
             val day = date.day
             //getDateEvent(month, year, day)
 
+=======
+            val Year = date.year.toString()
+            var dateScore : String = Year
+            commitCount = 0
+            todayDate = date.date
+            Log.d("fullresponse", "Date: "+ todayDate)
+            getUserCommitByRepos()
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
             //하나씩 선택되는 drawable
             calendarView.addDecorator(CalendarUnselectedDecorator(preDay,requireActivity()))
             calendarView.addDecorator(CalendarSelectedDecorator(date,requireActivity()))
@@ -91,6 +137,7 @@ class CalendarFragment : Fragment() {
 
             //날짜에 맞는 값들 뿌려주기
 
+<<<<<<< HEAD
             val todayCommit = monthCount.getOrDefault(day,0)
             Log.d("todayCommit", todayCommit.toString())
             commit_totalCommit.text = todayCommit.toString()
@@ -99,10 +146,29 @@ class CalendarFragment : Fragment() {
             if(todayCommit==0||todayCommit==null){
                 commitLayout.visibility = View.GONE
                 noCommitText.visibility = View.VISIBLE
+=======
+            val valueList = ArrayList<String>()
+
+            valueList.add("2")
+            valueList.add(commitCount.toString())
+            valueList.add("3")
+            //count, score, levelUp 순으로
+
+            commit_score.text = valueList[0]
+            commit_totalCommit.text = commitCount.toString()
+            if(valueList[2].isEmpty()){
+                commit_item.text= "없음!"
+                commit_item.setTextColor(resources.getColor(R.color.colorText))
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
             }else{
                 Log.d("onCreateView", "onCreateView: else ")
                 commitLayout.visibility = View.VISIBLE
                 noCommitText.visibility = View.GONE
+<<<<<<< HEAD
+=======
+                commit_item.text = valueList[2]
+                commit_item.setTextColor(resources.getColor(R.color.colorTextDark))
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
             }
             Log.d("onCreateView", "onCreateView: ")
             calendarView?.clearSelection()
@@ -110,7 +176,10 @@ class CalendarFragment : Fragment() {
 
 
         calendarView.setOnMonthChangedListener { widget, date ->
+<<<<<<< HEAD
             widget.invalidateDecorators()
+=======
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
             val mYear = date.year
             val mMonth = date.month+1
             val mDay = date.day
@@ -126,6 +195,7 @@ class CalendarFragment : Fragment() {
         mBinding = binding
         return mBinding?.root
     }
+<<<<<<< HEAD
     fun convert(date: Date?): Date? { //시차 변환
         val calendar = Calendar.getInstance()
         calendar.time = date
@@ -133,6 +203,84 @@ class CalendarFragment : Fragment() {
         return calendar.time
     }
 
+=======
+    fun getUserCommitByRepos(){
+        var GithubService=ApiClient.client.create(GithubInterface::class.java)
+        val call=GithubService.getUserRepos()
+        var reposNameList: MutableList<String> = mutableListOf()
+        call.enqueue(object :Callback<List<Repo>>{
+            override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
+
+                //Log.d("fullresponse", response.code().toString())
+                if (response.code() == 200) {
+
+                    // list<repos>
+
+                    repos = response.body()
+
+                    repos!!.forEach {
+                        getReposCommits(it.name)
+                        reposNameList.add(it.name)
+                    }
+                    Log.d("fullresponse", reposNameList.toString()+reposNameList.count())
+                } else {
+                    Log.e("err",response.code().toString())
+                }
+            }
+
+            override fun onFailure(call: Call<List<Repo>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+
+    }
+    fun getReposCommits(name:String){
+        var GithubService=ApiClient.client.create(GithubInterface::class.java)
+        // TODO kim1387를 사용자 이름으로 수정해야함
+        Log.d("fullresponse", "getReposCommits: username"+ prefs.getString("username",""))
+        val commitCall = GithubService.getRepoCommit(prefs.getString("username",""),name)
+        commitCall.enqueue(object :Callback<List<CommitRoot>>{
+            @RequiresApi(Build.VERSION_CODES.O)
+            @SuppressLint("SimpleDateFormat")
+            override fun onResponse(
+                call: Call<List<CommitRoot>>,
+                response: Response<List<CommitRoot>>
+            ) {
+                if (response.code() == 200) {
+                    val dateFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd")
+                    repoCommitsResponse = response.body()
+                    repoCommitsResponse!!.filter {
+                        Log.d("fullresponsetime", "onResponse: "+dateFormat.format(it.commit.author.date)+"----"+ dateFormat.format(todayDate))
+                        dateFormat.format(it.commit.author.date)
+                            // TODO kim1387를 사용자 이름으로 수정해야함
+                            .equals(dateFormat.format(todayDate))&&it.commit.committer.name.equals(prefs.getString("username",""))
+                    }.forEach {
+                        commitCount += 1
+                        Log.d("fullresponsedate", "onResponse: ${dateFormat.format(it.commit.author.date)}")
+                        Log.d("fullresponse ${name}", "message: "+it.commit.message)
+
+                    }
+                    commit_totalCommit.text = commitCount.toString()
+                    if (commitCount!=0){
+                        Log.d("fullresponse+개수", commitCount.toString())
+                    }
+
+                    // Log.d("fullresponse", repoCommitsResponse!![0].count.toString())
+                } else {
+                    Log.e("err1",response.toString())
+                }
+            }
+
+            override fun onFailure(call: Call<List<CommitRoot>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
+
+
+>>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
     override fun onDestroyView() {
         mBinding = null
         super.onDestroyView()

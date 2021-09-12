@@ -3,18 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="app/src/main/res/drawable/cal_sq_0.xml" value="0.2085" />
         <entry key="app/src/main/res/layout/activity_collection.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.18645833333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18645833333333334" />
         <entry key="app/src/main/res/layout/activity_peep_select.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_pick_peep.xml" value="0.1578528141629869" />
+=======
+        <entry key="app/src/main/res/layout/activity_peep_select.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_pick_peep.xml" value="0.19610507246376813" />
+>>>>>>> origin/heo
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_redirected.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_repo_auth.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_sign_in_out.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19610507246376813" />
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/alert_popup.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/error_popup.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.2749258732450181" />
@@ -22,6 +28,12 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21401824951171877" />
         <entry key="app/src/main/res/layout/item_recycler.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.26666666666666666" />
+=======
+        <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_find.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/item_recycler.xml" value="0.19610507246376813" />
+>>>>>>> origin/heo
       </map>
     </option>
   </component>

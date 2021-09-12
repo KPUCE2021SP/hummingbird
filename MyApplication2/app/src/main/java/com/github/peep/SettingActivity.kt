@@ -78,41 +78,17 @@ class SettingActivity : AppCompatActivity() {
     }
 
     fun showSettingPopup(string : String){
-//        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-//        val view = inflater.inflate(R.layout.alert_popup,null)
-//        var textView = view.findViewById<TextView>(R.id.alert_textview)
-//        textView.text = string
-
         AlertDesign(this)
             .setTitle("권한 변경")
             .setMessage(string)
             .setPositiveButton("예") {
                 logout()
-//                임의로
-                var intent=Intent(this, HomeActivity::class.java)
-                finish()
-                finish()
+                var intent=Intent(this,HomeActivity::class.java)
+                finishAffinity()
                 startActivity(intent)
             }
-            .setNegativeButton("취소"){}
-            .show()
-
-//        val alertDialog = AlertDesign.CustomDialogBuilder()
-//            .setTitle("권한 설정 변경")
-//            .setPositiveButton("확인"){ dialog, which ->
-//                logout()
-//                var intent=Intent(this,HomeActivity::class.java)
-//                finish()
-//                startActivity(intent)
-//            }
-//            .setNegativeButton("취소",null)
-//            .create()
-//
-//        alertDialog.setView(view)
-//        alertDialog.show()
-    }
-    override fun onDestroy() {
-        UserDB.destroyInstance()
-        super.onDestroy()
+            .setNegativeButton("취소"){
+                finish()
+            }
     }
 }

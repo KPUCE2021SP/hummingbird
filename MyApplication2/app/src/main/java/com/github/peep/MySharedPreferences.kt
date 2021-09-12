@@ -25,5 +25,4 @@ class MySharedPreferences(context: Context)
     fun clear(){
         prefs.edit().clear().apply()
     }
-
 }

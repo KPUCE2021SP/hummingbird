@@ -8,8 +8,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.peep.App.Companion.prefs
-import com.github.peep.DB.User
-import com.github.peep.DB.UserDB
 import com.github.peep.databinding.ActivityHomeBinding
 import com.github.peep.fragments.HomeFragment
 import com.github.rahul.githuboauth.ErrorCallback
@@ -122,10 +120,6 @@ class HomeActivity : AppCompatActivity() {
         val call=GithubService.getUser()
         call.enqueue(object: Callback<com.peep.githubapitest.model.User>{
             override fun onResponse(call: Call<com.peep.githubapitest.model.User>, response: Response<com.peep.githubapitest.model.User>) {
-<<<<<<< HEAD
-=======
-                Log.d("fullresponse", response.toString())
->>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
                 if (response.code() == 200) {
                     val user=response.body()
                     HomeFragment.username = user?.login.toString()

@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-<<<<<<< HEAD
 import com.github.peep.App.Companion.prefs
-=======
->>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
 import com.github.peep.DB.UserDB
 
 import com.github.peep.databinding.ActivitySettingBinding
@@ -93,14 +90,5 @@ class SettingActivity : AppCompatActivity() {
             .setNegativeButton("취소"){
                 finish()
             }
-<<<<<<< HEAD
-=======
-
-            .show()
-    }
-    override fun onDestroy() {
-        UserDB.destroyInstance()
-        super.onDestroy()
->>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
     }
 }

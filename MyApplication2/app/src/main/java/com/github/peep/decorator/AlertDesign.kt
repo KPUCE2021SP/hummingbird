@@ -2,8 +2,10 @@ package com.github.peep.decorator
 
 import android.app.AlertDialog
 import android.content.Context
+import android.os.Handler
+import android.view.MotionEvent
 import android.view.View
-import android.widget.ImageView
+import androidx.annotation.StringRes
 import com.github.peep.R
 import kotlinx.android.synthetic.main.alert_popup.view.*
 

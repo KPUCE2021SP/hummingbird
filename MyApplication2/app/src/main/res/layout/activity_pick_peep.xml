@@ -50,11 +50,7 @@
             android:fontFamily="@font/font_title"
             android:textSize="19sp"
             android:gravity="center"
-<<<<<<< HEAD
             android:text="불닭" />
-=======
-            android:text="빨간 병아리" />
->>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
     </LinearLayout>
 
     <LinearLayout
@@ -87,11 +83,7 @@
             android:fontFamily="@font/font_title"
             android:textSize="19sp"
             android:gravity="center"
-<<<<<<< HEAD
             android:text="노랑" />
-=======
-            android:text="노란 병아리" />
->>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
     </LinearLayout>
 
     <LinearLayout
@@ -124,11 +116,7 @@
             android:fontFamily="@font/font_title"
             android:textSize="19sp"
             android:gravity="center"
-<<<<<<< HEAD
             android:text="파랑이" />
-=======
-            android:text="파란 병아리" />
->>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
     </LinearLayout>
 
     <LinearLayout
@@ -160,11 +148,7 @@
             android:fontFamily="@font/font_title"
             android:textSize="19sp"
             android:gravity="center"
-<<<<<<< HEAD
             android:text="초롱" />
-=======
-            android:text="초록 병아리" />
->>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
     </LinearLayout>
     <LinearLayout
         android:id="@+id/pigeon_layout"
@@ -196,11 +180,7 @@
             android:fontFamily="@font/font_title"
             android:textSize="20sp"
             android:gravity="center"
-<<<<<<< HEAD
             android:text="둘팔이" />
-=======
-            android:text="비둘기" />
->>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
     </LinearLayout>
 
     <LinearLayout
@@ -232,11 +212,7 @@
             android:fontFamily="@font/font_title"
             android:textSize="20sp"
             android:gravity="center"
-<<<<<<< HEAD
             android:text="해핍" />
-=======
-            android:text="뱁새" />
->>>>>>> 50b55522df534ebcb77f28fbcac7f1a468459220
     </LinearLayout>
 
     <Button

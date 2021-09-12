@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.bumptech.glide.Glide
+import com.github.peep.App.Companion.prefs
 import com.github.peep.DB.UserDB
 
 import com.github.peep.databinding.ActivitySettingBinding
@@ -26,6 +26,11 @@ class SettingActivity : AppCompatActivity() {
         mBinding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
+        //userDb = UserDB.getInstance(this)
+
+//        val removeRunnable = Runnable{
+//            userDb?.userDao()?.deleteAll()
+//        }
 
 
         //사용자 프로필, 이름 가져오기
@@ -52,10 +57,9 @@ class SettingActivity : AppCompatActivity() {
         val call=GithubService.getUser()
         call.enqueue(object: Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
-                Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
-                    Glide.with(this@SettingActivity).load(user?.avatar_url).circleCrop().into(mBinding.settingProfileIv)
+                    Picasso.get().load(user?.avatar_url).into(mBinding.settingProfileIv)
                     mBinding.settingUsername.text = user?.login
                 } else {
                     Log.e("err",response.code().toString())
@@ -70,6 +74,7 @@ class SettingActivity : AppCompatActivity() {
     fun logout(){
         App.prefs.remove("token")
         android.webkit.CookieManager.getInstance().removeAllCookie()
+        App.prefs.clear()
     }
 
     fun showSettingPopup(string : String){
@@ -79,18 +84,11 @@ class SettingActivity : AppCompatActivity() {
             .setPositiveButton("예") {
                 logout()
                 var intent=Intent(this,HomeActivity::class.java)
-                finish()
+                finishAffinity()
                 startActivity(intent)
             }
             .setNegativeButton("취소"){
                 finish()
             }
-
-            .show()
-    }
-
-    override fun onDestroy() {
-        UserDB.destroyInstance()
-        super.onDestroy()
     }
 }

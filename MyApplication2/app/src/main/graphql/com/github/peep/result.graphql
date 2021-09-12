@@ -1,0 +1,21 @@
+query Result($username:String!,$start:GitTimestamp!,$end:GitTimestamp!,$privacy:RepositoryPrivacy!){
+    user(login:$username){
+        repositories(first:100,privacy:$privacy){
+            nodes{
+                name
+                ref(qualifiedName:"main"){
+                    target{
+                        ... on Commit{
+                            history(since:$start,until:$end){
+                                totalCount
+                                nodes{
+                                    committedDate
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

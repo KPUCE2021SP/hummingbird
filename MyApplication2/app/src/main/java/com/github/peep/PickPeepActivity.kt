@@ -141,11 +141,10 @@ class PickPeepActivity : AppCompatActivity() {
                 }
                 //뱁새
                 6 ->{
-//                    var intent = Intent(this, MainActivity::class.java)
-//                    intent.putExtra("nextPeep","yellow")
-//                    startActivity(intent)
-//                    finish()
-                    Toast.makeText(this,"뱁새 없어용", Toast.LENGTH_SHORT).show()
+                    var intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("nextPeep","white")
+                    startActivity(intent)
+                    finish()
                 }
             }
         }

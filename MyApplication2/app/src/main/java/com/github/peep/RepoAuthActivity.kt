@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import com.github.peep.App.Companion.prefs
 import com.github.peep.databinding.ActivityRepoAuthBinding
 import com.github.peep.databinding.ActivitySplashBinding
 import kotlinx.android.synthetic.main.activity_repo_auth.*
@@ -47,10 +48,12 @@ class RepoAuthActivity : AppCompatActivity() {
             if (focus == 0) {
                 toast("버튼을 선택해주세요")
             } else if (focus == 1) {
+                prefs.setString("auth","public")
                 intent.putExtra("auth", "public")
                 setResult(Activity.RESULT_OK, intent)
                 finish()
             } else if (focus == 2) {
+                prefs.setString("auth","private")
                 intent.putExtra("auth", "private")
                 setResult(Activity.RESULT_OK, intent)
                 finish()

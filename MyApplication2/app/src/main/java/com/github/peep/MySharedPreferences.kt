@@ -22,4 +22,7 @@ class MySharedPreferences(context: Context)
         prefs.edit().remove(key).apply()
     }
 
+    fun clear(){
+        prefs.edit().clear().apply()
+    }
 }

@@ -12,8 +12,8 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.github.peep.DB.UserDB
 import com.github.peep.databinding.ActivityProfileBinding
-import com.github.peep.fragments.HomeFragment
 import com.peep.githubapitest.githubpapi.ApiClient
 import com.peep.githubapitest.githubpapi.GithubInterface
 import com.peep.githubapitest.model.User
@@ -27,6 +27,7 @@ import retrofit2.Response
 
 class ProfileActivity : AppCompatActivity() {
     lateinit var mBinding : ActivityProfileBinding
+    private var userDb : UserDB? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_profile)
@@ -41,7 +42,6 @@ class ProfileActivity : AppCompatActivity() {
         mBinding.backButton.setOnClickListener {
             showSettingPopup()
         }
-
     }
     fun showSettingPopup(){
         val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -67,11 +67,10 @@ class ProfileActivity : AppCompatActivity() {
         val call=GithubService.getUser()
         call.enqueue(object: Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
-                Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
                     Picasso.get().load(user?.avatar_url).into(mBinding.gitProfileIv)
-                    mBinding.gitUsernameTv.text = user?.name
+                    mBinding.gitUsernameTv.text = user?.login
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -85,5 +84,9 @@ class ProfileActivity : AppCompatActivity() {
     fun logout(){
         App.prefs.remove("token")
         android.webkit.CookieManager.getInstance().removeAllCookie()
+    }
+    override fun onDestroy() {
+        UserDB.destroyInstance()
+        super.onDestroy()
     }
 }

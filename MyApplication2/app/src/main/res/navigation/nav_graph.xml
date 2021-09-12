@@ -15,9 +15,9 @@
         android:name="com.github.peep.fragments.CalendarFragment"
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar" />
-    <fragment
-        android:id="@+id/findFragment"
-        android:name="com.github.peep.fragments.FindFragment"
-        android:label="fragment_find"
-        tools:layout="@layout/fragment_find" />
+    <activity
+        android:id="@+id/acticity_collection"
+        android:name="com.github.peep.CollectionActicity"
+        android:label="activity_collection"
+        tools:layout="@layout/activity_collection" />
 </navigation>

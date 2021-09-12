@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.github.peep.App.Companion.prefs
+import com.github.peep.DB.UserDB
+
 import com.github.peep.databinding.ActivitySettingBinding
 import com.github.peep.decorator.AlertDesign
 import com.peep.githubapitest.githubpapi.ApiClient
@@ -16,10 +19,19 @@ import retrofit2.Response
 
 class SettingActivity : AppCompatActivity() {
     lateinit var mBinding: ActivitySettingBinding
+    //private var userDb : UserDB? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+
+        //userDb = UserDB.getInstance(this)
+
+//        val removeRunnable = Runnable{
+//            userDb?.userDao()?.deleteAll()
+//        }
+
 
         //사용자 프로필, 이름 가져오기
         getUser()
@@ -33,6 +45,11 @@ class SettingActivity : AppCompatActivity() {
         mBinding.settingRepoBtn.setOnClickListener {
             showSettingPopup("권한을 변경하시겠습니까?\n변경 시, 재로그인이 필요합니다.")
         }
+        // 병아리 초기화
+        mBinding.settingPeepInitBtn.setOnClickListener {
+//            val removeThread = Thread(removeRunnable)
+//            removeThread.start()
+        }
     }
 
     fun getUser(){
@@ -40,11 +57,10 @@ class SettingActivity : AppCompatActivity() {
         val call=GithubService.getUser()
         call.enqueue(object: Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
-                Log.d("fullresponse", response.toString())
                 if (response.code() == 200) {
                     val user=response.body()
                     Picasso.get().load(user?.avatar_url).into(mBinding.settingProfileIv)
-                    mBinding.settingUsername.text = user?.name
+                    mBinding.settingUsername.text = user?.login
                 } else {
                     Log.e("err",response.code().toString())
                 }
@@ -58,41 +74,21 @@ class SettingActivity : AppCompatActivity() {
     fun logout(){
         App.prefs.remove("token")
         android.webkit.CookieManager.getInstance().removeAllCookie()
+        App.prefs.clear()
     }
 
     fun showSettingPopup(string : String){
-//        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-//        val view = inflater.inflate(R.layout.alert_popup,null)
-//        var textView = view.findViewById<TextView>(R.id.alert_textview)
-//        textView.text = string
-
         AlertDesign(this)
             .setTitle("권한 변경")
             .setMessage(string)
             .setPositiveButton("예") {
                 logout()
                 var intent=Intent(this,HomeActivity::class.java)
-                finish()
+                finishAffinity()
                 startActivity(intent)
             }
             .setNegativeButton("취소"){
                 finish()
             }
-
-            .show()
-
-//        val alertDialog = AlertDesign.CustomDialogBuilder()
-//            .setTitle("권한 설정 변경")
-//            .setPositiveButton("확인"){ dialog, which ->
-//                logout()
-//                var intent=Intent(this,HomeActivity::class.java)
-//                finish()
-//                startActivity(intent)
-//            }
-//            .setNegativeButton("취소",null)
-//            .create()
-//
-//        alertDialog.setView(view)
-//        alertDialog.show()
     }
 }

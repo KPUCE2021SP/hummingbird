@@ -2,6 +2,8 @@ package com.catlove.gitcat
 
 import android.app.Activity
 import android.graphics.drawable.Drawable
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.github.peep.R
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.DayViewDecorator
@@ -11,6 +13,7 @@ class CalendarUnselectedDecorator : DayViewDecorator{
     private var drawable: Drawable
     private var dates: CalendarDay? = null
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     constructor(dates: CalendarDay, context: Activity){
         this.dates = dates
         drawable = context.getDrawable(R.drawable.calendar_unselect)!!

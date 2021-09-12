@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".SettingActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/setting_profile_iv"
             android:layout_width="200dp"
             android:layout_height="200dp"
@@ -30,16 +31,18 @@
 
         <TextView
             android:id="@+id/setting_username"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="174dp"
-            android:layout_marginLeft="174dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
             android:layout_marginTop="30dp"
-            android:layout_marginEnd="173dp"
-            android:layout_marginRight="173dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
             android:layout_marginBottom="30dp"
+            android:fontFamily="@font/font_title"
             android:text=""
-            android:textSize="20dp"
+            android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,13 +51,13 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:fontFamily="@font/font_title"
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:text="설정"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"

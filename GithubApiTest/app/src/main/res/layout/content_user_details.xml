@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.UserDetailsActivity"
+    tools:showIn="@layout/activity_user_details">
+<LinearLayout
+    android:id="@+id/llSearchView"
+    android:padding="4dp"
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="243dp"
+        android:layout_height="45dp"
+        android:layout_weight="1"
+        android:hint="@string/enter_username"
+        android:padding="2dp" />
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="54dp"
+        android:layout_height="45dp"
+        android:background="@color/dark_gray"
+        android:padding="2dp"
+        android:text="profile"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnRepo"
+        android:layout_width="20dp"
+        android:layout_height="45dp"
+        android:layout_weight="1"
+        android:background="@color/dark_gray"
+        android:padding="2dp"
+        android:text="Repo"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+</LinearLayout>
+    <include layout="@layout/profile_view"/>
+    <include layout="@layout/repo_view"/>
+</LinearLayout>

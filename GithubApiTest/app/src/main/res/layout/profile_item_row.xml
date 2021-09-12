@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:minHeight="50dp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:padding="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<TextView
+    android:id="@+id/tvText"
+    android:layout_gravity="center"
+    android:text="Hi"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"/>
+    <ImageView
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_chevron_right_blue_24dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+</LinearLayout>
+    <View
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/secondary_text"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</LinearLayout>

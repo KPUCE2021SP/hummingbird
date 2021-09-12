@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "780260783680",
+    "firebase_url": "https://toyproject-b7165-default-rtdb.firebaseio.com",
+    "project_id": "toyproject-b7165",
+    "storage_bucket": "toyproject-b7165.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780260783680:android:748dcbc5d7c6731e0851a5",
+        "android_client_info": {
+          "package_name": "codevinci.com.kotlinretrofitrestexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780260783680-2oqr58quicakl0mfb88q97u54r4busvk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "codevinci.com.kotlinretrofitrestexample",
+            "certificate_hash": "e5ffb5b771162c6c9cf9ca792f9fa6b1ec8a3a26"
+          }
+        },
+        {
+          "client_id": "780260783680-n8tf27g9dejni6ptp6kmg8mso8qbj18j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT-HR-HGI8FG4v9PV2fVy8mTHaP8cySRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780260783680-n8tf27g9dejni6ptp6kmg8mso8qbj18j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780260783680:android:6b1b11a488a0d8330851a5",
+        "android_client_info": {
+          "package_name": "com.example.myapplication2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780260783680-2csuugci7umje0pkkqj6f7ole0023vsk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication2",
+            "certificate_hash": "4e3c8a1697d3b55c718b261e3aed45f7b6fa52d0"
+          }
+        },
+        {
+          "client_id": "780260783680-n8tf27g9dejni6ptp6kmg8mso8qbj18j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT-HR-HGI8FG4v9PV2fVy8mTHaP8cySRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780260783680-n8tf27g9dejni6ptp6kmg8mso8qbj18j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

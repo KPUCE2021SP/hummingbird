@@ -8,6 +8,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.github.peep.App.Companion.prefs
 import com.github.peep.databinding.ActivityPickPeepBinding
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.toast
@@ -107,42 +108,42 @@ class PickPeepActivity : AppCompatActivity() {
                 //red
                 1 ->{
                     var intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("nextPeep","red")
+                    prefs.setString("currentPeep","red")
                     startActivity(intent)
                     finish()
                 }
                 //yellow
                 2 ->{
                     var intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("nextPeep","yellow")
+                    prefs.setString("currentPeep","yellow")
                     startActivity(intent)
                     finish()
                 }
                 //blue
                 3 ->{
                     var intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("nextPeep","blue")
+                    prefs.setString("currentPeep","blue")
                     startActivity(intent)
                     finish()
                 }
                 //green
                 4 ->{
                     var intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("nextPeep","green")
+                    prefs.setString("currentPeep","green")
                     startActivity(intent)
                     finish()
                 }
                 //pigeon
                 5 ->{
                     var intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("nextPeep","pigeon")
+                    prefs.setString("currentPeep","pigeon")
                     startActivity(intent)
                     finish()
                 }
                 //뱁새
                 6 ->{
                     var intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("nextPeep","white")
+                    prefs.setString("currentPeep","white")
                     startActivity(intent)
                     finish()
                 }

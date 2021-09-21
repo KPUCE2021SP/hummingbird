@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.github.peep.App.Companion.prefs
+import com.github.peep.CollectionActicity.Companion.peepName
 import com.github.peep.DB.UserDB
 
 import com.github.peep.databinding.ActivitySettingBinding
@@ -47,8 +48,10 @@ class SettingActivity : AppCompatActivity() {
         }
         // 병아리 초기화
         mBinding.settingPeepInitBtn.setOnClickListener {
-//            val removeThread = Thread(removeRunnable)
-//            removeThread.start()
+            for(i in peepName.indices){
+                prefs.remove(peepName[i])
+            }
+            finish()
         }
     }
 
@@ -77,6 +80,10 @@ class SettingActivity : AppCompatActivity() {
         App.prefs.clear()
     }
 
+    fun setRepoAuth(){
+        App.prefs.remove("token")
+    }
+
     fun showSettingPopup(string : String){
 //        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 //        val view = inflater.inflate(R.layout.alert_popup,null)
@@ -87,7 +94,7 @@ class SettingActivity : AppCompatActivity() {
             .setTitle("권한 변경")
             .setMessage(string)
             .setPositiveButton("예") {
-                logout()
+                setRepoAuth()
 //                임의로
                 var intent=Intent(this, HomeActivity::class.java)
                 finish()

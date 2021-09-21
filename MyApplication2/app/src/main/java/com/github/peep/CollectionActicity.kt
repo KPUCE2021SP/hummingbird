@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.github.peep.App.Companion.prefs
 import com.github.peep.decorator.AlertDesign
 import com.github.peep.view.CollectionAdapter
 import com.github.peep.view.CollectionData
@@ -23,20 +24,18 @@ import java.lang.Exception
 //큰그림은 CatDataBase의 Room.databaseBuilder를 호출해 새로운 db 객체를 만들고. 데이터를 읽기/쓰기는 서브 쓰레드에서 작업
 class CollectionActicity : AppCompatActivity() {
     lateinit var collectionAdapter: CollectionAdapter
-
     var datas = mutableListOf<CollectionData>()
 
     //yellow,red,green,blue,peigeon 순서대로 가지고 병아리의 숫자.
     //이후엔 map으로 수정할 예정
     companion object {
-        val peepName = arrayOf("yellow", "red", "green", "blue", "pigeon")
-        var peepCount = arrayOf(0, 0, 0, 0, 0)
+        val peepName = arrayOf("yellow", "red", "green", "blue", "pigeon","white")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection)
-        var currentPeep: String? = intent.getStringExtra("currentPeep")
+        var currentPeep: String? =intent.getStringExtra("currentPeep")
         collectionAdapter = CollectionAdapter(this)
         rv_profile.adapter = collectionAdapter
 
@@ -44,7 +43,7 @@ class CollectionActicity : AppCompatActivity() {
         if (currentPeep != null) {
             for (i in peepName.indices) {
                 if (peepName[i] == currentPeep) {
-                    peepCount[i]++
+                    prefs.setInt(peepName[i],prefs.getInt(peepName[i],0)+1)
                 }
             }
             gradPeepCount()
@@ -76,8 +75,8 @@ class CollectionActicity : AppCompatActivity() {
     //졸업한 병아리의 수를 카운팅하는 함수
     //만약 졸업한 병아리가 있다면 해당 병아리를 리사이클러뷰에 추가해준다.
     fun gradPeepCount() {
-        for (i in peepCount.indices) {
-            if (peepCount[i] != 0) {
+        for (i in peepName.indices) {
+            if(prefs.getInt(peepName[i],0)!=0){
                 when (i) {
                     //yellow
                     0 -> {
@@ -85,7 +84,7 @@ class CollectionActicity : AppCompatActivity() {
                             CollectionData(
                                 img = R.drawable.peep_illust,
                                 name = "yellow",
-                                count = peepCount[0]
+                                count = prefs.getInt(peepName[i],0)
                             )
                         )
                     }
@@ -95,7 +94,7 @@ class CollectionActicity : AppCompatActivity() {
                             CollectionData(
                                 img = R.drawable.red_peep_illust,
                                 name = "red",
-                                count = peepCount[1]
+                                count = prefs.getInt(peepName[i],0)
                             )
                         )
                     }
@@ -105,7 +104,7 @@ class CollectionActicity : AppCompatActivity() {
                             CollectionData(
                                 img = R.drawable.green_peep_illust,
                                 name = "green",
-                                count = peepCount[2]
+                                count = prefs.getInt(peepName[i],0)
                             )
                         )
                     }
@@ -115,7 +114,7 @@ class CollectionActicity : AppCompatActivity() {
                             CollectionData(
                                 img = R.drawable.blue_peep_illust,
                                 name = "blue",
-                                count = peepCount[3]
+                                count = prefs.getInt(peepName[i],0)
                             )
                         )
                     }
@@ -125,12 +124,23 @@ class CollectionActicity : AppCompatActivity() {
                             CollectionData(
                                 img = R.drawable.pigeon_illu,
                                 name = "pigeon",
-                                count = peepCount[4]
+                                count = prefs.getInt(peepName[i],0)
+                            )
+                        )
+                    }
+
+                    5 -> {
+                        datas.add(
+                            CollectionData(
+                                img = R.drawable.white_peep_illust,
+                                name = "white",
+                                count = prefs.getInt(peepName[i],0)
                             )
                         )
                     }
                 }
             }
+
         }
     }
 

@@ -7,6 +7,15 @@
     tools:context=".PeepSelectActivity">
 
     <Button
+        android:id="@+id/peep_white_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PEEP_WHITE_BTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/peep_pigeon_btn" />
+
+    <Button
         android:id="@+id/peep_pigeon_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

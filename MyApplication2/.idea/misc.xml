@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/cal_sq_0.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/commit_circle_low.xml" value="0.2135" />
+        <entry key="app/src/main/res/drawable/commit_circle_zero.xml" value="0.2135" />
         <entry key="app/src/main/res/layout/activity_collection.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.18645833333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18645833333333334" />

@@ -24,6 +24,10 @@ import com.github.peep.fragments.HomeFragment.Companion.df1
 import com.github.peep.fragments.HomeFragment.Companion.df2
 import com.github.peep.graphql.apolloClient
 import com.github.peep.type.RepositoryPrivacy
+import com.github.peep.view.CollectionAdapter
+import com.github.peep.view.CollectionData
+import com.github.peep.view.DetailAdapter
+import com.github.peep.view.DetailData
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import kotlinx.android.synthetic.main.fragment_calendar.*
@@ -34,6 +38,9 @@ import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
 class CalendarFragment : Fragment() {
+
+    lateinit var detailAdapter: DetailAdapter
+    var datas = mutableListOf<DetailData>()
 
     private var mBinding : FragmentCalendarBinding?=null
 
@@ -123,7 +130,6 @@ class CalendarFragment : Fragment() {
             Log.i("Move date", mDay.toString() + "")
 
         }
-        mBinding = binding
         return mBinding?.root
     }
     fun convert(date: Date?): Date? { //시차 변환

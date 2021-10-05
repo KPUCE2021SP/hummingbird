@@ -1,5 +1,6 @@
 query Result($username:String!,$start:GitTimestamp!,$end:GitTimestamp!,$privacy:RepositoryPrivacy!){
     user(login:$username){
+        name
         repositories(first:100,privacy:$privacy){
             nodes{
                 name
@@ -10,6 +11,7 @@ query Result($username:String!,$start:GitTimestamp!,$end:GitTimestamp!,$privacy:
                                 totalCount
                                 nodes{
                                     committedDate
+                                    message
                                 }
                             }
                         }

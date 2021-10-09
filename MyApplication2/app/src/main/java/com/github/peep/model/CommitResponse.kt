@@ -69,7 +69,7 @@ data class Commit (
     var tree: Tree,
     var url: String,
     var comment_count :Int,
-    var verification: Verification,
+    var verification: Verification
 )
 
 data class Parent (
@@ -87,5 +87,5 @@ data class CommitRoot (
     var comments_url:String ,
     var author: Author,
     var committer: Committer,
-    var parents: List<Parent>,
+    var parents: List<Parent>
 )

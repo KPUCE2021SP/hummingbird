@@ -269,9 +269,11 @@
 
 
                             <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/repository_recyclerview"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/commit_recyclerview"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:listitem="@layout/commit_item_recycler"
                                 />
                         </RelativeLayout>
                     </LinearLayout>

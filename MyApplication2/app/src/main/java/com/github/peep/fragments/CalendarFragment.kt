@@ -186,8 +186,9 @@ class CalendarFragment : Fragment() {
                 .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
                     @RequiresApi(Build.VERSION_CODES.N)
                     override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
+
+
                         var data = response.data!!
-                        Log.d("graphql", data.toString())
                         var repositories=data.user!!.repositories
                         for(i in 0..repositories.nodes!!.size-1){
                             var repository= repositories.nodes!![i]
@@ -198,29 +199,33 @@ class CalendarFragment : Fragment() {
                                     var commit=history!!.nodes!![i]
                                     var committedDate=commit!!.committedDate.toString()
 
+
+
                                     var dateString: String = committedDate.replace("Z", "GMT+00:00")
                                     Log.d("dateString", dateString)
                                     var dateFormat: Date = df1.parse(dateString)
                                     var kor_dateFormat: Date = convert(dateFormat)!!
                                     var str_date: String = df1.format(kor_dateFormat)
-                                    Log.d("committedDate",str_date)
+                                    var message=commit!!.message
 
-                                    var day:Int=str_date.substring(8,10).toInt()
+                                    if(!message.contains("Merge")||!message.contains("merge")||
+                                            message.contains("pull")||!message.contains("Pull")){
+
+                                        var day:Int=str_date.substring(8,10).toInt()
 
 
-                                    var count:Int=monthCount.getOrDefault(day,0)+1
-                                    monthCount.set(day,count)
-                                    Log.d("monthCount",""+monthCount.toString())
+                                        var count:Int=monthCount.getOrDefault(day,0)+1
+                                        monthCount.set(day,count)
+
+                                    }
+
+
 
 
                                 }
-                                Log.d("repository",repository!!.name)
                             }
 
 
-                        }
-                        for ((key, value) in monthCount){
-                            Log.d("value","${key} : ${value}")
                         }
                         Log.d("value","-----------------------")
                         val level1Commit : ArrayList<CalendarDay> = ArrayList()
@@ -255,8 +260,8 @@ class CalendarFragment : Fragment() {
                 .enqueue(object :ApolloCall.Callback<ResultQuery.Data>(){
                     @RequiresApi(Build.VERSION_CODES.N)
                     override fun onResponse(response: com.apollographql.apollo.api.Response<ResultQuery.Data>) {
+
                         var data = response.data!!
-                        Log.d("graphql", data.toString())
                         var repositories=data.user!!.repositories
                         for(i in 0..repositories.nodes!!.size-1){
                             var repository= repositories.nodes!![i]
@@ -269,26 +274,32 @@ class CalendarFragment : Fragment() {
 
                                     var committedDate=commit!!.committedDate.toString()
 
+                                    var message=commit!!.message
+
+
+
                                     var dateString: String = committedDate.replace("Z", "GMT+00:00")
                                     var dateFormat: Date = df1.parse(dateString)
                                     var kor_dateFormat: Date = convert(dateFormat)!!
                                     var str_date: String = df1.format(kor_dateFormat)
+                                    if(!message.contains("Merge")||!message.contains("merge")||
+                                        message.contains("pull")||!message.contains("Pull")){
 
-                                    Log.d("committedDate",str_date)
+                                        Log.d("committedDate",str_date)
 
-                                    var day:Int=str_date.substring(8,10).toInt()
+                                        var day:Int=str_date.substring(8,10).toInt()
 
-                                    var count:Int=monthCount.getOrDefault(day,0)+1
-                                    monthCount.set(day,count)
+                                        var count:Int=monthCount.getOrDefault(day,0)+1
+                                        monthCount.set(day,count)
+
+                                    }
+
+
 
                                 }
-                                Log.d("repository",repository!!.name)
                             }
 
 
-                        }
-                        for ((key, value) in monthCount){
-                            Log.d("value","${key} : ${value}")
                         }
 
                         Log.d("value","-----------------------")
@@ -304,7 +315,6 @@ class CalendarFragment : Fragment() {
                                 level3Commit.add(CalendarDay.from(year,month-1,entry))
                             }
                         }
-                        Log.d("level1Commit", "level1Commit: "+level1Commit.toString())
                         mBinding!!.root.post {
                             calendarView.addDecorator(EventDecorator(level1Commit,requireActivity(),"level_1"))
                             calendarView.addDecorator(EventDecorator(level2Commit,requireActivity(),"level_2"))

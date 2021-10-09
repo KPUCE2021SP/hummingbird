@@ -10,6 +10,7 @@ query Result($username:String!,$start:GitTimestamp!,$end:GitTimestamp!,$privacy:
                                 totalCount
                                 nodes{
                                     committedDate
+                                    message
                                 }
                             }
                         }

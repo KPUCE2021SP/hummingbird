@@ -1,5 +1,3 @@
-
-
 <!-- PROJECT LOGO -->
    <p align="center"><img width="774" alt="스크린샷 2021-08-08 오후 12 39 18" src="https://user-images.githubusercontent.com/54930877/128619951-9727f580-fc66-4a88-a586-724262b16746.png"></p>
   <h3 align="center">PeepPeep</h3>

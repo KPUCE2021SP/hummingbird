@@ -17,6 +17,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#실행영상">실행영상</a></li>
         <li><a href="#built-with">Built With</a></li>
         <li><a href="#architecture">Architecture</a></li>
       </ul>
@@ -43,6 +44,18 @@
     - **병아리 수집 앨범** : 다큰 병아리를 독립하여 다른 병아리가 올 수 있도록 둥지를 만들고 떠납니다. 지금까지 모은 병아리들을 추억할 수 있습니다.
 
 병아리를 키우고 모으며 매일 조금씩 commit 하다 보면, 꾸준한 습관 만들기는 물론 개발이 더욱 재밌어질 거예요!
+
+### 실행영상
+<div>
+   <p>초기 화면 & 커밋 달력</p>
+   <img src="https://user-images.githubusercontent.com/54930877/138998099-219732cc-cbdd-4ff4-9880-6d71623ca41d.gif" width="40%">
+   <img src="https://user-images.githubusercontent.com/54930877/138998093-6e972f60-ac1f-47d1-ac8f-ec4a34678870.gif" width="40%">
+   <p>레벨업 및 졸업기능 & 병아리 컬렉션</p>
+   <img src="https://user-images.githubusercontent.com/54930877/138998087-78986d43-0f73-4a44-84a7-39e218d7a10c.gif" width="40%">
+   <img src="https://user-images.githubusercontent.com/54930877/138998064-7d338a38-fdb5-4b96-978b-af5e9446bfda.gif" width="40%">
+   <p>설정 및 로그아웃</p>
+   <img src="https://user-images.githubusercontent.com/54930877/138998071-d93adf58-d114-4588-8946-eb4ae05af5a3.gif" width="40%">
+</div>
 
 ### Built With
 
